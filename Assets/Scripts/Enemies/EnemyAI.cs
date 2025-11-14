@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class EnemyBase : MonoBehaviour
 {
-    [Header("Base Stats")]
+    [Header("Runtime Stats")]
     public float health;
     public float maxHealth;
     public float moveSpeed;
     public float attackDamage;
-    public float attackRange = 2f;
-    public float detectionRange = 8f;
+    public float attackRange;
+    public float detectionRange;
+    public float attackCooldown;
     
-    [Header("References")]
+    public EnemyStats baseStats;
     protected Transform tower;
     protected Transform player;
     protected Rigidbody rb;
-    
     protected BTNode rootNode;
+    
     private float lastAttackTime;
-    protected float attackCooldown = 1f;
+    public System.Action<EnemyBase> onDeath;
     
     protected virtual void Start()
     {
@@ -31,7 +33,20 @@ public abstract class EnemyBase : MonoBehaviour
             rb = gameObject.AddComponent<Rigidbody>();
         
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        Initialize(baseStats, 1f, 1f, 1f);
+    }
+
+    public virtual void Initialize(EnemyStats stats, float healthMult, float damageMult, float speedMult)
+    {
+        baseStats = stats;
+        maxHealth = stats.maxHealth * healthMult;
         health = maxHealth;
+        moveSpeed = stats.moveSpeed * speedMult;
+        attackDamage = stats.attackDamage * damageMult;
+        attackRange = stats.attackRange;
+        detectionRange = stats.detectionRange;
+        attackCooldown = stats.attackCooldown;
         
         SetupBehaviourTree();
     }
@@ -50,7 +65,6 @@ public abstract class EnemyBase : MonoBehaviour
             rootNode.Evaluate();
     }
     
-    // Helpers
     protected bool IsPlayerNearby() => player != null && Vector3.Distance(transform.position, player.position) <= detectionRange;
     
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);
@@ -94,6 +108,13 @@ public abstract class EnemyBase : MonoBehaviour
     
     protected virtual void Die()
     {
-        Destroy(gameObject, 0.5f);
+        if (baseStats != null)
+        {
+            // Give rewards
+            Debug.Log($"Enemy defeated! +{baseStats.goldReward} gold, +{baseStats.expReward} exp");
+        }
+        
+        onDeath?.Invoke(this);
+        Destroy(gameObject);
     }
 }
