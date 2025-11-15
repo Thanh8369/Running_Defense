@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/playertestScene.meta
+guid: 8d526484dd6930b41a9a595be04fd708
+folderAsset: yes
+========
 guid: 2ac631a77c4bcc34b89700e4733899c8
+>>>>>>>> main:Assets/Scenes/EcanomyTest/EconomyTest.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

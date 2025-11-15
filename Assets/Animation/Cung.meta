@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Player.meta
+guid: 31c8d5fb257d8864b8b9fc368b316e05
+========
 guid: 4d7741c966c32d441bf534167931c2cc
+>>>>>>>> main:Assets/Animation/Cung.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/PlayerAnimation.meta
+guid: b53877613a5ecdb4eb3921db7e273cc5
+folderAsset: yes
+========
 guid: 54a549c7f991e2d46a07e02f88429e1d
+>>>>>>>> main:Assets/Scenes/GuardSence.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
