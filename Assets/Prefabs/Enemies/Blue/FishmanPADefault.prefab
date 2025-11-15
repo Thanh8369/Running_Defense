@@ -1,0 +1,2377 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &52216072151564575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3800994129594634332}
+  m_Layer: 0
+  m_Name: fishman_lowerLegRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3800994129594634332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52216072151564575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.15706544, y: -0.04487594, z: -0.23726065, w: 0.9576137}
+  m_LocalPosition: {x: 0.29797894, y: 0.00000017957119, z: 0.0000007576104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5322635705859908142}
+  m_Father: {fileID: 5113922324932869945}
+  m_LocalEulerAnglesHint: {x: -20.01026, y: -5.7733493, z: -56.580853}
+--- !u!1 &314470423640668197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527154934603658553}
+  m_Layer: 0
+  m_Name: fishman_fin01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1527154934603658553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314470423640668197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0.49112198, w: 0.8710908}
+  m_LocalPosition: {x: -0.28521544, y: 0.33816227, z: 9.194623e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -58.828705}
+--- !u!1 &514298486208881629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641799301879782984}
+  m_Layer: 0
+  m_Name: fishman_pinky01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641799301879782984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514298486208881629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14429213, y: -0.6154388, z: -0.18680793, w: 0.7520091}
+  m_LocalPosition: {x: 0.14712241, y: -0.04272647, z: -0.02347424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5333467480390246012}
+  m_Father: {fileID: 8853256994172129095}
+  m_LocalEulerAnglesHint: {x: -0.7402659, y: -78.41353, z: -27.297241}
+--- !u!1 &791517821282402833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038629447372552946}
+  m_Layer: 0
+  m_Name: fishman_handLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038629447372552946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791517821282402833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14228448, y: -0.024915323, z: -0.010209481, w: 0.9894595}
+  m_LocalPosition: {x: -0.34269026, y: 7.105427e-17, z: -2.131628e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3518573916525126039}
+  - {fileID: 6031983496775622700}
+  - {fileID: 2946648883372110126}
+  - {fileID: 6584443508663515417}
+  m_Father: {fileID: 8108336262375272115}
+  m_LocalEulerAnglesHint: {x: 46.213104, y: 0.19134808, z: 14.3583355}
+--- !u!1 &1052292592035523738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407976922097379135}
+  m_Layer: 0
+  m_Name: fishman_mouthHorn01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1407976922097379135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052292592035523738}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.1398862, y: -0.2518379, z: -0.7827028, w: 0.55171174}
+  m_LocalPosition: {x: 0.050312392, y: 0.09143029, z: -0.2139162}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8461887808848661932}
+  m_Father: {fileID: 5163948003400054150}
+  m_LocalEulerAnglesHint: {x: -33.2698, y: -4.0399837, z: -108.43398}
+--- !u!1 &1148677486727170845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877896190755452334}
+  m_Layer: 0
+  m_Name: fishman_lowerMouth01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &877896190755452334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148677486727170845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6642291, y: 0.7475291, z: -5.100652e-18, w: -8.644526e-17}
+  m_LocalPosition: {x: 0.05114302, y: -0.0719716, z: 2.1842267e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2689322079166184943}
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: -4.1087887e-15, y: -180, z: 80.81112}
+--- !u!1 &1203194265759088822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6521030879273724456}
+  m_Layer: 0
+  m_Name: fishman_pinky02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6521030879273724456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203194265759088822}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.088293344, y: -0.4484862, z: 0.14631735, w: 0.87730026}
+  m_LocalPosition: {x: -0.10729393, y: 5.2846613e-16, z: -1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5099749079307462622}
+  m_Father: {fileID: 2946648883372110126}
+  m_LocalEulerAnglesHint: {x: 1.2867739, y: -5.563369, z: -0.79258215}
+--- !u!1 &1260596724620225724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3091275995128666980}
+  m_Layer: 0
+  m_Name: fishman_lowerLegLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3091275995128666980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260596724620225724}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.1570654, y: -0.044875298, z: -0.23726167, w: 0.9576135}
+  m_LocalPosition: {x: -0.2979794, y: -4.6185276e-16, z: -1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1083052664953139478}
+  m_Father: {fileID: 6306904281833060300}
+  m_LocalEulerAnglesHint: {x: -19.756958, y: -5.4659796, z: -54.337852}
+--- !u!1 &1379102713780705710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5333467480390246012}
+  m_Layer: 0
+  m_Name: fishman_pinky02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5333467480390246012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379102713780705710}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.022419801, y: -0.7554815, z: 0.010082696, w: 0.6547086}
+  m_LocalPosition: {x: 0.10729381, y: -0.00000032347543, z: 0.00000053483745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5890259652209451591}
+  m_Father: {fileID: 641799301879782984}
+  m_LocalEulerAnglesHint: {x: 2.555745, y: -98.20131, z: -1.1857418}
+--- !u!1 &1381660684666503640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6306904281833060300}
+  m_Layer: 0
+  m_Name: fishman_upperLegLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6306904281833060300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381660684666503640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.14366674, y: 0.9776883, z: 0.04561032, w: -0.14630504}
+  m_LocalPosition: {x: 0.011533938, y: -0.06529141, z: -0.13924953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3091275995128666980}
+  m_Father: {fileID: 4163794187120383265}
+  m_LocalEulerAnglesHint: {x: -11.053808, y: -160.68504, z: 57.759823}
+--- !u!1 &1403645324643802876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2707445258401962238}
+  m_Layer: 0
+  m_Name: fishman_thumb03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2707445258401962238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403645324643802876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.039931208, y: 0.039464246, z: 0.0015783464, w: 0.99842155}
+  m_LocalPosition: {x: -0.10436903, y: -0.00065994076, z: 0.008237231}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2665274111996037656}
+  m_LocalEulerAnglesHint: {x: 4.5662518, y: 4.541507, z: 0.3623102}
+--- !u!1 &1478442202058828392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5453462017476194580}
+  m_Layer: 0
+  m_Name: fishman_index01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5453462017476194580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478442202058828392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.22605403, y: -0.54652333, z: -0.10642442, w: 0.79930323}
+  m_LocalPosition: {x: 0.14610375, y: 0.06282728, z: 0.02033005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7799098498189619713}
+  m_Father: {fileID: 8853256994172129095}
+  m_LocalEulerAnglesHint: {x: 14.184465, y: -71.94854, z: -25.489048}
+--- !u!1 &1508326153471229611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489312021938417162}
+  m_Layer: 0
+  m_Name: fishman_index03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1489312021938417162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508326153471229611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00012567932, y: -0.521359, z: 0.028621137, w: 0.8528573}
+  m_LocalPosition: {x: 0.1044864, y: 0.00000009952088, z: 0.00000013852691}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7799098498189619713}
+  m_LocalEulerAnglesHint: {x: 1.722463, y: -62.833633, z: 2.7920077}
+--- !u!1 &1795556691785898304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4890098799084999239}
+  m_Layer: 0
+  m_Name: fishman_eyeHornLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4890098799084999239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795556691785898304}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2896155, y: -0.6450759, z: -0.2896155, w: 0.6450759}
+  m_LocalPosition: {x: -0.15101081, y: 0.10205308, z: -0.21178819}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: -24.1962, y: -82.36477, z: -13.993017}
+--- !u!1 &1855772739787422923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2665274111996037656}
+  m_Layer: 0
+  m_Name: fishman_thumb02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2665274111996037656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855772739787422923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0026041574, y: 0.26510537, z: -0.2747375, w: 0.92424655}
+  m_LocalPosition: {x: -0.08488386, y: 4.2632563e-16, z: 0.005754693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2707445258401962238}
+  m_Father: {fileID: 6584443508663515417}
+  m_LocalEulerAnglesHint: {x: 5.560331, y: 4.7217784, z: -10.409033}
+--- !u!1 &2009898685333885467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7961760675325350062}
+  m_Layer: 0
+  m_Name: fishman_head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7961760675325350062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009898685333885467}
+  serializedVersion: 2
+  m_LocalRotation: {x: -5.551116e-17, y: 2.775558e-17, z: -0.26957884, w: 0.96297836}
+  m_LocalPosition: {x: -0.17533451, y: 2.842171e-16, z: 7.105427e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4890098799084999239}
+  - {fileID: 1070740298294900630}
+  - {fileID: 7132352314748212202}
+  - {fileID: 8536786230482174782}
+  - {fileID: 1527154934603658553}
+  - {fileID: 877896190755452334}
+  - {fileID: 8736973800180225382}
+  m_Father: {fileID: 3601002570079740740}
+  m_LocalEulerAnglesHint: {x: -3.6841629, y: 7.379939, z: -53.878536}
+--- !u!1 &2029163581779221121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7799098498189619713}
+  m_Layer: 0
+  m_Name: fishman_index02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7799098498189619713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029163581779221121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08009999, y: -0.70743346, z: 0.10303651, w: 0.69462603}
+  m_LocalPosition: {x: 0.0979354, y: 0.0000007095839, z: -2.3067456e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1489312021938417162}
+  m_Father: {fileID: 5453462017476194580}
+  m_LocalEulerAnglesHint: {x: 14.895799, y: -90.815605, z: 1.767827}
+--- !u!1 &2286357969608541727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992452068979289731}
+  m_Layer: 0
+  m_Name: fishman_thumb01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992452068979289731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286357969608541727}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.31785876, y: -0.66198146, z: -0.37132162, w: 0.5682135}
+  m_LocalPosition: {x: 0.08392869, y: 0.05659004, z: 0.0697864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8383957719015493022}
+  m_Father: {fileID: 8853256994172129095}
+  m_LocalEulerAnglesHint: {x: -58.521843, y: -98.64703, z: -0.1258282}
+--- !u!1 &2358660433286994313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6917401530655730692}
+  m_Layer: 0
+  m_Name: fishman_lowerArmRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6917401530655730692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358660433286994313}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.15989885, y: -0.20523258, z: 0.16712756, w: 0.9509891}
+  m_LocalPosition: {x: 0.398564, y: -0.00000031872608, z: -0.0000009473659}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8853256994172129095}
+  m_Father: {fileID: 8709433734321255067}
+  m_LocalEulerAnglesHint: {x: 8.675451, y: -51.931767, z: 44.063995}
+--- !u!1 &2591313892001189509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4997232176563122407}
+  m_Layer: 0
+  m_Name: fishman_toeRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4997232176563122407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591313892001189509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.21237443, y: -0.0000004661231, z: 0.00000003686753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5322635705859908142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2620218196923089627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8536786230482174782}
+  m_Layer: 0
+  m_Name: fishman_eyeRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8536786230482174782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620218196923089627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6450759, y: -0.2896155, z: 0.6450759, w: 0.2896155}
+  m_LocalPosition: {x: -0.1833178, y: 0.02202203, z: 0.179207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: 11.615596, y: 72.142654, z: 129.28363}
+--- !u!1 &2894191531437744695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6112440107489360835}
+  m_Layer: 0
+  m_Name: fishman_mouthHorn02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6112440107489360835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2894191531437744695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00735763, y: 0.067614816, z: 0.004405384, w: 0.99767464}
+  m_LocalPosition: {x: 0.23056535, y: -0.0000016541995, z: 0.0000025405502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6211515254575399985}
+  m_LocalEulerAnglesHint: {x: 0.8070545, y: 7.7582374, z: 0.5607172}
+--- !u!1 &2959784264697472840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2946648883372110126}
+  m_Layer: 0
+  m_Name: fishman_pinky01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2946648883372110126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959784264697472840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.22654471, y: -0.3010195, z: -0.13051336, w: 0.9170774}
+  m_LocalPosition: {x: -0.14712188, y: 0.04272635, z: 0.023474116}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6521030879273724456}
+  m_Father: {fileID: 1038629447372552946}
+  m_LocalEulerAnglesHint: {x: 29.350143, y: -8.309018, z: -15.119455}
+--- !u!1 &2971942471229625856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576503684914588131}
+  m_Layer: 0
+  m_Name: fishman_index03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576503684914588131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971942471229625856}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.040669516, z: 0, w: 0.9991727}
+  m_LocalPosition: {x: -0.10448647, y: -3.907985e-16, z: 1.563194e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4653874745609506864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3078036106968430488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399393905160112028}
+  m_Layer: 0
+  m_Name: fishman_tail03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399393905160112028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078036106968430488}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0013082287, y: 0.025455313, z: 0.05130874, w: 0.99835753}
+  m_LocalPosition: {x: -0.19984725, y: 0, z: -2.915201e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8336722924352236219}
+  m_LocalEulerAnglesHint: {x: -0.12105012, y: 2.6304436, z: 2.6382515}
+--- !u!1 &3175608149570937850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221271166876584789}
+  m_Layer: 0
+  m_Name: fishman_spine02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221271166876584789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175608149570937850}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1.11022296e-16, y: -1.3877788e-16, z: 0.28317946, w: 0.9590669}
+  m_LocalPosition: {x: -0.20953512, y: 0, z: 5.2751826e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 294383911093415663}
+  - {fileID: 3601002570079740740}
+  - {fileID: 7788474287531068358}
+  - {fileID: 8709433734321255067}
+  m_Father: {fileID: 857498715989477636}
+  m_LocalEulerAnglesHint: {x: 3.9654608, y: 3.118576, z: 31.75999}
+--- !u!1 &3199763495287367783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070740298294900630}
+  m_Layer: 0
+  m_Name: fishman_eyeHornRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1070740298294900630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199763495287367783}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2896155, y: -0.6450759, z: -0.2896155, w: 0.6450759}
+  m_LocalPosition: {x: -0.15101147, y: 0.10205343, z: 0.21178773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: -16.191238, y: -107.416626, z: 14.962683}
+--- !u!1 &3322069111074439402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4859852899842721148}
+  m_Layer: 0
+  m_Name: fishman_tail01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4859852899842721148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322069111074439402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.37344608, y: 0.9273017, z: -0.009521818, w: -0.023643568}
+  m_LocalPosition: {x: 0.19423778, y: 0.09402621, z: -0.004952799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8336722924352236219}
+  m_Father: {fileID: 4163794187120383265}
+  m_LocalEulerAnglesHint: {x: 1.9477437, y: 106.67154, z: -47.741512}
+--- !u!1 &3440043201783173017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689322079166184943}
+  m_Layer: 0
+  m_Name: fishman_lowerMouth02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689322079166184943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440043201783173017}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.82218647, y: 0.5692182, z: 2.926576e-17, w: 5.4213656e-17}
+  m_LocalPosition: {x: -0.18185629, y: -0.000120999895, z: -5.583907e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5163948003400054150}
+  m_Father: {fileID: 877896190755452334}
+  m_LocalEulerAnglesHint: {x: -2.8036493e-17, y: 180, z: 118.557465}
+--- !u!1 &3527803907053446251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4163794187120383265}
+  m_Layer: 0
+  m_Name: fishman_root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4163794187120383265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527803907053446251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.50216395, y: 0.5609495, z: -0.438981, w: 0.49037006}
+  m_LocalPosition: {x: -0.0111597, y: 0.6616664, z: -0.08274039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2741051264355479271}
+  - {fileID: 857498715989477636}
+  - {fileID: 4859852899842721148}
+  - {fileID: 6306904281833060300}
+  - {fileID: 5113922324932869945}
+  m_Father: {fileID: 4435921473273675835}
+  m_LocalEulerAnglesHint: {x: 4.0789948, y: 69.01649, z: -77.3924}
+--- !u!1 &3628351395583507316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6211515254575399985}
+  m_Layer: 0
+  m_Name: fishman_mouthHorn01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6211515254575399985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628351395583507316}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.2518379, y: -0.1398862, z: 0.55171174, w: 0.7827028}
+  m_LocalPosition: {x: 0.05031208, y: 0.09143044, z: 0.21391599}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6112440107489360835}
+  m_Father: {fileID: 5163948003400054150}
+  m_LocalEulerAnglesHint: {x: 33.2698, y: 4.0399837, z: 71.56601}
+--- !u!1 &3852883701604431666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875061455692977890}
+  m_Layer: 0
+  m_Name: fishman_toeLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1875061455692977890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852883701604431666}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.21237478, y: 1.0658141e-16, z: -1.0658141e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083052664953139478}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3897041618361999022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8853256994172129095}
+  m_Layer: 0
+  m_Name: fishman_handRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8853256994172129095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897041618361999022}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.16127399, y: 0.18151528, z: 0.12959722, w: 0.9613779}
+  m_LocalPosition: {x: 0.34269038, y: 0.00000004387748, z: 0.00000034077377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4466189846528314767}
+  - {fileID: 5453462017476194580}
+  - {fileID: 765999065627145399}
+  - {fileID: 641799301879782984}
+  - {fileID: 992452068979289731}
+  m_Father: {fileID: 6917401530655730692}
+  m_LocalEulerAnglesHint: {x: 10.765084, y: 23.729836, z: -43.02317}
+--- !u!1 &4151097368500878214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8108336262375272115}
+  m_Layer: 0
+  m_Name: fishman_lowerArmLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8108336262375272115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4151097368500878214}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.14705598, y: -0.3130409, z: 0.26009968, w: 0.90151435}
+  m_LocalPosition: {x: -0.3985641, y: -3.1974422e-16, z: 2.131628e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1038629447372552946}
+  m_Father: {fileID: 7788474287531068358}
+  m_LocalEulerAnglesHint: {x: 8.102405, y: -51.677013, z: 43.895107}
+--- !u!1 &4155299480364935579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667460528242705883}
+  m_Layer: 0
+  m_Name: fishman_middle02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1667460528242705883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155299480364935579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.020719055, y: -0.7596601, z: -0.06942257, w: 0.6462722}
+  m_LocalPosition: {x: 0.10729402, y: 0.00000021978052, z: -0.00000052653553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7056951013903243509}
+  m_Father: {fileID: 765999065627145399}
+  m_LocalEulerAnglesHint: {x: -7.5999465, y: -98.997955, z: -3.3691666}
+--- !u!1 &4245498819982469842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6444593150412886301}
+  m_Layer: 0
+  m_Name: fishman_thumb03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6444593150412886301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245498819982469842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.039931208, y: 0.039464246, z: 0.0015783464, w: 0.99842155}
+  m_LocalPosition: {x: 0.10436913, y: 0.0006591995, z: -0.008237529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8383957719015493022}
+  m_LocalEulerAnglesHint: {x: 4.5662518, y: 4.541507, z: 0.3623102}
+--- !u!1 &4322810254075828909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2741051264355479271}
+  m_Layer: 0
+  m_Name: fishman_fin04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2741051264355479271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322810254075828909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0.5162347, w: 0.85644716}
+  m_LocalPosition: {x: -0.16313617, y: 0.42575148, z: 2.7314965e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4163794187120383265}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -62.160038}
+--- !u!1 &4540460122579671691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4653874745609506864}
+  m_Layer: 0
+  m_Name: fishman_index02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4653874745609506864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540460122579671691}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0072153793, y: -0.22927898, z: 0.046823714, w: 0.9722071}
+  m_LocalPosition: {x: -0.09793559, y: 8.881784e-16, z: -9.947598e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1576503684914588131}
+  m_Father: {fileID: 3518573916525126039}
+  m_LocalEulerAnglesHint: {x: 2.4839034, y: -6.1469765, z: 2.7270927}
+--- !u!1 &4882488261274245628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4147324219649675131}
+  m_Layer: 0
+  m_Name: fishman_belly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4147324219649675131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882488261274245628}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.23889796, y: -0.66552824, z: -0.23889796, w: 0.66552824}
+  m_LocalPosition: {x: -0.058829963, y: -0.37505683, z: -2.3598288e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857498715989477636}
+  m_LocalEulerAnglesHint: {x: -39.49221, y: -90, z: 0}
+--- !u!1 &4961474690016916637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7132352314748212202}
+  m_Layer: 0
+  m_Name: fishman_eyeLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7132352314748212202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961474690016916637}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2896155, y: -0.6450759, z: -0.2896155, w: 0.6450759}
+  m_LocalPosition: {x: -0.18332006, y: 0.022024319, z: -0.17920734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: -26.08142, y: -69.7074, z: -16.541197}
+--- !u!1 &5079149759413498673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6584443508663515417}
+  m_Layer: 0
+  m_Name: fishman_thumb01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6584443508663515417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079149759413498673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.4976476, y: -0.5297499, z: -0.08904729, w: 0.6810158}
+  m_LocalPosition: {x: -0.0839284, y: -0.05658991, z: -0.06978588}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2665274111996037656}
+  m_Father: {fileID: 1038629447372552946}
+  m_LocalEulerAnglesHint: {x: -41.62174, y: -104.9654, z: 57.323875}
+--- !u!1 &5135156983541650051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8336722924352236219}
+  m_Layer: 0
+  m_Name: fishman_tail02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8336722924352236219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135156983541650051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0025089707, y: 0.025365122, z: -0.09840185, w: 0.9948203}
+  m_LocalPosition: {x: -0.21429318, y: -0.0016793966, z: 1.173044e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 399393905160112028}
+  m_Father: {fileID: 4859852899842721148}
+  m_LocalEulerAnglesHint: {x: 0.69693196, y: 2.540445, z: -15.366328}
+--- !u!1 &5395855831345213851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 765999065627145399}
+  m_Layer: 0
+  m_Name: fishman_middle01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &765999065627145399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5395855831345213851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.18217225, y: -0.6049161, z: -0.14636956, w: 0.7612265}
+  m_LocalPosition: {x: 0.15858631, y: 0.011471417, z: 0.0022730306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1667460528242705883}
+  m_Father: {fileID: 8853256994172129095}
+  m_LocalEulerAnglesHint: {x: 5.7544885, y: -78.29917, z: -26.45428}
+--- !u!1 &5503875013917880325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7206714316008442632}
+  - component: {fileID: 1319229990481099771}
+  m_Layer: 0
+  m_Name: Fishman
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7206714316008442632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503875013917880325}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4435921473273675835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1319229990481099771
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503875013917880325}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bfd95676563b425a973ae4cbd940d5f0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -2819011681246535577, guid: eac36f1100f74cf99dbcb5d73ff4dfaa, type: 3}
+  m_Bones:
+  - {fileID: 4163794187120383265}
+  - {fileID: 857498715989477636}
+  - {fileID: 1221271166876584789}
+  - {fileID: 3601002570079740740}
+  - {fileID: 7961760675325350062}
+  - {fileID: 8736973800180225382}
+  - {fileID: 987756801784941414}
+  - {fileID: 877896190755452334}
+  - {fileID: 2689322079166184943}
+  - {fileID: 5163948003400054150}
+  - {fileID: 1407976922097379135}
+  - {fileID: 8461887808848661932}
+  - {fileID: 6211515254575399985}
+  - {fileID: 6112440107489360835}
+  - {fileID: 7132352314748212202}
+  - {fileID: 8536786230482174782}
+  - {fileID: 1527154934603658553}
+  - {fileID: 4890098799084999239}
+  - {fileID: 1070740298294900630}
+  - {fileID: 7788474287531068358}
+  - {fileID: 8108336262375272115}
+  - {fileID: 1038629447372552946}
+  - {fileID: 3518573916525126039}
+  - {fileID: 4653874745609506864}
+  - {fileID: 1576503684914588131}
+  - {fileID: 6031983496775622700}
+  - {fileID: 4001803872957829302}
+  - {fileID: 3444496296715157710}
+  - {fileID: 2946648883372110126}
+  - {fileID: 6521030879273724456}
+  - {fileID: 5099749079307462622}
+  - {fileID: 6584443508663515417}
+  - {fileID: 2665274111996037656}
+  - {fileID: 2707445258401962238}
+  - {fileID: 8709433734321255067}
+  - {fileID: 6917401530655730692}
+  - {fileID: 8853256994172129095}
+  - {fileID: 5453462017476194580}
+  - {fileID: 7799098498189619713}
+  - {fileID: 1489312021938417162}
+  - {fileID: 765999065627145399}
+  - {fileID: 1667460528242705883}
+  - {fileID: 7056951013903243509}
+  - {fileID: 641799301879782984}
+  - {fileID: 5333467480390246012}
+  - {fileID: 5890259652209451591}
+  - {fileID: 992452068979289731}
+  - {fileID: 8383957719015493022}
+  - {fileID: 6444593150412886301}
+  - {fileID: 4466189846528314767}
+  - {fileID: 294383911093415663}
+  - {fileID: 4147324219649675131}
+  - {fileID: 4164593626126055299}
+  - {fileID: 4859852899842721148}
+  - {fileID: 8336722924352236219}
+  - {fileID: 399393905160112028}
+  - {fileID: 6306904281833060300}
+  - {fileID: 3091275995128666980}
+  - {fileID: 1083052664953139478}
+  - {fileID: 1875061455692977890}
+  - {fileID: 5113922324932869945}
+  - {fileID: 3800994129594634332}
+  - {fileID: 5322635705859908142}
+  - {fileID: 4997232176563122407}
+  - {fileID: 2741051264355479271}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 4163794187120383265}
+  m_AABB:
+    m_Center: {x: -0.16348821, y: -0.04079336, z: 0.01271081}
+    m_Extent: {x: 0.9719505, y: 0.8782535, z: 1.0796548}
+  m_DirtyAABB: 0
+--- !u!1 &5592902008733505597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083052664953139478}
+  m_Layer: 0
+  m_Name: fishman_feetLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1083052664953139478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592902008733505597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.4965394, y: 0.43391275, z: 0.5672874, w: 0.49330857}
+  m_LocalPosition: {x: -0.27135247, y: 0.0025587173, z: -0.016949711}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1875061455692977890}
+  m_Father: {fileID: 3091275995128666980}
+  m_LocalEulerAnglesHint: {x: 5.5500083, y: 91.41112, z: 117.52267}
+--- !u!1 &5610439619709626561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8383957719015493022}
+  m_Layer: 0
+  m_Name: fishman_thumb02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8383957719015493022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5610439619709626561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.050667677, y: 0.5529881, z: -0.40335593, w: 0.72728324}
+  m_LocalPosition: {x: 0.084883384, y: 0.0000008412224, z: -0.0057547847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6444593150412886301}
+  m_Father: {fileID: 992452068979289731}
+  m_LocalEulerAnglesHint: {x: 31.31894, y: 63.34305, z: -38.40276}
+--- !u!1 &5942554189091002629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3357824354525149596}
+  - component: {fileID: 3370887102990987353}
+  - component: {fileID: 4241935722104000590}
+  m_Layer: 0
+  m_Name: Harpoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3357824354525149596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942554189091002629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.777752, y: -0.33042255, z: -0.4921451, w: -0.2090838}
+  m_LocalPosition: {x: -0.032860335, y: 0.003398819, z: -0.0046202084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4466189846528314767}
+  m_LocalEulerAnglesHint: {x: -40.576626, y: -124.31244, z: -156.06241}
+--- !u!33 &3370887102990987353
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942554189091002629}
+  m_Mesh: {fileID: 8473930003380522784, guid: eac36f1100f74cf99dbcb5d73ff4dfaa, type: 3}
+--- !u!23 &4241935722104000590
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942554189091002629}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bfd95676563b425a973ae4cbd940d5f0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5952118471068299170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5890259652209451591}
+  m_Layer: 0
+  m_Name: fishman_pinky03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5890259652209451591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952118471068299170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.39130804, z: -0, w: 0.9202598}
+  m_LocalPosition: {x: 0.1115563, y: 0.0045184996, z: -0.00000016358987}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5333467480390246012}
+  m_LocalEulerAnglesHint: {x: 0, y: -46.071827, z: 0}
+--- !u!1 &5994011729057905032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4164593626126055299}
+  m_Layer: 0
+  m_Name: fishman_fin03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4164593626126055299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994011729057905032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.5976526, w: 0.8017552}
+  m_LocalPosition: {x: -0.051798344, y: 0.42720485, z: 1.2160927e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857498715989477636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -73.40392}
+--- !u!1 &6141232434028717984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3518573916525126039}
+  m_Layer: 0
+  m_Name: fishman_index01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3518573916525126039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141232434028717984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.30134836, y: -0.20562719, z: 0.09758387, w: 0.92595035}
+  m_LocalPosition: {x: -0.14610328, y: -0.06282748, z: -0.020330187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4653874745609506864}
+  m_Father: {fileID: 1038629447372552946}
+  m_LocalEulerAnglesHint: {x: 34.40722, y: -2.0338185, z: 15.396728}
+--- !u!1 &6156705340831833771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4001803872957829302}
+  m_Layer: 0
+  m_Name: fishman_middle02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4001803872957829302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156705340831833771}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0047814483, y: -0.36593586, z: -0.0063151494, w: 0.93060637}
+  m_LocalPosition: {x: -0.10729393, y: 3.907985e-16, z: 1.9895197e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3444496296715157710}
+  m_Father: {fileID: 6031983496775622700}
+  m_LocalEulerAnglesHint: {x: -0.39383703, y: -3.6274326, z: -0.8456959}
+--- !u!1 &6394195791207620864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8461887808848661932}
+  m_Layer: 0
+  m_Name: fishman_mouthHorn02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8461887808848661932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394195791207620864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00735763, y: 0.067614816, z: 0.004405384, w: 0.99767464}
+  m_LocalPosition: {x: -0.2305675, y: 7.105427e-16, z: -5.684342e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1407976922097379135}
+  m_LocalEulerAnglesHint: {x: 0.8070545, y: 7.7582374, z: 0.5607172}
+--- !u!1 &6472935738481757205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3444496296715157710}
+  m_Layer: 0
+  m_Name: fishman_middle03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3444496296715157710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472935738481757205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.09219162, z: 0, w: 0.9957413}
+  m_LocalPosition: {x: -0.13275152, y: -4.6185276e-16, z: -3.2684964e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4001803872957829302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6918507943071336600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294383911093415663}
+  m_Layer: 0
+  m_Name: fishman_fin02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &294383911093415663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918507943071336600}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.71595573, w: 0.69814575}
+  m_LocalPosition: {x: 0.057329543, y: 0.4027744, z: 7.520302e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1221271166876584789}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91.443146}
+--- !u!1 &7139664106279685093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7056951013903243509}
+  m_Layer: 0
+  m_Name: fishman_middle03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7056951013903243509
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139664106279685093}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0021073637, y: -0.40924045, z: -0.06745587, w: 0.90992725}
+  m_LocalPosition: {x: 0.13275202, y: -0.00000034009423, z: 0.00000022440418}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1667460528242705883}
+  m_LocalEulerAnglesHint: {x: -2.9449368, y: -48.247433, z: -7.160505}
+--- !u!1 &7575001811899604331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987756801784941414}
+  m_Layer: 0
+  m_Name: fishman_upperMouth02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &987756801784941414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7575001811899604331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.0014003393, w: 0.99999905}
+  m_LocalPosition: {x: -0.15212359, y: -0.0010866828, z: 5.616297e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8736973800180225382}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7646275236806525702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5113922324932869945}
+  m_Layer: 0
+  m_Name: fishman_upperLegRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5113922324932869945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646275236806525702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.9780183, y: -0.14351349, z: 0.14594577, w: 0.039798375}
+  m_LocalPosition: {x: 0.011533887, y: -0.06529145, z: 0.13925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3800994129594634332}
+  m_Father: {fileID: 4163794187120383265}
+  m_LocalEulerAnglesHint: {x: 23.534384, y: 147.01477, z: -179.05382}
+--- !u!1 &7728459433888411230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5163948003400054150}
+  m_Layer: 0
+  m_Name: fishman_lowerMouth03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5163948003400054150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728459433888411230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.06355329, w: 0.99797845}
+  m_LocalPosition: {x: -0.17281042, y: 0.0013871263, z: 7.500792e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1407976922097379135}
+  - {fileID: 6211515254575399985}
+  m_Father: {fileID: 2689322079166184943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.5930643}
+--- !u!1 &7788466530622259727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5099749079307462622}
+  m_Layer: 0
+  m_Name: fishman_pinky03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5099749079307462622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788466530622259727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.15581624, z: 0, w: 0.98778605}
+  m_LocalPosition: {x: -0.11155599, y: -0.0045175375, z: -7.105427e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6521030879273724456}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.1199825, z: 0}
+--- !u!1 &7898899397143403415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8709433734321255067}
+  m_Layer: 0
+  m_Name: fishman_upperArmRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8709433734321255067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898899397143403415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.8222916, y: -0.47189254, z: 0.18922219, w: 0.25563437}
+  m_LocalPosition: {x: 0.005949321, y: -0.05997588, z: 0.20138599}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6917401530655730692}
+  m_Father: {fileID: 1221271166876584789}
+  m_LocalEulerAnglesHint: {x: 70.70213, y: -100.63857, z: -26.870522}
+--- !u!1 &8369421785164925335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6031983496775622700}
+  m_Layer: 0
+  m_Name: fishman_middle01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6031983496775622700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369421785164925335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.17363094, y: -0.28792626, z: -0.05948596, w: 0.9399001}
+  m_LocalPosition: {x: -0.15858623, y: -0.011471321, z: -0.0022727416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4001803872957829302}
+  m_Father: {fileID: 1038629447372552946}
+  m_LocalEulerAnglesHint: {x: 19.599049, y: -6.1043797, z: 1.8752127}
+--- !u!1 &8779276499879171874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7788474287531068358}
+  m_Layer: 0
+  m_Name: fishman_upperArmLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7788474287531068358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779276499879171874}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.46967334, y: 0.8050681, z: 0.33023858, w: -0.14904645}
+  m_LocalPosition: {x: 0.00594928, y: -0.059975453, z: -0.20138624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8108336262375272115}
+  m_Father: {fileID: 1221271166876584789}
+  m_LocalEulerAnglesHint: {x: -55.878967, y: 155.3913, z: 93.011536}
+--- !u!1 &8877022511211496305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5322635705859908142}
+  m_Layer: 0
+  m_Name: fishman_feetRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5322635705859908142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877022511211496305}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.50526935, y: 0.4277936, z: 0.57554835, w: 0.48004133}
+  m_LocalPosition: {x: 0.27135274, y: -0.0025585073, z: 0.016949257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4997232176563122407}
+  m_Father: {fileID: 3800994129594634332}
+  m_LocalEulerAnglesHint: {x: -31.185837, y: 63.824326, z: 101.77922}
+--- !u!1 &8897456200764006969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3601002570079740740}
+  m_Layer: 0
+  m_Name: fishman_neck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3601002570079740740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8897456200764006969}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0013388905, y: -0.054231834, z: 0.21071723, w: 0.97604066}
+  m_LocalPosition: {x: -0.16551073, y: -1.4210854e-16, z: 5.0626478e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7961760675325350062}
+  m_Father: {fileID: 1221271166876584789}
+  m_LocalEulerAnglesHint: {x: -2.3318942, y: -7.219869, z: 33.973267}
+--- !u!1 &8989590690627769346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4466189846528314767}
+  m_Layer: 0
+  m_Name: fishman_harppon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4466189846528314767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989590690627769346}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.15774499, y: -0.014421852, z: 0.07461142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3357824354525149596}
+  m_Father: {fileID: 8853256994172129095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8993068834631598593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8736973800180225382}
+  m_Layer: 0
+  m_Name: fishman_upperMouth01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8736973800180225382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993068834631598593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.30019286, w: 0.9538786}
+  m_LocalPosition: {x: -0.09957153, y: -8.5265126e-16, z: 3.756165e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 987756801784941414}
+  m_Father: {fileID: 7961760675325350062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.93876}
+--- !u!1 &9009700774628282464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857498715989477636}
+  m_Layer: 0
+  m_Name: fishman_spine01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857498715989477636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009700774628282464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 3.1225026e-17, y: 1.1969592e-16, z: 0.25624138, w: 0.9666128}
+  m_LocalPosition: {x: -0.2683505, y: -3.5527136e-17, z: -5.753964e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4147324219649675131}
+  - {fileID: 4164593626126055299}
+  - {fileID: 1221271166876584789}
+  m_Father: {fileID: 4163794187120383265}
+  m_LocalEulerAnglesHint: {x: 1.0039532, y: -3.3154223, z: 33.90653}
+--- !u!1 &9053075404424218739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4435921473273675835}
+  - component: {fileID: 4082808221177696388}
+  m_Layer: 0
+  m_Name: FishmanPADefault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4435921473273675835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053075404424218739}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.87, y: 0, z: -0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7206714316008442632}
+  - {fileID: 4163794187120383265}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4082808221177696388
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053075404424218739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: eac36f1100f74cf99dbcb5d73ff4dfaa, type: 3}
+  m_Controller: {fileID: 9100000, guid: 61665be93d0a45ce95d745c4d1aa09e5, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

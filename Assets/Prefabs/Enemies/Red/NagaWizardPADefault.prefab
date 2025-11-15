@@ -1,0 +1,2410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &11805957819764233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657312240133635253}
+  m_Layer: 0
+  m_Name: nagaWizard_root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657312240133635253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11805957819764233}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.31352326, y: 0.63380057, z: -0.31352326, w: 0.63380057}
+  m_LocalPosition: {x: -0, y: 0.3837907, z: -0.017350651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6579200651114392618}
+  - {fileID: 5924862866861787359}
+  m_Father: {fileID: 1454325358394028780}
+  m_LocalEulerAnglesHint: {x: -0.04492244, y: 76.83526, z: -52.63007}
+--- !u!1 &72923243900298772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2787856283248791700}
+  m_Layer: 0
+  m_Name: nagaWizard_upperMouth03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2787856283248791700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72923243900298772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.078377984, w: 0.99692374}
+  m_LocalPosition: {x: -0.12823746, y: -2.2737367e-15, z: 3.8686106e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7918284462519970693}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.752574}
+--- !u!1 &266410261368175585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5577616940757584671}
+  m_Layer: 0
+  m_Name: nagaWizard_tail03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5577616940757584671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266410261368175585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.050392374, y: 0.29730496, z: 0.057646997, w: 0.95170754}
+  m_LocalPosition: {x: -0.37159577, y: -2.3092638e-16, z: 4.2632563e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7914363755380105009}
+  m_Father: {fileID: 3507054875309251817}
+  m_LocalEulerAnglesHint: {x: 3.5292983, y: 32.08181, z: 11.686683}
+--- !u!1 &451426435182981444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6601130917809798739}
+  m_Layer: 0
+  m_Name: nagaWizard_middle01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6601130917809798739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451426435182981444}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0137952315, y: -0.63088083, z: 0.019625107, w: 0.7755088}
+  m_LocalPosition: {x: -0.24644443, y: 0.006413217, z: 0.024324993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8059931737332162232}
+  m_Father: {fileID: 6411263425529394962}
+  m_LocalEulerAnglesHint: {x: 0.19283162, y: -78.25248, z: 2.7423885}
+--- !u!1 &615203358489253949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7531613611284067233}
+  m_Layer: 0
+  m_Name: nagaWizard_eyeLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7531613611284067233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615203358489253949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.26560393, y: 0.6553278, z: -0.26560393, w: 0.6553278}
+  m_LocalPosition: {x: 0.0064833425, y: -0.16860206, z: 0.13839597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: 44.12535, y: 90, z: 0}
+--- !u!1 &1157636462012845115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9063344158350022490}
+  m_Layer: 0
+  m_Name: nagaWizard_headFin01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9063344158350022490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157636462012845115}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6412558, y: 0.7673272, z: -7.7196465e-18, w: -8.625083e-17}
+  m_LocalPosition: {x: 0.09758433, y: -0.0958832, z: 8.578939e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5515584841450401724}
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: -10.02796, y: -178.1458, z: 79.53548}
+--- !u!1 &1342050979372298027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6984845786080226668}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6984845786080226668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342050979372298027}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.027561516, y: -0.67752093, z: 0.0066149863, w: 0.73495716}
+  m_LocalPosition: {x: -0.100438565, y: -1.4210854e-16, z: -9.947598e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 744203273433118084}
+  m_Father: {fileID: 5755352450957172427}
+  m_LocalEulerAnglesHint: {x: -1.8079525, y: -85.385475, z: 2.6992805}
+--- !u!1 &1409830999754330394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3553198380032953243}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3553198380032953243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409830999754330394}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.025366291, y: -0.41391885, z: -0.008090162, w: 0.9099243}
+  m_LocalPosition: {x: 0.24027313, y: -0.084149525, z: 0.0029091283}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2111561379512881794}
+  m_Father: {fileID: 3967923687157624089}
+  m_LocalEulerAnglesHint: {x: -3.0778565, y: -38.970104, z: -0.15925288}
+--- !u!1 &1532286660974941253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7918284462519970693}
+  m_Layer: 0
+  m_Name: nagaWizard_upperMouth02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7918284462519970693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532286660974941253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.9980821, y: 0.061904408, z: 1.15392126e-17, w: 6.0634304e-17}
+  m_LocalPosition: {x: -0.14451735, y: 5.684342e-16, z: -4.9916714e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2787856283248791700}
+  m_Father: {fileID: 908896109726482453}
+  m_LocalEulerAnglesHint: {x: 5.7735045e-15, y: 180, z: 146.45128}
+--- !u!1 &1553906157119872341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4780360916667240800}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4780360916667240800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553906157119872341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0037062643, y: 0.0601075, z: -0.061432015, w: 0.9962929}
+  m_LocalPosition: {x: 0.20271471, y: 0.00000010902536, z: -0.0000029334074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6482041177300031655}
+  m_LocalEulerAnglesHint: {x: 0.8462892, y: 6.8532567, z: -24.676052}
+--- !u!1 &1579187777384119066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3019484499441777214}
+  m_Layer: 0
+  m_Name: nagaWizard_lowerMouth03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3019484499441777214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579187777384119066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.08009202, w: 0.9967875}
+  m_LocalPosition: {x: -0.13794138, y: -0.010374619, z: -6.9961063e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1901472754386604253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.422031}
+--- !u!1 &1832467790476844591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6625401354405229914}
+  m_Layer: 0
+  m_Name: nagaWizard_index03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6625401354405229914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832467790476844591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.07402132, z: 0, w: 0.9972567}
+  m_LocalPosition: {x: 0.11872266, y: -0.0000001364358, z: -0.0000015223394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2246366536624361489}
+  m_LocalEulerAnglesHint: {x: 0, y: -17.802301, z: 0}
+--- !u!1 &1867665953249584585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2887332329108033640}
+  - component: {fileID: 7140163801306194595}
+  m_Layer: 0
+  m_Name: NagaWizard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2887332329108033640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867665953249584585}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: -4.5474734e-15, z: 4.5474734e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1454325358394028780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &7140163801306194595
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867665953249584585}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bfd95676563b425a973ae4cbd940d5f0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -8495276121165079086, guid: 3577d5d9c6db446da89d6cc3da05c0ba, type: 3}
+  m_Bones:
+  - {fileID: 1657312240133635253}
+  - {fileID: 6579200651114392618}
+  - {fileID: 3430435990240030471}
+  - {fileID: 745809508151911248}
+  - {fileID: 7160190687891030934}
+  - {fileID: 7980609040225516894}
+  - {fileID: 6411263425529394962}
+  - {fileID: 219159672185216572}
+  - {fileID: 7714106024470274285}
+  - {fileID: 6642849418188972090}
+  - {fileID: 1130438150183396289}
+  - {fileID: 5964048629182125}
+  - {fileID: 7563936711466834345}
+  - {fileID: 6601130917809798739}
+  - {fileID: 8059931737332162232}
+  - {fileID: 5738010894539011219}
+  - {fileID: 5755352450957172427}
+  - {fileID: 6984845786080226668}
+  - {fileID: 744203273433118084}
+  - {fileID: 4999203560022570459}
+  - {fileID: 1276088416072333474}
+  - {fileID: 1865657162697826488}
+  - {fileID: 5573547747178238102}
+  - {fileID: 3838831260360346351}
+  - {fileID: 7368221657599172346}
+  - {fileID: 1901472754386604253}
+  - {fileID: 3019484499441777214}
+  - {fileID: 908896109726482453}
+  - {fileID: 7918284462519970693}
+  - {fileID: 2787856283248791700}
+  - {fileID: 7531613611284067233}
+  - {fileID: 9063344158350022490}
+  - {fileID: 5515584841450401724}
+  - {fileID: 8313330547392733198}
+  - {fileID: 1576084794630659424}
+  - {fileID: 4119309581628690114}
+  - {fileID: 7234967082595687954}
+  - {fileID: 6153819685917287638}
+  - {fileID: 6482041177300031655}
+  - {fileID: 4780360916667240800}
+  - {fileID: 1460638810149105467}
+  - {fileID: 7621622532944950436}
+  - {fileID: 1210701221949894193}
+  - {fileID: 6105470694846039167}
+  - {fileID: 2362520388050644565}
+  - {fileID: 5311119562765053631}
+  - {fileID: 3967923687157624089}
+  - {fileID: 1144074449166881134}
+  - {fileID: 1077926768857717310}
+  - {fileID: 2476740251666591677}
+  - {fileID: 1507840742111891723}
+  - {fileID: 2246366536624361489}
+  - {fileID: 6625401354405229914}
+  - {fileID: 8121232028795375401}
+  - {fileID: 1571457846750643138}
+  - {fileID: 2405386520704199990}
+  - {fileID: 3553198380032953243}
+  - {fileID: 2111561379512881794}
+  - {fileID: 7708046103465114696}
+  - {fileID: 848557869011567564}
+  - {fileID: 5924862866861787359}
+  - {fileID: 3507054875309251817}
+  - {fileID: 5577616940757584671}
+  - {fileID: 7914363755380105009}
+  - {fileID: 5602865206294540134}
+  - {fileID: 8538796688855189551}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 1657312240133635253}
+  m_AABB:
+    m_Center: {x: 0.0677377, y: 0.54886913, z: 0.021410733}
+    m_Extent: {x: 1.5308009, y: 1.1298432, z: 0.93113434}
+  m_DirtyAABB: 0
+--- !u!1 &2015620861251268556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4119309581628690114}
+  m_Layer: 0
+  m_Name: nagaWizard_eyeRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4119309581628690114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015620861251268556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6553278, y: -0.26560396, z: -0.6553278, w: -0.26560396}
+  m_LocalPosition: {x: 0.006484174, y: -0.16860309, z: -0.138396}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: -44.125362, y: -90, z: 180}
+--- !u!1 &2096310188728492431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5515584841450401724}
+  m_Layer: 0
+  m_Name: nagaWizard_headFin02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5515584841450401724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096310188728492431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.103300884, y: -2.842171e-16, z: -3.1930932e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9063344158350022490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2297348313374895716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2476740251666591677}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2476740251666591677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297348313374895716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000010536679, y: 2.6361274e-11, z: -0.18136078, w: 0.9834166}
+  m_LocalPosition: {x: 0.09584186, y: -0.00000020728261, z: -0.0000020638895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077926768857717310}
+  m_LocalEulerAnglesHint: {x: 0.0014454031, y: 0.000020176441, z: -19.416641}
+--- !u!1 &2499680072612908899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7714106024470274285}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7714106024470274285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499680072612908899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.090106286, y: 0.1085417, z: -0.7999122, w: 0.58330095}
+  m_LocalPosition: {x: -0.11860852, y: -2.842171e-16, z: 1.4210854e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6642849418188972090}
+  m_Father: {fileID: 219159672185216572}
+  m_LocalEulerAnglesHint: {x: 16.18656, y: -1.0458685, z: -107.9492}
+--- !u!1 &2524212179915599539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576084794630659424}
+  m_Layer: 0
+  m_Name: nagaWizard_hornRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576084794630659424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524212179915599539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6553278, y: -0.26560393, z: -0.6553278, w: -0.26560393}
+  m_LocalPosition: {x: 0.11363377, y: -0.22449848, z: -0.19446799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: -44.125362, y: -90, z: 180}
+--- !u!1 &2823387483496273445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3430435990240030471}
+  m_Layer: 0
+  m_Name: nagaWizard_spine02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3430435990240030471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2823387483496273445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0019429005, y: -0.023472246, z: -0.22161378, w: 0.97485006}
+  m_LocalPosition: {x: -0.31550553, y: -1.2434498e-16, z: 1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 745809508151911248}
+  m_Father: {fileID: 6579200651114392618}
+  m_LocalEulerAnglesHint: {x: -5.419165, y: 0.79836404, z: -13.871563}
+--- !u!1 &2876776313530087652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8121232028795375401}
+  m_Layer: 0
+  m_Name: nagaWizard_middle01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8121232028795375401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2876776313530087652}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.020717429, y: -0.2504101, z: 0.01209303, w: 0.96784264}
+  m_LocalPosition: {x: 0.2464412, y: -0.006413036, z: -0.02432456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1571457846750643138}
+  m_Father: {fileID: 3967923687157624089}
+  m_LocalEulerAnglesHint: {x: -1.7286952, y: -35.384514, z: 2.1669362}
+--- !u!1 &3354328944886791423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2405386520704199990}
+  m_Layer: 0
+  m_Name: nagaWizard_middle03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2405386520704199990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354328944886791423}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.1171722, z: 0, w: 0.9931116}
+  m_LocalPosition: {x: 0.118722096, y: -0.00000034979615, z: -0.0000016607946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1571457846750643138}
+  m_LocalEulerAnglesHint: {x: 0, y: -17.176954, z: 0}
+--- !u!1 &3483661062648539859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2362520388050644565}
+  m_Layer: 0
+  m_Name: nagaWizard_upperArmRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2362520388050644565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3483661062648539859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7625487, y: 0.14881049, z: -0.60455567, w: -0.17574817}
+  m_LocalPosition: {x: 0.08102567, y: 0.021949217, z: -0.25466612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5311119562765053631}
+  m_Father: {fileID: 745809508151911248}
+  m_LocalEulerAnglesHint: {x: 15.50332, y: -131.01619, z: 174.25008}
+--- !u!1 &3546140284484935178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460638810149105467}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1460638810149105467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3546140284484935178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.011489598, y: -0.70346874, z: 0.06568997, w: 0.7075907}
+  m_LocalPosition: {x: -0.061955355, y: 0.024260202, z: -0.20924187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7621622532944950436}
+  m_Father: {fileID: 1865657162697826488}
+  m_LocalEulerAnglesHint: {x: 6.158683, y: -89.73447, z: -12.782623}
+--- !u!1 &3615456038451850780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7368221657599172346}
+  m_Layer: 0
+  m_Name: nagaWizard_lowerMouth01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7368221657599172346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615456038451850780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.41223103, w: 0.9110794}
+  m_LocalPosition: {x: -0.07672126, y: -5.684342e-16, z: -3.3629917e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1901472754386604253}
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.911598}
+--- !u!1 &3632944816029847877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7160190687891030934}
+  m_Layer: 0
+  m_Name: nagaWizard_upperArmLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7160190687891030934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3632944816029847877}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.24440932, y: 0.051946357, z: 0.23033893, w: 0.94048375}
+  m_LocalPosition: {x: -0.26787013, y: -0.0052694255, z: -0.010933059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7980609040225516894}
+  m_Father: {fileID: 745809508151911248}
+  m_LocalEulerAnglesHint: {x: -34.341614, y: -2.445469, z: 44.302032}
+--- !u!1 &3847157114244392906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219159672185216572}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219159672185216572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847157114244392906}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.26965114, y: -0.5069661, z: 0.14759846, w: 0.8052877}
+  m_LocalPosition: {x: -0.12643228, y: -0.09145812, z: -0.043568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7714106024470274285}
+  m_Father: {fileID: 6411263425529394962}
+  m_LocalEulerAnglesHint: {x: -16.537252, y: -69.191734, z: 32.220676}
+--- !u!1 &3903085897927778689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3967923687157624089}
+  m_Layer: 0
+  m_Name: nagaWizard_handRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3967923687157624089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3903085897927778689}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.073439896, y: 0.047541905, z: 0.10801272, w: 0.99029267}
+  m_LocalPosition: {x: 0.32054082, y: 0.00000035503444, z: 0.000000647346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1507840742111891723}
+  - {fileID: 8121232028795375401}
+  - {fileID: 3553198380032953243}
+  - {fileID: 1144074449166881134}
+  m_Father: {fileID: 5311119562765053631}
+  m_LocalEulerAnglesHint: {x: -10.283882, y: -16.635748, z: -8.431358}
+--- !u!1 &4084915380533916337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1210701221949894193}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1210701221949894193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084915380533916337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.70346874, y: 0.011489598, z: 0.7075907, w: -0.06568997}
+  m_LocalPosition: {x: -0.061953068, y: 0.02426042, z: 0.209242}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6105470694846039167}
+  m_Father: {fileID: 1865657162697826488}
+  m_LocalEulerAnglesHint: {x: -6.1586823, y: 89.734474, z: 167.21738}
+--- !u!1 &4112203669445462703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3838831260360346351}
+  m_Layer: 0
+  m_Name: nagaWizard_head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3838831260360346351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112203669445462703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.44947857, y: 0.892832, z: -0.008565409, w: -0.027326744}
+  m_LocalPosition: {x: -0.14859274, y: -4.2632563e-16, z: 7.105427e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7531613611284067233}
+  - {fileID: 4119309581628690114}
+  - {fileID: 9063344158350022490}
+  - {fileID: 8313330547392733198}
+  - {fileID: 1576084794630659424}
+  - {fileID: 7368221657599172346}
+  - {fileID: 908896109726482453}
+  m_Father: {fileID: 5573547747178238102}
+  m_LocalEulerAnglesHint: {x: -0.5324136, y: -178.76189, z: 58.40274}
+--- !u!1 &4298309590361649153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5755352450957172427}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5755352450957172427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298309590361649153}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.026553674, y: -0.7233058, z: 0.0019498233, w: 0.69001436}
+  m_LocalPosition: {x: -0.24027337, y: 0.08414912, z: -0.0029095989}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6984845786080226668}
+  m_Father: {fileID: 6411263425529394962}
+  m_LocalEulerAnglesHint: {x: -1.9383564, y: -92.73864, z: 2.3570814}
+--- !u!1 &4679050858448974386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5964048629182125}
+  m_Layer: 0
+  m_Name: nagaWizard_index02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5964048629182125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679050858448974386}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.028304864, y: -0.7306257, z: 0.022937927, w: 0.6818056}
+  m_LocalPosition: {x: -0.100438565, y: 3.9968028e-16, z: -9.947598e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7563936711466834345}
+  m_Father: {fileID: 1130438150183396289}
+  m_LocalEulerAnglesHint: {x: -0.2909963, y: -93.96981, z: 4.1656294}
+--- !u!1 &4694456315990335472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3507054875309251817}
+  m_Layer: 0
+  m_Name: nagaWizard_tail02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3507054875309251817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694456315990335472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.97593, y: -0.20337026, z: -0.07874581, w: -0.00065135804}
+  m_LocalPosition: {x: -0.31351668, y: -1.0658141e-16, z: 1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5577616940757584671}
+  m_Father: {fileID: 5924862866861787359}
+  m_LocalEulerAnglesHint: {x: -7.1245008, y: -140.80275, z: -159.87428}
+--- !u!1 &4772595081985459009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276088416072333474}
+  m_Layer: 0
+  m_Name: nagaWizard_neck01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1276088416072333474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772595081985459009}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.10737961, y: 0.87291956, z: -0.022550384, w: 0.47536573}
+  m_LocalPosition: {x: 0.08971713, y: 0.03728127, z: 0.13259056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1865657162697826488}
+  m_Father: {fileID: 745809508151911248}
+  m_LocalEulerAnglesHint: {x: 11.15213, y: 120.442375, z: -24.636995}
+--- !u!1 &4861925281892488275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6642849418188972090}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6642849418188972090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861925281892488275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.295292, w: 0.9554071}
+  m_LocalPosition: {x: -0.09584109, y: -2.842171e-16, z: -2.9842794e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7714106024470274285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.35009}
+--- !u!1 &4868472555786566064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571457846750643138}
+  m_Layer: 0
+  m_Name: nagaWizard_middle02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1571457846750643138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4868472555786566064}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.050189737, y: -0.3892608, z: -0.004206784, w: 0.9197496}
+  m_LocalPosition: {x: 0.10043758, y: 0.00000054456166, z: 0.00000082415823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2405386520704199990}
+  m_Father: {fileID: 8121232028795375401}
+  m_LocalEulerAnglesHint: {x: -5.341602, y: -50.329834, z: 2.233806}
+--- !u!1 &4880631671636710653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5602865206294540134}
+  m_Layer: 0
+  m_Name: nagaWizard_tail05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5602865206294540134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880631671636710653}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.103708826, y: 0.6005048, z: 0.04365215, w: 0.79166466}
+  m_LocalPosition: {x: -0.36324158, y: 7.105427e-17, z: -1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8538796688855189551}
+  m_Father: {fileID: 7914363755380105009}
+  m_LocalEulerAnglesHint: {x: -7.1592445, y: -16.610239, z: 19.275297}
+--- !u!1 &4908221702208513168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908896109726482453}
+  m_Layer: 0
+  m_Name: nagaWizard_upperMouth01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908896109726482453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908221702208513168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.33465922, w: 0.94233924}
+  m_LocalPosition: {x: -0.014141837, y: -0.05745611, z: 1.3331719e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7918284462519970693}
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 64.15091}
+--- !u!1 &5188937705965821451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901472754386604253}
+  m_Layer: 0
+  m_Name: nagaWizard_lowerMouth02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1901472754386604253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188937705965821451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.01363318, w: 0.9999071}
+  m_LocalPosition: {x: -0.14533773, y: -0.013872839, z: -6.439704e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3019484499441777214}
+  m_Father: {fileID: 7368221657599172346}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.769068}
+--- !u!1 &5213760871607492334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6320741307247673914}
+  - component: {fileID: 8113408219917857945}
+  - component: {fileID: 8713299818138657328}
+  m_Layer: 0
+  m_Name: NagaWizardStaff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6320741307247673914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213760871607492334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.017380109, y: 0.11212523, z: -0.15218589, w: 0.98181736}
+  m_LocalPosition: {x: -0.0000003814697, y: -0.0000000500679, z: 0.00000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4999203560022570459}
+  m_LocalEulerAnglesHint: {x: 3.9137979, y: 12.438257, z: -17.195068}
+--- !u!33 &8113408219917857945
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213760871607492334}
+  m_Mesh: {fileID: -8502221039706756085, guid: 3577d5d9c6db446da89d6cc3da05c0ba, type: 3}
+--- !u!23 &8713299818138657328
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213760871607492334}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: bfd95676563b425a973ae4cbd940d5f0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5221224713051297556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7708046103465114696}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky03Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7708046103465114696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221224713051297556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.19287767, z: 0, w: 0.9812228}
+  m_LocalPosition: {x: 0.10814382, y: 0.0000004940926, z: 0.000001114257}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111561379512881794}
+  m_LocalEulerAnglesHint: {x: 0, y: -16.916399, z: 0}
+--- !u!1 &5423100345793013639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130438150183396289}
+  m_Layer: 0
+  m_Name: nagaWizard_index01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1130438150183396289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5423100345793013639}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0013218091, y: -0.6379848, z: 0.039381754, w: 0.76904017}
+  m_LocalPosition: {x: -0.23763143, y: -0.078831546, z: 0.0063915337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5964048629182125}
+  m_Father: {fileID: 6411263425529394962}
+  m_LocalEulerAnglesHint: {x: 2.7636962, y: -79.271, z: 3.5736413}
+--- !u!1 &5518016901377220523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111561379512881794}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111561379512881794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518016901377220523}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.028344216, y: -0.48659346, z: -0.000022517044, w: 0.8731686}
+  m_LocalPosition: {x: 0.100437775, y: 0.00000068955137, z: 0.0000005666529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7708046103465114696}
+  m_Father: {fileID: 3553198380032953243}
+  m_LocalEulerAnglesHint: {x: -2.9742196, y: -52.738518, z: 1.3057926}
+--- !u!1 &5547214465548511470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 745809508151911248}
+  m_Layer: 0
+  m_Name: nagaWizard_spine03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &745809508151911248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547214465548511470}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.20368889, y: 0.8796244, z: -0.06410718, w: -0.42504346}
+  m_LocalPosition: {x: -0.25942543, y: 2.842171e-16, z: -1.9095835e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1276088416072333474}
+  - {fileID: 7160190687891030934}
+  - {fileID: 2362520388050644565}
+  m_Father: {fileID: 3430435990240030471}
+  m_LocalEulerAnglesHint: {x: 0.4644589, y: -119.96384, z: -19.342379}
+--- !u!1 &5591716674368341866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2246366536624361489}
+  m_Layer: 0
+  m_Name: nagaWizard_index02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2246366536624361489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591716674368341866}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.03557848, y: -0.34813803, z: 0.007841245, w: 0.9367351}
+  m_LocalPosition: {x: 0.10044088, y: -0.0000010217474, z: -0.000001423378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6625401354405229914}
+  m_Father: {fileID: 1507840742111891723}
+  m_LocalEulerAnglesHint: {x: -2.9639056, y: -52.77584, z: 2.9607453}
+--- !u!1 &5684220435883269328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7234967082595687954}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin01Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7234967082595687954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684220435883269328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.108833164, y: -0.7700129, z: -0.010840433, w: 0.6285841}
+  m_LocalPosition: {x: -0.08531499, y: 0.039196186, z: -0.23435228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6153819685917287638}
+  m_Father: {fileID: 5573547747178238102}
+  m_LocalEulerAnglesHint: {x: -8.830753, y: -102.24209, z: -8.705244}
+--- !u!1 &5726711738589161089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7914363755380105009}
+  m_Layer: 0
+  m_Name: nagaWizard_tail04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7914363755380105009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5726711738589161089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.8646571, y: -0.41100767, z: -0.27765366, w: 0.07968196}
+  m_LocalPosition: {x: -0.38529179, y: 2.7089442e-16, z: 2.1316282e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5602865206294540134}
+  m_Father: {fileID: 5577616940757584671}
+  m_LocalEulerAnglesHint: {x: 5.7526827, y: 156.98253, z: -161.70782}
+--- !u!1 &5896035058564305118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8538796688855189551}
+  m_Layer: 0
+  m_Name: nagaWizard_tail06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8538796688855189551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896035058564305118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.03540499, y: 0.075024866, z: -1.5360399e-10, w: 0.996553}
+  m_LocalPosition: {x: -0.36831304, y: 1.4210854e-16, z: -1.4210854e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5602865206294540134}
+  m_LocalEulerAnglesHint: {x: -4.4832125, y: -9.571818, z: 0.39431378}
+--- !u!1 &5979732463401291685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7621622532944950436}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin04Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7621622532944950436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979732463401291685}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00019054534, y: -0.0049961805, z: -0.03811002, w: 0.9992611}
+  m_LocalPosition: {x: -0.17087145, y: -1.4654943e-16, z: -1.9895197e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1460638810149105467}
+  m_LocalEulerAnglesHint: {x: -0.17091265, y: -0.86405504, z: -21.547855}
+--- !u!1 &6088757785271284914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6579200651114392618}
+  m_Layer: 0
+  m_Name: nagaWizard_spine01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6579200651114392618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088757785271284914}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.020504663, y: 0.048086517, z: -0.31225315, w: 0.9485596}
+  m_LocalPosition: {x: -0.24188045, y: -7.105427e-17, z: 8.184275e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 848557869011567564}
+  - {fileID: 3430435990240030471}
+  m_Father: {fileID: 1657312240133635253}
+  m_LocalEulerAnglesHint: {x: -35.97695, y: 40.343216, z: -29.709082}
+--- !u!1 &6194169681994604063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5738010894539011219}
+  m_Layer: 0
+  m_Name: nagaWizard_middle03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5738010894539011219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194169681994604063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.20189121, z: -0, w: 0.97940797}
+  m_LocalPosition: {x: -0.11872143, y: 5.3290704e-17, z: 1.1368684e-15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8059931737332162232}
+  m_LocalEulerAnglesHint: {x: 0, y: -23.295147, z: 0}
+--- !u!1 &6525766182663992028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865657162697826488}
+  m_Layer: 0
+  m_Name: nagaWizard_neck02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865657162697826488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525766182663992028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0039425367, y: -0.017913878, z: 0.10750082, w: 0.9940358}
+  m_LocalPosition: {x: -0.15811588, y: 1.0658141e-16, z: 5.3290704e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5573547747178238102}
+  - {fileID: 1460638810149105467}
+  - {fileID: 1210701221949894193}
+  m_Father: {fileID: 1276088416072333474}
+  m_LocalEulerAnglesHint: {x: 1.1743801, y: -12.680752, z: -4.8390226}
+--- !u!1 &6656764013683129755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5573547747178238102}
+  m_Layer: 0
+  m_Name: nagaWizard_neck03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5573547747178238102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6656764013683129755}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0011042687, y: 0.020429991, z: 0.21003167, w: 0.97748053}
+  m_LocalPosition: {x: -0.1482766, y: 1.1990408e-16, z: 5.3290704e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3838831260360346351}
+  - {fileID: 7234967082595687954}
+  - {fileID: 6482041177300031655}
+  m_Father: {fileID: 1865657162697826488}
+  m_LocalEulerAnglesHint: {x: -10.171432, y: 6.1958656, z: 29.297085}
+--- !u!1 &6891125972073219175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744203273433118084}
+  m_Layer: 0
+  m_Name: nagaWizard_pinky03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744203273433118084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891125972073219175}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.28332025, z: -0, w: 0.9590254}
+  m_LocalPosition: {x: -0.10814473, y: 1.4210854e-16, z: 8.5265126e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6984845786080226668}
+  m_LocalEulerAnglesHint: {x: 0, y: -32.916935, z: 0}
+--- !u!1 &7011705446534895299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6482041177300031655}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6482041177300031655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011705446534895299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7700129, y: -0.10883314, z: 0.6285841, w: 0.010840412}
+  m_LocalPosition: {x: -0.08531524, y: 0.03919625, z: 0.234352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4780360916667240800}
+  m_Father: {fileID: 5573547747178238102}
+  m_LocalEulerAnglesHint: {x: 8.830754, y: 102.24209, z: 3.6333618}
+--- !u!1 &7106714695840229214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8313330547392733198}
+  m_Layer: 0
+  m_Name: nagaWizard_hornLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8313330547392733198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106714695840229214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.26560393, y: 0.6553278, z: -0.26560393, w: 0.6553278}
+  m_LocalPosition: {x: 0.11363684, y: -0.22450143, z: 0.19446781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3838831260360346351}
+  m_LocalEulerAnglesHint: {x: 44.12535, y: 90, z: 0}
+--- !u!1 &7250762614585433687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5924862866861787359}
+  m_Layer: 0
+  m_Name: nagaWizard_tail01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5924862866861787359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250762614585433687}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.34377003, y: 0.9344525, z: -0.049809, w: -0.07835686}
+  m_LocalPosition: {x: 0.25354105, y: 0.084635444, z: -5.908455e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3507054875309251817}
+  m_Father: {fileID: 1657312240133635253}
+  m_LocalEulerAnglesHint: {x: 34.405464, y: -148.4538, z: -30.38512}
+--- !u!1 &7480914889383476053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4999203560022570459}
+  m_Layer: 0
+  m_Name: nagaWizard_staff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4999203560022570459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7480914889383476053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2026911, y: -0.0016060738, z: -0.059726223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6320741307247673914}
+  m_Father: {fileID: 6411263425529394962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7539592778566814746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1077926768857717310}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb02Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1077926768857717310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539592778566814746}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.02064322, y: 0.049764626, z: -0.48755348, w: 0.87142926}
+  m_LocalPosition: {x: 0.11860868, y: -0.00000007783553, z: -0.0000049950263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2476740251666591677}
+  m_Father: {fileID: 1144074449166881134}
+  m_LocalEulerAnglesHint: {x: 4.8501334, y: 3.8321722, z: -53.168007}
+--- !u!1 &7733230681673276382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5311119562765053631}
+  m_Layer: 0
+  m_Name: nagaWizard_lowerArmRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5311119562765053631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733230681673276382}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.060658295, y: -0.10029859, z: 0.5273585, w: 0.84151876}
+  m_LocalPosition: {x: 0.42594215, y: 0.00000002332223, z: -0.024651378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3967923687157624089}
+  m_Father: {fileID: 2362520388050644565}
+  m_LocalEulerAnglesHint: {x: 13.636828, y: -5.527879, z: 68.353645}
+--- !u!1 &7959015542640128081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507840742111891723}
+  m_Layer: 0
+  m_Name: nagaWizard_index01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1507840742111891723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959015542640128081}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.020508593, y: -0.17758465, z: 0.033646207, w: 0.98331636}
+  m_LocalPosition: {x: 0.23762706, y: 0.07883243, z: -0.0063902456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2246366536624361489}
+  m_Father: {fileID: 3967923687157624089}
+  m_LocalEulerAnglesHint: {x: -0.46906805, y: -35.58141, z: 4.5248423}
+--- !u!1 &8016495608990183580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7980609040225516894}
+  m_Layer: 0
+  m_Name: nagaWizard_lowerArmLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7980609040225516894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8016495608990183580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.037220918, y: -0.0807244, z: 0.43378276, w: 0.8966218}
+  m_LocalPosition: {x: -0.425942, y: 1.7763567e-16, z: 0.024650764}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6411263425529394962}
+  m_Father: {fileID: 7160190687891030934}
+  m_LocalEulerAnglesHint: {x: 4.5028, y: -5.5887394, z: 39.84217}
+--- !u!1 &8173838577628182191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144074449166881134}
+  m_Layer: 0
+  m_Name: nagaWizard_thumb01Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1144074449166881134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173838577628182191}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.26475123, y: -0.49211833, z: 0.12879987, w: 0.8192295}
+  m_LocalPosition: {x: 0.12642819, y: 0.09145859, z: 0.04356891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1077926768857717310}
+  m_Father: {fileID: 3967923687157624089}
+  m_LocalEulerAnglesHint: {x: -17.601202, y: -67.09494, z: 31.818031}
+--- !u!1 &8607203581414172406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8059931737332162232}
+  m_Layer: 0
+  m_Name: nagaWizard_middle02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8059931737332162232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607203581414172406}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.029801399, y: -0.7001247, z: -0.0043334137, w: 0.7133853}
+  m_LocalPosition: {x: -0.100438565, y: -1.6986412e-16, z: 9.947598e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5738010894539011219}
+  m_Father: {fileID: 6601130917809798739}
+  m_LocalEulerAnglesHint: {x: -2.7849586, y: -88.97459, z: 2.0395093}
+--- !u!1 &8702781575019688047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6411263425529394962}
+  m_Layer: 0
+  m_Name: nagaWizard_handLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6411263425529394962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702781575019688047}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.46293437, y: -0.265742, z: -0.21887222, w: 0.81680346}
+  m_LocalPosition: {x: -0.3205409, y: -2.0872193e-16, z: -8.5265126e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1130438150183396289}
+  - {fileID: 6601130917809798739}
+  - {fileID: 5755352450957172427}
+  - {fileID: 4999203560022570459}
+  - {fileID: 219159672185216572}
+  m_Father: {fileID: 7980609040225516894}
+  m_LocalEulerAnglesHint: {x: -49.578995, y: 2.6475987, z: -92.73299}
+--- !u!1 &8808955300615455143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6153819685917287638}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin02Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6153819685917287638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808955300615455143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0037062643, y: 0.0601075, z: -0.061432015, w: 0.9962929}
+  m_LocalPosition: {x: -0.20271534, y: 7.3274716e-17, z: 2.842171e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7234967082595687954}
+  m_LocalEulerAnglesHint: {x: 0.8462892, y: 6.8532567, z: -24.676052}
+--- !u!1 &8880853936290890038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6105470694846039167}
+  m_Layer: 0
+  m_Name: nagaWizard_sideFin04Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6105470694846039167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880853936290890038}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00019054534, y: -0.0049961805, z: -0.03811002, w: 0.9992611}
+  m_LocalPosition: {x: 0.17087093, y: 0.000000010674732, z: -0.0000063396833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1210701221949894193}
+  m_LocalEulerAnglesHint: {x: -0.17091265, y: -0.86405504, z: -21.547855}
+--- !u!1 &8899590748060701124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848557869011567564}
+  m_Layer: 0
+  m_Name: nagaWizard_bellyArmor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &848557869011567564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899590748060701124}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1.7347236e-17, y: 3.3209118e-16, z: -0.018369136, w: 0.9998313}
+  m_LocalPosition: {x: 0.041571002, y: -0.17099647, z: 2.1316282e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6579200651114392618}
+  m_LocalEulerAnglesHint: {x: 2.3616649e-15, y: 1.6331454e-14, z: -2.1050668}
+--- !u!1 &8924694857437442281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454325358394028780}
+  - component: {fileID: 7676552568143504739}
+  m_Layer: 0
+  m_Name: NagaWizardPADefault
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1454325358394028780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924694857437442281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.46, y: 0, z: -1.94}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2887332329108033640}
+  - {fileID: 1657312240133635253}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7676552568143504739
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924694857437442281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3577d5d9c6db446da89d6cc3da05c0ba, type: 3}
+  m_Controller: {fileID: 9100000, guid: bef2c7ab71504940a882246300c58338, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &9060606175581968168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7563936711466834345}
+  m_Layer: 0
+  m_Name: nagaWizard_index03Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7563936711466834345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060606175581968168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.20379746, z: -0, w: 0.9790131}
+  m_LocalPosition: {x: -0.11872143, y: -5.32907e-16, z: 2.842171e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5964048629182125}
+  m_LocalEulerAnglesHint: {x: 0, y: -23.518225, z: 0}
