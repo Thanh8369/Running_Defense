@@ -133,12 +133,16 @@ public class playercontroller : MonoBehaviour
     private float originalSpeed;
 
     private Vector3 lastTapPoint;
-
+    
     void Start()
     {
         originalSpeed = agent.speed;
         animator = GetComponent<Animator>();  // Get the Animator component
-        agent.updateRotation = false;  // Prevent NavMeshAgent from automatically rotating the player
+        // editor = manual rotat, mobile = auto rotat
+        if (Application.isEditor)
+            agent.updateRotation = false;
+        else
+            agent.updateRotation = true;
     }
 
     void Update()
@@ -170,7 +174,7 @@ public class playercontroller : MonoBehaviour
             // Move the NavMeshAgent
             agent.Move(movement);
 
-            // Update rotation to face the direction of movement
+            ////////
             RotatePlayer(movement);
 
             // Set speed for movement animation
