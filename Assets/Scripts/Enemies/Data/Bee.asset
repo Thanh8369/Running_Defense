@@ -10,28 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Spider
+  m_Name: Bee
   m_EditorClassIdentifier: 
-  enemyName: 
-  maxHealth: 100
-  moveSpeed: 3
+  enemyName: Bee
+  moveSpeed: 5
   attackDamage: 10
-  attackRange: 2
+  attackRange: 0.5
   detectionRange: 8
   attackCooldown: 1
-  prefab: {fileID: 0}
-  enemyColor: {r: 1, g: 0, b: 0, a: 1}
-  isElite: 0
-  armorReduction: 0.3
-  chargeSpeed: 8
-  chargeCooldown: 5
-  chargeDuration: 1
-  isBoss: 0
-  phaseChangeHealthPercent: 0.5
-  aoeRadius: 5
-  aoeDamage: 40
-  aoeCooldown: 8
-  summonCooldown: 15
-  minionPrefab: {fileID: 0}
-  goldReward: 10
-  expReward: 5
+  prefab: {fileID: 9176174925602817712, guid: 59af6d6612e0f8140852f0def1733049, type: 3}

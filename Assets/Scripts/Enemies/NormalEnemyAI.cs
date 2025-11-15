@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalEnemy : EnemyBase
+public class NormalEnemy : EnemyAI
 {
     private float currentFocusTime;
     private float towerFocusTime = 3f;
     
-    protected override void SetupBehaviourTree()
+    protected override void SetupBT()
     {
         rootNode = new BTSelector(new List<BTNode>
         {
