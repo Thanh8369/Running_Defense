@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class testAutoarrow : MonoBehaviour
 {
-    public float shootInterval = 0.5f; 
-    public float detectionRange = 15f; 
+    [SerializeField] private float shootInterval = 0.5f; 
+    [SerializeField] private float detectionRange = 15f; 
     public GameObject projectilePrefab;
     public Transform firePoint;
 
