@@ -125,8 +125,8 @@ public class playercontroller : MonoBehaviour
     //[Header("Dash Settings")]
     private float doubleTapTime = 0.3f;
     private float dashDistance = 3f;
-    private float dashSpeedMultiplier = 5f;
-    private float dashDuration = 0.2f;
+    private float dashSpeedMultiplier = 2f;
+    private float dashDuration = 0.1f;
 
     private float lastTapTime = 0f;
     private bool isDashing = false;
@@ -187,7 +187,7 @@ public class playercontroller : MonoBehaviour
         }
 
         // Dash with Shift key (Hold for a brief moment to simulate double tap)
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             // If Shift key press happens within the doubleTapTime, trigger Dash
             if (Time.time - lastTapTime < doubleTapTime)
