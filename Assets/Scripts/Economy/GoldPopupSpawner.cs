@@ -37,7 +37,7 @@ public class GoldPopupSpawner : MonoBehaviour
         // Tự tìm Canvas nếu chưa gán
         if (mainCanvas == null)
         {
-            mainCanvas = FindObjectOfType<Canvas>();
+            mainCanvas = FindAnyObjectByType<Canvas>();
             if (mainCanvas == null)
             {
                 Debug.LogWarning("[GoldPopupSpawner] Không tìm thấy Canvas trong scene hiện tại.");
