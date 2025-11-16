@@ -107,6 +107,10 @@ public class EnemyTestGoldDrop : MonoBehaviour
                 Debug.LogWarning("[EnemyTestGoldDrop] GoldPopupSpawner.Instance == null, không thể spawn popup.");
         }
 
+        GetComponent<EnemyGoldDrop>()?.OnEnemyKilled();
+        GetComponent<EnemyExpDropTest>()?.OnEnemyKilled();
+        Destroy(gameObject);
+
         // TODO: FX chết / animation nếu cần
 
         Debug.Log($"[EnemyTestGoldDrop] Enemy chết, thưởng {goldGain} Gold.");
