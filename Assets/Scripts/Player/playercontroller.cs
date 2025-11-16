@@ -122,11 +122,11 @@ public class playercontroller : MonoBehaviour
     public NavMeshAgent agent;
     private Animator animator;
 
-    [Header("Dash Settings")]
-    public float doubleTapTime = 0.3f;
-    public float dashDistance = 3f;
-    public float dashSpeedMultiplier = 3f;
-    public float dashDuration = 0.2f;
+    //[Header("Dash Settings")]
+    private float doubleTapTime = 0.3f;
+    private float dashDistance = 3f;
+    private float dashSpeedMultiplier = 5f;
+    private float dashDuration = 0.2f;
 
     private float lastTapTime = 0f;
     private bool isDashing = false;
