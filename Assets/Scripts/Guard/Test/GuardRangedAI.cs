@@ -3,33 +3,43 @@ using UnityEngine.AI;
 
 public class GuardRangedAI : MonoBehaviour
 {
-    public TowerArea tower;           // Trụ để kiểm soát phạm vi
-    public NavMeshAgent agent;        // Agent điều khiển di chuyển
-    public Transform guardPoint;      // Điểm đứng khi không có enemy
+    public TowerArea tower;
+    public NavMeshAgent agent;
+    public Transform guardPoint;
+
     public GameObject bulletPrefab;
-    public Transform firePoint;       // Vị trí bắn trên lính
+    public Transform firePoint;
+
     public float attackRange = 15f;
     public float attackCooldown = 1f;
-    public float stopDistanceFromEnemy = 3f; // Khoảng cách lính giữ với enemy
+    public float stopDistanceFromEnemy = 3f;
 
     private Transform target;
     private float nextAttack;
 
+    private GuardAnimation animController;
+
+    void Start()
+    {
+        animController = GetComponent<GuardAnimation>();
+    }
+
     void Update()
     {
+        if (animController.isAttacking)
+        {
+            agent.ResetPath();
+            return;
+        }
         UpdateTarget();
 
         if (target == null)
         {
-            // Không có enemy → quay về guardPoint
-            if (guardPoint != null && agent != null)
-            {
+            if (guardPoint != null)
                 agent.SetDestination(guardPoint.position);
-            }
             return;
         }
 
-        // Enemy còn trong phạm vi tower
         if (!tower.enemyQueue.Contains(target))
         {
             target = null;
@@ -38,17 +48,15 @@ public class GuardRangedAI : MonoBehaviour
 
         float dist = Vector3.Distance(transform.position, target.position);
 
-        // Di chuyển gần enemy nhưng không vượt quá stopDistanceFromEnemy
         if (dist > stopDistanceFromEnemy)
         {
             agent.SetDestination(target.position);
         }
         else
         {
-            agent.SetDestination(transform.position); // đứng yên bắn
+            agent.SetDestination(transform.position);
         }
 
-        // Bắn nếu trong tầm
         if (dist <= attackRange && Time.time >= nextAttack)
         {
             ShootAtTarget();
@@ -58,7 +66,6 @@ public class GuardRangedAI : MonoBehaviour
 
     void UpdateTarget()
     {
-        // Cleanup enemy null
         tower.enemyQueue.RemoveAll(e => e == null);
 
         if (tower.enemyQueue.Count == 0)
@@ -68,18 +75,14 @@ public class GuardRangedAI : MonoBehaviour
         }
 
         if (target == null || !tower.enemyQueue.Contains(target))
-        {
             target = tower.enemyQueue[0];
-        }
     }
 
     void ShootAtTarget()
     {
-        if (bulletPrefab == null || firePoint == null || target == null)
-            return;
+        animController.PlayAttack(); // ★ Animation dùng chung
 
         Vector3 dir = (target.position - firePoint.position).normalized;
-
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().SetDirection(dir);
     }
