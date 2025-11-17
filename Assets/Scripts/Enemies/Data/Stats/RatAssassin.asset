@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
+  m_Name: RatAssassin
+  m_EditorClassIdentifier: 
+  enemyName: RatAssassin
+  moveSpeed: 10
+  rotateSpeed: 360
+  attackDamage: 10
+  attackCooldown: 1
+  attackRange: 1.8
+  detectionRange: 15
+  prefab: {fileID: 778833451543208765, guid: a8836bc81fdd46444a8e9d082dbd365d, type: 3}
