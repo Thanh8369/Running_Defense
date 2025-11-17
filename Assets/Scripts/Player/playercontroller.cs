@@ -6,12 +6,12 @@ using System.Collections;
 public class playercontroller : MonoBehaviour
 {
     //dash eff
-    [SerializeField] private TrailRenderer tr;
+    //[SerializeField] private TrailRenderer tr;
 
     public NavMeshAgent agent;
     private Animator animator;
 
-    //[Header("Dash Settings")]
+    
     private float doubleTapTime = 0.3f;
     private float dashDistance = 3f;
     private float dashSpeedMultiplier = 2f;
@@ -25,7 +25,7 @@ public class playercontroller : MonoBehaviour
     
     void Start()
     {
-        tr.emitting = false;
+        //tr.emitting = false;
         originalSpeed = agent.speed;
         animator = GetComponent<Animator>();  
         // editor = manual rotat, mobile = auto rotat
@@ -52,7 +52,6 @@ public class playercontroller : MonoBehaviour
 
     private void HandleEditorMovement()
     {
-        // Handle movement with keyboard (WASD/Arrow keys)
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -68,7 +67,7 @@ public class playercontroller : MonoBehaviour
             RotatePlayer(movement);
 
             // Set speed for movement animation
-            animator.SetFloat("Speed", 1);  // Play walking animation
+            animator.SetFloat("Speed", 1);  
         }
         else
         {
@@ -76,10 +75,8 @@ public class playercontroller : MonoBehaviour
             animator.SetFloat("Speed", 0);
         }
 
-        // Dash with Shift key (Hold for a brief moment to simulate double tap)
         if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // If Shift key press happens within the doubleTapTime, trigger Dash
+        {           
             if (Time.time - lastTapTime < doubleTapTime)
             {
                 StartCoroutine(DashTowardPoint(transform.position + transform.forward * dashDistance));
@@ -98,8 +95,6 @@ public class playercontroller : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 lastTapPoint = hit.point;
-
-                // Check if it's a double tap
                 if (Time.time - lastTapTime < doubleTapTime)
                 {
                     StartCoroutine(DashTowardPoint(lastTapPoint));
@@ -130,7 +125,7 @@ public class playercontroller : MonoBehaviour
     {
         if (isDashing) yield break;
         isDashing = true;
-        tr.emitting = true;
+        //tr.emitting = true;
         agent.speed = originalSpeed * dashSpeedMultiplier;
 
         // Dash in the direction of the target point
@@ -145,7 +140,7 @@ public class playercontroller : MonoBehaviour
 
         agent.speed = originalSpeed;
         isDashing = false;
-        tr.emitting = false;
+        //tr.emitting = false;
         // After dashing, set speed back to 0 for idle animation
         animator.SetFloat("Speed", 0);
     }
