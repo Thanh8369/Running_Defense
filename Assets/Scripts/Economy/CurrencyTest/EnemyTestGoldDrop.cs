@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
+using Son.Economy;
 
-/// <summary>
-/// Enemy test dùng để kiểm tra hệ thống:
-/// - Máu / Die()
-/// - Cộng Gold vào WalletManager
-/// - Hiển thị popup Gold thông qua GoldPopupSpawner
-///
-/// Cách dùng:
-/// - Gắn script này lên 1 GameObject (enemy test) trong scene.
-/// - Nhấn Play, rồi bấm phím K để giết enemy và xem gold + popup.
-/// </summary>
-public class EnemyTestGoldDrop : MonoBehaviour
+    /// <summary>
+    /// Enemy test dùng để kiểm tra hệ thống:
+    /// - Máu / Die()
+    /// - Cộng Gold vào WalletManager
+    /// - Hiển thị popup Gold thông qua GoldPopupSpawner
+    ///
+    /// Cách dùng:
+    /// - Gắn script này lên 1 GameObject (enemy test) trong scene.
+    /// - Nhấn Play, rồi bấm phím K để giết enemy và xem gold + popup.
+    /// </summary>
+    public class EnemyTestGoldDrop : MonoBehaviour
 {
     [Header("Stats")]
     [Tooltip("Máu tối đa của enemy test.")]
