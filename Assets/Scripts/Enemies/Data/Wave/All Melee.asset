@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
   m_Name: All Melee
   m_EditorClassIdentifier: 
-  waveNumber: 1
-  timeBetweenSpawns: 5
-  prepareTime: 2
+  prepareTime: 5
   enemyGroups:
   - enemyStats: {fileID: 11400000, guid: b0db0a38c0466534ba8bf5b42826b5fa, type: 2}
     count: 15
@@ -52,7 +50,3 @@ MonoBehaviour:
     count: 3
     spawnDelay: 8
     spawnHeightOffset: 1
-  healthMultiplier: 1
-  damageMultiplier: 1
-  speedMultiplier: 1
-  goldMultiplier: 1
