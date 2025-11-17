@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class testAutoarrow : MonoBehaviour
 {
-    [SerializeField] private float shootInterval = 0.5f; 
-    [SerializeField] private float detectionRange = 15f; 
+    public PlayerData playerData;
+     
     public GameObject projectilePrefab;
     public Transform firePoint;
 
@@ -15,7 +15,7 @@ public class testAutoarrow : MonoBehaviour
 
         GameObject nearestEnemy = GetNearestEnemy();
 
-        if (nearestEnemy != null && shootTimer >= shootInterval)
+        if (nearestEnemy != null && shootTimer >= playerData.shootInterval)
         {
             Shoot(nearestEnemy.transform);
             shootTimer = 0f;
@@ -34,7 +34,7 @@ public class testAutoarrow : MonoBehaviour
         {
             float dist = Vector3.Distance(enemy.transform.position, currentPos);
 
-            if (dist < minDistance && dist <= detectionRange)
+            if (dist < minDistance && dist <= playerData.detectionRange)
             {
                 minDistance = dist;
                 closest = enemy;
