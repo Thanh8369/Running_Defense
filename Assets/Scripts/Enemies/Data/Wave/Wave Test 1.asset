@@ -10,19 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
-  m_Name: Wave 1 _ Map1
+  m_Name: Wave Test 1
   m_EditorClassIdentifier: 
-  waveNumber: 1
-  timeBetweenSpawns: 1
   prepareTime: 0
   enemyGroups:
-  - enemyStats: {fileID: 11400000, guid: 51ab04ccb5907ec4ea0483ddff92696b, type: 2}
-    count: 50
+  - enemyStats: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
+    count: 10
     spawnDelay: 1
-  - enemyStats: {fileID: 11400000, guid: e95eabe9e1f001d43bf44644d285faca, type: 2}
-    count: 50
-    spawnDelay: 2
-  healthMultiplier: 1
-  damageMultiplier: 1
-  speedMultiplier: 1
-  goldMultiplier: 1
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: b0db0a38c0466534ba8bf5b42826b5fa, type: 2}
+    count: 10
+    spawnDelay: 4
+    spawnHeightOffset: 1

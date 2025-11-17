@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
+  m_Name: All Melee
+  m_EditorClassIdentifier: 
+  waveNumber: 1
+  timeBetweenSpawns: 5
+  prepareTime: 2
+  enemyGroups:
+  - enemyStats: {fileID: 11400000, guid: b0db0a38c0466534ba8bf5b42826b5fa, type: 2}
+    count: 15
+    spawnDelay: 4
+    spawnHeightOffset: 1
+  - enemyStats: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
+    count: 10
+    spawnDelay: 2
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 6e7b125bae1b6ae43b98670623cba6c1, type: 2}
+    count: 4
+    spawnDelay: 5
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 7ca0693903b8a4d4d8d139b009b924a8, type: 2}
+    count: 8
+    spawnDelay: 6
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 71ac033f323c94345b50f8aba17b91a4, type: 2}
+    count: 10
+    spawnDelay: 2
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: a14cb98b85a2c374aa4884dddee84b98, type: 2}
+    count: 10
+    spawnDelay: 1
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 85e19cef48622954c8da04401bfe3ca9, type: 2}
+    count: 4
+    spawnDelay: 7
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 3afe874cae22b5246ac24cffce6e9a9e, type: 2}
+    count: 16
+    spawnDelay: 3
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 85a0afc41b46ffc4e99444f13b7de391, type: 2}
+    count: 3
+    spawnDelay: 8
+    spawnHeightOffset: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  speedMultiplier: 1
+  goldMultiplier: 1

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Bee
+  m_Name: MonsterPlant
   m_EditorClassIdentifier: 
-  enemyName: Bee
-  moveSpeed: 5
+  enemyName: MonsterPlant
+  moveSpeed: 8
+  rotateSpeed: 360
   attackDamage: 10
-  attackRange: 0.5
-  detectionRange: 8
   attackCooldown: 1
-  prefab: {fileID: 9176174925602817712, guid: 59af6d6612e0f8140852f0def1733049, type: 3}
+  attackRange: 2
+  detectionRange: 8
+  prefab: {fileID: 622605152123196104, guid: 98c8189889ff09c47b510384ddf84068, type: 3}

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Spider
+  m_Name: RatAssassin
   m_EditorClassIdentifier: 
-  enemyName: Spider
-  maxHealth: 100
-  moveSpeed: 5
+  enemyName: RatAssassin
+  moveSpeed: 10
+  rotateSpeed: 360
   attackDamage: 10
-  attackRange: 0.5
-  detectionRange: 8
   attackCooldown: 1
-  prefab: {fileID: 2637523753971440380, guid: 96827c9c81aaeea4fa01b4eafa68bc3d, type: 3}
+  attackRange: 1.8
+  detectionRange: 15
+  prefab: {fileID: 778833451543208765, guid: a8836bc81fdd46444a8e9d082dbd365d, type: 3}
