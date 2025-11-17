@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Son.Economy;
 
 public class StageClearTester : MonoBehaviour
 {
