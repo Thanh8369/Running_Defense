@@ -20,7 +20,7 @@ MonoBehaviour:
   attackRange: 10
   detectionRange: 12
   minGold: 5
-  maxGold: 15
+  maxGold: 10
   expAmount: 10
   prefab: {fileID: 6571512195248973064, guid: f6079360a08eba844965b236c4654350, type: 3}
   projectilePrefab: {fileID: 6045715366450228825, guid: dabcd42b2f61add45a1154dba42e380c, type: 3}
