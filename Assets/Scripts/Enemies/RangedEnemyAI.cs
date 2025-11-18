@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RangedEnemyAI : EnemyAI
 {
-    [SerializeField] private float keepDistance = 8f;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float projectileSpeed = 15f;
@@ -22,13 +21,6 @@ public class RangedEnemyAI : EnemyAI
 
                 new BTSelector(new List<BTNode>
                 {
-                    // Lùi nếu quá gần
-                    new BTSequence(new List<BTNode>
-                    {
-                        new BTCondition(() => DistanceToTarget(player) < keepDistance * 0.5f),
-                        new BTAction(() => MoveAwayFrom(player))
-                    }),
-
                     // Bắn player
                     new BTSequence(new List<BTNode>
                     {
@@ -50,13 +42,6 @@ public class RangedEnemyAI : EnemyAI
             // Tower
             new BTSelector(new List<BTNode>
             {
-                // Lùi nếu quá gần
-                new BTSequence(new List<BTNode>
-                {
-                    new BTCondition(() => DistanceToTarget(tower) < keepDistance * 0.5f),
-                    new BTAction(() => MoveAwayFrom(tower))
-                }),
-
                 // Bắn tower
                 new BTSequence(new List<BTNode>
                 {
@@ -79,17 +64,6 @@ public class RangedEnemyAI : EnemyAI
         });
     }
 
-    private BTNode.NodeState MoveAwayFrom(Transform target)
-    {
-        if (target == null) return BTNode.NodeState.Failure;
-
-        Vector3 dir = transform.position - target.position;
-        dir.y = 0;
-
-        rb.MovePosition(transform.position + dir.normalized * moveSpeed * Time.deltaTime);
-        return BTNode.NodeState.Running;
-    }
-
     // Animation event
     public void FireProjectile()
     {
@@ -100,5 +74,16 @@ public class RangedEnemyAI : EnemyAI
         Projectile p = proj.GetComponent<Projectile>();
 
         p?.Initialize(currentTarget, attackDamage, projectileSpeed, firePoint.right);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Vẽ detection range
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+
+        // Vẽ attack range
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

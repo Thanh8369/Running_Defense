@@ -10,7 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
-  m_Name: Wave Test 2
+  m_Name: Test
   m_EditorClassIdentifier: 
   prepareTime: 5
-  enemyGroups: []
+  enemyGroups:
+  - enemyStats: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
+    count: 1
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 3afe874cae22b5246ac24cffce6e9a9e, type: 2}
+    count: 1
+    spawnDelay: 0
+    spawnHeightOffset: 0

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public List<WaveConfig> waves = new List<WaveConfig>();
-    public Transform[] spawnPoints;
+    [SerializeField] private float spawnRadius = 3f;
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private List<WaveConfig> waves = new List<WaveConfig>();
 
-    private float spawnRadius = 3f;
     private int currentWaveIndex = 0;
 
     void Start()
