@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int _maxHealth = 100;
-    public float MaxHealth => _maxHealth;
+    //[SerializeField] private int _maxHealth = 100;
+    public PlayerHpData playerHpData;
+    public float MaxHealth => playerHpData._maxHealth;
     public float CurrentHealth { get; private set; }
 
     public event Action<float, float> OnHealthChanged;
@@ -12,9 +13,9 @@ public class Health : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        CurrentHealth = _maxHealth;
-        OnHealthChanged?.Invoke(CurrentHealth, _maxHealth);
-        Debug.Log($"[Health] Awake, HP = {CurrentHealth}/{_maxHealth}");
+        CurrentHealth = playerHpData._maxHealth;
+        OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
+        Debug.Log($"[Health] Awake, HP = {CurrentHealth}/{playerHpData._maxHealth}");
     }
 
     public void TakeDamage(float damage)
@@ -22,11 +23,11 @@ public class Health : MonoBehaviour, IDamageable
         if (damage <= 0 || CurrentHealth <= 0) return;
 
         CurrentHealth -= damage;
-        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, _maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, playerHpData._maxHealth);
 
-        Debug.Log($"[Health] TakeDamage {damage}, HP = {CurrentHealth}/{_maxHealth}");
+        Debug.Log($"[Health] TakeDamage {damage}, HP = {CurrentHealth}/{playerHpData._maxHealth}");
 
-        OnHealthChanged?.Invoke(CurrentHealth, _maxHealth);
+        OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
 
         if (CurrentHealth <= 0)
         {
@@ -39,7 +40,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         if (amount <= 0 || CurrentHealth <= 0) return;
 
-        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _maxHealth);
-        OnHealthChanged?.Invoke(CurrentHealth, _maxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, playerHpData._maxHealth);
+        OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
     }
 }
