@@ -6,7 +6,6 @@ public class RangedEnemyAI : EnemyAI
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float projectileSpeed = 15f;
 
     protected override void SetupBT()
     {
@@ -71,9 +70,9 @@ public class RangedEnemyAI : EnemyAI
         if (currentTarget == null) return;
 
         GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Projectile p = proj.GetComponent<Projectile>();
+        EnemyProjectile p = proj.GetComponent<EnemyProjectile>();
 
-        p?.Initialize(currentTarget, attackDamage, projectileSpeed, firePoint.right);
+        p?.Initialize(currentTarget, attackDamage, firePoint.right);
     }
 
     void OnDrawGizmosSelected()

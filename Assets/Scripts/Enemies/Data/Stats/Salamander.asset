@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Spider
+  m_Name: Salamander
   m_EditorClassIdentifier: 
-  enemyName: Spider
-  moveSpeed: 4
+  enemyName: Salamander
+  moveSpeed: 10
   rotateSpeed: 360
-  attackDamage: 10
-  attackCooldown: 2
-  attackRange: 12
-  detectionRange: 14
-  prefab: {fileID: 3163258782654741772, guid: 96827c9c81aaeea4fa01b4eafa68bc3d, type: 3}
+  attackDamage: 1
+  attackCooldown: 0.5
+  attackRange: 10
+  detectionRange: 12
+  prefab: {fileID: 6571512195248973064, guid: f6079360a08eba844965b236c4654350, type: 3}

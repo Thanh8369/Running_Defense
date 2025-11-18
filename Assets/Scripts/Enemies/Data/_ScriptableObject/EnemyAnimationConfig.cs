@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class EnemyAnimationData
 {
-    public string animationName;      
     public string triggerName;    
     [Range(1f, 99f)] public float percent = 20f;           
     [HideInInspector] public float lastUsedTime = -999f;

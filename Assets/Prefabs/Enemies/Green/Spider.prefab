@@ -386,12 +386,10 @@ MonoBehaviour:
   rotateSpeed: 0
   attackDamage: 0
   attackCooldown: 0
-  attackRange: 10
-  detectionRange: 13
-  keepDistance: 8
+  attackRange: 0
+  detectionRange: 0
   projectilePrefab: {fileID: 6045715366450228825, guid: dabcd42b2f61add45a1154dba42e380c, type: 3}
   firePoint: {fileID: 5936773752464825355}
-  projectileSpeed: 15
 --- !u!114 &2349168975185667114
 MonoBehaviour:
   m_ObjectHideFlags: 0
