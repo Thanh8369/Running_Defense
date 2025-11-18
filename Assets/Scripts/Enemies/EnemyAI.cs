@@ -6,27 +6,22 @@ public enum AttackType { Melee, Ranged }
 
 public abstract class EnemyAI : MonoBehaviour
 {
-    protected EnemyStats baseStats;
+    public EnemyStats stats;
+
     protected Rigidbody rb;
     protected BTNode rootNode;
     protected Transform tower;
     protected Transform player;
     protected Transform currentTarget;
-
-    [SerializeField] protected float moveSpeed;
-    [SerializeField] protected float rotateSpeed;
-    [SerializeField] protected float attackDamage;
-    [SerializeField] protected float attackCooldown;
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected float detectionRange;
     protected AttackType attackType;
-
-    protected float lastAttackTime;
     protected float currentFocusTime;
 
-    protected bool isMoving;
+    private float lastAttackTime;
+
     protected bool isAttacking;
-    protected bool isRotatingToTarget;
+    protected bool isRotate;
+    protected bool isDie = false;
+    protected bool isHit = false;
 
     // EVENTS
     public Action<bool> onMove;
@@ -37,32 +32,24 @@ public abstract class EnemyAI : MonoBehaviour
         tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         rb = GetComponent<Rigidbody>();
+
+        Initialize(stats);
     }
 
-    public virtual void Initialize(EnemyStats stats)
+    private void Initialize(EnemyStats stats)
     {
-        baseStats = stats;
-        moveSpeed = stats.moveSpeed;
-        rotateSpeed = stats.rotateSpeed;
-        attackDamage = stats.attackDamage;
-        attackCooldown = stats.attackCooldown;
-        attackRange = stats.attackRange;
-        detectionRange = stats.detectionRange;
-
+        this.stats = stats;
         SetupBT();
     }
 
     protected virtual void Update()
     {
+        if (isDie || isHit) return;
+
         rootNode?.Evaluate();
 
         if (currentFocusTime > 0)
             currentFocusTime -= Time.deltaTime;
-
-        if (!isMoving)
-            onMove?.Invoke(false);
-
-        isMoving = false;
     }
 
     protected abstract void SetupBT();
@@ -70,23 +57,22 @@ public abstract class EnemyAI : MonoBehaviour
     // MOVE TO TARGET
     protected BTNode.NodeState MoveToTarget(Transform target)
     {
-        if (target == null) return BTNode.NodeState.Failure;
+        if (target == null || isDie || isHit) 
+            return BTNode.NodeState.Failure;
 
         float dist = DistanceToTarget(target);
 
-        if (isAttacking || dist <= attackRange || isRotatingToTarget)
+        if (isAttacking || dist <= stats.attackRange || isRotate)
         {
             onMove?.Invoke(false);
-            isMoving = false;
             return BTNode.NodeState.Success;
         }
 
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
 
-        rb.MovePosition(transform.position + dir.normalized * moveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + dir.normalized * stats.moveSpeed * Time.deltaTime);
 
-        isMoving = true;
         onMove?.Invoke(true);
 
         return BTNode.NodeState.Running;
@@ -95,17 +81,17 @@ public abstract class EnemyAI : MonoBehaviour
     // ROTATE TO TARGET
     protected BTNode.NodeState RotateToTarget(Transform target)
     {
-        if (target == null || isAttacking)
+        if (target == null || isAttacking || isDie || isHit)
             return BTNode.NodeState.Failure;
 
-        isRotatingToTarget = true;
+        isRotate = true;
 
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
 
         if (dir.sqrMagnitude < 0.001f)
         {
-            isRotatingToTarget = false;
+            isRotate = false;
             return BTNode.NodeState.Failure;
         }
 
@@ -113,12 +99,12 @@ public abstract class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(
             transform.rotation,
             targetRot,
-            rotateSpeed * Time.deltaTime
+            stats.rotateSpeed * Time.deltaTime
         );
 
         if (Vector3.Angle(transform.forward, dir) <= 5f)
         {
-            isRotatingToTarget = false;
+            isRotate = false;
             return BTNode.NodeState.Success;
         }
 
@@ -128,7 +114,7 @@ public abstract class EnemyAI : MonoBehaviour
     // ATTACK TARGET - Animation only
     protected BTNode.NodeState AttackTarget(Transform target)
     {
-        if (target == null || !CanAttack() || isRotatingToTarget)
+        if (target == null || !CanAttack() || isRotate || isDie || isHit)
             return BTNode.NodeState.Failure;
 
         isAttacking = true;
@@ -141,8 +127,25 @@ public abstract class EnemyAI : MonoBehaviour
         return BTNode.NodeState.Success;
     }
 
+    public void ApplyStun()
+    {
+        isHit = true;
+        isAttacking = false;
+        isRotate = false;
+        onMove?.Invoke(false);
+    }
+
+    public void StopAI()
+    {
+        isDie = true;
+        isAttacking = false;
+        isRotate = false;
+        onMove?.Invoke(false);
+    }
+
     // HELPERS
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);
-    protected bool CanAttack() => Time.time - lastAttackTime >= attackCooldown;
+    protected bool CanAttack() => Time.time - lastAttackTime >= stats.attackCooldown;
     public void OnAttackAnimationEnd() => isAttacking = false;
+    public void OnGetHitAnimationEnd() => isHit = false;
 }

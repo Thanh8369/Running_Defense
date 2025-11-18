@@ -9,26 +9,42 @@ public class EnemyAnimation : MonoBehaviour
     [SerializeField] private EnemyAnimationConfig animationConfig;
 
     private Animator animator;
-    private EnemyAI enemy;
+    private EnemyAI enemyAI;
+    private EnemyHealth enemyHealth;
 
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    private static readonly int GetHit = Animator.StringToHash("GetHit");
+    private static readonly int Die = Animator.StringToHash("Die");
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-        enemy = GetComponent<EnemyAI>();
+        enemyAI = GetComponent<EnemyAI>();
+        enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void OnEnable()
     {
-        enemy.onMove += PlayWalkAnimation;
-        enemy.onAttack += PlayAttackAnimation;
+        enemyAI.onMove += PlayWalkAnimation;
+        enemyAI.onAttack += PlayAttackAnimation;
+        
+        if (enemyHealth != null)
+        {
+            enemyHealth.onHit += PlayGetHitAnimation;
+            enemyHealth.onDie += PlayDeathAnimation;
+        }
     }
 
     void OnDisable()
     {
-        enemy.onMove -= PlayWalkAnimation;
-        enemy.onAttack -= PlayAttackAnimation;
+        enemyAI.onMove -= PlayWalkAnimation;
+        enemyAI.onAttack -= PlayAttackAnimation;
+        
+        if (enemyHealth != null)
+        {
+            enemyHealth.onHit -= PlayGetHitAnimation;
+            enemyHealth.onDie -= PlayDeathAnimation;
+        }
     }
 
     private void PlayWalkAnimation(bool isWalking)
@@ -49,8 +65,28 @@ public class EnemyAnimation : MonoBehaviour
             animator.SetTrigger(anim.triggerName);
     }
 
+    public void PlayGetHitAnimation()
+    {
+        animator.SetTrigger(GetHit);
+    }
+
+    public void PlayDeathAnimation()
+    {
+        animator.SetTrigger(Die);
+    }
+
     public void OnAttackEnd()
     {
-        enemy.OnAttackAnimationEnd();
+        enemyAI.OnAttackAnimationEnd();
+    }
+
+    public void OnGetHitEnd()
+    {
+        enemyAI.OnGetHitAnimationEnd();
+    }
+
+    public void OnDieEnd()
+    {
+        enemyHealth.OnDieAnimationEnd();
     }
 }

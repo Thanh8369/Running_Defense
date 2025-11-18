@@ -10,6 +10,14 @@ public class EnemyExpDropTest : MonoBehaviour
     private bool _hasGivenExp = false;
 
     /// <summary>
+    /// Cài đặt giá trị EXP từ stats
+    /// </summary>
+    public void SetExpAmount(int exp)
+    {
+        expAmount = exp;
+    }
+
+    /// <summary>
     /// Gọi từ logic chết của Enemy (cùng chỗ bạn gọi EnemyGoldDrop.OnEnemyKilled()).
     /// </summary>
     public void OnEnemyKilled()
