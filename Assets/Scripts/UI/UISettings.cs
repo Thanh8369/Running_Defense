@@ -12,6 +12,7 @@ public class UISettings : MonoBehaviour
     [SerializeField] private Slider _bgmSlider;   // Nhạc nền
     [SerializeField] private Slider _sfxSlider;   // SFX
     [SerializeField] private Slider _fovSlider;   // FOV
+    [SerializeField] private GameObject _settingsPanel; // Panel cài đặt
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource _bgmSource;           // Nhạc nền của map hiện tại
@@ -160,10 +161,10 @@ public class UISettings : MonoBehaviour
     }
     public void ShowSettings()
     {
-        this.gameObject.SetActive(true);
+        _settingsPanel.SetActive(true);
     }
     public void HideSettings()
     {
-        this.gameObject.SetActive(false);
+        _settingsPanel.SetActive(false);
     }
 }
