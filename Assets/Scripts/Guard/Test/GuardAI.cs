@@ -1,68 +1,147 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 using System.Collections.Generic;
 
 public class GuardAI : MonoBehaviour
 {
-public TowerArea tower;
-public NavMeshAgent agent;
-public Transform guardPoint;
-public float attackRange = 2f;
-public float attackCooldown = 1f;
-private GuardAnimation guardAnim;
+    // ========================
+    //        VARIABLES
+    // ========================
+    public TowerArea tower;
+    public Transform guardPoint;
+    public float moveSpeed = 3f;
+    public float rotateSpeed = 10f;
+    public float attackRange = 2f;
+    public float attackCooldown = 1f;
 
-
+    private GuardAnimation guardAnim;
     private Transform target;
-private float nextAttack;
-private BTNode root;
+    private float nextAttack;
 
-void Start()
-{
-    BuildBehaviorTree();
-    guardAnim = GetComponent<GuardAnimation>();
-}
+    // Mục tiêu bị khóa khi đang Attack
+    private Transform lockedTarget = null;
 
-void Update()
-{
-    UpdateTarget();
-    root.Evaluate();
-}
+    // Behavior tree root node
+    private BTNode root;
 
-// --- UPDATE TARGET LOGIC ---
-void UpdateTarget()
-{
-    tower.enemyQueue.RemoveAll(e => e == null);
-
-    if (tower.enemyQueue.Count == 0)
+    // ========================
+    //        START
+    // ========================
+    void Start()
     {
-        target = null;
-        return;
+        guardAnim = GetComponent<GuardAnimation>();
+        BuildBehaviorTree();
     }
 
-    if (target == null || !tower.enemyQueue.Contains(target))
+    // ========================
+    //        UPDATE
+    // ========================
+    void Update()
     {
-        target = tower.enemyQueue[0];
-    }
-}
+        // Nếu đang attack → KHÔNG CHO AI chạy logic DI CHUYỂN HAY ĐỔI TARGET
+        if (guardAnim.isAttacking)
+            return;
 
-// --- GUARD RETURN ---
-void Attack()
-{
-        if (Time.time >= nextAttack)
+        // Nếu animation attack đã xong → bỏ locked target
+        if (lockedTarget != null && !guardAnim.isAttacking)
+            lockedTarget = null;
+
+        UpdateTarget();
+        root.Evaluate();
+    }
+
+    // ========================
+    //     UPDATE TARGET
+    // ========================
+    void UpdateTarget()
+    {
+        // Nếu đang khóa mục tiêu → không đổi target
+        if (lockedTarget != null)
+            return;
+
+        tower.enemyQueue.RemoveAll(e => e == null);
+
+        if (tower.enemyQueue.Count == 0)
         {
-            Debug.Log("Guard Attack!");
-            guardAnim.PlayAttack();   // << GỌI ANIMATION Ở ĐÂY
-            nextAttack = Time.time + attackCooldown;
+            target = null;
+            return;
         }
+
+        // Nếu target đang trống hoặc không còn trong queue → chọn target đầu tiên
+        if (target == null || !tower.enemyQueue.Contains(target))
+            target = tower.enemyQueue[0];
     }
 
-// ==============================
-// ==    BUILD BEHAVIOR TREE   ==
-// ==============================
-void BuildBehaviorTree()
-{
-    // ---- ATTACK SEQUENCE ----
-    var attackSequence = new BTSequence(new List<BTNode>
+    // ========================
+    //          MOVE
+    // ========================
+    void MoveTo(Vector3 pos)
+    {
+        // Chặn di chuyển khi đang attack
+        if (guardAnim.isAttacking)
+        {
+            guardAnim.SetMoving(false);
+            return;
+        }
+
+        guardAnim.SetMoving(true);
+
+        // Xoay mượt về hướng đi
+        Vector3 dir = (pos - transform.position).normalized;
+        dir.y = 0;
+
+        if (dir != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                Quaternion.LookRotation(dir),
+                rotateSpeed * Time.deltaTime
+            );
+        }
+
+        // Di chuyển
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            pos,
+            moveSpeed * Time.deltaTime
+        );
+    }
+
+    // ========================
+    //         ATTACK
+    // ========================
+    void Attack()
+    {
+        if (Time.time < nextAttack)
+            return;
+
+        // ------------------------------
+        // KHÓA TARGET TRONG SUỐT ANIMATION
+        // ------------------------------
+        lockedTarget = target;
+
+        // CHẠY ANIMATION
+        guardAnim.PlayAttack();
+
+        // Xoay về target 1 lần khi bắt đầu attack
+        if (target != null)
+        {
+            Vector3 dir = target.position - transform.position;
+            dir.y = 0;
+
+            if (dir != Vector3.zero)
+                transform.rotation = Quaternion.LookRotation(dir);
+        }
+
+        nextAttack = Time.time + attackCooldown;
+    }
+
+    // ========================
+    //     BUILD BEHAVIOR TREE
+    // ========================
+    void BuildBehaviorTree()
+    {
+        // ---- ATTACK ----
+        var attackSequence = new BTSequence(new List<BTNode>
         {
             new BTCondition(() => target != null),
             new BTCondition(() => tower.enemyQueue.Contains(target)),
@@ -73,58 +152,63 @@ void BuildBehaviorTree()
             }),
             new BTAction(() =>
             {
-                Attack();
+                guardAnim.SetMoving(false);
+                Attack(); // <-- KHÓA TARGET + PLAY ANIM
                 return BTNode.NodeState.Success;
             })
         });
 
-    // ---- CHASE SEQUENCE ----
-    var chaseSequence = new BTSequence(new List<BTNode>
+        // ---- CHASE ----
+        var chaseSequence = new BTSequence(new List<BTNode>
         {
             new BTCondition(() => target != null),
             new BTCondition(() => tower.enemyQueue.Contains(target)),
             new BTAction(() =>
             {
-                if (target == null)
-                    return BTNode.NodeState.Failure;
+                // Không chase khi attack
+                if (guardAnim.isAttacking)
+                    return BTNode.NodeState.Running;
 
                 float dist = Vector3.Distance(transform.position, target.position);
 
-                if (dist < 1f)
-                {
-                    agent.SetDestination(transform.position);
+                if (dist <= attackRange)
                     return BTNode.NodeState.Success;
-                }
 
-                agent.SetDestination(target.position);
+                MoveTo(target.position);
                 return BTNode.NodeState.Running;
             })
         });
 
-    // ---- RETURN TO GUARD POINT ----
-    var returnToGuard = new BTAction(() =>
-    {
-        if (guardPoint == null)
-            return BTNode.NodeState.Failure;
-
-        float dist = Vector3.Distance(transform.position, guardPoint.position);
-
-        if (dist < 1f)
+        // ---- RETURN ----
+        var returnToGuard = new BTAction(() =>
         {
-            agent.SetDestination(transform.position);
-            return BTNode.NodeState.Success;
-        }
+            if (guardPoint == null) return BTNode.NodeState.Failure;
 
-        agent.SetDestination(guardPoint.position);
-        return BTNode.NodeState.Running;
-    });
+            if (guardAnim.isAttacking)
+                return BTNode.NodeState.Running;
 
-    // ---- ROOT SELECTOR ----
-    root = new BTSelector(new List<BTNode>
+            float dist = Vector3.Distance(transform.position, guardPoint.position);
+
+            if (dist < 0.5f)
+            {
+                guardAnim.SetMoving(false);
+                return BTNode.NodeState.Success;
+            }
+
+            MoveTo(guardPoint.position);
+            return BTNode.NodeState.Running;
+        });
+
+        root = new BTSelector(new List<BTNode>
         {
             attackSequence,
             chaseSequence,
             returnToGuard
         });
-}
+    }
+
+    // ==========================================
+    //   CALLED BY ANIMATION EVENT (END ATTACK)
+    // ==========================================
+ 
 }

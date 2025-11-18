@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
-using UnityEngine.AI;
 
 public class GuardAnimation : MonoBehaviour
 {
     public Animator anim;
-    public NavMeshAgent agent;
+    public Rigidbody rb;
 
     public bool isAttacking = false;
-    private float attackTimer = 0f;
 
-    public float attackDuration = 0.7f;
+    private RigidbodyConstraints originalConstraints;
+
+    void Start()
+    {
+        originalConstraints = rb.constraints;
+    }
 
     void Update()
     {
-        HandleMovement();
-        HandleAttackTimer();
+        // không dùng attackTimer nữa!
     }
 
-    void HandleMovement()
+    public void SetMoving(bool moving)
     {
         if (isAttacking)
         {
@@ -25,7 +27,6 @@ public class GuardAnimation : MonoBehaviour
             return;
         }
 
-        bool moving = agent.velocity.sqrMagnitude > 0.1f;
         anim.SetBool("IsMoving", moving);
     }
 
@@ -34,27 +35,19 @@ public class GuardAnimation : MonoBehaviour
         if (isAttacking) return;
 
         isAttacking = true;
-        attackTimer = 0f;
 
         anim.SetTrigger("Attack");
+        anim.SetBool("IsMoving", false);
 
-        // Dừng di chuyển NGAY, KHÔNG tắt NavMeshAgent
-        agent.ResetPath();
-        agent.velocity = Vector3.zero;   // chặn trượt lúc xoay
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    void HandleAttackTimer()
+    // 🔥 Animation Event tại cuối Animation Attack
+    public void OnAttackEnd()
     {
-        if (!isAttacking) return;
+        isAttacking = false;
 
-        attackTimer += Time.deltaTime;
-
-        if (attackTimer >= attackDuration)
-        {
-            isAttacking = false;
-
-            // KHÔNG cần bật lại agent
-            // Vì agent chưa bao giờ bị tắt!
-        }
+        // mở lại chuyển động
+        rb.constraints = originalConstraints;
     }
 }
