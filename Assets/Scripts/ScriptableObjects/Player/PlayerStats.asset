@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f7d53a6ca89464fb1d80b490232323, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  shootInterval: 4
-  detectionRange: 3
+  shootInterval: 1
+  detectionRange: 50
