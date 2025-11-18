@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prepareTime: 0
   enemyGroups:
-  - enemyStats: {fileID: 11400000, guid: 11bf0e82fc435f747a747a24c76b88d1, type: 2}
-    count: 1
+  - enemyStats: {fileID: 11400000, guid: a14cb98b85a2c374aa4884dddee84b98, type: 2}
+    count: 10
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 85e19cef48622954c8da04401bfe3ca9, type: 2}
+    count: 10
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 935f87d7f62b4b642a3c45fe291022cd, type: 2}
+    count: 10
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 3afe874cae22b5246ac24cffce6e9a9e, type: 2}
+    count: 10
     spawnDelay: 0
     spawnHeightOffset: 0

@@ -68,12 +68,6 @@ public class WaveManager : MonoBehaviour
         Vector3 spawnPos = spawnPoint.position +
                            new Vector3(offset2D.x, heightOffset, offset2D.y);
 
-        GameObject enemyObj = Instantiate(info.enemyStats.prefab, spawnPos, Quaternion.identity);
-
-        EnemyAI enemy = enemyObj.GetComponent<EnemyAI>();
-        if (enemy != null)
-        {
-            enemy.Initialize(info.enemyStats);
-        }
+        Instantiate(info.enemyStats.prefab, spawnPos, Quaternion.identity);
     }
 }

@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: Spider
   m_EditorClassIdentifier: 
-  enemyName: Spider
+  maxHealth: 100
   moveSpeed: 4
   rotateSpeed: 360
   attackDamage: 10
   attackCooldown: 2
   attackRange: 12
   detectionRange: 14
+  minGold: 5
+  maxGold: 15
+  expAmount: 10
   prefab: {fileID: 3163258782654741772, guid: 96827c9c81aaeea4fa01b4eafa68bc3d, type: 3}
+  projectilePrefab: {fileID: 6045715366450228825, guid: dabcd42b2f61add45a1154dba42e380c, type: 3}
