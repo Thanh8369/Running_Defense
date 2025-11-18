@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public List<WaveConfig> waves = new List<WaveConfig>();
-    public Transform[] spawnPoints;
+    [SerializeField] private float spawnRadius = 3f;
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private List<WaveConfig> waves = new List<WaveConfig>();
 
-    private float spawnRadius = 3f;
     private int currentWaveIndex = 0;
 
     void Start()
@@ -68,12 +68,6 @@ public class WaveManager : MonoBehaviour
         Vector3 spawnPos = spawnPoint.position +
                            new Vector3(offset2D.x, heightOffset, offset2D.y);
 
-        GameObject enemyObj = Instantiate(info.enemyStats.prefab, spawnPos, Quaternion.identity);
-
-        EnemyAI enemy = enemyObj.GetComponent<EnemyAI>();
-        if (enemy != null)
-        {
-            enemy.Initialize(info.enemyStats);
-        }
+        Instantiate(info.enemyStats.prefab, spawnPos, Quaternion.identity);
     }
 }

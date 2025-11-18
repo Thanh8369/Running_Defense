@@ -18,3 +18,7 @@ MonoBehaviour:
     count: 100
     spawnDelay: 0
     spawnHeightOffset: 0
+  - enemyStats: {fileID: 11400000, guid: 935f87d7f62b4b642a3c45fe291022cd, type: 2}
+    count: 100
+    spawnDelay: 0
+    spawnHeightOffset: 0

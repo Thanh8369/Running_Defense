@@ -21,6 +21,15 @@ namespace Son.Economy
         private bool _hasDropped = false;
 
         /// <summary>
+        /// Cài đặt giá trị gold từ stats
+        /// </summary>
+        public void SetRewards(int min, int max)
+        {
+            minGold = min;
+            maxGold = max;
+        }
+
+        /// <summary>
         /// Gọi hàm này khi Enemy chính thức chết (ví dụ trong OnDeath).
         /// </summary>
         public void OnEnemyKilled()
