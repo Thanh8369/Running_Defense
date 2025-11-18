@@ -29,7 +29,9 @@ public class GoldPopupUI : MonoBehaviour
     {
         if (_rect == null) return;
 
-        _time += Time.deltaTime;
+        // DÙNG unscaledDeltaTime (bỏ qua timeScale)
+        _time += Time.unscaledDeltaTime;
+
         float t = Mathf.Clamp01(_time / duration);
 
         // Move lên
@@ -43,6 +45,7 @@ public class GoldPopupUI : MonoBehaviour
             amountText.color = c;
         }
 
+        // Tự hủy
         if (t >= 1f)
         {
             Destroy(gameObject);

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 using Son.Economy;
 
@@ -31,7 +31,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             TakeDamage(10f);
         }
@@ -60,14 +60,50 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (isDead) return;
         isDead = true;
 
+        // 1) Dừng AI, gọi event chết
         enemyAI.StopAI();
         onDie?.Invoke();
 
-        // goldDrop?.SetRewards(enemyAI.stats.minGold, enemyAI.stats.maxGold);
-        // expDrop?.SetExpAmount(enemyAI.stats.expAmount);
+        int goldGain = 0;
 
-        // goldDrop?.OnEnemyKilled();
-        // expDrop?.OnEnemyKilled();
+        //// 2) Gán reward từ stats
+        //if (enemyAI != null)
+        //{
+        //    if (goldDrop != null)
+        //        goldDrop.DropGoldAndReturnAmount(enemyAI.stats.minGold, enemyAI.stats.maxGold);
+
+        //    if (expDrop != null)
+        //        expDrop.SetExpAmount(enemyAI.stats.expAmount);
+        //}
+
+        // 3) Cộng Gold và lấy số Gold đã rơi
+        if (goldDrop != null)
+        {
+            goldGain = goldDrop.DropGoldAndReturnAmount();
+        }
+
+        // 4) Cộng Exp
+        if (expDrop != null)
+        {
+            expDrop.OnEnemyKilled();
+        }
+
+        // 5) Hiển thị popup Gold (coin + text)
+        if (goldGain > 0)
+        {
+            if (GoldPopupSpawner.Instance != null)
+            {
+                GoldPopupSpawner.Instance.SpawnGoldPopup(transform.position, goldGain);
+                Debug.Log("[EnemyHealth] Spawn gold popup: " + goldGain);
+            }
+            else
+            {
+                Debug.LogWarning("[EnemyHealth] GoldPopupSpawner.Instance == null, không thể spawn popup.");
+            }
+        }
+
+        // 6) Huỷ enemy (sau này nếu có animation chết thì có thể chuyển sang OnDieAnimationEnd)
+        Destroy(gameObject);
     }
 
     public void OnDieAnimationEnd()
