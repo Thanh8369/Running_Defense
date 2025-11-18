@@ -13,14 +13,14 @@ public class MeleeEnemyAI : EnemyAI
             // Player
             new BTSequence(new List<BTNode>
             {
-                new BTCondition(() => DistanceToTarget(player) <= detectionRange && currentFocusTime <= 0),
+                new BTCondition(() => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0),
 
                 new BTSelector(new List<BTNode>
                 {
                     // Tấn công player
                     new BTSequence(new List<BTNode>
                     {
-                        new BTCondition(() => DistanceToTarget(player) <= attackRange),
+                        new BTCondition(() => DistanceToTarget(player) <= stats.attackRange),
                         new BTAction(() => RotateToTarget(player)),
                         new BTAction(() => AttackTarget(player))
                     }),
@@ -40,11 +40,11 @@ public class MeleeEnemyAI : EnemyAI
                 // Tấn công tower
                 new BTSequence(new List<BTNode>
                 {
-                    new BTCondition(() => DistanceToTarget(tower) <= attackRange),
+                    new BTCondition(() => DistanceToTarget(tower) <= stats.attackRange),
                     new BTAction(() => RotateToTarget(tower)),
                     new BTAction(() =>
                     {
-                        if (currentFocusTime <= 0f) currentFocusTime = attackCooldown;
+                        if (currentFocusTime <= 0f) currentFocusTime = stats.attackCooldown;
                         return AttackTarget(tower);
                     })
                 }),
@@ -63,6 +63,6 @@ public class MeleeEnemyAI : EnemyAI
     public void DealDamageToTarget()
     {
         if (currentTarget == null) return;
-        currentTarget.GetComponent<IDamageable>()?.TakeDamage(attackDamage);
+        currentTarget.GetComponent<IDamageable>()?.TakeDamage(stats.attackDamage);
     }
 }

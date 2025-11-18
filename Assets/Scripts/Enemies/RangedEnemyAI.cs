@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class RangedEnemyAI : EnemyAI
 {
-    [SerializeField] private float keepDistance = 8f;
-    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float projectileSpeed = 15f;
 
     protected override void SetupBT()
     {
@@ -18,21 +15,14 @@ public class RangedEnemyAI : EnemyAI
             // Player
             new BTSequence(new List<BTNode>
             {
-                new BTCondition(() => DistanceToTarget(player) <= detectionRange && currentFocusTime <= 0),
+                new BTCondition(() => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0),
 
                 new BTSelector(new List<BTNode>
                 {
-                    // Lùi nếu quá gần
-                    new BTSequence(new List<BTNode>
-                    {
-                        new BTCondition(() => DistanceToTarget(player) < keepDistance * 0.5f),
-                        new BTAction(() => MoveAwayFrom(player))
-                    }),
-
                     // Bắn player
                     new BTSequence(new List<BTNode>
                     {
-                        new BTCondition(() => DistanceToTarget(player) <= attackRange),
+                        new BTCondition(() => DistanceToTarget(player) <= stats.attackRange),
                         new BTAction(() => RotateToTarget(player)),
                         new BTAction(() => AttackTarget(player))
                     }),
@@ -40,7 +30,7 @@ public class RangedEnemyAI : EnemyAI
                     // Tiến đến range bắn
                     new BTSequence(new List<BTNode>
                     {
-                        new BTCondition(() => DistanceToTarget(player) > attackRange),
+                        new BTCondition(() => DistanceToTarget(player) > stats.attackRange),
                         new BTAction(() => RotateToTarget(player)),
                         new BTAction(() => MoveToTarget(player))
                     })
@@ -50,21 +40,14 @@ public class RangedEnemyAI : EnemyAI
             // Tower
             new BTSelector(new List<BTNode>
             {
-                // Lùi nếu quá gần
-                new BTSequence(new List<BTNode>
-                {
-                    new BTCondition(() => DistanceToTarget(tower) < keepDistance * 0.5f),
-                    new BTAction(() => MoveAwayFrom(tower))
-                }),
-
                 // Bắn tower
                 new BTSequence(new List<BTNode>
                 {
-                    new BTCondition(() => DistanceToTarget(tower) <= attackRange),
+                    new BTCondition(() => DistanceToTarget(tower) <= stats.attackRange),
                     new BTAction(() => RotateToTarget(tower)),
                     new BTAction(() =>
                     {
-                        if(currentFocusTime <= 0f) currentFocusTime = attackCooldown;
+                        if(currentFocusTime <= 0f) currentFocusTime = stats.attackCooldown;
                         return AttackTarget(tower);
                     })
                 }),
@@ -79,26 +62,15 @@ public class RangedEnemyAI : EnemyAI
         });
     }
 
-    private BTNode.NodeState MoveAwayFrom(Transform target)
-    {
-        if (target == null) return BTNode.NodeState.Failure;
-
-        Vector3 dir = transform.position - target.position;
-        dir.y = 0;
-
-        rb.MovePosition(transform.position + dir.normalized * moveSpeed * Time.deltaTime);
-        return BTNode.NodeState.Running;
-    }
-
     // Animation event
     public void FireProjectile()
     {
-        if (projectilePrefab == null || firePoint == null) return;
+        if (stats.projectilePrefab == null || firePoint == null) return;
         if (currentTarget == null) return;
 
-        GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Projectile p = proj.GetComponent<Projectile>();
+        GameObject proj = Instantiate(stats.projectilePrefab, firePoint.position, firePoint.rotation);
+        EnemyProjectile p = proj.GetComponent<EnemyProjectile>();
 
-        p?.Initialize(currentTarget, attackDamage, projectileSpeed, firePoint.right);
+        p?.Initialize(currentTarget, stats.attackDamage, firePoint.right);
     }
 }
