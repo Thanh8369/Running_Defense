@@ -33,11 +33,23 @@ public class DaggerATK : MonoBehaviour
     {
         for (int i = 0; i < daggers.Count; i++)
         {
-            daggers[i] = Random.rotation;
+            //daggers[i] = Random.rotation;
 
-            GameObject p = Instantiate(dagger, throwPoint.position, throwPoint.rotation);
-            p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, daggers[i], spreadAngle);
-            p.GetComponent<Rigidbody>().AddForce(p.transform.right * daggerVel);
+            //GameObject p = Instantiate(dagger, throwPoint.position, throwPoint.rotation);
+            //p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, daggers[i], spreadAngle);
+            //p.GetComponent<Rigidbody>().AddForce(p.transform.forward * daggerVel);
+
+            Quaternion spreadRot = Quaternion.AngleAxis(
+            Random.Range(-spreadAngle, spreadAngle),
+            throwPoint.up
+        ) * Quaternion.AngleAxis(
+            Random.Range(-spreadAngle, spreadAngle),
+            throwPoint.right
+        );
+            Quaternion finalRot = throwPoint.rotation * spreadRot;
+            GameObject p = Instantiate(dagger, throwPoint.position, finalRot);
+            Rigidbody rb = p.GetComponent<Rigidbody>();
+            rb.linearVelocity = p.transform.forward * daggerVel;
         }
     }
 }
