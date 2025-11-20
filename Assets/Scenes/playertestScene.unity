@@ -244,7 +244,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5649,13 +5649,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958612419}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.0299946, z: 1.24}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 0.7329946, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2920819}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5617440257784196007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1504311855
 GameObject:
@@ -5746,7 +5746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798680167}
   m_Layer: 0
-  m_Name: shootPoint (1)
+  m_Name: throwdaggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5760,13 +5760,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798680166}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.73, y: 2.92, z: -0.022}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.067, y: 1.63, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5617440257784196007}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1918551972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6984,15 +6984,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6865061933607843945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebe352ab55e03dc409efb4a7f5ce8f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: bc82cc0b797e70e4fb5f268563c38a1c, type: 2}
   projectilePrefab: {fileID: 8107467662078565406, guid: 1074f2f7f82023a4e8d678f01c1af272, type: 3}
-  firePoint:
-  - {fileID: 553868038723737904}
+  firePoint: {fileID: 553868038723737904}
 --- !u!224 &2053336803876355581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9530,6 +9529,7 @@ Transform:
   - {fileID: 1798680167}
   - {fileID: 4716271018590528831}
   - {fileID: 6025870466389788754}
+  - {fileID: 958612420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5631374560033223353
@@ -10042,6 +10042,9 @@ GameObject:
   - component: {fileID: 6044500566830625236}
   - component: {fileID: 6004652436551085188}
   - component: {fileID: 6044500566830625237}
+  - component: {fileID: 6044500566830625238}
+  - component: {fileID: 6044500566830625239}
+  - component: {fileID: 6044500566830625240}
   m_Layer: 0
   m_Name: PlayerSword
   m_TagString: Untagged
@@ -10124,6 +10127,66 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6044500566830625238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032007730807637800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00935a39eae200c47995d2c0f4626f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &6044500566830625239
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032007730807637800}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05427416, y: 1.0350236, z: 0.1889884}
+  m_Center: {x: 0.000096426775, y: 0.37330076, z: 0}
+--- !u!54 &6044500566830625240
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032007730807637800}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!4 &6065407264769385366
 Transform:
   m_ObjectHideFlags: 0
@@ -10617,6 +10680,7 @@ GameObject:
   - component: {fileID: 1962159517509368051}
   - component: {fileID: 5242986442535797502}
   - component: {fileID: 8603446703376840885}
+  - component: {fileID: 8603446703376840886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11857,6 +11921,23 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8603446703376840886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865061933607843945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb83485652d1c74085c3ddff09d2b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daggerCount: 5
+  spreadAngle: 15
+  dagger: {fileID: 1517462375083585838, guid: b18fea29cbef3fd4b90676626174e93a, type: 3}
+  throwPoint: {fileID: 1798680167}
+  daggerVel: 300
 --- !u!4 &8603973478742766408
 Transform:
   m_ObjectHideFlags: 0
@@ -12104,4 +12185,3 @@ SceneRoots:
   - {fileID: 2122055524}
   - {fileID: 1504311858}
   - {fileID: 357801820}
-  - {fileID: 958612420}
