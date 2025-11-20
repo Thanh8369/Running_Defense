@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
     private Transform target;
     private float damage;
+    Vector3 direction;
     private Vector3 nonHomingDirection;
 
     [Header("Settings")]
@@ -24,7 +26,8 @@ public class EnemyProjectile : MonoBehaviour
                 nonHomingDirection = fireDirection.normalized;
             }
         }
-        Destroy(gameObject, lifetime);
+
+        StartCoroutine(ReturnToPoolAfterLifetime());
     }
 
     void Update()
@@ -34,9 +37,6 @@ public class EnemyProjectile : MonoBehaviour
 
     void MoveProjectile()
     {
-        Vector3 direction;
-
-        // HOMING
         if (useHoming && target != null)
         {
             Vector3 targetPos = target.position + Vector3.up * heightOffset;
@@ -48,8 +48,8 @@ public class EnemyProjectile : MonoBehaviour
         }
 
         float distance = projectileSpeed * Time.deltaTime;
-
         transform.position += direction * distance;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,6 +59,14 @@ public class EnemyProjectile : MonoBehaviour
             target.GetComponent<IDamageable>()?.TakeDamage(damage);
         }
 
-        Destroy(gameObject);
+        PoolManager.Instance.Return(gameObject);
     }
+
+    private IEnumerator ReturnToPoolAfterLifetime()
+    {
+        yield return new WaitForSeconds(lifetime);
+
+        PoolManager.Instance.Return(gameObject);
+    }
+
 }

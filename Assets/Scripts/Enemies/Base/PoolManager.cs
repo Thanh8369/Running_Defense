@@ -40,6 +40,7 @@ public class PoolManager : MonoBehaviour
     {
         if (!pools.ContainsKey(prefab))
         {
+            Debug.LogWarning($"Pool for prefab {prefab.name} does not exist. Creating new pool.");
             CreatePool(prefab, 1);
         }
 

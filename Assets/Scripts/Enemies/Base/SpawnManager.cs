@@ -6,10 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance { get; private set; }
 
-    [SerializeField] private float mapDuration = 480f;
     [SerializeField] private float mapTimer = 0f;
     [SerializeField] private float spawnRadius = 5f;
-    [SerializeField] private SpawnConfig spawnConfig;
+
+    [Header("List Spawn Config theo thời gian")]
+    [SerializeField] private List<SpawnConfig> spawnConfigs;
+
     [SerializeField] private Transform[] spawnPoints;
 
     private int aliveEnemies = 0;
@@ -22,43 +24,68 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(RunSpawns());
+        // Sort theo trigger time
+        spawnConfigs.Sort((a, b) => a.triggerTime.CompareTo(b.triggerTime));
+        StartCoroutine(RunTimeline());
     }
 
-    IEnumerator RunSpawns()
+    IEnumerator RunTimeline()
     {
         mapTimer = 0f;
+        int index = 0;
 
-        if (spawnConfig == null || spawnConfig.spawnInfos.Count == 0)
-            yield break;
-
-        spawnConfig.spawnInfos.Sort((a, b) => a.triggerTime.CompareTo(b.triggerTime));
-        int spawnIndex = 0;
-
-        while (spawnIndex < spawnConfig.spawnInfos.Count)
+        while (index < spawnConfigs.Count)
         {
             mapTimer += Time.deltaTime;
 
-            while (spawnIndex < spawnConfig.spawnInfos.Count &&
-                   mapTimer >= spawnConfig.spawnInfos[spawnIndex].triggerTime)
+            while (index < spawnConfigs.Count &&
+                   mapTimer >= spawnConfigs[index].triggerTime)
             {
-                StartCoroutine(SpawnEnemyGroup(spawnConfig.spawnInfos[spawnIndex]));
-                spawnIndex++;
+                StartCoroutine(SpawnGroup(spawnConfigs[index]));
+                index++;
             }
 
             yield return null;
         }
 
         allSpawnsCompleted = true;
-        Debug.Log("All enemies from spawnConfig have spawned.");
+        Debug.Log("All spawn groups have been triggered.");
+    }
+
+    IEnumerator SpawnGroup(SpawnConfig config)
+    {
+        List<Coroutine> runningGroups = new List<Coroutine>();
+
+        foreach (var info in config.spawnInfos)
+        {
+            Coroutine c = StartCoroutine(SpawnEnemyGroup(info));
+            runningGroups.Add(c);
+        }
+
+        foreach (var group in runningGroups)
+            yield return group;
     }
 
     IEnumerator SpawnEnemyGroup(SpawnInfo info)
     {
-        for (int i = 0; i < info.count; i++)
+        int spawned = 0;
+
+        while (spawned < info.count)
         {
-            SpawnEnemy(info);
-            yield return new WaitForSeconds(info.spawnDelay);
+            int batchSize = Random.Range(info.minBatch, info.maxBatch + 1);
+            batchSize = Mathf.Min(batchSize, info.count - spawned);
+
+            for (int i = 0; i < batchSize; i++)
+            {
+                SpawnEnemy(info);
+                spawned++;
+            }
+
+            // Delay giữa các batch
+            if (info.spawnDelay > 0)
+                yield return new WaitForSeconds(info.spawnDelay);
+            else
+                yield return null; // ít nhất 1 frame để không block
         }
     }
 
@@ -66,13 +93,12 @@ public class SpawnManager : MonoBehaviour
     {
         if (spawnPoints.Length == 0) return;
 
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Vector2 offset2D = Random.insideUnitCircle * spawnRadius;
-        float heightOffset = info.spawnHeightOffset;
+        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Vector2 offset = Random.insideUnitCircle * spawnRadius;
 
-        Vector3 spawnPos = spawnPoint.position + new Vector3(offset2D.x, heightOffset, offset2D.y);
+        Vector3 spawnPos = sp.position + new Vector3(offset.x, info.spawnHeightOffset, offset.y);
+
         PoolManager.Instance.Get(info.enemy.prefab, spawnPos, Quaternion.identity);
-
         aliveEnemies++;
     }
 
@@ -82,13 +108,7 @@ public class SpawnManager : MonoBehaviour
 
         if (allSpawnsCompleted && aliveEnemies <= 0)
         {
-            OnGameWin();
+            Debug.Log("GAME COMPLETED!!!");
         }
-    }
-
-    void OnGameWin()
-    {
-        Debug.Log("GAME COMPLETED! All enemies defeated!");
-        Time.timeScale = 0f;
     }
 }

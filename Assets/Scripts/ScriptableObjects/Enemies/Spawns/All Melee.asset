@@ -10,21 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
-  m_Name: Test
+  m_Name: All Melee
   m_EditorClassIdentifier: 
   spawnInfos:
-  - enemy: {fileID: 11400000, guid: b0db0a38c0466534ba8bf5b42826b5fa, type: 2}
+  - enemy: {fileID: 0}
     triggerTime: 0
-    count: 100
+    count: 0
     spawnDelay: 0
     spawnHeightOffset: 0
-  - enemy: {fileID: 11400000, guid: 6e7b125bae1b6ae43b98670623cba6c1, type: 2}
+  - enemy: {fileID: 0}
     triggerTime: 0
-    count: 100
+    count: 0
     spawnDelay: 0
     spawnHeightOffset: 0
-  - enemy: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
-    triggerTime: 10
-    count: 100
+  - enemy: {fileID: 0}
+    triggerTime: 0
+    count: 0
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemy: {fileID: 0}
+    triggerTime: 0
+    count: 0
     spawnDelay: 0
     spawnHeightOffset: 0

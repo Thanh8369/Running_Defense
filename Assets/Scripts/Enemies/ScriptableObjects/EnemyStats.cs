@@ -21,5 +21,15 @@ public class EnemyStats : ScriptableObject
     
     [Header("Visual")]
     public GameObject prefab;
-    public GameObject projectilePrefab;
+    
+    [Header("Projectile Settings")]
+    public List<ProjectileData> projectilePrefabs = new List<ProjectileData>();
+}
+
+[System.Serializable]
+public class ProjectileData
+{
+    public GameObject prefab;
+    public float customDamage = -1f; // -1 = dùng damage từ Enemy, >0 = dùng riêng
+    public bool useHoming = true;
 }

@@ -118,7 +118,7 @@ MonoBehaviour:
   _text: {fileID: 2760714729554066046}
   _moveUpSpeed: 1.5
   _lifeTime: 0.6
-  _randomOffset: {x: 0.4, y: 0.3, z: 0}
+  _randomOffset: {x: 0.4, y: 0.8, z: 0}
   _color: {r: 1, g: 1, b: 1, a: 1}
   _fontSize: 3
 --- !u!1 &7385346414634694598
@@ -215,10 +215,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 36
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 100
   m_fontSizeMax: 200
   m_fontStyle: 0

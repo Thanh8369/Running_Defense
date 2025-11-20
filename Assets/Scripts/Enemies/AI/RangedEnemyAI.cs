@@ -5,6 +5,17 @@ using UnityEngine;
 public class RangedEnemyAI : EnemyAI
 {
     [SerializeField] private Transform firePoint;
+    private ProjectileData currentProjectileData;
+
+    protected override void Start()
+    {
+        base.Start();
+        // Set default projectile variant
+        if (stats.projectilePrefabs.Count > 0)
+        {
+            currentProjectileData = stats.projectilePrefabs[0];
+        }
+    }
 
     protected override void SetupBT()
     {
@@ -65,12 +76,28 @@ public class RangedEnemyAI : EnemyAI
     // Animation event
     public void FireProjectile()
     {
-        if (stats.projectilePrefab == null || firePoint == null) return;
         if (currentTarget == null) return;
 
-        GameObject proj = PoolManager.Instance.Get(stats.projectilePrefab, firePoint.position, firePoint.rotation);
+        if (currentProjectileData.prefab == null || firePoint == null) return;
+
+        GameObject proj = PoolManager.Instance.Get(currentProjectileData.prefab, firePoint.position, firePoint.rotation);
         EnemyProjectile p = proj.GetComponent<EnemyProjectile>();
 
-        p?.Initialize(currentTarget, stats.attackDamage, firePoint.right);
+        if (p != null)
+        {
+            float finalDamage = currentProjectileData.customDamage > 0
+                ? currentProjectileData.customDamage
+                : stats.attackDamage;
+
+            p.Initialize(currentTarget, finalDamage, firePoint.right);
+        }
+    }
+
+    public void SetProjectileVariant(int index)
+    {
+        if (index >= 0 && index < stats.projectilePrefabs.Count)
+        {
+            currentProjectileData = stats.projectilePrefabs[index];
+        }
     }
 }

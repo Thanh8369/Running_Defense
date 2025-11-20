@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: Cactus
   m_EditorClassIdentifier: 
-  enemyName: Cactus
+  maxHealth: 10000
   moveSpeed: 10
   rotateSpeed: 360
   attackDamage: 10
   attackCooldown: 1
   attackRange: 1.5
   detectionRange: 8
+  minGold: 5
+  maxGold: 15
+  expAmount: 10
   prefab: {fileID: 7798384498389156138, guid: b248cc7dde910544fbfa93c351fbc5b9, type: 3}
+  projectilePrefabs: []

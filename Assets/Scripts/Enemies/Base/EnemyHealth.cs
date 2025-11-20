@@ -43,6 +43,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        GetComponent<DamagePopupReceiver>()?.ShowDamage(damage, transform.position);
 
         if (currentHealth > 0)
         {

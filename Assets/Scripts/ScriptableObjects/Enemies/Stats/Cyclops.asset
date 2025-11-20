@@ -10,17 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Spider
+  m_Name: Cyclops
   m_EditorClassIdentifier: 
   maxHealth: 100
-  moveSpeed: 4
+  moveSpeed: 12
   rotateSpeed: 360
   attackDamage: 10
-  attackCooldown: 2
-  attackRange: 12
-  detectionRange: 14
+  attackCooldown: 1
+  attackRange: 25
+  detectionRange: 25
   minGold: 5
   maxGold: 15
   expAmount: 10
-  prefab: {fileID: 3163258782654741772, guid: 96827c9c81aaeea4fa01b4eafa68bc3d, type: 3}
-  projectilePrefab: {fileID: 6045715366450228825, guid: dabcd42b2f61add45a1154dba42e380c, type: 3}
+  prefab: {fileID: 5820329575921559263, guid: 4284318eb5fe8dd45a073655e1b6cec0, type: 3}
+  projectilePrefabs:
+  - prefab: {fileID: 7023165486502889764, guid: dbdb8d3734601bd4298cc3ff97b2a48b, type: 3}
+    customDamage: 10
+    useHoming: 0
+  - prefab: {fileID: 8898039968441253301, guid: d3cebf04c49d55e4291ea74db6564c39, type: 3}
+    customDamage: 100
+    useHoming: 0
