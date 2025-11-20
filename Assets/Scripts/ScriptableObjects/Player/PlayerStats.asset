@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootInterval: 1
   detectionRange: 5
+

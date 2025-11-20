@@ -1609,8 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5748faafb6444d8fb5520daddd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGold: 5
-  maxGold: 15
+  enemyStats: {fileID: 11400000, guid: 935f87d7f62b4b642a3c45fe291022cd, type: 2}
   logOnDrop: 0
 --- !u!114 &202252735562411850
 MonoBehaviour:

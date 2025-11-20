@@ -4,9 +4,8 @@ public class GoldPopupSpawner : MonoBehaviour
 {
     public static GoldPopupSpawner Instance { get; private set; }
 
-    [Header("References")]
-    [Tooltip("Canvas HUD (Screen Space Overlay hoặc Screen Space Camera)")]
-    public Canvas mainCanvas;
+    [Header("Canvas để spawn popup (Sorting thấp hơn UISkill)")]
+    public Canvas popupCanvas;
 
     [Tooltip("Prefab popup UI (có GoldPopupUI + Text)")]
     public GameObject goldPopupPrefab;
@@ -34,29 +33,22 @@ public class GoldPopupSpawner : MonoBehaviour
             return;
         }
 
-        // Tự tìm Canvas nếu chưa gán
-        if (mainCanvas == null)
+        // nếu chưa gán thì tìm tên Canvas_GoldPopup
+        if (popupCanvas == null)
         {
-            mainCanvas = FindAnyObjectByType<Canvas>();
-            if (mainCanvas == null)
+            popupCanvas = GameObject.Find("Canvas_PopupGold")?.GetComponent<Canvas>();
+
+            if (popupCanvas == null)
             {
-                Debug.LogWarning("[GoldPopupSpawner] Không tìm thấy Canvas trong scene hiện tại.");
+                Debug.LogError("[GoldPopupSpawner] Bạn CHƯA gán popupCanvas!");
                 return;
             }
         }
 
-        // Tự tìm Camera nếu chưa gán
         if (worldCamera == null)
-        {
             worldCamera = Camera.main;
-            if (worldCamera == null)
-            {
-                Debug.LogWarning("[GoldPopupSpawner] Không tìm thấy Camera.main.");
-                return;
-            }
-        }
 
-        RectTransform canvasRect = mainCanvas.GetComponent<RectTransform>();
+        RectTransform canvasRect = popupCanvas.GetComponent<RectTransform>();
 
         Vector3 screenPos = worldCamera.WorldToScreenPoint(worldPos);
 
@@ -64,11 +56,12 @@ public class GoldPopupSpawner : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvasRect,
             screenPos,
-            mainCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : mainCanvas.worldCamera,
+            popupCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : popupCanvas.worldCamera,
             out uiLocalPos
         );
 
-        GameObject popupObj = Instantiate(goldPopupPrefab, mainCanvas.transform, false);
+        GameObject popupObj = Instantiate(goldPopupPrefab, popupCanvas.transform, false);
+
         RectTransform popupRect = popupObj.GetComponent<RectTransform>();
         popupRect.anchoredPosition = uiLocalPos;
 
@@ -78,6 +71,7 @@ public class GoldPopupSpawner : MonoBehaviour
             popupUI.Init(amount);
         }
 
-        Debug.Log($"[GoldPopupSpawner] Spawn popup tại {uiLocalPos}, amount={amount}");
+        // Debug
+        // Debug.Log($"[GoldPopupSpawner] Spawn popup tại {uiLocalPos}, amount={amount}");
     }
 }

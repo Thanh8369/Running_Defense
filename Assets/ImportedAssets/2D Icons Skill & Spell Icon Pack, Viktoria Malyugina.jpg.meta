@@ -1,0 +1,1280 @@
+fileFormatVersion: 2
+guid: 34f3c2f46df9b894ea0736eda1011c10
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1167
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d96e9b092f3524e840ed24525cd427
+      internalID: -581017866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1167
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12555a5fdfaa451438ff06f29dfd4896
+      internalID: -77166674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_2
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1167
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668ba724a40d3be46b7fc74580474193
+      internalID: 93787442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1167
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b3eff3dfb1f4741a82c7560b340525
+      internalID: 136089854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_4
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1167
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39dc50bff3a2a2e4da3b139afdb26ea7
+      internalID: 1543803550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1039
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7ab2be12ab778418c1bce8bb3ceeb5
+      internalID: -1461132727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_6
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1039
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfbc28cc6a814b49a89892d8f2436d7
+      internalID: -1215244748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_7
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1039
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c1b1f47b3e94e4da51362d1771e1c5
+      internalID: -80280186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_8
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1039
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c6118dcb1cecc46a66cbea5039668d
+      internalID: 1013626212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_9
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1039
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddc3bd60e42ba9d478a9f7e32fecf9a6
+      internalID: 1811424494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 911
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdd5bfd5ee08bf478ca34a6401ff309
+      internalID: 1150686499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_11
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 911
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226c1f0f1ab76904fb6bc030cd79d38f
+      internalID: -1587217604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 911
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aabfa7f8ffb3964c90ef7412806ae29
+      internalID: -1252016450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_13
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 911
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb97a4960c50314cbd4c66e86e24e74
+      internalID: -296830265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_14
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 911
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12dcc361b5f3bb459432b95a373c625
+      internalID: -480260189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_15
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 783
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f409040aaf26e4e84990f2e7ff7b67
+      internalID: -165661923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_16
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 783
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974d3a00e82a4fd4f9dc827a64a834e1
+      internalID: -311590346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 783
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9048e00782827fc4890ebce94e1ddaba
+      internalID: -1393994807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 783
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59496e6e3675ee747b248a0d67bc96ba
+      internalID: -261329745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_19
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 783
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be38a8b6397293b48a00651b2dd6abe7
+      internalID: -272412474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_20
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 655
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eaa8cfcc4a99f748ab95ee219c5e30f
+      internalID: 2145648637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_21
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 655
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fff5a319ca00649a9ecc1c6f18e06b
+      internalID: 1396851268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_22
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 655
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7f82a1c3d5fa4408aa07b599b43bd0
+      internalID: 1554727423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_23
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 655
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49b8ffa14d23364d88679bf3c163a1c
+      internalID: -2053313240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_24
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 655
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175a1a878107efd42a5956ffaddf70b8
+      internalID: 1368995773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 527
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33930ce771b42a1408effb04bb9c2ad1
+      internalID: -795367877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_26
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 527
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef0767d7a98a8740b120e99afdb50a6
+      internalID: -39088080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_27
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 527
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082b64966841a514cacf431d55db46e5
+      internalID: -1011001809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_28
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 527
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9c694daea62bf4b844985382107f78
+      internalID: -484677218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_29
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 527
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ce8fad069138d42873120c311e072d
+      internalID: -1118348756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_30
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 399
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6160f41d2a9f04e49a0834a436088ef7
+      internalID: -418909950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_31
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 399
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a2aebd4b78e0a42829916042025bd2
+      internalID: -327753518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_32
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 399
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8495ab5a887e043a26fd3d523d912b
+      internalID: -615313564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_33
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 399
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1867e1b68233b41a4c9231548b73bf
+      internalID: 1705121249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_34
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 399
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ff51601d52f8a4496d1440d651032b
+      internalID: -528707744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_35
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 271
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1241e9ed6555bf5458c3e70db7c7af60
+      internalID: -2011729527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_36
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 271
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbe76e8964de1144b54ac65cfdf617f
+      internalID: -1338320074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_37
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 271
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89aa9860e094437468f1009f9590a6a2
+      internalID: -1155304703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_38
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 271
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a5a30410af8534a8f1757f9591f954
+      internalID: 2010751543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_39
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 271
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c1e3cd29ba5c145846fc0b7a83f100
+      internalID: 1824546153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_40
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 143
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e2bad278ace164cad1da11c99fa7ee
+      internalID: 1859012989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_41
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 143
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41809eff33757794cbdc5f8c09055448
+      internalID: 924178331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_42
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 143
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c53f79cf089ae4991c5cf12d5c98f7
+      internalID: -724126507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_43
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 143
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faf2fce76eca8d4faf5b9847ebc14ca
+      internalID: -875854896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_44
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 143
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a7b790508ef9a4a9939b8622ea3bcd
+      internalID: 132220336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_45
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 15
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5a4b30fc0578a4a9deed7885993b21
+      internalID: 702169917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_46
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 15
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d929d7eeb0747f44b8f5a9fd61298bc1
+      internalID: -1900933157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_47
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 15
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd81a3d353ab0d47926401a85e8af77
+      internalID: -228106056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_48
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 15
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c9d0e0b2f608447a07114b4aef21e8
+      internalID: 369582720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_49
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 15
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfc4580c7c61ad4ab929a275867b547
+      internalID: 532013889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b36ec9d1018d7bc4cb406749541fb857
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_0: -581017866
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_1: -77166674
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_10: 1150686499
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_11: -1587217604
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_12: -1252016450
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_13: -296830265
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_14: -480260189
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_15: -165661923
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_16: -311590346
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_17: -1393994807
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_18: -261329745
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_19: -272412474
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_2: 93787442
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_20: 2145648637
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_21: 1396851268
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_22: 1554727423
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_23: -2053313240
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_24: 1368995773
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_25: -795367877
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_26: -39088080
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_27: -1011001809
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_28: -484677218
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_29: -1118348756
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_3: 136089854
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_30: -418909950
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_31: -327753518
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_32: -615313564
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_33: 1705121249
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_34: -528707744
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_35: -2011729527
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_36: -1338320074
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_37: -1155304703
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_38: 2010751543
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_39: 1824546153
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_4: 1543803550
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_40: 1859012989
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_41: 924178331
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_42: -724126507
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_43: -875854896
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_44: 132220336
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_45: 702169917
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_46: -1900933157
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_47: -228106056
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_48: 369582720
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_49: 532013889
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_5: -1461132727
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_6: -1215244748
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_7: -80280186
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_8: 1013626212
+      2D Icons Skill & Spell Icon Pack, Viktoria Malyugina_9: 1811424494
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
