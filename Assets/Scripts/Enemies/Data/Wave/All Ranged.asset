@@ -15,10 +15,10 @@ MonoBehaviour:
   prepareTime: 0
   enemyGroups:
   - enemyStats: {fileID: 11400000, guid: 21cf37e4b28b66e4990c2c9b7c89b655, type: 2}
-    count: 100
+    count: 10
     spawnDelay: 0
     spawnHeightOffset: 0
   - enemyStats: {fileID: 11400000, guid: 935f87d7f62b4b642a3c45fe291022cd, type: 2}
-    count: 100
+    count: 10
     spawnDelay: 0
     spawnHeightOffset: 0

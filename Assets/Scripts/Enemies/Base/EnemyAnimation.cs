@@ -10,6 +10,7 @@ public class EnemyAnimation : MonoBehaviour
 
     private Animator animator;
     private EnemyAI enemyAI;
+    private CyclopsAI cyclopsAI;
     private EnemyHealth enemyHealth;
 
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
@@ -20,14 +21,18 @@ public class EnemyAnimation : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<EnemyAI>();
+        cyclopsAI = GetComponent<CyclopsAI>();
         enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void OnEnable()
     {
-        enemyAI.onMove += PlayWalkAnimation;
-        enemyAI.onAttack += PlayAttackAnimation;
-        
+        if (enemyAI != null)
+        {
+            enemyAI.onMove += PlayWalkAnimation;
+            enemyAI.onAttack += PlayAttackAnimation;
+        }
+
         if (enemyHealth != null)
         {
             enemyHealth.onHit += PlayGetHitAnimation;
@@ -37,9 +42,12 @@ public class EnemyAnimation : MonoBehaviour
 
     void OnDisable()
     {
-        enemyAI.onMove -= PlayWalkAnimation;
-        enemyAI.onAttack -= PlayAttackAnimation;
-        
+        if (enemyAI != null)
+        {
+            enemyAI.onMove -= PlayWalkAnimation;
+            enemyAI.onAttack -= PlayAttackAnimation;
+        }
+
         if (enemyHealth != null)
         {
             enemyHealth.onHit -= PlayGetHitAnimation;
@@ -56,13 +64,19 @@ public class EnemyAnimation : MonoBehaviour
     {
         if (animationConfig == null) return;
 
-        EnemyAnimationData anim =
-            atkType == "ranged"
+        EnemyAnimationData anim = atkType == "ranged"
             ? animationConfig.GetRandomAttack(animationConfig.rangedAttacks)
             : animationConfig.GetRandomAttack(animationConfig.meleeAttacks);
 
         if (anim != null)
+        {
             animator.SetTrigger(anim.triggerName);
+
+            if (cyclopsAI != null && atkType == "ranged")
+            {
+                cyclopsAI.OnAttackAnimationSet(anim.triggerName);
+            }
+        }
     }
 
     public void PlayGetHitAnimation()
@@ -75,6 +89,7 @@ public class EnemyAnimation : MonoBehaviour
         animator.SetTrigger(Die);
     }
 
+    // Animation event callbacks - được gọi từ animation timeline
     public void OnAttackEnd()
     {
         enemyAI.OnAttackAnimationEnd();
