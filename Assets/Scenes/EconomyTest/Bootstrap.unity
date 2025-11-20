@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4541cd05a8b90cb40a79bf1c41f9f685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: MainMenuTestSystem
+  nextSceneName: MainScene_Map1
 --- !u!4 &871474226
 Transform:
   m_ObjectHideFlags: 0

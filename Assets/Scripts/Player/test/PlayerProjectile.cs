@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    //ArrowDamage
     public float lifeTime = 3f;
     private float timer = 0f;
 
@@ -23,7 +24,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            // optional: enemy health etc.
+            //takedamage(damage)
             ArrowObjectPool.Instance.ReturnObject(gameObject);
         }
     }

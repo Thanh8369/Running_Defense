@@ -5,7 +5,7 @@ public class testAutoarrow : MonoBehaviour
     public PlayerData playerData;
      
     public GameObject projectilePrefab;
-    public Transform firePoint;
+    public Transform[] firePoint;
 
     private float shootTimer = 0f;
 
@@ -46,17 +46,32 @@ public class testAutoarrow : MonoBehaviour
 
     void Shoot(Transform target)
     {
-        GameObject proj = ArrowObjectPool.Instance.GetObject();
-        //GameObject proj = Instantiate(projectilePrefab);
+        foreach(Transform fp in firePoint)
+        {
+            GameObject proj = ArrowObjectPool.Instance.GetObject();
+            //GameObject proj = Instantiate(projectilePrefab);
 
-        proj.transform.position = firePoint.position;
-        proj.transform.rotation = Quaternion.identity;
+            proj.transform.position = fp.position;
+            proj.transform.rotation = Quaternion.identity;
 
-        Vector3 dir = (target.position - firePoint.position).normalized;
+            Vector3 dir = (target.position - fp.position).normalized;
+
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
+            rb.linearVelocity = dir * 20f;
+
+            proj.transform.forward = dir;
+        }
+        //GameObject proj = ArrowObjectPool.Instance.GetObject();
+        ////GameObject proj = Instantiate(projectilePrefab);
+
+        //proj.transform.position = firePoint.position;
+        //proj.transform.rotation = Quaternion.identity;
+
+        //Vector3 dir = (target.position - firePoint.position).normalized;
        
-        Rigidbody rb = proj.GetComponent<Rigidbody>();
-        rb.linearVelocity = dir * 20f;
+        //Rigidbody rb = proj.GetComponent<Rigidbody>();
+        //rb.linearVelocity = dir * 20f;
 
-        proj.transform.forward = dir;
+        //proj.transform.forward = dir;
     }
 }

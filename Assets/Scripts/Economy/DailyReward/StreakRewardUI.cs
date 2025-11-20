@@ -11,7 +11,7 @@ using Son.Economy;
 public class StreakRewardUI : MonoBehaviour
 {
     [Header("Config chung")]
-    [Tooltip("ID duy nhất để lưu PlayerPrefs,ví dụ: WEEK_REWARD, MONTH_REWARD")]
+    [Tooltip("ID duy nhất để lưu PlayerPrefs, ví dụ: WEEK_REWARD, MONTH_REWARD")]
     public string rewardId = "WEEK_REWARD";
 
     [Tooltip("Tổng số ngày trong 1 vòng: 7 cho week, 30 cho month")]
@@ -70,10 +70,10 @@ public class StreakRewardUI : MonoBehaviour
         // Lấy thông tin reward của ngày hiện tại
         RewardEntry entry = rewardEntries[_currentDayIndex];
 
-        // Add vào Wallet: hiện tại chỉ hỗ trợ Gold (Coin) và Gem
+        // Add vào Wallet: hiện tại chỉ hỗ trợ Gold và Gem
         switch (entry.type)
         {
-            case RewardType.Gold: // dùng Gold trong Wallet
+            case RewardType.Gold:
                 WalletManager.Instance.AddCurrency(CurrencyType.Gold, entry.amount, $"DailyLogin_{rewardId}");
                 break;
 
@@ -81,7 +81,6 @@ public class StreakRewardUI : MonoBehaviour
                 WalletManager.Instance.AddCurrency(CurrencyType.Gem, entry.amount, $"DailyLogin_{rewardId}");
                 break;
 
-            // Các loại khác tạm thời chưa có hệ thống riêng → chỉ log cảnh báo
             default:
                 Debug.LogWarning(
                     $"[{rewardId}] Reward type {entry.type} chưa được hỗ trợ (chỉ Gold & Gem). " +
@@ -150,11 +149,10 @@ public class StreakRewardUI : MonoBehaviour
         for (int i = 0; i < daySlots.Length; i++)
         {
             var slot = daySlots[i];
-            RewardEntry entry = rewardEntries[i];
+            var entry = rewardEntries[i];
 
-            // icon + số lượng
-            slot.iconImage.sprite = entry.icon;
-            slot.amountText.text = entry.amount.ToString();
+            // set icon + value + day text
+            slot.SetupVisual(entry, i);
 
             // ô đã qua / hôm nay / tương lai
             if (i < _currentDayIndex)
@@ -193,37 +191,84 @@ public class StreakRewardUI : MonoBehaviour
 [Serializable]
 public class RewardEntry
 {
-    public RewardType type;
-    public int amount;
-    public Sprite icon;
+    public RewardType type;       // Gold / Gem
+    public int amount;            // số lượng
+    public Sprite icon;           // icon hiển thị
+    [Tooltip("Nếu để trống sẽ tự set = \"Day X\"")]
+    public string customDayLabel; // optional
 }
 
 /// <summary>
 /// Script gắn vào từng ô Day (Day 1 / Day 2 / ...).
+/// Mỗi ô gồm:
+/// - 2 background: normal & claimed
+/// - item icon
+/// - check image
+/// - text day, text value
+/// - focus highlight (today)
 /// </summary>
 [Serializable]
 public class StreakRewardDayUI
 {
-    public Image iconImage;
-    public TextMeshProUGUI amountText;
-    public GameObject claimedTick;
-    public GameObject todayHighlight;
+    [Header("Background state")]
+    public Image rewardNormalImage;    // nền khi chưa nhận
+    public Image rewardClaimedImage;   // nền khi đã nhận
+
+    [Header("Icon + check")]
+    public Image itemIconImage;        // icon quà
+    public Image checkImage;           // dấu check đã nhận
+
+    [Header("Text")]
+    public TextMeshProUGUI textDay;    // "Day 1"
+    public TextMeshProUGUI textValue;  // "100"
+
+    [Header("Highlight hôm nay")]
+    public GameObject focusHighlight;  // object Focus
+
+    /// <summary>
+    /// Set icon, value, day text cho ô.
+    /// </summary>
+    public void SetupVisual(RewardEntry entry, int dayIndex)
+    {
+        if (itemIconImage != null && entry.icon != null)
+            itemIconImage.sprite = entry.icon;
+
+        if (textValue != null)
+            textValue.text = entry.amount.ToString();
+
+        if (textDay != null)
+        {
+            if (!string.IsNullOrEmpty(entry.customDayLabel))
+                textDay.text = entry.customDayLabel;
+            else
+                textDay.text = $"Day {dayIndex + 1}";
+        }
+    }
 
     public void SetStateClaimed()
     {
-        claimedTick.SetActive(true);
-        todayHighlight.SetActive(false);
+        if (rewardNormalImage != null) rewardNormalImage.enabled = false;
+        if (rewardClaimedImage != null) rewardClaimedImage.enabled = true;
+
+        if (checkImage != null) checkImage.gameObject.SetActive(true);
+        if (focusHighlight != null) focusHighlight.SetActive(false);
     }
 
     public void SetStateToday(bool canClaim)
     {
-        claimedTick.SetActive(false);
-        todayHighlight.SetActive(true);
+        if (rewardNormalImage != null) rewardNormalImage.enabled = true;
+        if (rewardClaimedImage != null) rewardClaimedImage.enabled = false;
+
+        if (checkImage != null) checkImage.gameObject.SetActive(false);
+        if (focusHighlight != null) focusHighlight.SetActive(true);
     }
 
     public void SetStateLocked()
     {
-        claimedTick.SetActive(false);
-        todayHighlight.SetActive(false);
+        if (rewardNormalImage != null) rewardNormalImage.enabled = true;
+        if (rewardClaimedImage != null) rewardClaimedImage.enabled = false;
+
+        if (checkImage != null) checkImage.gameObject.SetActive(false);
+        if (focusHighlight != null) focusHighlight.SetActive(false);
     }
 }
