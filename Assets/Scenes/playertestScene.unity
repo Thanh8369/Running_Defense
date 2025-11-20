@@ -5640,7 +5640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &958612420
 Transform:
   m_ObjectHideFlags: 0
@@ -10051,7 +10051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &6036659366678760524
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11934,7 +11934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daggerCount: 5
-  spreadAngle: 10
+  spreadAngle: 15
   dagger: {fileID: 1517462375083585838, guid: b18fea29cbef3fd4b90676626174e93a, type: 3}
   throwPoint: {fileID: 1798680167}
   daggerVel: 300
