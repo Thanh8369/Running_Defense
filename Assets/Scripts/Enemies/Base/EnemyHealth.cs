@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            TakeDamage(10f);
+            TakeDamage(50f);
         }
     }
 
@@ -47,7 +47,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (currentHealth > 0)
         {
             onHit?.Invoke();
-            enemyAI.ApplyStun();
+            enemyAI.GetHit();
         }
         else
         {
@@ -103,11 +103,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
 
         // 6) Huỷ enemy (sau này nếu có animation chết thì có thể chuyển sang OnDieAnimationEnd)
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 
     public void OnDieAnimationEnd()
     {
-        Destroy(gameObject);
+        SpawnManager.Instance.OnEnemyKilled();
+        PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
     }
 }

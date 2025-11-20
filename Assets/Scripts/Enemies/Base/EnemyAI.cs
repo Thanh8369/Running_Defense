@@ -127,11 +127,12 @@ public abstract class EnemyAI : MonoBehaviour
         return BTNode.NodeState.Success;
     }
 
-    public void ApplyStun()
+    public void GetHit()
     {
         isHit = true;
         isAttacking = false;
         isRotate = false;
+        rb.linearVelocity = Vector3.zero;
         onMove?.Invoke(false);
     }
 

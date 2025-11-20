@@ -68,7 +68,7 @@ public class RangedEnemyAI : EnemyAI
         if (stats.projectilePrefab == null || firePoint == null) return;
         if (currentTarget == null) return;
 
-        GameObject proj = Instantiate(stats.projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject proj = PoolManager.Instance.Get(stats.projectilePrefab, firePoint.position, firePoint.rotation);
         EnemyProjectile p = proj.GetComponent<EnemyProjectile>();
 
         p?.Initialize(currentTarget, stats.attackDamage, firePoint.right);

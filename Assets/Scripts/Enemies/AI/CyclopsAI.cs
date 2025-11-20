@@ -36,7 +36,7 @@ public class CyclopsAI : RangedEnemyAI
     {
         if (currentTarget == null) return;
 
-        GameObject proj = Instantiate(
+        GameObject proj = PoolManager.Instance.Get(
             currentAttackMapping.projectilePrefab,
             currentAttackMapping.firePoint.position,
             currentAttackMapping.firePoint.rotation
