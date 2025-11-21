@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,21 +10,24 @@ public class EnemyAnimation : MonoBehaviour
     private Animator animator;
     private EnemyAI enemyAI;
     private CyclopsAI cyclopsAI;
+    private EvilMageAI evilMageAI;
     private EnemyHealth enemyHealth;
 
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private static readonly int GetHit = Animator.StringToHash("GetHit");
+    private static readonly int DefendGetHit = Animator.StringToHash("DefendGetHit");
     private static readonly int Die = Animator.StringToHash("Die");
 
-    void Awake()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<EnemyAI>();
         cyclopsAI = GetComponent<CyclopsAI>();
+        evilMageAI = GetComponent<EvilMageAI>();
         enemyHealth = GetComponent<EnemyHealth>();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (enemyAI != null)
         {
@@ -35,12 +37,12 @@ public class EnemyAnimation : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            enemyHealth.onHit += PlayGetHitAnimation;
+            enemyHealth.onHit += PlayHitAnimation;
             enemyHealth.onDie += PlayDeathAnimation;
         }
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         if (enemyAI != null)
         {
@@ -50,7 +52,7 @@ public class EnemyAnimation : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            enemyHealth.onHit -= PlayGetHitAnimation;
+            enemyHealth.onHit -= PlayHitAnimation;
             enemyHealth.onDie -= PlayDeathAnimation;
         }
     }
@@ -72,36 +74,25 @@ public class EnemyAnimation : MonoBehaviour
         {
             animator.SetTrigger(anim.triggerName);
 
-            if (cyclopsAI != null && atkType == "ranged")
+            if (atkType == "ranged")
             {
-                cyclopsAI.OnAttackAnimationSet(anim.triggerName);
+                cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
+                evilMageAI?.OnAttackAnimationSet(anim.triggerName);
             }
         }
     }
 
-    public void PlayGetHitAnimation()
+    private void PlayHitAnimation()
     {
         animator.SetTrigger(GetHit);
     }
 
-    public void PlayDeathAnimation()
+    private void PlayDeathAnimation()
     {
         animator.SetTrigger(Die);
     }
 
-    // Animation event callbacks - được gọi từ animation timeline
-    public void OnAttackEnd()
-    {
-        enemyAI.OnAttackAnimationEnd();
-    }
-
-    public void OnGetHitEnd()
-    {
-        enemyAI.OnGetHitAnimationEnd();
-    }
-
-    public void OnDieEnd()
-    {
-        enemyHealth.OnDieAnimationEnd();
-    }
+    public void OnAttackEnd() => enemyAI.OnAttackAnimationEnd();
+    public void OnGetHitEnd() => enemyAI.OnGetHitAnimationEnd();
+    public void OnDieEnd() => enemyHealth.OnDieAnimationEnd();
 }

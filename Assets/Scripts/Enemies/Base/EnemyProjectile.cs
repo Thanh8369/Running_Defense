@@ -3,61 +3,60 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour
 {
-    private Transform target;
-    private float damage;
-    Vector3 direction;
-    private Vector3 nonHomingDirection;
-
     [Header("Settings")]
     [SerializeField] private bool useHoming = true;
     [SerializeField] private float lifetime = 5f;
     [SerializeField] private float projectileSpeed = 15f;
     [SerializeField] private float heightOffset = 1f;
 
+    private Transform target;
+    private float damage;
+    private Vector3 direction;
+    private Vector3 nonHomingDirection;
+    private bool isMoving = true;
+
     public void Initialize(Transform target, float damage, Vector3 fireDirection)
     {
         this.target = target;
         this.damage = damage;
+        transform.localScale = Vector3.one;
 
-        if (target != null)
-        {
-            if (!useHoming)
-            {
-                nonHomingDirection = fireDirection.normalized;
-            }
-        }
+        if (target != null && !useHoming)
+            nonHomingDirection = fireDirection.normalized;
 
         StartCoroutine(ReturnToPoolAfterLifetime());
     }
 
-    void Update()
+    public void StopMoving() => isMoving = false;
+    public void StartMoving() => isMoving = true;
+
+    private void Update()
     {
-        MoveProjectile();
+        if (isMoving)
+            MoveProjectile();
     }
 
-    void MoveProjectile()
+    private void MoveProjectile()
+    {
+        direction = GetDirection();
+        transform.position += direction * projectileSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.LookRotation(direction);
+    }
+
+    private Vector3 GetDirection()
     {
         if (useHoming && target != null)
         {
             Vector3 targetPos = target.position + Vector3.up * heightOffset;
-            direction = (targetPos - transform.position).normalized;
+            return (targetPos - transform.position).normalized;
         }
-        else
-        {
-            direction = nonHomingDirection;
-        }
-
-        float distance = projectileSpeed * Time.deltaTime;
-        transform.position += direction * distance;
-        transform.rotation = Quaternion.LookRotation(direction);
+        return nonHomingDirection;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (target != null && other.transform == target)
-        {
             target.GetComponent<IDamageable>()?.TakeDamage(damage);
-        }
 
         PoolManager.Instance.Return(gameObject);
     }
@@ -65,8 +64,6 @@ public class EnemyProjectile : MonoBehaviour
     private IEnumerator ReturnToPoolAfterLifetime()
     {
         yield return new WaitForSeconds(lifetime);
-
         PoolManager.Instance.Return(gameObject);
     }
-
 }

@@ -6,7 +6,7 @@ public enum AttackType { Melee, Ranged }
 
 public abstract class EnemyAI : MonoBehaviour
 {
-    public EnemyStats stats;
+    [SerializeField] public EnemyStats stats;
 
     protected Rigidbody rb;
     protected BTNode rootNode;
@@ -17,13 +17,11 @@ public abstract class EnemyAI : MonoBehaviour
     protected float currentFocusTime;
 
     private float lastAttackTime;
-
     protected bool isAttacking;
     protected bool isRotate;
     protected bool isDie = false;
     protected bool isHit = false;
 
-    // EVENTS
     public Action<bool> onMove;
     public Action<string> onAttack;
 
@@ -32,11 +30,10 @@ public abstract class EnemyAI : MonoBehaviour
         tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         rb = GetComponent<Rigidbody>();
-
         Initialize(stats);
     }
 
-    private void Initialize(EnemyStats stats)
+    protected virtual void Initialize(EnemyStats stats)
     {
         this.stats = stats;
         SetupBT();
@@ -45,23 +42,18 @@ public abstract class EnemyAI : MonoBehaviour
     protected virtual void Update()
     {
         if (isDie || isHit) return;
-
         rootNode?.Evaluate();
-
-        if (currentFocusTime > 0)
-            currentFocusTime -= Time.deltaTime;
+        if (currentFocusTime > 0) currentFocusTime -= Time.deltaTime;
     }
 
     protected abstract void SetupBT();
 
-    // MOVE TO TARGET
     protected BTNode.NodeState MoveToTarget(Transform target)
     {
-        if (target == null || isDie || isHit) 
+        if (target == null || isDie || isHit)
             return BTNode.NodeState.Failure;
 
         float dist = DistanceToTarget(target);
-
         if (isAttacking || dist <= stats.attackRange || isRotate)
         {
             onMove?.Invoke(false);
@@ -70,22 +62,17 @@ public abstract class EnemyAI : MonoBehaviour
 
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
-
         rb.MovePosition(transform.position + dir.normalized * stats.moveSpeed * Time.deltaTime);
-
         onMove?.Invoke(true);
-
         return BTNode.NodeState.Running;
     }
 
-    // ROTATE TO TARGET
     protected BTNode.NodeState RotateToTarget(Transform target)
     {
         if (target == null || isAttacking || isDie || isHit)
             return BTNode.NodeState.Failure;
 
         isRotate = true;
-
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
 
@@ -96,11 +83,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
 
         Quaternion targetRot = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.RotateTowards(
-            transform.rotation,
-            targetRot,
-            stats.rotateSpeed * Time.deltaTime
-        );
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, stats.rotateSpeed * Time.deltaTime);
 
         if (Vector3.Angle(transform.forward, dir) <= 5f)
         {
@@ -111,7 +94,6 @@ public abstract class EnemyAI : MonoBehaviour
         return BTNode.NodeState.Running;
     }
 
-    // ATTACK TARGET - Animation only
     protected BTNode.NodeState AttackTarget(Transform target)
     {
         if (target == null || !CanAttack() || isRotate || isDie || isHit)
@@ -119,15 +101,13 @@ public abstract class EnemyAI : MonoBehaviour
 
         isAttacking = true;
         currentTarget = target;
-
         string typeStr = attackType == AttackType.Melee ? "melee" : "ranged";
         onAttack?.Invoke(typeStr);
-
         lastAttackTime = Time.time;
         return BTNode.NodeState.Success;
     }
 
-    public void GetHit()
+    public virtual void GetHit()
     {
         isHit = true;
         isAttacking = false;
@@ -136,7 +116,7 @@ public abstract class EnemyAI : MonoBehaviour
         onMove?.Invoke(false);
     }
 
-    public void StopAI()
+    public virtual void StopAI()
     {
         isDie = true;
         isAttacking = false;
@@ -144,7 +124,6 @@ public abstract class EnemyAI : MonoBehaviour
         onMove?.Invoke(false);
     }
 
-    // HELPERS
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);
     protected bool CanAttack() => Time.time - lastAttackTime >= stats.attackCooldown;
     public void OnAttackAnimationEnd() => isAttacking = false;

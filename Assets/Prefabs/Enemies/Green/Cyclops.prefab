@@ -1052,14 +1052,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 97eb3882a2835ff48b01263ded4384fd, type: 2}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 2566685812432512602}
   attackMappings:
   - animationTriggerName: Attack01
     firePoint: {fileID: 2566685812432512602}
     projectileVariantIndex: 0
+    scaleUpDuration: 0
   - animationTriggerName: Attack02
     firePoint: {fileID: 8293379342167524343}
     projectileVariantIndex: 1
+    scaleUpDuration: 0
 --- !u!114 &8815406670224340183
 MonoBehaviour:
   m_ObjectHideFlags: 0

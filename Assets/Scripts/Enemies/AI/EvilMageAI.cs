@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CyclopsAI : RangedEnemyAI
+public class EvilMageAI : RangedEnemyAI
 {
     [SerializeField] private List<AnimationFirepointProjectileMap> attackMappings = new List<AnimationFirepointProjectileMap>();
     private AnimationFirepointProjectileMap currentAttackMapping;
+    private GameObject currentProjectile;
+    private float projectileScaleStartTime;
 
     public void OnAttackAnimationSet(string triggerName)
     {
@@ -35,13 +37,40 @@ public class CyclopsAI : RangedEnemyAI
 
         if (projData.prefab == null) return;
 
-        GameObject proj = PoolManager.Instance.Get(projData.prefab, currentAttackMapping.firePoint.position, currentAttackMapping.firePoint.rotation);
-        EnemyProjectile p = proj.GetComponent<EnemyProjectile>();
+        currentProjectile = PoolManager.Instance.Get(projData.prefab, currentAttackMapping.firePoint.position, currentAttackMapping.firePoint.rotation);
+        EnemyProjectile p = currentProjectile.GetComponent<EnemyProjectile>();
 
         if (p != null)
         {
             float finalDamage = projData.customDamage > 0 ? projData.customDamage : stats.attackDamage;
             p.Initialize(currentTarget, finalDamage, currentAttackMapping.firePoint.forward);
+            p.StopMoving();
+        }
+
+        if (currentAttackMapping.scaleUpDuration > 0)
+        {
+            currentProjectile.transform.localScale = Vector3.zero;
+            projectileScaleStartTime = Time.time;
+        }
+    }
+
+    public void LaunchCurrentProjectile()
+    {
+        if (currentProjectile == null) return;
+        EnemyProjectile p = currentProjectile.GetComponent<EnemyProjectile>();
+        p?.StartMoving();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (currentProjectile != null && currentProjectile.activeInHierarchy &&
+            currentAttackMapping != null && currentAttackMapping.scaleUpDuration > 0)
+        {
+            float elapsedTime = Time.time - projectileScaleStartTime;
+            float progress = Mathf.Clamp01(elapsedTime / currentAttackMapping.scaleUpDuration);
+            currentProjectile.transform.localScale = Vector3.one * (progress * currentAttackMapping.scaleUpMax);
         }
     }
 }

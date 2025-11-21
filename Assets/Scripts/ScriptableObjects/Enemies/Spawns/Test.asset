@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerTime: 0
   spawnInfos:
-  - enemy: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
+  - enemy: {fileID: 11400000, guid: 6cbd31872e029e84b8a413994ff2a06d, type: 2}
     count: 10
     minBatch: 1
-    maxBatch: 5
-    spawnDelay: 10
+    maxBatch: 2
+    spawnDelay: 0
     spawnHeightOffset: 0
