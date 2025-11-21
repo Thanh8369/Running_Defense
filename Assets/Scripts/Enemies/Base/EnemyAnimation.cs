@@ -11,20 +11,25 @@ public class EnemyAnimation : MonoBehaviour
     private EnemyAI enemyAI;
     private CyclopsAI cyclopsAI;
     private EvilMageAI evilMageAI;
+    private OrcAI orcAI;
+    private LizardWarriorAI lizardWarriorAI;
     private EnemyHealth enemyHealth;
 
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private static readonly int GetHit = Animator.StringToHash("GetHit");
     private static readonly int DefendGetHit = Animator.StringToHash("DefendGetHit");
     private static readonly int Die = Animator.StringToHash("Die");
+    private static readonly int IsHeal = Animator.StringToHash("IsHeal");
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<EnemyAI>();
+        enemyHealth = GetComponent<EnemyHealth>();
         cyclopsAI = GetComponent<CyclopsAI>();
         evilMageAI = GetComponent<EvilMageAI>();
-        enemyHealth = GetComponent<EnemyHealth>();
+        orcAI = GetComponent<OrcAI>();
+        lizardWarriorAI = GetComponent<LizardWarriorAI>();
     }
 
     private void OnEnable()
@@ -66,6 +71,12 @@ public class EnemyAnimation : MonoBehaviour
     {
         if (animationConfig == null) return;
 
+        if (atkType == "defend")
+        {
+            animator.SetTrigger("Defend");
+            return;
+        }
+
         EnemyAnimationData anim = atkType == "ranged"
             ? animationConfig.GetRandomAttack(animationConfig.rangedAttacks)
             : animationConfig.GetRandomAttack(animationConfig.meleeAttacks);
@@ -79,12 +90,30 @@ public class EnemyAnimation : MonoBehaviour
                 cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
                 evilMageAI?.OnAttackAnimationSet(anim.triggerName);
             }
+
+            if (atkType == "melee")
+            {
+                orcAI?.OnAttackAnimationSet(anim.triggerName);
+                lizardWarriorAI?.OnAttackAnimationSet(anim.triggerName);
+            }
         }
     }
 
     private void PlayHitAnimation()
     {
-        animator.SetTrigger(GetHit);
+        if (lizardWarriorAI != null && lizardWarriorAI.IsHealing())
+        {
+            animator.SetTrigger(DefendGetHit);
+        }
+        else
+        {
+            animator.SetTrigger(GetHit);
+        }
+    }
+
+    public void PlayHealAnimation(bool isHealing)
+    {
+        animator.SetBool(IsHeal, isHealing);
     }
 
     private void PlayDeathAnimation()

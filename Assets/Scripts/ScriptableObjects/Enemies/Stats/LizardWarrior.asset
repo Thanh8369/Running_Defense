@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Turtle
+  m_Name: LizardWarrior
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  moveSpeed: 2
-  rotateSpeed: 180
-  attackDamage: 2
+  maxHealth: 10000
+  moveSpeed: 15
+  rotateSpeed: 360
+  attackDamage: 10
   attackCooldown: 1
-  attackRange: 2
-  detectionRange: 5
+  attackRange: 4
+  detectionRange: 8
   minGold: 5
   maxGold: 15
   expAmount: 10
-  prefab: {fileID: 1275755912302449940, guid: 89f8321f9fe58e74c97c9e109b47814e, type: 3}
+  prefab: {fileID: 1894462108528737659, guid: dc205721daded154d9a2bd51b910b3e5, type: 3}
   projectilePrefabs: []
