@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 1
   currentExp: 0
-  baseExpToLevelUp: 10
+  baseExpToLevelUp: 100
   expGrowthPerLevel: 0.2
 --- !u!4 &590830076
 Transform:

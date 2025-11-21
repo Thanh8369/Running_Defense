@@ -1456,6 +1456,7 @@ GameObject:
   - component: {fileID: 2435622127326402695}
   - component: {fileID: 956453476550511475}
   - component: {fileID: 6409772834478733015}
+  - component: {fileID: 6678017348215182335}
   m_Layer: 0
   m_Name: BattleBee
   m_TagString: Enemy
@@ -1567,8 +1568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5748faafb6444d8fb5520daddd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGold: 5
-  maxGold: 15
   logOnDrop: 0
 --- !u!114 &956453476550511475
 MonoBehaviour:
@@ -1597,3 +1596,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+--- !u!136 &6678017348215182335
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176174925602817712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.61833745
+  m_Height: 1.5402471
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.2498765, z: 0.11833742}

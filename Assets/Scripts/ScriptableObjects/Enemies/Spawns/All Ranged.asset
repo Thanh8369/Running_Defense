@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
   m_Name: All Ranged
   m_EditorClassIdentifier: 
-  prepareTime: 0
-  enemyGroups:
-  - enemyStats: {fileID: 11400000, guid: 21cf37e4b28b66e4990c2c9b7c89b655, type: 2}
-    count: 10
+  triggerTime: 0
+  spawnInfos:
+  - enemy: {fileID: 11400000, guid: a14cb98b85a2c374aa4884dddee84b98, type: 2}
+    count: 5
+    minBatch: 1
+    maxBatch: 2
     spawnDelay: 0
     spawnHeightOffset: 0
-  - enemyStats: {fileID: 11400000, guid: 935f87d7f62b4b642a3c45fe291022cd, type: 2}
-    count: 10
+  - enemy: {fileID: 11400000, guid: 3afe874cae22b5246ac24cffce6e9a9e, type: 2}
+    count: 5
+    minBatch: 1
+    maxBatch: 2
     spawnDelay: 0
     spawnHeightOffset: 0
