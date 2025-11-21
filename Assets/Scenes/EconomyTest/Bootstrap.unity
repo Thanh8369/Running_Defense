@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 364761036}
   - component: {fileID: 364761035}
   - component: {fileID: 364761037}
-  - component: {fileID: 364761038}
   m_Layer: 0
   m_Name: WalletManager
   m_TagString: Untagged
@@ -318,22 +317,6 @@ MonoBehaviour:
   wallet: {fileID: 364761035}
   spawnPoint: {fileID: 0}
   unitsParent: {fileID: 0}
---- !u!114 &364761038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364761034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb212b6a33adc2b4dbebb18421a59739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLevel: 1
-  currentExp: 0
-  baseExpToLevelUp: 10
-  expGrowthPerLevel: 0.2
 --- !u!1 &590830074
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d85b83c729f13e4f93ce2e7d93cd0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCanvas: {fileID: 0}
+  popupCanvas: {fileID: 0}
   goldPopupPrefab: {fileID: 4451450121018361749, guid: 87178da8a43856c45bc22fae33f86f7b, type: 3}
   worldCamera: {fileID: 0}
 --- !u!4 &1697984905

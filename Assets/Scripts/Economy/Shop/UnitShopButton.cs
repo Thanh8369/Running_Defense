@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;   // thêm dòng này
 
 namespace Son.Economy
 {
@@ -24,6 +25,10 @@ namespace Son.Economy
 
         [Header("Button mua (thường là Button con của buttonOn)")]
         public Button buyButton;
+
+        [Header("Hiển thị giá tiền")]
+        [Tooltip("Text hiển thị cost lấy từ config (VD: 100).")]
+        public TMP_Text costText;
 
         private UnitPurchaseService _service;
         private WalletManager _wallet;
@@ -101,7 +106,36 @@ namespace Son.Economy
                 SetAvatarActive(false);
                 SetButtonStates(false, false, 0f);
                 SetInteractable(false);
+
+                // clear text nếu không có item
+                if (costText != null)
+                    costText.text = "";
+
+                // clear sprite avatar nếu muốn
+                if (avatar != null)
+                {
+                    var img = avatar.GetComponent<Image>();
+                    if (img != null) img.sprite = null;
+                }
+
                 return;
+            }
+
+            // Cập nhật sprite avatar từ config.icon
+            if (avatar != null)
+            {
+                var img = avatar.GetComponent<Image>();
+                if (img != null)
+                {
+                    img.sprite = item.icon;
+                }
+            }
+
+            // Cập nhật text giá từ config
+            if (costText != null)
+            {
+                costText.text = item.cost.ToString();
+                // hoặc nếu muốn: costText.text = $"{item.cost} {item.currency}";
             }
 
             bool enoughMoney = _wallet != null && _wallet.HasEnough(item.currency, item.cost);
