@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3800994129594634332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527154934603658553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_fin01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641799301879782984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1038629447372552946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1407976922097379135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_mouthHorn01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877896190755452334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerMouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6521030879273724456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3091275995128666980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5333467480390246012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6306904281833060300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2707445258401962238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5453462017476194580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489312021938417162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4890098799084999239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_eyeHornLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2665274111996037656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7961760675325350062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7799098498189619713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992452068979289731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6917401530655730692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997232176563122407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_toeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8536786230482174782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_eyeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6112440107489360835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_mouthHorn02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2946648883372110126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576503684914588131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 399393905160112028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_tail03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221271166876584789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1070740298294900630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_eyeHornRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4859852899842721148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_tail01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2689322079166184943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerMouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4163794187120383265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6211515254575399985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_mouthHorn01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875061455692977890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_toeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,7 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8853256994172129095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8108336262375272115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1667460528242705883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6444593150412886301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2741051264355479271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_fin04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4653874745609506864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4147324219649675131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1263,7 +1263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7132352314748212202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_eyeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6584443508663515417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8336722924352236219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_tail02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,7 +1358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 765999065627145399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206714316008442632}
   - component: {fileID: 1319229990481099771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fishman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,7 +1543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083052664953139478}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_feetLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8383957719015493022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_thumb02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 3357824354525149596}
   - component: {fileID: 3370887102990987353}
   - component: {fileID: 4241935722104000590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Harpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,7 +1693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5890259652209451591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1724,7 +1724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4164593626126055299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_fin03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1755,7 +1755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3518573916525126039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_index01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,7 +1787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001803872957829302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8461887808848661932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_mouthHorn02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,7 +1850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3444496296715157710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 294383911093415663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_fin02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1912,7 +1912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7056951013903243509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +1943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 987756801784941414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperMouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1974,7 +1974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5113922324932869945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2006,7 +2006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5163948003400054150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_lowerMouth03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2039,7 +2039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5099749079307462622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_pinky03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2070,7 +2070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8709433734321255067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2102,7 +2102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6031983496775622700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_middle01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2134,7 +2134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7788474287531068358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2166,7 +2166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5322635705859908142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_feetRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2198,7 +2198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3601002570079740740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4466189846528314767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_harppon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2262,7 +2262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8736973800180225382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_upperMouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857498715989477636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fishman_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2335,7 @@ GameObject:
   - component: {fileID: 3316063314058968577}
   - component: {fileID: 8421600272543672060}
   - component: {fileID: 864493528946043712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fishman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2446,8 +2446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5748faafb6444d8fb5520daddd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGold: 5
-  maxGold: 15
   logOnDrop: 0
 --- !u!114 &8421600272543672060
 MonoBehaviour:
