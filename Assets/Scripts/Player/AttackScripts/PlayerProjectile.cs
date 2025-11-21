@@ -26,7 +26,7 @@ public class PlayerProjectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             //takedamage(damage)
-            //GetComponent<EnemyHealth>().TakeDamage(playerDamage.damage);
+            GetComponent<EnemyHealth>().TakeDamage(playerDamage.damage);
             ArrowObjectPool.Instance.ReturnObject(gameObject);
             //Debug.Log("hit");
         }
