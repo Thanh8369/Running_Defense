@@ -3,11 +3,8 @@ using System.Collections.Generic;
 
 public class GuardAI : MonoBehaviour
 {
-    // ========================
-    //        VARIABLES
-    // ========================
     public TowerArea tower;
-    public Transform guardPoint;
+
     public float moveSpeed = 3f;
     public float rotateSpeed = 10f;
     public float attackRange = 2f;
@@ -17,31 +14,22 @@ public class GuardAI : MonoBehaviour
     private Transform target;
     private float nextAttack;
 
-    // Mục tiêu bị khóa khi đang Attack
     private Transform lockedTarget = null;
-
-    // Behavior tree root node
     private BTNode root;
 
-    // ========================
-    //        START
-    // ========================
     void Start()
     {
         guardAnim = GetComponent<GuardAnimation>();
         BuildBehaviorTree();
     }
 
-    // ========================
-    //        UPDATE
-    // ========================
     void Update()
     {
-        // Nếu đang attack → KHÔNG CHO AI chạy logic DI CHUYỂN HAY ĐỔI TARGET
+        // Nếu đang attack → không xử lý AI di chuyển
         if (guardAnim.isAttacking)
             return;
 
-        // Nếu animation attack đã xong → bỏ locked target
+        // Attack xong thì mở khóa target
         if (lockedTarget != null && !guardAnim.isAttacking)
             lockedTarget = null;
 
@@ -49,12 +37,12 @@ public class GuardAI : MonoBehaviour
         root.Evaluate();
     }
 
-    // ========================
-    //     UPDATE TARGET
-    // ========================
+    // =================================================================
+    // TÌM TARGET
+    // =================================================================
     void UpdateTarget()
     {
-        // Nếu đang khóa mục tiêu → không đổi target
+        // Nếu đang khóa target khi đánh → không đổi target
         if (lockedTarget != null)
             return;
 
@@ -66,17 +54,15 @@ public class GuardAI : MonoBehaviour
             return;
         }
 
-        // Nếu target đang trống hoặc không còn trong queue → chọn target đầu tiên
         if (target == null || !tower.enemyQueue.Contains(target))
             target = tower.enemyQueue[0];
     }
 
-    // ========================
-    //          MOVE
-    // ========================
+    // =================================================================
+    // DI CHUYỂN
+    // =================================================================
     void MoveTo(Vector3 pos)
     {
-        // Chặn di chuyển khi đang attack
         if (guardAnim.isAttacking)
         {
             guardAnim.SetMoving(false);
@@ -85,7 +71,6 @@ public class GuardAI : MonoBehaviour
 
         guardAnim.SetMoving(true);
 
-        // Xoay mượt về hướng đi
         Vector3 dir = (pos - transform.position).normalized;
         dir.y = 0;
 
@@ -98,7 +83,6 @@ public class GuardAI : MonoBehaviour
             );
         }
 
-        // Di chuyển
         transform.position = Vector3.MoveTowards(
             transform.position,
             pos,
@@ -106,23 +90,18 @@ public class GuardAI : MonoBehaviour
         );
     }
 
-    // ========================
-    //         ATTACK
-    // ========================
+    // =================================================================
+    // ATTACK
+    // =================================================================
     void Attack()
     {
-        if (Time.time < nextAttack)
-            return;
+        if (Time.time < nextAttack) return;
 
-        // ------------------------------
-        // KHÓA TARGET TRONG SUỐT ANIMATION
-        // ------------------------------
-        lockedTarget = target;
+        lockedTarget = target; // khóa target khi animation attack
 
-        // CHẠY ANIMATION
         guardAnim.PlayAttack();
 
-        // Xoay về target 1 lần khi bắt đầu attack
+        // Xoay mặt về enemy khi bắt đầu attack
         if (target != null)
         {
             Vector3 dir = target.position - transform.position;
@@ -135,37 +114,34 @@ public class GuardAI : MonoBehaviour
         nextAttack = Time.time + attackCooldown;
     }
 
-    // ========================
-    //     BUILD BEHAVIOR TREE
-    // ========================
+    // =================================================================
+    // BEHAVIOR TREE
+    // =================================================================
     void BuildBehaviorTree()
     {
-        // ---- ATTACK ----
+        // ---------------- ATTACK ----------------
         var attackSequence = new BTSequence(new List<BTNode>
         {
             new BTCondition(() => target != null),
             new BTCondition(() => tower.enemyQueue.Contains(target)),
-            new BTCondition(() =>
-            {
-                float dist = Vector3.Distance(transform.position, target.position);
-                return dist <= attackRange;
-            }),
+            new BTCondition(() => Vector3.Distance(transform.position, target.position) <= attackRange),
+
             new BTAction(() =>
             {
                 guardAnim.SetMoving(false);
-                Attack(); // <-- KHÓA TARGET + PLAY ANIM
+                Attack();
                 return BTNode.NodeState.Success;
             })
         });
 
-        // ---- CHASE ----
+        // ---------------- CHASE ----------------
         var chaseSequence = new BTSequence(new List<BTNode>
         {
             new BTCondition(() => target != null),
             new BTCondition(() => tower.enemyQueue.Contains(target)),
+
             new BTAction(() =>
             {
-                // Không chase khi attack
                 if (guardAnim.isAttacking)
                     return BTNode.NodeState.Running;
 
@@ -179,36 +155,19 @@ public class GuardAI : MonoBehaviour
             })
         });
 
-        // ---- RETURN ----
-        var returnToGuard = new BTAction(() =>
+        // ---------------- IDLE (KHÔNG CÓ TARGET) ----------------
+        var idleNode = new BTAction(() =>
         {
-            if (guardPoint == null) return BTNode.NodeState.Failure;
-
-            if (guardAnim.isAttacking)
-                return BTNode.NodeState.Running;
-
-            float dist = Vector3.Distance(transform.position, guardPoint.position);
-
-            if (dist < 0.5f)
-            {
-                guardAnim.SetMoving(false);
-                return BTNode.NodeState.Success;
-            }
-
-            MoveTo(guardPoint.position);
-            return BTNode.NodeState.Running;
+            guardAnim.SetMoving(false);
+            return BTNode.NodeState.Success;
         });
 
+        // ---------------- ROOT ----------------
         root = new BTSelector(new List<BTNode>
         {
             attackSequence,
             chaseSequence,
-            returnToGuard
+            idleNode
         });
     }
-
-    // ==========================================
-    //   CALLED BY ANIMATION EVENT (END ATTACK)
-    // ==========================================
- 
 }
