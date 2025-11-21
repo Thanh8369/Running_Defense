@@ -1651,6 +1651,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3411877491978835523}
   - component: {fileID: 1598673445717331424}
+  - component: {fileID: 6203283133641693001}
   m_Layer: 5
   m_Name: ImgTroop (2)
   m_TagString: Untagged
@@ -1689,6 +1690,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888225081341581418}
   m_CullTransparentMesh: 1
+--- !u!114 &6203283133641693001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888225081341581418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3016dfb7f32f41bcda9d8e4701335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8a4c64d6a9638b24c80e2508dd0370c6, type: 2}
+  avatar: {fileID: 4543454133722624090}
+  buttonOn: {fileID: 2613258723031371119}
+  buttonOff: {fileID: 3899234174064143040}
+  buyButton: {fileID: 30718003454108971}
 --- !u!1 &939449037827483892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,6 +1928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966405042878654492}
   - component: {fileID: 4802413688135702411}
+  - component: {fileID: 9105765557383701978}
   m_Layer: 5
   m_Name: ImgTroop (4)
   m_TagString: Untagged
@@ -1948,6 +1967,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980896282192958948}
   m_CullTransparentMesh: 1
+--- !u!114 &9105765557383701978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980896282192958948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3016dfb7f32f41bcda9d8e4701335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8a4c64d6a9638b24c80e2508dd0370c6, type: 2}
+  avatar: {fileID: 6773875128094182686}
+  buttonOn: {fileID: 7354124800504922467}
+  buttonOff: {fileID: 4099071603949707193}
+  buyButton: {fileID: 601688345625289826}
 --- !u!1 &1176742569521426384
 GameObject:
   m_ObjectHideFlags: 0
@@ -6854,6 +6890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330601344033044366}
   - component: {fileID: 2989512870710837105}
+  - component: {fileID: 383305013670920098}
   m_Layer: 5
   m_Name: ImgTroop (1)
   m_TagString: Untagged
@@ -6892,6 +6929,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4149709336025509445}
   m_CullTransparentMesh: 1
+--- !u!114 &383305013670920098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4149709336025509445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3016dfb7f32f41bcda9d8e4701335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8a4c64d6a9638b24c80e2508dd0370c6, type: 2}
+  avatar: {fileID: 7455113307323020842}
+  buttonOn: {fileID: 2724734293811632582}
+  buttonOff: {fileID: 120715165979486107}
+  buyButton: {fileID: 1700197718947439595}
 --- !u!1 &4185839118446280797
 GameObject:
   m_ObjectHideFlags: 0
@@ -11832,6 +11886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6592798984524605135}
   - component: {fileID: 6440791266748227125}
+  - component: {fileID: 9139101606227134248}
   m_Layer: 5
   m_Name: ImgTroop
   m_TagString: Untagged
@@ -11870,6 +11925,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7581674456980565511}
   m_CullTransparentMesh: 1
+--- !u!114 &9139101606227134248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581674456980565511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3016dfb7f32f41bcda9d8e4701335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8a4c64d6a9638b24c80e2508dd0370c6, type: 2}
+  avatar: {fileID: 8015596993597103753}
+  buttonOn: {fileID: 3778866944237904662}
+  buttonOff: {fileID: 20643778070195025}
+  buyButton: {fileID: 6799256407203683170}
 --- !u!1 &7606132704989233190
 GameObject:
   m_ObjectHideFlags: 0
@@ -12152,6 +12224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6860668465352399922}
   - component: {fileID: 9028776265583340882}
+  - component: {fileID: 5627033164733258902}
   m_Layer: 5
   m_Name: ImgTroop (3)
   m_TagString: Untagged
@@ -12190,6 +12263,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7676124485793907645}
   m_CullTransparentMesh: 1
+--- !u!114 &5627033164733258902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676124485793907645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25f3016dfb7f32f41bcda9d8e4701335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 8a4c64d6a9638b24c80e2508dd0370c6, type: 2}
+  avatar: {fileID: 2502721094802655162}
+  buttonOn: {fileID: 6685242588307677817}
+  buttonOff: {fileID: 8544181702144200012}
+  buyButton: {fileID: 1983981732372192697}
 --- !u!1 &7738854548293175213
 GameObject:
   m_ObjectHideFlags: 0
