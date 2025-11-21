@@ -6,6 +6,7 @@ public class testAutoarrow : MonoBehaviour
      
     public GameObject projectilePrefab;
     public Transform firePoint;
+    private float detectionRange = 15f;
 
     private float shootTimer = 0f;
 
@@ -34,7 +35,7 @@ public class testAutoarrow : MonoBehaviour
         {
             float dist = Vector3.Distance(enemy.transform.position, currentPos);
 
-            if (dist < minDistance && dist <= playerData.detectionRange)
+            if (dist < minDistance && dist <= detectionRange)
             {
                 minDistance = dist;
                 closest = enemy;

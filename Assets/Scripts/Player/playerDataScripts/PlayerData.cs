@@ -4,5 +4,4 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     public float shootInterval;
-    public float detectionRange;
 }

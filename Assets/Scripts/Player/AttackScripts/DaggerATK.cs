@@ -11,8 +11,9 @@ public class DaggerATK : MonoBehaviour
     public Transform throwPoint;
     public float daggerVel;
     List<Quaternion> daggers;
-
-    private float shootInterval = 2;
+    //Atk speed
+    public PlayerData playerData;
+    
 
     private float shootTimer = 0f;
     private void Awake()
@@ -27,7 +28,7 @@ public class DaggerATK : MonoBehaviour
      void Update()
     {
         shootTimer += Time.deltaTime;
-        if ( shootTimer >= shootInterval)
+        if ( shootTimer >= playerData.shootInterval)
         {
             ThrowDagger();
             shootTimer = 0f;
