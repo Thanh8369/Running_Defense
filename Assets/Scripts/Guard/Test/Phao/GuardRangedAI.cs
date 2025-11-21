@@ -22,6 +22,12 @@ public class GuardRangedAI: MonoBehaviour
     void Start()
     {
         wheelController = GetComponent<WheelRotation>();
+        if (tower == null)
+        {
+            tower = FindObjectOfType<TowerArea>();
+            if (tower == null)
+                Debug.LogError("Không tìm thấy TowerArea trong scene!");
+        }
     }
 
     void Update()

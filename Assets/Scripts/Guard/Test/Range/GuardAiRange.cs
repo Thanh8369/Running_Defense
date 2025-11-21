@@ -24,6 +24,14 @@ public class GuardAiRange : MonoBehaviour
     void Start()
     {
         animController = GetComponent<GuardAnimation>();
+        if (tower == null)
+        {
+            tower = FindObjectOfType<TowerArea>();
+            if (tower == null)
+                Debug.LogError("Không tìm thấy TowerArea trong scene!");
+        }
+
+     
     }
 
     void Update()

@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public float lifeTime = 3f;
-    public float damage = 50f;    // Damage bạn muốn
+    public float damage = 50f;
 
     private Vector3 direction;
 
@@ -21,19 +21,22 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Kiểm tra có IDamageable hay không
+        // Tìm IDamageable ở cả object và parent (GIẢI QUYẾT COLLIDER Ở CHILD)
         IDamageable dmg = other.GetComponent<IDamageable>();
+        if (dmg == null)
+            dmg = other.GetComponentInParent<IDamageable>();
+
         if (dmg != null)
         {
-            dmg.TakeDamage(damage);   // 🔥 Gây dame đúng hệ thống
+            dmg.TakeDamage(damage);
             Destroy(gameObject);
             return;
         }
 
-        // Nếu không có IDamageable nhưng có tag Enemy → fallback
+        // Nếu enemy có tag nhưng không có script health
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy FOUND but missing IDamageable → " + other.name);
+            Debug.LogWarning("Enemy FOUND but missing IDamageable: " + other.name);
             Destroy(gameObject);
         }
     }

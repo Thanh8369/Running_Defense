@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031869992267753984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145290866231792859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452353856635966484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn04Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005847775488614383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8253065448505253978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn04Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3825507795814559631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_tail03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 949720606065665393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7994929210264048019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_tail05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675346417024006001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7995415787985955588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4247604773811509569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2904256601320341676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_tail04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8574145184675260908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_pin01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5577680257391315828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3038675660916497268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_rib02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8346583315045343261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing04Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727728220257513448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4224308315989072460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_pin03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50846149549858221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_rib02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7540339562776774458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3148497203859827192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6830387317008400759}
   - component: {fileID: 4513734755157026707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StingRayPADefault
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529167738456410169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_chin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4602556844172205996}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9059037305181135859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6930094063289196814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_tail01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 302226144557439259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing02Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,7 +895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8105043516845596488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_pin02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021578219535154644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_lowerMouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3898951184868225095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6694540641682636286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6363175366614870637}
   - component: {fileID: 3349352724844798150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stingray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7251442905042268243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_lowerMouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8708416498374992302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_tail02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5984698469658102946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4532946097621885682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2514708943756037242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_upperMouth02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8015378988558612856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_rib01Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2216669308712804204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_upperMouth01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,7 +1378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7661284138530514442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4205994177905787934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5211480697997900046}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_horn03Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1478,7 +1478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6260522042561422063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_underWing03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5891362380477693990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_rib01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 553216823897676287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: stingRay_wing04Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

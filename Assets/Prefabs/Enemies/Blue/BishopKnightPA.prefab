@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6262389793279332130}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_Skirt01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143779061502211677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_neck01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5528532877314270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_upperArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4433489431568718037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_index02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9203174907530761984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_lowerArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4923115742064668755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 5788285283747276573}
   - component: {fileID: 1628383722360951010}
   - component: {fileID: 4722176470193116440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bishop_Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 966611291930774264}
   - component: {fileID: 7366536917585224363}
   - component: {fileID: 6412819119754859886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bishop_Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108362758090056350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4912405316451435107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_Skirt02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3985172651831669947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4891082119427799504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_middle03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6027365555568714760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_SkirtRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4901838737714027275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8787807534391470851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_thumb03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952644050219877336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7609865480034863675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8085244629225511081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_ring03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5810580716730417933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_Skirt03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083527682119462625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_SkirtRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546430519938986814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_index03Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7054886367668063748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_middle01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,7 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3961458043268520093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_lowerArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2722907745111664597}
   - component: {fileID: 1999062007317022973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bishop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833872214319886713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_index01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1008,7 +1008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487413809818440182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_ring01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6790209800032122428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4162918587510608659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_upperArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3792379053190789845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_SkirtFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8837836947927046002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_SkirtLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4545506443914779430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_neck02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046339932884281230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_thumb02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4927107927504745813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_ring02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410422798791414162}
   - component: {fileID: 4151077472586286098}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BishopKnightPA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7284522698666276451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_neck03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8644610712602401456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_middle02Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 808044519177837022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7171190701175570377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_thumb01Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207776243655559559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bishopKnight_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

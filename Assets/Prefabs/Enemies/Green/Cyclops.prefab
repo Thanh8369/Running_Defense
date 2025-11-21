@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7817826439550574172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_toeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394291929485864915}
   - component: {fileID: 5905841023194169751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cyclops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2709377230620924656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_feetRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2729578165806980569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4760423443652164909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4314795228945468661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764309405821266090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9029018186399568154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_headBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772593203359154254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542048550161860828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handTipLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678757370263373891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handTipRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630204394223283394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2632015610976292059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7646825256128134492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 947659905214410530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979422991832591939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_bigArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3054319376443276873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8531245565890763992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_eyeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8293379342167524343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2566685812432512602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821355441810235902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5339429724559398677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_feetLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3219168254885636914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255313100020893136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8654670666044563444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_toeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040070280985870673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525906649734429492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 2434346411109836074}
   - component: {fileID: 578593361209420867}
   - component: {fileID: 5885424207904886408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cyclops
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6759720600602786069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1154,7 +1154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940396584228230082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_headTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7705343566027825749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805832415933211619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1660029044221886078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_eyeRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4791674956537300991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103207786147543856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1350,7 +1350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9199913093909878972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,7 +1381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2194077166048446008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 835687516321864294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
