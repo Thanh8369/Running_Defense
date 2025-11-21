@@ -41,6 +41,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (damage <= 0 || isDead) return;
 
+        Debug.LogWarning("enemy ăn dmg");
+
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         GetComponent<DamagePopupReceiver>()?.ShowDamage(damage, transform.position);

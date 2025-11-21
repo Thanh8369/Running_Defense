@@ -1,48 +1,21 @@
 ﻿using System;
 using UnityEngine;
-using Son.Economy;   // <- thêm dòng này để dùng DeathPanelController
 
 public class Health : MonoBehaviour, IDamageable
 {
+    //[SerializeField] private int _maxHealth = 100;
     public PlayerHpData playerHpData;
     public float MaxHealth => playerHpData._maxHealth;
     public float CurrentHealth { get; private set; }
 
-    /// <summary>
-    /// float current, float max
-    /// </summary>
     public event Action<float, float> OnHealthChanged;
-
-    /// <summary>
-    /// Gọi khi chết
-    /// </summary>
     public event Action OnDeath;
-
-    private void Update()
-    {
-        // Test: nhấn P để chết ngay
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TakeDamage(CurrentHealth); // trừ hết máu
-        }
-    }
 
     private void Awake()
     {
         CurrentHealth = playerHpData._maxHealth;
         OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
         Debug.Log($"[Health] Awake, HP = {CurrentHealth}/{playerHpData._maxHealth}");
-    }
-
-    private void OnEnable()
-    {
-        // Khi Health này chết → gọi HandleDeath()
-        OnDeath += HandleDeath;
-    }
-
-    private void OnDisable()
-    {
-        OnDeath -= HandleDeath;
     }
 
     public void TakeDamage(float damage)
@@ -59,7 +32,7 @@ public class Health : MonoBehaviour, IDamageable
         if (CurrentHealth <= 0)
         {
             Debug.Log("[Health] Dead");
-            OnDeath?.Invoke();   // bắn event chết
+            OnDeath?.Invoke();
         }
     }
 
@@ -72,26 +45,13 @@ public class Health : MonoBehaviour, IDamageable
     }
 
     /// <summary>
-    /// Hàm xử lý khi chết: hiện Death Panel
+    /// Dùng cho revive: set thẳng máu về full, kể cả khi đang = 0.
+    /// Chỉ DeathController của tower gọi hàm này.
     /// </summary>
-    private void HandleDeath()
+    public void ReviveToFull()
     {
-        Debug.Log("[Health] HandleDeath -> Show DeathPanel");
-
-        if (DeathPanelController.Instance != null)
-        {
-            DeathPanelController.Instance.Show();
-        }
-        else
-        {
-            Debug.LogWarning("[Health] Không tìm thấy DeathPanelController.Instance trong scene!");
-        }
-    }
-
-    public void Revive()
-    {
-        var health = GetComponent<Health>();
-        health.Heal(health.MaxHealth);
-        // bật lại movement, AI... nếu có
+        CurrentHealth = playerHpData._maxHealth;
+        Debug.Log($"[Health] ReviveToFull, HP = {CurrentHealth}/{playerHpData._maxHealth}");
+        OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
     }
 }
