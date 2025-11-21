@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 4997791737329805034}
   - component: {fileID: 3404353807205841927}
   - component: {fileID: 3515986901510856752}
+  - component: {fileID: 1059964691668408620}
   m_Layer: 6
   m_Name: Spider
   m_TagString: Enemy
@@ -322,6 +323,7 @@ Transform:
   m_Children:
   - {fileID: 5304842995531887922}
   - {fileID: 4949567028234952549}
+  - {fileID: 673789249644924710}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6384461833603273076
@@ -412,8 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5748faafb6444d8fb5520daddd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minGold: 5
-  maxGold: 15
   logOnDrop: 0
 --- !u!114 &3404353807205841927
 MonoBehaviour:
@@ -442,6 +442,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+--- !u!114 &1059964691668408620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163258782654741772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82abb3ade006e4445a929964a09590b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _popupAnchor: {fileID: 673789249644924710}
 --- !u!1 &3187946183893302428
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +659,37 @@ Transform:
   - {fileID: 5936773752464825355}
   m_Father: {fileID: 5304842995531887922}
   m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 139.20396}
+--- !u!1 &4305810582272892135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673789249644924710}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &673789249644924710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4305810582272892135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.073, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 279275853645224832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4661496615725790495
 GameObject:
   m_ObjectHideFlags: 0

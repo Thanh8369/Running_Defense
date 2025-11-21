@@ -14,11 +14,6 @@ public class GuardAnimation : MonoBehaviour
         originalConstraints = rb.constraints;
     }
 
-    void Update()
-    {
-        // không dùng attackTimer nữa!
-    }
-
     public void SetMoving(bool moving)
     {
         if (isAttacking)
@@ -39,15 +34,16 @@ public class GuardAnimation : MonoBehaviour
         anim.SetTrigger("Attack");
         anim.SetBool("IsMoving", false);
 
+        // Freeze toàn bộ khi tấn công
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    // 🔥 Animation Event tại cuối Animation Attack
+    // Gọi từ Animation Event cuối attack
     public void OnAttackEnd()
     {
         isAttacking = false;
 
-        // mở lại chuyển động
+        // Mở khóa chuyển động lại
         rb.constraints = originalConstraints;
     }
 }
