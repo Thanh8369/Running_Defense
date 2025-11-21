@@ -2,19 +2,19 @@ using UnityEngine;
 
 public class FlyingDagger : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float rotateSpeed = 10f;
+    Rigidbody rb;
 
-    private void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
+
     void FixedUpdate()
     {
         if (rb.linearVelocity.sqrMagnitude > 0.01f)
         {
-            var targetRot = Quaternion.LookRotation(rb.linearVelocity.normalized);
-            rb.MoveRotation(Quaternion.Lerp(rb.rotation, targetRot, rotateSpeed * Time.fixedDeltaTime));
+            Quaternion target = Quaternion.LookRotation(rb.linearVelocity);
+            rb.MoveRotation(Quaternion.Lerp(rb.rotation, target, Time.fixedDeltaTime * 10f));
         }
     }
 }

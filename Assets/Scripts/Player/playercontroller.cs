@@ -6,7 +6,8 @@ using System.Collections;
 public class playercontroller : MonoBehaviour
 {
     //dash eff
-    //[SerializeField] private TrailRenderer tr;
+    public TrailRenderer dashTrail;
+
 
     public NavMeshAgent agent;
     private Animator animator;
@@ -27,7 +28,10 @@ public class playercontroller : MonoBehaviour
     {
         //tr.emitting = false;
         originalSpeed = agent.speed;
-        animator = GetComponent<Animator>();  
+        animator = GetComponent<Animator>();
+
+        if (dashTrail != null)
+            dashTrail.emitting = false;
         // editor = manual rotat, mobile = auto rotat
         if (Application.isEditor)
             agent.updateRotation = false;
@@ -65,13 +69,10 @@ public class playercontroller : MonoBehaviour
 
             ////////
             RotatePlayer(movement);
-
-            // Set speed for movement animation
             animator.SetFloat("Speed", 1);  
         }
         else
         {
-            // If not moving, set speed to 0 for idle animation
             animator.SetFloat("Speed", 0);
         }
 
@@ -125,23 +126,30 @@ public class playercontroller : MonoBehaviour
     {
         if (isDashing) yield break;
         isDashing = true;
-        //tr.emitting = true;
+
+        // ENABLE TRAIL
+        if (dashTrail != null)
+            dashTrail.enabled = true;
+
         agent.speed = originalSpeed * dashSpeedMultiplier;
 
-        // Dash in the direction of the target point
         Vector3 direction = (targetPoint - transform.position).normalized;
         Vector3 dashTarget = transform.position + direction * dashDistance;
+
         agent.SetDestination(dashTarget);
 
-        // Trigger Dash animation
         animator.SetTrigger("rolling");
 
+        // Wait for dash duration
         yield return new WaitForSeconds(dashDuration);
 
         agent.speed = originalSpeed;
         isDashing = false;
-        //tr.emitting = false;
-        // After dashing, set speed back to 0 for idle animation
+
+        // DISABLE TRAIL
+        if (dashTrail != null)
+            dashTrail.enabled = false;
+
         animator.SetFloat("Speed", 0);
     }
 }
