@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c03ce9e7c1fdd348a22e6c5cc476293, type: 3}
   m_Name: Wizzard
   m_EditorClassIdentifier: 
-  id: 
-  displayName: 
+  id: 3
+  displayName: Wizzard
   description: 
-  icon: {fileID: 0}
-  unitPrefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: 165593218ec9a3844bfbc120324d78fe, type: 3}
+  unitPrefab: {fileID: 3826728684629958318, guid: 50015193bce6ab74091be21f7767bb90, type: 3}
   currency: 0
   cost: 100
   maxAliveAtOnce: 0

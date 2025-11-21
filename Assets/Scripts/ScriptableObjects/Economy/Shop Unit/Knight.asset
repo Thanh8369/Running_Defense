@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c03ce9e7c1fdd348a22e6c5cc476293, type: 3}
-  m_Name: Swordman
+  m_Name: Knight
   m_EditorClassIdentifier: 
-  id: 2
-  displayName: Warrior
+  id: 4
+  displayName: Knight
   description: 
-  icon: {fileID: 21300000, guid: cdd0561d88c101841a3f766b0395457a, type: 3}
-  unitPrefab: {fileID: 797953525358258463, guid: 2a9febe60e5ee2547aecf1d30a052ec6, type: 3}
+  icon: {fileID: 21300000, guid: 3d991989d69a53146a0d921350d265dc, type: 3}
+  unitPrefab: {fileID: 7932548676346558220, guid: 41fd8b1e1bd27de469a932b1adcfe895, type: 3}
   currency: 0
   cost: 100
   maxAliveAtOnce: 0
