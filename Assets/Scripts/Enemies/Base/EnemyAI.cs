@@ -2,30 +2,38 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType { Melee, Ranged }
+public enum BuffType { Speed }
+
+[Serializable]
+public class Buff
+{
+    public BuffType type;
+    public float multiplier = 1f;
+    public float duration = 0f;
+    [NonSerialized] public float endTime;
+}
 
 public abstract class EnemyAI : MonoBehaviour
 {
     public EnemyStats stats;
+    public float currentMoveSpeed { get; private set; }
 
     protected Rigidbody rb;
     protected BTNode rootNode;
     protected Transform tower;
     protected Transform player;
     protected Transform currentTarget;
-    protected AttackType attackType;
     protected float currentFocusTime;
 
     private float lastAttackTime;
-
     protected bool isAttacking;
     protected bool isRotate;
     protected bool isDie = false;
     protected bool isHit = false;
+    private List<Buff> activeBuffs = new List<Buff>();
 
-    // EVENTS
-    public Action<bool> onMove;
-    public Action<string> onAttack;
+    public Action<bool, float> onMove;
+    public Action onAttack;
 
     protected virtual void Start()
     {
@@ -33,12 +41,8 @@ public abstract class EnemyAI : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         rb = GetComponent<Rigidbody>();
 
-        Initialize(stats);
-    }
+        currentMoveSpeed = stats.moveSpeed;
 
-    private void Initialize(EnemyStats stats)
-    {
-        this.stats = stats;
         SetupBT();
     }
 
@@ -48,44 +52,40 @@ public abstract class EnemyAI : MonoBehaviour
 
         rootNode?.Evaluate();
 
-        if (currentFocusTime > 0)
-            currentFocusTime -= Time.deltaTime;
+        if (currentFocusTime > 0) currentFocusTime -= Time.deltaTime;
+
+        UpdateBuffs();
     }
 
     protected abstract void SetupBT();
 
-    // MOVE TO TARGET
+    // ============ Movement ============
     protected BTNode.NodeState MoveToTarget(Transform target)
     {
-        if (target == null || isDie || isHit) 
+        if (target == null || isDie || isHit)
             return BTNode.NodeState.Failure;
 
         float dist = DistanceToTarget(target);
-
         if (isAttacking || dist <= stats.attackRange || isRotate)
         {
-            onMove?.Invoke(false);
+            onMove?.Invoke(false, 0);
             return BTNode.NodeState.Success;
         }
 
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
 
-        rb.MovePosition(transform.position + dir.normalized * stats.moveSpeed * Time.deltaTime);
-
-        onMove?.Invoke(true);
-
+        rb.MovePosition(transform.position + dir.normalized * currentMoveSpeed * Time.deltaTime);
+        onMove?.Invoke(true, Mathf.Clamp01(currentMoveSpeed / stats.maxSpeed));
         return BTNode.NodeState.Running;
     }
 
-    // ROTATE TO TARGET
     protected BTNode.NodeState RotateToTarget(Transform target)
     {
         if (target == null || isAttacking || isDie || isHit)
             return BTNode.NodeState.Failure;
 
         isRotate = true;
-
         Vector3 dir = target.position - transform.position;
         dir.y = 0;
 
@@ -96,11 +96,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
 
         Quaternion targetRot = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.RotateTowards(
-            transform.rotation,
-            targetRot,
-            stats.rotateSpeed * Time.deltaTime
-        );
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, stats.rotateSpeed * Time.deltaTime);
 
         if (Vector3.Angle(transform.forward, dir) <= 5f)
         {
@@ -111,7 +107,6 @@ public abstract class EnemyAI : MonoBehaviour
         return BTNode.NodeState.Running;
     }
 
-    // ATTACK TARGET - Animation only
     protected BTNode.NodeState AttackTarget(Transform target)
     {
         if (target == null || !CanAttack() || isRotate || isDie || isHit)
@@ -119,32 +114,68 @@ public abstract class EnemyAI : MonoBehaviour
 
         isAttacking = true;
         currentTarget = target;
-
-        string typeStr = attackType == AttackType.Melee ? "melee" : "ranged";
-        onAttack?.Invoke(typeStr);
-
+        onAttack?.Invoke();
         lastAttackTime = Time.time;
         return BTNode.NodeState.Success;
     }
 
-    public void GetHit()
+    public virtual void GetHit()
     {
         isHit = true;
         isAttacking = false;
         isRotate = false;
-        rb.linearVelocity = Vector3.zero;
-        onMove?.Invoke(false);
+        if (rb != null) rb.linearVelocity = Vector3.zero;
+        onMove?.Invoke(false, 0);
     }
 
-    public void StopAI()
+    public virtual void StopAI()
     {
         isDie = true;
         isAttacking = false;
         isRotate = false;
-        onMove?.Invoke(false);
+        onMove?.Invoke(false, 0);
     }
 
-    // HELPERS
+    private void UpdateBuffs()
+    {
+        float multiplierSpeed = 1f;
+
+        // Lấy buff tốc độ cuối cùng (gần nhất)
+        Buff lastSpeed = null;
+
+        for (int i = activeBuffs.Count - 1; i >= 0; i--)
+        {
+            var buff = activeBuffs[i];
+            if (Time.time >= buff.endTime)
+            {
+                activeBuffs.RemoveAt(i);
+                continue;
+            }
+
+            if (buff.type == BuffType.Speed && lastSpeed == null)
+                lastSpeed = buff;
+        }
+
+        if (lastSpeed != null)
+            multiplierSpeed = lastSpeed.multiplier;
+
+        float targetSpeed = Mathf.Min(stats.moveSpeed * multiplierSpeed, stats.maxSpeed);
+        currentMoveSpeed = Mathf.Lerp(currentMoveSpeed, targetSpeed, 10f * Time.deltaTime);
+    }
+
+    public void ApplyBuff(BuffType type, float multiplier, float duration)
+    {
+        Buff buff = new Buff()
+        {
+            type = type,
+            multiplier = multiplier,
+            duration = duration,
+            endTime = Time.time + duration
+        };
+
+        activeBuffs.Add(buff);
+    }
+
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);
     protected bool CanAttack() => Time.time - lastAttackTime >= stats.attackCooldown;
     public void OnAttackAnimationEnd() => isAttacking = false;
