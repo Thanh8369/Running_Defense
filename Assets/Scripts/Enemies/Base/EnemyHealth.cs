@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public Action onDie;
     public Action onHit;
+    public Action<float, float> onHealthChanged;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         float finalDamage = ApplyDamageReduction(damage);
         currentHealth -= finalDamage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
 
         GetComponent<DamagePopupReceiver>()?.ShowDamage(finalDamage, transform.position);
 
@@ -70,6 +72,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void ForceSetHealth(float newHealth)
     {
         currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
     }
     
     private void Die()

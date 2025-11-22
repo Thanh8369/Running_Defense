@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  triggerTime: 0
+  triggerTime: 2
   spawnInfos:
-  - enemy: {fileID: 11400000, guid: 11bf0e82fc435f747a747a24c76b88d1, type: 2}
-    count: 10
+  - enemy: {fileID: 11400000, guid: a8b9bb1b00b1075488de7562aca17b95, type: 2}
+    count: 1
     minBatch: 1
     maxBatch: 2
     spawnDelay: 0

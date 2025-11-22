@@ -24,6 +24,11 @@ public class LizardWarriorAI : MeleeEnemyAI
     private EnemyHealth enemyHealth;
     private EnemyAnimation enemyAnimation;
 
+    private void OnEnable()
+    {
+        FindFirstObjectByType<BossHealthUI>(FindObjectsInactive.Include)?.HandleBossSpawned(this);
+    }
+
     protected override void Start()
     {
         base.Start();

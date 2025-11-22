@@ -19,7 +19,7 @@ public class EnemyAnimation : MonoBehaviour
     private static readonly int GetHit = Animator.StringToHash("GetHit");
     private static readonly int DefendGetHit = Animator.StringToHash("DefendGetHit");
     private static readonly int Die = Animator.StringToHash("Die");
-    private static readonly int IsHeal = Animator.StringToHash("IsHeal");
+    private static readonly int IsHeal = Animator.StringToHash("IsHealing");
 
     private void Awake()
     {
