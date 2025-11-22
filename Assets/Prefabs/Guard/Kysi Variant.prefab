@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &548864426095434684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5921230557498967419}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5921230557498967419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548864426095434684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.131, y: 1.775, z: 0.133}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3383753640119513761}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2949802353713230223
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +105,7 @@ GameObject:
   - component: {fileID: 3354540717779993231}
   - component: {fileID: 3363853143139372357}
   - component: {fileID: 3323562980214010923}
+  - component: {fileID: 4742604884648112231}
   m_Layer: 0
   m_Name: SM_Wep_Spear_06
   m_TagString: Untagged
@@ -93,7 +125,8 @@ Transform:
   m_LocalPosition: {x: 0.08, y: 0.047, z: 0.33}
   m_LocalScale: {x: 1.0101008, y: 1.0101008, z: 1.0101008}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5921230557498967419}
   m_Father: {fileID: 7933977228917257774}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3354540717779993231
@@ -164,13 +197,32 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43479510100620924, guid: c0f713c5cacf44b4c94d8a436115f5ad, type: 2}
+--- !u!114 &4742604884648112231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3386112346307422247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e8659af6d4d7649a42af3826f68501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  attackRate: 1
+  attackRange: 0.93
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  attackPoint: {fileID: 5921230557498967419}
 --- !u!1 &4314704407102252450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,10 +4202,11 @@ GameObject:
   - component: {fileID: 2069908120915403516}
   - component: {fileID: 2160150832135828142}
   - component: {fileID: 8106627263904826981}
-  - component: {fileID: 8760067167658844723}
   - component: {fileID: 7790747407809745141}
   - component: {fileID: 7464242001192262990}
   - component: {fileID: 6425377991561498132}
+  - component: {fileID: 3484250206723802093}
+  - component: {fileID: 5071176597407840896}
   m_Layer: 0
   m_Name: Kysi Variant
   m_TagString: Untagged
@@ -4238,7 +4291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
-  guardPoint: {fileID: 0}
   moveSpeed: 3
   rotateSpeed: 10
   attackRange: 2
@@ -4280,7 +4332,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4310,23 +4362,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &8760067167658844723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932548676346558220}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a66401176f3994b92df89477cf71f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7790747407809745141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4429,6 +4469,38 @@ MonoBehaviour:
   - {fileID: 7927884549910298348}
   - {fileID: 7927629857463831816}
   - {fileID: 7933894298536307704}
+--- !u!114 &3484250206723802093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932548676346558220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6a8227a372d15408bad640b287de0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &5071176597407840896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932548676346558220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e8659af6d4d7649a42af3826f68501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5000
+  attackRate: 1
+  attackRange: 1.46
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackPoint: {fileID: 5921230557498967419}
 --- !u!1 &7932559646130114598
 GameObject:
   m_ObjectHideFlags: 0

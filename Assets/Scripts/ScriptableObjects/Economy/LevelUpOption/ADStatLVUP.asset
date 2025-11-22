@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230e2a183a6def44b82e0d7310162680, type: 3}
+  m_Name: ADStatLVUP
+  m_EditorClassIdentifier: 
+  id: Attack Damage
+  displayName: Attack Damage
+  description: Increase Attack Damage
+  icon: {fileID: 1013626212, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
+  powerValue: 1
+  targetStat: 0
+  amount: 5
+  healToFullOnMaxHPIncrease: 0

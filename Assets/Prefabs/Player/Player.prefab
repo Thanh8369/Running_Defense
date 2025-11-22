@@ -3522,8 +3522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff177c6a2d168ad49988694d64ff9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthSlider: {fileID: 0}
-  _health: {fileID: 0}
+  _healthSlider: {fileID: 8867816292693846085}
+  _health: {fileID: 7179040431947322153}
   _target: {fileID: 7392359164629924464}
   _offset: {x: 0, y: 3, z: 0}
   _mainCamera: {fileID: 0}
@@ -4980,6 +4980,7 @@ GameObject:
   - component: {fileID: 8962755158514552202}
   - component: {fileID: 3483880623207491876}
   - component: {fileID: 7179040431947322153}
+  - component: {fileID: 4844306664245146727}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5108,6 +5109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52f23175be4bc64aa07ad45a2795a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashTrail: {fileID: 0}
   agent: {fileID: 1548498841856015003}
 --- !u!114 &3483880623207491876
 MonoBehaviour:
@@ -5121,8 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe352ab55e03dc409efb4a7f5ce8f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootInterval: 5
-  detectionRange: 5
+  playerData: {fileID: 0}
   projectilePrefab: {fileID: 8107467662078565406, guid: 1074f2f7f82023a4e8d678f01c1af272, type: 3}
   firePoint: {fileID: 3228090631334660327}
 --- !u!114 &7179040431947322153
@@ -5137,7 +5138,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eca219473da4cc44b9ca7af02f47a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  playerHpData: {fileID: 11400000, guid: 384fb065bc0b9a74ca3c7b471613a64c, type: 2}
+--- !u!114 &4844306664245146727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369480501562075582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f835aff5bdd33f4fb4fe74bc4514e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowData: {fileID: 11400000, guid: 873b6b8d98a3ada44b6adba92882d689, type: 2}
+  playerData: {fileID: 11400000, guid: 3f02db35ac315bc4f81e899e61bd8d0d, type: 2}
+  hpData: {fileID: 11400000, guid: 384fb065bc0b9a74ca3c7b471613a64c, type: 2}
+  baseAttackDamage: 10
+  bonusAttackDamage: 0
+  attackSpeed: 1
+  maxHP: 100
+  currentHP: 100
 --- !u!1 &8430532646551523004
 GameObject:
   m_ObjectHideFlags: 0
