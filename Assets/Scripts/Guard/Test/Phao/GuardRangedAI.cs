@@ -99,7 +99,8 @@ public class GuardRangedAI : MonoBehaviour
 
     void UpdateTarget()
     {
-        tower.enemyQueue.RemoveAll(e => e == null);
+        // loại bỏ target chết/null khỏi danh sách
+        tower.enemyQueue.RemoveAll(e => e == null||(e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead()));
 
         if (tower.enemyQueue.Count == 0)
         {
@@ -107,8 +108,8 @@ public class GuardRangedAI : MonoBehaviour
             return;
         }
 
-        if (target == null || !tower.enemyQueue.Contains(target))
-            target = tower.enemyQueue[0];
+        if (target == null||!tower.enemyQueue.Contains(target))
+        target = tower.enemyQueue[0];
     }
 
     void Shoot()

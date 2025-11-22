@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 230e2a183a6def44b82e0d7310162680, type: 3}
-  m_Name: HPStatLVUp
+  m_Script: {fileID: 11500000, guid: 85be13a421644084eb55c743adcdd5d9, type: 3}
+  m_Name: TowerAS
   m_EditorClassIdentifier: 
-  id: HP
-  displayName: HP
-  description: Increase HP
-  icon: {fileID: 924178331, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
+  id: Tower Attack Speed
+  displayName: Tower Attack Speed
+  description: Tower Attack Speed
+  icon: {fileID: 136089854, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
   powerValue: 1
-  targetStat: 2
-  amount: 20
+  targetStat: 1
+  amount: 2
   healToFullOnMaxHPIncrease: 1

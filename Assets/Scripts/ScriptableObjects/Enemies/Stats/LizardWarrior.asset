@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: LizardWarrior
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 10000
   moveSpeed: 15
   maxSpeed: 37.5
   rotateSpeed: 360
@@ -20,8 +20,8 @@ MonoBehaviour:
   attackCooldown: 1
   attackRange: 4
   detectionRange: 8
-  minGold: 5
-  maxGold: 15
-  expAmount: 10
+  minGold: 100
+  maxGold: 1000
+  expAmount: 100
   prefab: {fileID: 1894462108528737659, guid: dc205721daded154d9a2bd51b910b3e5, type: 3}
   projectilePrefabs: []

@@ -110,7 +110,8 @@ public class GuardAiRange : MonoBehaviour
     // UPDATE TARGET
     void UpdateTarget()
     {
-        tower.enemyQueue.RemoveAll(e => e == null);
+        // loại bỏ target chết/null khỏi danh sách
+        tower.enemyQueue.RemoveAll(e => e == null || (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead()));
 
         // Đang attack → không đổi target
         if (lockedTarget != null)

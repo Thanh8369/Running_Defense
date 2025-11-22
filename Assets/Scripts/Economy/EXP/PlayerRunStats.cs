@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Chứa các chỉ số runtime của Player trong 1 run.
-/// Khi Level Up sẽ cộng vào đây.
+/// Khi Level Up / buff sẽ cộng vào đây, không sửa ScriptableObject gốc.
 /// </summary>
 public class PlayerRunStats : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class PlayerRunStats : MonoBehaviour
     public PlayerHpData hpData;
 
     [Header("Damage / Attack (runtime)")]
-    [Tooltip("Damage cơ bản, lấy từ arrowData.damage khi Start.")]
+    [Tooltip("Damage cơ bản, lấy từ arrowData.damage khi Start/Awake.")]
     public float baseAttackDamage = 10f;
 
     [Tooltip("Damage cộng thêm từ các level up, buff...")]
@@ -31,7 +31,7 @@ public class PlayerRunStats : MonoBehaviour
     public float currentHP = 100f;
 
     /// <summary>
-    /// Damage thực tế = base + bonus (tuỳ anh dùng).
+    /// Damage thực tế = base + bonus.
     /// </summary>
     public float TotalAttackDamage => baseAttackDamage + bonusAttackDamage;
 
@@ -42,7 +42,7 @@ public class PlayerRunStats : MonoBehaviour
 
     /// <summary>
     /// Lấy base stat từ các ScriptableObject.
-    /// Gọi ở Awake hoặc context menu trong Editor.
+    /// Gọi ở Awake hoặc bằng context menu trong Editor.
     /// </summary>
     [ContextMenu("Init From Scriptable Data (Editor Only)")]
     public void InitFromScriptableData()
@@ -96,6 +96,11 @@ public class PlayerRunStats : MonoBehaviour
         if (healToFull)
         {
             currentHP = maxHP;
+        }
+        else
+        {
+            // Đảm bảo không vượt quá maxHP mới (nếu sau này có logic heal khác).
+            currentHP = Mathf.Min(currentHP, maxHP);
         }
     }
 }

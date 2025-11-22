@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private float maxHealth;
     private bool isDead = false;
 
+    public bool IsDead() => isDead;
+
     public Action onDie;
     public Action onHit;
     public Action<float, float> onHealthChanged;
@@ -102,5 +104,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         SpawnManager.Instance.OnEnemyKilled();
         PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
+    }
+
+    private void OnEnable()
+    {
+        currentHealth = maxHealth;
+        isDead = false;
     }
 }

@@ -3,23 +3,32 @@ using UnityEngine;
 
 namespace Son.Economy
 {
+    /// <summary>
+    /// Quản lý UI Level Up:
+    /// - Lắng nghe sự kiện OnLevelUp từ PlayerExperienceManager.
+    /// - Mỗi lần Level Up: random 3 option từ allOptions (có thể gồm Player & Tower).
+    /// - Cho phép queue nhiều lần Level Up (pendingLevelUpCount).
+    /// </summary>
     public class LevelUpPanel : MonoBehaviour
     {
         [Header("Root Panel")]
         public GameObject panelRoot;
 
         [Header("Danh sách lựa chọn có thể xuất hiện")]
-        public List<LevelUpOption_StatBonus> allOptions = new List<LevelUpOption_StatBonus>();
+        [Tooltip("Kéo các ScriptableObject LevelUpOptionConfig (Player, Tower...) vào đây.")]
+        public List<LevelUpOptionConfig> allOptions = new List<LevelUpOptionConfig>();
 
         [Header("3 nút lựa chọn")]
         public LevelUpOptionButton optionButton1;
         public LevelUpOptionButton optionButton2;
         public LevelUpOptionButton optionButton3;
 
-        [Header("Target stats để áp effect")]
+        [Header("Target stats để áp effect (Player)")]
+        [Tooltip("PlayerRunStats để option Player có thể buff. Nếu để trống sẽ tự FindAnyObjectByType.")]
         public PlayerRunStats playerRunStats;
 
         [Header("Cấu hình random")]
+        [Tooltip("Cho phép trùng option trong cùng 1 lần roll hay không.")]
         public bool allowDuplicateInOneRoll = false;
 
         private PlayerExperienceManager _exp;
@@ -81,7 +90,7 @@ namespace Son.Economy
                 _isPanelOpen = true;
             }
 
-            var chosen = PickRandomOptions(3);
+            List<LevelUpOptionConfig> chosen = PickRandomOptions(3);
 
             if (optionButton1 != null) optionButton1.Setup(chosen.Count > 0 ? chosen[0] : null, this);
             if (optionButton2 != null) optionButton2.Setup(chosen.Count > 1 ? chosen[1] : null, this);
@@ -103,9 +112,11 @@ namespace Son.Economy
                 // Tự tìm PlayerRunStats nếu chưa gán trong Inspector
                 if (playerRunStats == null)
                 {
-                    playerRunStats = FindAnyObjectByType<PlayerRunStats>();
+                    playerRunStats = Object.FindAnyObjectByType<PlayerRunStats>();
                 }
 
+                // Với option Player: dùng playerRunStats.
+                // Với option Tower: bỏ qua playerRunStats và tự xử lý.
                 option.ApplyEffect(playerRunStats);
             }
             // --------------------
@@ -130,18 +141,22 @@ namespace Son.Economy
             }
         }
 
-        private List<LevelUpOption_StatBonus> PickRandomOptions(int count)
+        /// <summary>
+        /// Random ra N option bất kỳ từ allOptions.
+        /// </summary>
+        private List<LevelUpOptionConfig> PickRandomOptions(int count)
         {
-            var result = new List<LevelUpOption_StatBonus>();
+            var result = new List<LevelUpOptionConfig>();
 
             if (allOptions == null || allOptions.Count == 0)
                 return result;
 
-            var pool = new List<LevelUpOption_StatBonus>(allOptions);
+            var pool = new List<LevelUpOptionConfig>(allOptions);
 
             for (int i = 0; i < count; i++)
             {
-                if (pool.Count == 0) break;
+                if (pool.Count == 0)
+                    break;
 
                 int index = Random.Range(0, pool.Count);
                 var opt = pool[index];

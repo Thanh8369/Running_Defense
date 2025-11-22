@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: Orc
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1500
   moveSpeed: 10
+  maxSpeed: 25
   rotateSpeed: 360
-  attackDamage: 100
+  attackDamage: 50
   attackCooldown: 1
   attackRange: 3
   detectionRange: 8
   minGold: 5
   maxGold: 15
-  expAmount: 10
+  expAmount: 50
   prefab: {fileID: 8385484009870936370, guid: a09743e9eee47a04abccd3984563b407, type: 3}
   projectilePrefabs: []

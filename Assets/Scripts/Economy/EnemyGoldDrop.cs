@@ -46,6 +46,11 @@ namespace Son.Economy
             DropGoldAndReturnAmount();
         }
 
+        private void OnEnable()
+        {
+            _hasDropped = false;
+        }
+
         /// <summary>
         /// Hàm mới: rơi Gold và trả về số Gold đã cộng vào Wallet.
         /// EnemyHealth sẽ dùng hàm này để hiện popup.

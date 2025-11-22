@@ -3,35 +3,51 @@
 namespace Son.Economy
 {
     /// <summary>
-    /// Nâng cấp khi Level Up (miễn phí).
+    /// Cấu hình cơ bản cho 1 lựa chọn Level Up.
+    /// Các loại option cụ thể (Player, Tower, Passive, Skill...) sẽ kế thừa class này.
     /// </summary>
-    [CreateAssetMenu(fileName = "LevelUpOption", menuName = "Son/Economy/Level Up Option/Base", order = 10)]
+    [CreateAssetMenu(
+        fileName = "LevelUpOption",
+        menuName = "Son/Economy/Level Up Option/Base",
+        order = 10)]
     public class LevelUpOptionConfig : ScriptableObject
     {
         [Header("Thông tin hiển thị")]
+        [Tooltip("ID nội bộ, dùng cho debug / save game.")]
         public string id;
+
+        [Tooltip("Tên hiển thị trên UI.")]
         public string displayName;
-        [TextArea] public string description;
+
+        [TextArea]
+        [Tooltip("Mô tả chi tiết option.")]
+        public string description;
+
+        [Tooltip("Icon hiển thị trên nút lựa chọn.")]
         public Sprite icon;
 
-        [Header("Cấu hình tuỳ ý")]
-        public int powerValue = 1;  // ví dụ: +1 damage, +5% attack speed...
+        [Header("Giá trị cấu hình tuỳ ý")]
+        [Tooltip("Giá trị 'sức mạnh' cơ bản. Tuỳ option con sử dụng như thế nào.")]
+        public int powerValue = 1;
 
         /// <summary>
-        /// Thực thi hiệu ứng nâng cấp (cũ – không có tham số).
-        /// Dùng trong trường hợp bạn tự Find PlayerRunStats bên trong.
+        /// Fallback: áp effect mà không truyền gì.
+        /// Thường dùng cho test nhanh trong Editor.
         /// </summary>
         public virtual void ApplyEffect()
         {
-            Debug.Log($"[LevelUpOption] ApplyEffect (no stats param): {id} - {displayName} (power={powerValue})");
+            Debug.Log($"[LevelUpOptionConfig] ApplyEffect() - {id} - {displayName} (power={powerValue})");
         }
 
         /// <summary>
-        /// Bản chuẩn: truyền PlayerRunStats để cộng stat.
+        /// Hàm chuẩn được gọi từ LevelUpPanel.
+        /// Option con có thể:
+        /// - Dùng playerStats để buff Player.
+        /// - Bỏ qua playerStats và tự xử lý (ví dụ buff Tower).
         /// </summary>
-        public virtual void ApplyEffect(PlayerRunStats stats)
+        public virtual void ApplyEffect(PlayerRunStats playerStats)
         {
-            Debug.Log($"[LevelUpOption] ApplyEffect(PlayerRunStats): {id} - {displayName} (power={powerValue})");
+            Debug.Log($"[LevelUpOptionConfig] ApplyEffect(PlayerRunStats) - {id} - {displayName} (power={powerValue})");
         }
     }
 }

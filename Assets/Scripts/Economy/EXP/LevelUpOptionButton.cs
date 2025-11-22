@@ -1,53 +1,64 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 namespace Son.Economy
 {
-    [RequireComponent(typeof(Button))]
+    /// <summary>
+    /// Gắn lên 1 button option trong LevelUpPanel.
+    /// - Hiển thị icon / title / description.
+    /// - Khi bấm, gọi lại LevelUpPanel.OnOptionChosen().
+    /// </summary>
     public class LevelUpOptionButton : MonoBehaviour
     {
-        [Header("UI Bind")]
+        [Header("UI")]
         public Image iconImage;
-        public TMP_Text nameText;
+        public TMP_Text titleText;
         public TMP_Text descriptionText;
+        public Button button;
 
-        [HideInInspector] public LevelUpOption_StatBonus option;
-        [HideInInspector] public LevelUpPanel parentPanel;
+        private LevelUpOptionConfig _option;
+        private LevelUpPanel _panel;
 
-        private Button _btn;
-
-        private void Awake()
+        /// <summary>
+        /// Gọi từ LevelUpPanel để gán option và panel cha.
+        /// </summary>
+        public void Setup(LevelUpOptionConfig option, LevelUpPanel panel)
         {
-            _btn = GetComponent<Button>();
-        }
+            _option = option;
+            _panel = panel;
 
-        private void OnEnable()
-        {
-            _btn.onClick.AddListener(OnClick);
-        }
+            if (option == null)
+            {
+                // Không có option → ẩn nút
+                gameObject.SetActive(false);
+                return;
+            }
 
-        private void OnDisable()
-        {
-            _btn.onClick.RemoveListener(OnClick);
-        }
+            gameObject.SetActive(true);
 
-        public void Setup(LevelUpOption_StatBonus config, LevelUpPanel panel)
-        {
-            option = config;
-            parentPanel = panel;
+            if (iconImage != null)
+                iconImage.sprite = option.icon;
 
-            if (iconImage) iconImage.sprite = config.icon;
-            if (nameText) nameText.text = config.displayName + " +" + config.amount;
-            if (descriptionText) descriptionText.text = config.description;
+            if (titleText != null)
+                titleText.text = option.displayName;
+
+            if (descriptionText != null)
+                descriptionText.text = option.description;
+
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(OnClick);
+            }
         }
 
         private void OnClick()
         {
-            if (option == null || parentPanel == null) return;
+            if (_option == null || _panel == null)
+                return;
 
-            option.ApplyEffect();
-            parentPanel.OnOptionChosen(option);
+            _panel.OnOptionChosen(_option);
         }
     }
 }
