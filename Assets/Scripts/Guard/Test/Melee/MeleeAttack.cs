@@ -3,7 +3,7 @@
 public class MeleeAttack : MonoBehaviour
 {
     [Header("Attack Settings")]
-    public float damage = 30f;
+    public float damage = 5000;
     public float attackRate = 1f;
     public float attackRange = 1.5f;
     public LayerMask targetLayer;

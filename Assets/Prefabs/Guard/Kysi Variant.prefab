@@ -4206,6 +4206,7 @@ GameObject:
   - component: {fileID: 7464242001192262990}
   - component: {fileID: 6425377991561498132}
   - component: {fileID: 3484250206723802093}
+  - component: {fileID: 5071176597407840896}
   m_Layer: 0
   m_Name: Kysi Variant
   m_TagString: Untagged
@@ -4331,7 +4332,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4364,7 +4365,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &7790747407809745141
 MonoBehaviour:
@@ -4481,6 +4482,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &5071176597407840896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932548676346558220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e8659af6d4d7649a42af3826f68501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5000
+  attackRate: 1
+  attackRange: 1.46
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  attackPoint: {fileID: 5921230557498967419}
 --- !u!1 &7932559646130114598
 GameObject:
   m_ObjectHideFlags: 0

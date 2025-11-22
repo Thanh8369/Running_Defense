@@ -2149,6 +2149,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1756480022}
     m_Modifications:
     - target: {fileID: 764202563140458289, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 764202563140458289, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
       propertyPath: enemyQueue.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -2194,7 +2198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952192317389029704, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7453168894324746498, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
       propertyPath: m_Name
@@ -2353,8 +2357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ee1c890290d1a4f95df2f71fec2f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8107467662078565406, guid: 1074f2f7f82023a4e8d678f01c1af272, type: 3}
-  poolSize: 20
 --- !u!4 &1937557330
 Transform:
   m_ObjectHideFlags: 0
