@@ -15,11 +15,12 @@ public class EnemyAnimation : MonoBehaviour
     private LizardWarriorAI lizardWarriorAI;
     private EnemyHealth enemyHealth;
 
-    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int IsHealing = Animator.StringToHash("IsHealing");
+    private static readonly int MoveSpeed = Animator.StringToHash("MoveSpeed");
     private static readonly int GetHit = Animator.StringToHash("GetHit");
     private static readonly int DefendGetHit = Animator.StringToHash("DefendGetHit");
     private static readonly int Die = Animator.StringToHash("Die");
-    private static readonly int IsHeal = Animator.StringToHash("IsHealing");
 
     private void Awake()
     {
@@ -62,40 +63,26 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
-    private void PlayWalkAnimation(bool isWalking)
+    private void PlayWalkAnimation(bool isMoving, float moveSpeed)
     {
-        animator.SetBool(IsWalking, isWalking);
+        animator.SetBool(IsMoving, isMoving);
+        animator.SetFloat(MoveSpeed, moveSpeed);
     }
 
-    private void PlayAttackAnimation(string atkType)
+    private void PlayAttackAnimation()
     {
         if (animationConfig == null) return;
 
-        if (atkType == "defend")
-        {
-            animator.SetTrigger("Defend");
-            return;
-        }
-
-        EnemyAnimationData anim = atkType == "ranged"
-            ? animationConfig.GetRandomAttack(animationConfig.rangedAttacks)
-            : animationConfig.GetRandomAttack(animationConfig.meleeAttacks);
+        EnemyAnimationData anim = animationConfig.GetRandomAttack(animationConfig.attackAnimations);
 
         if (anim != null)
         {
             animator.SetTrigger(anim.triggerName);
 
-            if (atkType == "ranged")
-            {
-                cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
-                evilMageAI?.OnAttackAnimationSet(anim.triggerName);
-            }
-
-            if (atkType == "melee")
-            {
-                orcAI?.OnAttackAnimationSet(anim.triggerName);
-                lizardWarriorAI?.OnAttackAnimationSet(anim.triggerName);
-            }
+            cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
+            evilMageAI?.OnAttackAnimationSet(anim.triggerName);
+            orcAI?.OnAttackAnimationSet(anim.triggerName);
+            lizardWarriorAI?.OnAttackAnimationSet(anim.triggerName);
         }
     }
 
@@ -113,7 +100,7 @@ public class EnemyAnimation : MonoBehaviour
 
     public void PlayHealAnimation(bool isHealing)
     {
-        animator.SetBool(IsHeal, isHealing);
+        animator.SetBool(IsHealing, isHealing);
     }
 
     private void PlayDeathAnimation()

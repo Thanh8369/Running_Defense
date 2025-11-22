@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7817826439550574172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_toeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394291929485864915}
   - component: {fileID: 5905841023194169751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cyclops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2709377230620924656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_feetRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ Transform:
   m_Children:
   - {fileID: 7817826439550574172}
   m_Father: {fileID: 3054319376443276873}
-  m_LocalEulerAnglesHint: {x: -1.1429751, y: -11.276137, z: 97.96465}
+  m_LocalEulerAnglesHint: {x: -0.6645385, y: -14.650458, z: 103.05392}
 --- !u!1 &836484020862694670
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2729578165806980569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1660029044221886078}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.914463, y: 0, z: 0}
 --- !u!1 &1054088195525152144
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4760423443652164909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7705343566027825749}
-  m_LocalEulerAnglesHint: {x: -22.380135, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -22.380136, y: -90, z: 0}
 --- !u!1 &1070110781354239101
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4314795228945468661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ Transform:
   - {fileID: 1805832415933211619}
   - {fileID: 772593203359154254}
   m_Father: {fileID: 821355441810235902}
-  m_LocalEulerAnglesHint: {x: 4.902956, y: 1.3642964, z: -18.119434}
+  m_LocalEulerAnglesHint: {x: 10.533233, y: 2.9582438, z: -13.760136}
 --- !u!1 &1225118272066205579
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764309405821266090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678757370263373891}
-  m_LocalEulerAnglesHint: {x: 0.0016696743, y: 179.83115, z: 174.72144}
+  m_LocalEulerAnglesHint: {x: 0.0016712686, y: 179.83115, z: 174.72144}
 --- !u!1 &1546420441560442574
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9029018186399568154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_headBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7646825256128134492}
-  m_LocalEulerAnglesHint: {x: -3.9909132, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.990915, y: -90, z: 0}
 --- !u!1 &1640400143385495970
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772593203359154254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ Transform:
   m_Children:
   - {fileID: 6759720600602786069}
   m_Father: {fileID: 4314795228945468661}
-  m_LocalEulerAnglesHint: {x: 11.032753, y: 114.27801, z: -10.30069}
+  m_LocalEulerAnglesHint: {x: 27.065321, y: 114.15764, z: 4.25601}
 --- !u!1 &1674126735351236756
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1542048550161860828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handTipLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ Transform:
   m_Children:
   - {fileID: 979422991832591939}
   m_Father: {fileID: 835687516321864294}
-  m_LocalEulerAnglesHint: {x: -0.098655574, y: 1.9023697, z: -1.7159885}
+  m_LocalEulerAnglesHint: {x: -0.09865742, y: 1.9023687, z: -1.7159886}
 --- !u!1 &1824896458554957100
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678757370263373891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handTipRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ Transform:
   - {fileID: 3764309405821266090}
   - {fileID: 2566685812432512602}
   m_Father: {fileID: 8255313100020893136}
-  m_LocalEulerAnglesHint: {x: 0.12877491, y: -2.1513286, z: -2.311525}
+  m_LocalEulerAnglesHint: {x: 0.12877639, y: -2.1513302, z: -2.3115256}
 --- !u!1 &2389159311998789257
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630204394223283394}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678757370263373891}
-  m_LocalEulerAnglesHint: {x: 0.19347924, y: -2.6495137, z: 5.2724166}
+  m_LocalEulerAnglesHint: {x: 0.1934787, y: -2.649512, z: 5.272417}
 --- !u!1 &2426290011217405490
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2632015610976292059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ Transform:
   m_Children:
   - {fileID: 3054319376443276873}
   m_Father: {fileID: 7705343566027825749}
-  m_LocalEulerAnglesHint: {x: 15.478878, y: 167.5815, z: -138.08955}
+  m_LocalEulerAnglesHint: {x: 27.290138, y: 168.83778, z: -138.6386}
 --- !u!1 &2567480480502305121
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7646825256128134492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ Transform:
   - {fileID: 9029018186399568154}
   - {fileID: 7940396584228230082}
   m_Father: {fileID: 4314795228945468661}
-  m_LocalEulerAnglesHint: {x: 3.7847994e-14, y: 1.7115127e-14, z: 37.68098}
+  m_LocalEulerAnglesHint: {x: -16.155691, y: -9.408252, z: 35.290405}
 --- !u!1 &2721677531213510111
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 947659905214410530}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ Transform:
   m_Children:
   - {fileID: 5339429724559398677}
   m_Father: {fileID: 525906649734429492}
-  m_LocalEulerAnglesHint: {x: -2.008787, y: -1.8689915, z: -47.04865}
+  m_LocalEulerAnglesHint: {x: -2.6284063, y: -1.9241991, z: -53.775936}
 --- !u!1 &3510536638754245651
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979422991832591939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_bigArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ Transform:
   m_Children:
   - {fileID: 8293379342167524343}
   m_Father: {fileID: 1542048550161860828}
-  m_LocalEulerAnglesHint: {x: -2.694836, y: -2.7813027, z: -1.0200337}
+  m_LocalEulerAnglesHint: {x: -2.694835, y: -2.7813044, z: -1.0200335}
 --- !u!1 &3538721425535086788
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3054319376443276873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ Transform:
   m_Children:
   - {fileID: 2709377230620924656}
   m_Father: {fileID: 2632015610976292059}
-  m_LocalEulerAnglesHint: {x: -0.8863825, y: -1.3837615, z: -32.63519}
+  m_LocalEulerAnglesHint: {x: -1.3759376, y: -1.6736255, z: -39.491264}
 --- !u!1 &3575726442671745532
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8531245565890763992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_eyeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1660029044221886078}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.1681457, y: 0.72726953, z: 5.7991776}
 --- !u!1 &3749271253976637409
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8293379342167524343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2566685812432512602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821355441810235902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +760,7 @@ Transform:
   m_Children:
   - {fileID: 4314795228945468661}
   m_Father: {fileID: 2194077166048446008}
-  m_LocalEulerAnglesHint: {x: 0.18894382, y: 3.177703, z: -13.890746}
+  m_LocalEulerAnglesHint: {x: 5.1361017, y: -1.0721064, z: -15.653139}
 --- !u!1 &4458292203946101002
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5339429724559398677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_feetLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ Transform:
   m_Children:
   - {fileID: 8654670666044563444}
   m_Father: {fileID: 947659905214410530}
-  m_LocalEulerAnglesHint: {x: 0.92565507, y: -10.180721, z: 111.15101}
+  m_LocalEulerAnglesHint: {x: -6.119195, y: -11.952864, z: 103.6967}
 --- !u!1 &4986448209629345973
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3219168254885636914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_belly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7705343566027825749}
-  m_LocalEulerAnglesHint: {x: -22.380135, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -22.380136, y: -90, z: 0}
 --- !u!1 &5034758058210237675
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8255313100020893136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +855,7 @@ Transform:
   m_Children:
   - {fileID: 8678757370263373891}
   m_Father: {fileID: 6759720600602786069}
-  m_LocalEulerAnglesHint: {x: 2.2375498, y: -4.6893663, z: 4.040637}
+  m_LocalEulerAnglesHint: {x: 9.418128, y: -31.64575, z: -28.222435}
 --- !u!1 &5104197236770406430
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8654670666044563444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_toeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040070280985870673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678757370263373891}
-  m_LocalEulerAnglesHint: {x: 0.0023373861, y: 179.83836, z: 174.72144}
+  m_LocalEulerAnglesHint: {x: 0.0023380744, y: 179.83836, z: 174.72144}
 --- !u!1 &5531934418764194807
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525906649734429492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ Transform:
   m_Children:
   - {fileID: 947659905214410530}
   m_Father: {fileID: 7705343566027825749}
-  m_LocalEulerAnglesHint: {x: -11.528655, y: -162.33324, z: 43.85709}
+  m_LocalEulerAnglesHint: {x: 3.9492474, y: -153.9889, z: 65.4879}
 --- !u!1 &5820329575921559263
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,13 +960,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4012807841911628018}
   - component: {fileID: 5622386264000481861}
+  - component: {fileID: 5564141268785687181}
   - component: {fileID: 8104479926253182835}
   - component: {fileID: 1150364376863427855}
   - component: {fileID: 8815406670224340183}
   - component: {fileID: 2434346411109836074}
   - component: {fileID: 578593361209420867}
   - component: {fileID: 5885424207904886408}
-  m_Layer: 0
+  - component: {fileID: 6868942646833666642}
+  m_Layer: 6
   m_Name: Cyclops
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1012,6 +1014,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &5564141268785687181
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820329575921559263}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &8104479926253182835
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1058,10 +1081,12 @@ MonoBehaviour:
     firePoint: {fileID: 2566685812432512602}
     projectileVariantIndex: 0
     scaleUpDuration: 0
+    scaleUpMax: 1
   - animationTriggerName: Attack02
     firePoint: {fileID: 8293379342167524343}
     projectileVariantIndex: 1
     scaleUpDuration: 0
+    scaleUpMax: 1
 --- !u!114 &8815406670224340183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1140,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+--- !u!114 &6868942646833666642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820329575921559263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82abb3ade006e4445a929964a09590b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _popupAnchor: {fileID: 4012807841911628018}
 --- !u!1 &6532637318267811561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6759720600602786069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1184,7 @@ Transform:
   m_Children:
   - {fileID: 8255313100020893136}
   m_Father: {fileID: 772593203359154254}
-  m_LocalEulerAnglesHint: {x: -26.361458, y: 20.369608, z: 54.57181}
+  m_LocalEulerAnglesHint: {x: -35.67701, y: 15.711871, z: 65.79913}
 --- !u!1 &6648927794490022729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940396584228230082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_headTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7646825256128134492}
-  m_LocalEulerAnglesHint: {x: -3.9909132, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.990915, y: -90, z: 0}
 --- !u!1 &6936979491784506804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7705343566027825749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1251,7 @@ Transform:
   - {fileID: 525906649734429492}
   - {fileID: 2632015610976292059}
   m_Father: {fileID: 4012807841911628018}
-  m_LocalEulerAnglesHint: {x: -1.9091554, y: 83.045204, z: -67.619865}
+  m_LocalEulerAnglesHint: {x: -2.3498335, y: 69.5837, z: -65.38415}
 --- !u!1 &7203178282940571039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,7 +1261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805832415933211619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1245,7 +1283,7 @@ Transform:
   m_Children:
   - {fileID: 3103207786147543856}
   m_Father: {fileID: 4314795228945468661}
-  m_LocalEulerAnglesHint: {x: -13.137093, y: -123.33851, z: -25.227655}
+  m_LocalEulerAnglesHint: {x: 2.7811801, y: -118.05467, z: -32.95426}
 --- !u!1 &7215223439573043009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1660029044221886078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_eyeRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4791674956537300991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_upperEyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1348,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1660029044221886078}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -49.885952, y: 0, z: 0}
 --- !u!1 &7932507892100534878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103207786147543856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_lowerArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,7 +1380,7 @@ Transform:
   m_Children:
   - {fileID: 835687516321864294}
   m_Father: {fileID: 1805832415933211619}
-  m_LocalEulerAnglesHint: {x: 2.1015182, y: -10.962137, z: 15.688713}
+  m_LocalEulerAnglesHint: {x: 13.144884, y: -20.030838, z: 36.96264}
 --- !u!1 &8804930892728021342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9199913093909878972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_smallArrow02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1373,7 +1411,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678757370263373891}
-  m_LocalEulerAnglesHint: {x: -0.18473147, y: 177.81314, z: 174.72466}
+  m_LocalEulerAnglesHint: {x: -0.18472981, y: 177.81314, z: 174.72466}
 --- !u!1 &8899597960367370972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2194077166048446008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1405,7 +1443,7 @@ Transform:
   m_Children:
   - {fileID: 821355441810235902}
   m_Father: {fileID: 7705343566027825749}
-  m_LocalEulerAnglesHint: {x: 2.886174e-14, y: -3.0157395e-14, z: -11.786169}
+  m_LocalEulerAnglesHint: {x: 9.25173, y: -3.5259075, z: -12.112956}
 --- !u!1 &8950723641635313152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,7 +1453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 835687516321864294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cyclops_handLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1437,4 +1475,4 @@ Transform:
   m_Children:
   - {fileID: 1542048550161860828}
   m_Father: {fileID: 3103207786147543856}
-  m_LocalEulerAnglesHint: {x: 28.091457, y: 6.078018, z: -11.3780155}
+  m_LocalEulerAnglesHint: {x: 31.526169, y: 0.9082434, z: 7.008848}

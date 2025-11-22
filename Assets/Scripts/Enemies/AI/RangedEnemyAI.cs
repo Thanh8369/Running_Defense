@@ -26,7 +26,6 @@ public class RangedEnemyAI : EnemyAI
 
     protected override void SetupBT()
     {
-        attackType = AttackType.Ranged;
         rootNode = new BTSelector(new List<BTNode>
         {
             BuildPlayerAttackSequence(),

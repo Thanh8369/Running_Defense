@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: Cyclops_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks: []
-  rangedAttacks:
+  attackAnimations:
   - triggerName: Attack01
     percent: 50
-    lastUsedTime: 52.275043
+    lastUsedTime: 18.919495
   - triggerName: Attack02
     percent: 50
-    lastUsedTime: 56.95831
-  specialAttacks: []
+    lastUsedTime: 19.931599

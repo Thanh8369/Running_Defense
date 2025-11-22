@@ -15,7 +15,8 @@ public class EnemyStats : ScriptableObject
     [Header("Stats")]
     public float maxHealth = 100f;
     public float moveSpeed = 3f;
-    public float rotateSpeed = 360f;
+    [HideInInspector] public float maxSpeed = 5f;
+    [HideInInspector] public float rotateSpeed = 360f;
     public float attackDamage = 10f;
     public float attackCooldown = 1f;
     public float attackRange = 2f;
@@ -31,4 +32,9 @@ public class EnemyStats : ScriptableObject
 
     [Header("Projectile Settings")]
     public List<ProjectileData> projectilePrefabs = new List<ProjectileData>();
+
+    private void OnValidate()
+    {
+        maxSpeed = moveSpeed * 2.5f;
+    }
 }

@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: Orc_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks:
+  attackAnimations:
   - triggerName: Attack01
-    percent: 1
-    lastUsedTime: 2.1220803
+    percent: 50
+    lastUsedTime: 18.783302
   - triggerName: Attack02
-    percent: 99
-    lastUsedTime: 21.990908
-  rangedAttacks: []
-  specialAttacks: []
+    percent: 50
+    lastUsedTime: 19.784224

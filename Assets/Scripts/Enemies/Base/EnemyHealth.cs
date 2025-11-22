@@ -69,7 +69,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public float GetCurrentHealth() => currentHealth;
     public float GetMaxHealth() => maxHealth;
 
-    public void ForceSetHealth(float newHealth)
+    public void Heal(float newHealth)
     {
         currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
         onHealthChanged?.Invoke(currentHealth, maxHealth);
