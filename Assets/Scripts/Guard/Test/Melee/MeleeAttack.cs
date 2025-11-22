@@ -4,21 +4,16 @@ public class MeleeAttack : MonoBehaviour
 {
     [Header("Attack Settings")]
     public float damage = 5000;
-    public float attackRate = 1f;
     public float attackRange = 1.5f;
     public LayerMask targetLayer;
 
     [Header("References")]
     public Transform attackPoint;
 
-    private float nextAttackTime;
+   
 
     public void DoAttack()
     {
-        if (Time.time < nextAttackTime) return;
-
-        nextAttackTime = Time.time + 1f / attackRate;
-
         Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRange, targetLayer);
 
         foreach (Collider col in hits)

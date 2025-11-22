@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  attackRate: 1
   attackRange: 0.93
   targetLayer:
     serializedVersion: 2
@@ -4481,7 +4480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6a8227a372d15408bad640b287de0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
 --- !u!114 &5071176597407840896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4494,9 +4493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e8659af6d4d7649a42af3826f68501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5000
-  attackRate: 1
-  attackRange: 1.46
+  damage: 30
+  attackRange: 0.94
   targetLayer:
     serializedVersion: 2
     m_Bits: 64

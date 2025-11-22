@@ -2749,11 +2749,11 @@ MonoBehaviour:
   tower: {fileID: 0}
   bulletPrefab: {fileID: 7676968290916549584, guid: 0c84946bacd22194286642176cf10c82, type: 3}
   firePoint: {fileID: 7478104151110045271}
-  moveSpeed: 3
+  moveSpeed: 2.5
   rotateSpeed: 10
   attackRange: 15
-  attackCooldown: 1
-  stopDistanceFromEnemy: 5
+  attackCooldown: 0.5
+  stopDistanceFromEnemy: 15
 --- !u!114 &3058057720700133944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6a8227a372d15408bad640b287de0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
 --- !u!1 &2174688360921184946
 GameObject:
   m_ObjectHideFlags: 0
