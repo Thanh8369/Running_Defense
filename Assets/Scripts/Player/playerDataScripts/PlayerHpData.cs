@@ -1,8 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerStats", menuName = "Player/PlayerHpData")]
+[CreateAssetMenu(fileName = "PlayerState", menuName = "Player/PlayerStateData")]
 
 public class PlayerHpData : ScriptableObject
 {
     public int _maxHealth;
+   
 }

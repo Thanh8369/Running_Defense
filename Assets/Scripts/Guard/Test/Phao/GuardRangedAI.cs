@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 
-public class GuardRangedAI: MonoBehaviour
+public class GuardRangedAI : MonoBehaviour
 {
     public TowerArea tower;
-    public Transform guardPoint;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -22,6 +21,7 @@ public class GuardRangedAI: MonoBehaviour
     void Start()
     {
         wheelController = GetComponent<WheelRotation>();
+
         if (tower == null)
         {
             tower = FindObjectOfType<TowerArea>();
@@ -34,28 +34,16 @@ public class GuardRangedAI: MonoBehaviour
     {
         UpdateTarget();
 
-        // ——————————————
-        // Không có target → về guard point
-        // ——————————————
+        // ---------------------------------------------------------
+        // ❌ KHÔNG CÓ TARGET → ĐỨNG YÊN (KHÔNG TRỞ VỀ GUARD POINT)
+        // ---------------------------------------------------------
         if (target == null)
         {
-            if (guardPoint != null)
-            {
-                float dist = Vector3.Distance(transform.position, guardPoint.position);
-
-                if (dist > 0.1f)
-                {
-                    MoveTo(guardPoint.position);
-                }
-                else
-                {
-                    if (wheelController) wheelController.SetMoving(false);
-                }
-            }
+            if (wheelController) wheelController.SetMoving(false);
             return;
         }
 
-        // enemy rời khỏi tower
+        // enemy rời tower
         if (!tower.enemyQueue.Contains(target))
         {
             target = null;
@@ -64,9 +52,9 @@ public class GuardRangedAI: MonoBehaviour
 
         float distToEnemy = Vector3.Distance(transform.position, target.position);
 
-        // ——————————————
-        // Move giữ khoảng cách
-        // ——————————————
+        // ---------------------------------------------------------
+        //  MOVE GIỮ KHOẢNG CÁCH
+        // ---------------------------------------------------------
         if (distToEnemy > stopDistanceFromEnemy)
         {
             MoveTo(target.position);
@@ -76,9 +64,9 @@ public class GuardRangedAI: MonoBehaviour
             if (wheelController) wheelController.SetMoving(false);
         }
 
-        // ——————————————
-        // Bắn nếu trong tầm
-        // ——————————————
+        // ---------------------------------------------------------
+        //  BẮN
+        // ---------------------------------------------------------
         if (distToEnemy <= attackRange && Time.time >= nextAttack)
         {
             Shoot();
@@ -86,26 +74,22 @@ public class GuardRangedAI: MonoBehaviour
         }
     }
 
-    // ========================================
-    // MOVE – KHÔNG BAO GIỜ LÊN CAO
-    // ========================================
     void MoveTo(Vector3 pos)
     {
         if (wheelController) wheelController.SetMoving(true);
 
         Vector3 flat = new Vector3(pos.x, transform.position.y, pos.z);
-
         Vector3 dir = (flat - transform.position).normalized;
 
-        // xoay mượt
         if (dir != Vector3.zero)
+        {
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
                 Quaternion.LookRotation(dir),
                 rotateSpeed * Time.deltaTime
             );
+        }
 
-        // di chuyển
         transform.position = Vector3.MoveTowards(
             transform.position,
             flat,
@@ -113,9 +97,6 @@ public class GuardRangedAI: MonoBehaviour
         );
     }
 
-    // ========================================
-    // UPDATE TARGET
-    // ========================================
     void UpdateTarget()
     {
         tower.enemyQueue.RemoveAll(e => e == null);
@@ -130,9 +111,6 @@ public class GuardRangedAI: MonoBehaviour
             target = tower.enemyQueue[0];
     }
 
-    // ========================================
-    // SHOOT – tạo đạn parabol
-    // ========================================
     void Shoot()
     {
         if (firePoint == null || target == null)

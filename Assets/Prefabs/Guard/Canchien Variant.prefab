@@ -2384,10 +2384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2
   rotateSpeed: 10
   attackRange: 2
-  attackCooldown: 1
+  attackCooldown: 0.5
 --- !u!195 &8595689919591907983
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2500,9 +2500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e8659af6d4d7649a42af3826f68501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5000
-  attackRate: 1
-  attackRange: 1.06
+  damage: 20
+  attackRange: 0.5
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5011,7 +5010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  attackRate: 1
   attackRange: 0.56
   targetLayer:
     serializedVersion: 2
