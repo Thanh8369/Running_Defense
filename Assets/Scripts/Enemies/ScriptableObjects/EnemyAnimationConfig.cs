@@ -14,9 +14,7 @@ public class EnemyAnimationData
 [CreateAssetMenu(fileName = "AnimConfig", menuName = "Enemy/Animation Config")]
 public class EnemyAnimationConfig : ScriptableObject
 {
-    public List<EnemyAnimationData> meleeAttacks = new List<EnemyAnimationData>();
-    public List<EnemyAnimationData> rangedAttacks = new List<EnemyAnimationData>();
-    public List<EnemyAnimationData> specialAttacks = new List<EnemyAnimationData>();
+    public List<EnemyAnimationData> attackAnimations = new List<EnemyAnimationData>();
 
     public EnemyAnimationData GetRandomAttack(List<EnemyAnimationData> attackList)
     {

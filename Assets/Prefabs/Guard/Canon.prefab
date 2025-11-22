@@ -306,7 +306,6 @@ GameObject:
   - component: {fileID: 5945630487946247188}
   - component: {fileID: 9117577439634972911}
   - component: {fileID: 6118680422603132425}
-  - component: {fileID: 2661904347299573263}
   - component: {fileID: 2121986225317351259}
   m_Layer: 0
   m_Name: Canon
@@ -422,10 +421,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
-  guardPoint: {fileID: 0}
   bulletPrefab: {fileID: 8834548153809410939, guid: 19d4752eaba6df3429dc0206deb95106, type: 3}
   firePoint: {fileID: 379352854478909462}
-  moveSpeed: 3
+  moveSpeed: 1
   rotateSpeed: 10
   attackRange: 20
   attackCooldown: 5
@@ -509,19 +507,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2661904347299573263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7430700240802123827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eca219473da4cc44b9ca7af02f47a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHpData: {fileID: 0}
 --- !u!114 &2121986225317351259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,4 +519,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6a8227a372d15408bad640b287de0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 500
