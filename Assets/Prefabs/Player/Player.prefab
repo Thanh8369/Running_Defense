@@ -8313,7 +8313,7 @@ Transform:
   m_GameObject: {fileID: 5666553114006351233}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.003, y: 2.92, z: -0.022}
+  m_LocalPosition: {x: -0.003, y: 2.13, z: -0.022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9967,11 +9967,12 @@ GameObject:
   - component: {fileID: 8962755158514552202}
   - component: {fileID: 3483880623207491876}
   - component: {fileID: 7179040431947322153}
-  - component: {fileID: 6816742013292166263}
-  - component: {fileID: 3317884781576498858}
+  - component: {fileID: 4844306664245146727}
+  - component: {fileID: 4466473543053010388}
+  - component: {fileID: 2653030806718688477}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10078,7 +10079,7 @@ CharacterController:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 1.54
   m_Radius: 0.5
@@ -10086,7 +10087,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.23, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8962755158514552202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10257,12 +10258,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb83485652d1c74085c3ddff09d2b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daggerCount: 5
-  spreadAngle: 15
-  dagger: {fileID: 1517462375083585838, guid: b18fea29cbef3fd4b90676626174e93a, type: 3}
-  throwPoint: {fileID: 2439799857531251812}
-  daggerVel: 10
-  playerData: {fileID: 11400000, guid: bc82cc0b797e70e4fb5f268563c38a1c, type: 2}
+  arrowData: {fileID: 11400000, guid: 873b6b8d98a3ada44b6adba92882d689, type: 2}
+  playerData: {fileID: 11400000, guid: 3f02db35ac315bc4f81e899e61bd8d0d, type: 2}
+  hpData: {fileID: 11400000, guid: 384fb065bc0b9a74ca3c7b471613a64c, type: 2}
+  baseAttackDamage: 10
+  bonusAttackDamage: 0
+  attackSpeed: 1
+  maxHP: 100
+  currentHP: 100
+--- !u!136 &4466473543053010388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369480501562075582}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.0212622
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.99769473, z: 0}
+--- !u!54 &2653030806718688477
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369480501562075582}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1 &8430532646551523004
 GameObject:
   m_ObjectHideFlags: 0

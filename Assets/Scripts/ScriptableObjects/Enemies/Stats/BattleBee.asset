@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: BattleBee
   m_EditorClassIdentifier: 
-  enemyName: Battle Bee
-  moveSpeed: 15
+  maxHealth: 20
+  moveSpeed: 13
+  maxSpeed: 32.5
   rotateSpeed: 360
-  attackDamage: 2
+  attackDamage: 4
   attackCooldown: 1
   attackRange: 1.1
   detectionRange: 12
+  minGold: 5
+  maxGold: 15
+  expAmount: 10
   prefab: {fileID: 9176174925602817712, guid: 59af6d6612e0f8140852f0def1733049, type: 3}
+  projectilePrefabs: []

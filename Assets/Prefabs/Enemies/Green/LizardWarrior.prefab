@@ -702,16 +702,16 @@ MonoBehaviour:
   attackVariants:
   - id: 0
     animationTriggerName: Attack01
-    damageAmount: 100
+    damageAmount: 170
   - id: 1
     animationTriggerName: Attack02
-    damageAmount: 100
+    damageAmount: 200
   - id: 2
     animationTriggerName: Attack03
-    damageAmount: 500
+    damageAmount: 400
   healCooldown: 15
   healDuration: 10
-  healAmount: 10
+  healAmount: 50
   healTick: 1
   defenseDamageReduction: 0.6
   buffRadius: 100

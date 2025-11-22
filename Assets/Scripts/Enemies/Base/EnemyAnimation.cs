@@ -46,6 +46,11 @@ public class EnemyAnimation : MonoBehaviour
             enemyHealth.onHit += PlayHitAnimation;
             enemyHealth.onDie += PlayDeathAnimation;
         }
+
+        animator.Rebind();
+        animator.Update(0f);
+        animator.SetBool(IsMoving, false);
+        animator.SetBool(IsHealing, false);
     }
 
     private void OnDisable()

@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Canon
   description: 
   icon: {fileID: 21300000, guid: f38266b1b15d2a8468abfac63f3a7e40, type: 3}
-  unitPrefab: {fileID: 7430700240802123827, guid: 7f08654789290894eb287e5ff1455807, type: 3}
+  unitPrefab: {fileID: 7430700240802123827, guid: dda3cada86d5d1b41a3f49e1e6f923a0, type: 3}
   currency: 0
   cost: 100
   maxAliveAtOnce: 0

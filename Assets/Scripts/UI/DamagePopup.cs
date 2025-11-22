@@ -35,7 +35,7 @@ public class DamagePopup : MonoBehaviour
         // Random lệch nhẹ để popup không trùng đúng 1 chỗ
         transform.localPosition += new Vector3(
             Random.Range(-_randomOffset.x, _randomOffset.x),
-            Random.Range(0f, _randomOffset.y),
+            _randomOffset.y,
             0f
         );
 

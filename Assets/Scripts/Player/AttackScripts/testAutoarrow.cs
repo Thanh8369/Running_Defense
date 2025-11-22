@@ -50,7 +50,7 @@ public class testAutoarrow : MonoBehaviour
         //foreach(Transform fp in firePoint)
         //{
         //    GameObject proj = ArrowObjectPool.Instance.GetObject();
-        //    //GameObject proj = Instantiate(projectilePrefab);
+        GameObject proj = Instantiate(projectilePrefab);
 
         //    proj.transform.position = fp.position;
         //    proj.transform.rotation = Quaternion.identity;
@@ -62,7 +62,7 @@ public class testAutoarrow : MonoBehaviour
 
         //    proj.transform.forward = dir;
         //}
-        GameObject proj = ArrowObjectPool.Instance.GetObject();
+        //GameObject proj = ArrowObjectPool.Instance.GetObject();
         //GameObject proj = Instantiate(projectilePrefab);
 
         proj.transform.position = firePoint.position;

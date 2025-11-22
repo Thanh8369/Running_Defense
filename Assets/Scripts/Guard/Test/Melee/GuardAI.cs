@@ -52,7 +52,8 @@ public class GuardAI : MonoBehaviour
         if (lockedTarget != null)
             return;
 
-        tower.enemyQueue.RemoveAll(e => e == null);
+        // loại bỏ target chết/null khỏi danh sách
+        tower.enemyQueue.RemoveAll(e => e == null || (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead()));
 
         if (tower.enemyQueue.Count == 0)
         {
