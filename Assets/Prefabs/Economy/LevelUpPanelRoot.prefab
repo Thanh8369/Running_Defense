@@ -46,10 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelRoot: {fileID: 0}
   allOptions:
-  - {fileID: 11400000, guid: b3de40f3768685f4ea7e1a24859f52a7, type: 2}
-  - {fileID: 11400000, guid: b3de40f3768685f4ea7e1a24859f52a7, type: 2}
-  - {fileID: 11400000, guid: b3de40f3768685f4ea7e1a24859f52a7, type: 2}
+  - {fileID: 11400000, guid: 9d40f1e607b052a429c9885a94b9d263, type: 2}
+  - {fileID: 11400000, guid: 38663850fe03afc48973cd8ed15e3f3e, type: 2}
+  - {fileID: 11400000, guid: b02714c40b399244e9795c08daf911ef, type: 2}
   optionButton1: {fileID: 0}
   optionButton2: {fileID: 0}
   optionButton3: {fileID: 0}
-  allowDuplicateInOneRoll: 1
+  playerRunStats: {fileID: 0}
+  allowDuplicateInOneRoll: 0

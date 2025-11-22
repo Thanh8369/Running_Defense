@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: Cactus_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks:
-  - animationName: Attack01
-    triggerName: Attack01
-    percent: 80
-    lastUsedTime: 0
-  - animationName: Attack02
-    triggerName: Attack02
-    percent: 20
-    lastUsedTime: 0
-  rangedAttacks: []
-  specialAttacks: []
+  attackAnimations:
+  - triggerName: Attack01
+    percent: 50
+    lastUsedTime: 20.301435
+  - triggerName: Attack02
+    percent: 50
+    lastUsedTime: 17.293741

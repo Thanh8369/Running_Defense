@@ -3,7 +3,6 @@
 public class GuardRangedAI : MonoBehaviour
 {
     public TowerArea tower;
-    public Transform guardPoint;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -17,93 +16,71 @@ public class GuardRangedAI : MonoBehaviour
     private Transform target;
     private float nextAttack;
 
-    private GuardAnimation animController;
     private WheelRotation wheelController;
-
-    private Transform lockedTarget = null;
 
     void Start()
     {
-        animController = GetComponent<GuardAnimation>();
         wheelController = GetComponent<WheelRotation>();
+
+        if (tower == null)
+        {
+            tower = FindObjectOfType<TowerArea>();
+            if (tower == null)
+                Debug.LogError("Không tìm thấy TowerArea trong scene!");
+        }
     }
 
     void Update()
     {
-        // 1) Đang Attack → đứng yên
-        if (animController.isAttacking)
-        {
-            animController.SetMoving(false);
-            wheelController.SetMoving(false);
-            return;
-        }
-
-        // 2) Attack xong → mở khóa target
-        if (lockedTarget != null && !animController.isAttacking)
-            lockedTarget = null;
-
         UpdateTarget();
 
-        // 3) Không có target → về guardPoint
+        // ---------------------------------------------------------
+        // ❌ KHÔNG CÓ TARGET → ĐỨNG YÊN (KHÔNG TRỞ VỀ GUARD POINT)
+        // ---------------------------------------------------------
         if (target == null)
         {
-            if (guardPoint != null)
-                MoveTo(guardPoint.position);
-            else
-            {
-                animController.SetMoving(false);
-                wheelController.SetMoving(false);
-            }
+            if (wheelController) wheelController.SetMoving(false);
             return;
         }
 
-        // 4) Enemy rời tower → bỏ target
+        // enemy rời tower
         if (!tower.enemyQueue.Contains(target))
         {
             target = null;
             return;
         }
 
-        float dist = Vector3.Distance(transform.position, target.position);
+        float distToEnemy = Vector3.Distance(transform.position, target.position);
 
-        // 5) Move nhưng giữ khoảng cách
-        if (dist > stopDistanceFromEnemy)
+        // ---------------------------------------------------------
+        //  MOVE GIỮ KHOẢNG CÁCH
+        // ---------------------------------------------------------
+        if (distToEnemy > stopDistanceFromEnemy)
         {
             MoveTo(target.position);
         }
         else
         {
-            animController.SetMoving(false);
-            wheelController.SetMoving(false);
+            if (wheelController) wheelController.SetMoving(false);
         }
 
-        // 6) Attack khi trong tầm
-        if (dist <= attackRange && Time.time >= nextAttack)
+        // ---------------------------------------------------------
+        //  BẮN
+        // ---------------------------------------------------------
+        if (distToEnemy <= attackRange && Time.time >= nextAttack)
         {
-            ShootAtTarget();
+            Shoot();
             nextAttack = Time.time + attackCooldown;
         }
     }
 
-    // =======================
-    // MOVE FUNCTION
-    // =======================
     void MoveTo(Vector3 pos)
     {
-        if (animController.isAttacking)
-        {
-            animController.SetMoving(false);
-            wheelController.SetMoving(false);
-            return;
-        }
+        if (wheelController) wheelController.SetMoving(true);
 
-        animController.SetMoving(true);
-        wheelController.SetMoving(true);
+        Vector3 flat = new Vector3(pos.x, transform.position.y, pos.z);
+        Vector3 dir = (flat - transform.position).normalized;
 
-        Vector3 dir = (pos - transform.position).normalized;
-        dir.y = 0;
-
-        // Xoay mượt
         if (dir != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(
@@ -113,22 +90,16 @@ public class GuardRangedAI : MonoBehaviour
             );
         }
 
-        // Di chuyển
         transform.position = Vector3.MoveTowards(
             transform.position,
-            pos,
+            flat,
             moveSpeed * Time.deltaTime
         );
     }
 
-    // =======================
-    // UPDATE TARGET
-    // =======================
     void UpdateTarget()
     {
         tower.enemyQueue.RemoveAll(e => e == null);
-
-        if (lockedTarget != null) return;   // đang attack thì KHÔNG đổi target
 
         if (tower.enemyQueue.Count == 0)
         {
@@ -140,30 +111,14 @@ public class GuardRangedAI : MonoBehaviour
             target = tower.enemyQueue[0];
     }
 
-    // =======================
-    // ATTACK
-    // =======================
-    void ShootAtTarget()
+    void Shoot()
     {
-        lockedTarget = target;
-        animController.PlayAttack();
-    }
-
-    // Animation Event → Bắn tại đúng frame
-    public void OnShootEvent()
-    {
-        if (target == null || firePoint == null) return;
-
-        // Xoay mặt về enemy
-        Vector3 aimDir = target.position - transform.position;
-        aimDir.y = 0;
-        if (aimDir != Vector3.zero)
-            transform.rotation = Quaternion.LookRotation(aimDir);
-
-        // Tạo đạn
-        Vector3 dir = (target.position - firePoint.position).normalized;
+        if (firePoint == null || target == null)
+            return;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDirection(dir);
+
+        BulletCanon parabola = bullet.GetComponent<BulletCanon>();
+        parabola.Init(target.position);
     }
 }

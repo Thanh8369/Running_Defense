@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
@@ -23,12 +23,12 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        // Không cần check tag nếu tất cả enemy đều có IDamageable
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
-            //takedamage(damage)
-            GetComponent<EnemyHealth>().TakeDamage(playerDamage.damage);
+            damageable.TakeDamage(playerDamage.damage);
             ArrowObjectPool.Instance.ReturnObject(gameObject);
-            //Debug.Log("hit");
+            Debug.Log("hit");
         }
     }
 }

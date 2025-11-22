@@ -9,20 +9,21 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private float currentHealth;
 
     private EnemyAI enemyAI;
+    private LizardWarriorAI bossAI;
     private EnemyGoldDrop goldDrop;
     private EnemyExpDropTest expDrop;
     private float maxHealth;
     private bool isDead = false;
 
-    // Events
     public Action onDie;
     public Action onHit;
+    public Action<float, float> onHealthChanged;
 
     private void Awake()
     {
         enemyAI = GetComponent<EnemyAI>();
+        bossAI = GetComponent<LizardWarriorAI>();
         maxHealth = enemyAI != null ? enemyAI.stats.maxHealth : 100f;
-
         currentHealth = maxHealth;
 
         goldDrop = GetComponent<EnemyGoldDrop>();
@@ -32,18 +33,19 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
-        {
             TakeDamage(50f);
-        }
     }
 
     public void TakeDamage(float damage)
     {
         if (damage <= 0 || isDead) return;
 
-        currentHealth -= damage;
+        float finalDamage = ApplyDamageReduction(damage);
+        currentHealth -= finalDamage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        GetComponent<DamagePopupReceiver>()?.ShowDamage(damage, transform.position);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
+
+        GetComponent<DamagePopupReceiver>()?.ShowDamage(finalDamage, transform.position);
 
         if (currentHealth > 0)
         {
@@ -56,55 +58,44 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
+    private float ApplyDamageReduction(float damage)
+    {
+        if (bossAI != null)
+            return damage * bossAI.GetDamageReductionMultiplier();
+        return damage;
+    }
+
+    public float GetHealthPercent() => maxHealth > 0 ? currentHealth / maxHealth : 1f;
+    public float GetCurrentHealth() => currentHealth;
+    public float GetMaxHealth() => maxHealth;
+
+    public void Heal(float newHealth)
+    {
+        currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
+    }
+    
     private void Die()
     {
         if (isDead) return;
         isDead = true;
 
-        // 1) Dừng AI, gọi event chết
         enemyAI.StopAI();
         onDie?.Invoke();
 
-        int goldGain = 0;
+        HandleRewards();
+    }
 
-        //// 2) Gán reward từ stats
-        //if (enemyAI != null)
-        //{
-        //    if (goldDrop != null)
-        //        goldDrop.DropGoldAndReturnAmount(enemyAI.stats.minGold, enemyAI.stats.maxGold);
+    private void HandleRewards()
+    {
+        int goldGain = goldDrop?.DropGoldAndReturnAmount() ?? 0;
+        expDrop?.OnEnemyKilled();
 
-        //    if (expDrop != null)
-        //        expDrop.SetExpAmount(enemyAI.stats.expAmount);
-        //}
-
-        // 3) Cộng Gold và lấy số Gold đã rơi
-        if (goldDrop != null)
+        if (goldGain > 0 && GoldPopupSpawner.Instance != null)
         {
-            goldGain = goldDrop.DropGoldAndReturnAmount();
+            GoldPopupSpawner.Instance.SpawnGoldPopup(transform.position, goldGain);
+            Debug.Log($"[EnemyHealth] Spawn gold popup: {goldGain}");
         }
-
-        // 4) Cộng Exp
-        if (expDrop != null)
-        {
-            expDrop.OnEnemyKilled();
-        }
-
-        // 5) Hiển thị popup Gold (coin + text)
-        if (goldGain > 0)
-        {
-            if (GoldPopupSpawner.Instance != null)
-            {
-                GoldPopupSpawner.Instance.SpawnGoldPopup(transform.position, goldGain);
-                Debug.Log("[EnemyHealth] Spawn gold popup: " + goldGain);
-            }
-            else
-            {
-                Debug.LogWarning("[EnemyHealth] GoldPopupSpawner.Instance == null, không thể spawn popup.");
-            }
-        }
-
-        // 6) Huỷ enemy (sau này nếu có animation chết thì có thể chuyển sang OnDieAnimationEnd)
-        // Destroy(gameObject);
     }
 
     public void OnDieAnimationEnd()

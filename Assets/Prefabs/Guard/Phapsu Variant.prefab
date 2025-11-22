@@ -2895,11 +2895,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3823097948888564610}
   - component: {fileID: 3768464362604100828}
-  - component: {fileID: 8777210927083285489}
-  - component: {fileID: 6413358306304567659}
   - component: {fileID: 9116268534346360748}
   - component: {fileID: 5552179059318750027}
   - component: {fileID: 8468764739204855282}
+  - component: {fileID: 5117092267927221153}
+  - component: {fileID: 6431393724320379310}
+  - component: {fileID: 3967844555638148833}
   m_Layer: 0
   m_Name: Phapsu Variant
   m_TagString: Untagged
@@ -2916,7 +2917,7 @@ Transform:
   m_GameObject: {fileID: 3826728684629958318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.62, y: 0.35000002, z: -3.52}
+  m_LocalPosition: {x: -11.28, y: 0.105, z: -0.23}
   m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2968,50 +2969,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8777210927083285489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826728684629958318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f576678a2df43489d623798b5f63fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 0}
-  guardPoint: {fileID: 0}
-  bulletPrefab: {fileID: 5000577499338567899, guid: cd770d9e3bc169846a67286d9071a3bc, type: 3}
-  firePoint: {fileID: 8785167284564422528}
-  moveSpeed: 3
-  rotateSpeed: 10
-  attackRange: 10
-  attackCooldown: 2
-  stopDistanceFromEnemy: 3
---- !u!136 &6413358306304567659
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3826728684629958318}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &9116268534346360748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3034,10 +2991,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!195 &5552179059318750027
 NavMeshAgent:
@@ -3076,6 +3033,62 @@ MonoBehaviour:
   anim: {fileID: 3768464362604100828}
   rb: {fileID: 9116268534346360748}
   isAttacking: 0
+--- !u!114 &5117092267927221153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826728684629958318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3171925c2ddd969449929613c9033295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 0}
+  bulletPrefab: {fileID: 5000577499338567899, guid: cd770d9e3bc169846a67286d9071a3bc, type: 3}
+  firePoint: {fileID: 9003008367720071153}
+  moveSpeed: 1.5
+  rotateSpeed: 10
+  attackRange: 15
+  attackCooldown: 0.5
+  stopDistanceFromEnemy: 15
+--- !u!114 &6431393724320379310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826728684629958318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6a8227a372d15408bad640b287de0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 170
+--- !u!136 &3967844555638148833
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3826728684629958318}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.8183765
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8882959, z: 0}
 --- !u!1 &3826739178777723886
 GameObject:
   m_ObjectHideFlags: 0

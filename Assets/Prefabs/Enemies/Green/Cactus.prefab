@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5625903969507020556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8781411393240314016}
-  m_LocalEulerAnglesHint: {x: -11.73595, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -10.217588, y: -90.0029, z: 0.23435946}
 --- !u!1 &2586851882539819039
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3693822913442632000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ Transform:
   m_Children:
   - {fileID: 2905220353032799903}
   m_Father: {fileID: 2116379803476209489}
-  m_LocalEulerAnglesHint: {x: -8.529432, y: 177.46767, z: -1.1314967}
+  m_LocalEulerAnglesHint: {x: 5.4535956, y: -170.19711, z: -3.6811304}
 --- !u!1 &3171610495626141928
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5348120685189243977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8781411393240314016}
-  m_LocalEulerAnglesHint: {x: -11.73595, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.7359495, y: -90, z: 0}
 --- !u!1 &3820112611858333898
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8781411393240314016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ Transform:
   - {fileID: 5625903969507020556}
   - {fileID: 5348120685189243977}
   m_Father: {fileID: 4179311130152139821}
-  m_LocalEulerAnglesHint: {x: 4.947169e-16, y: 4.728385e-17, z: 11.635403}
+  m_LocalEulerAnglesHint: {x: -2.4197868e-16, y: 1.774547e-14, z: 10.226486}
 --- !u!1 &5235126371167776465
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2116379803476209489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ Transform:
   m_Children:
   - {fileID: 3693822913442632000}
   m_Father: {fileID: 5479013418364110216}
-  m_LocalEulerAnglesHint: {x: -2.8641762e-13, y: 1.7547907e-13, z: 71.27479}
+  m_LocalEulerAnglesHint: {x: -2.2238818e-13, y: 1.1475708e-13, z: 77.20436}
 --- !u!1 &5348418121529227646
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5479013418364110216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ Transform:
   m_Children:
   - {fileID: 2116379803476209489}
   m_Father: {fileID: 4948616317853394032}
-  m_LocalEulerAnglesHint: {x: 10.034481, y: 120.0614, z: 21.674726}
+  m_LocalEulerAnglesHint: {x: -9.346098, y: 143.02159, z: -53.36207}
 --- !u!1 &5449841737371777921
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249688011958634266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_headDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8781411393240314016}
-  m_LocalEulerAnglesHint: {x: -11.73595, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.7359495, y: -90, z: 0}
 --- !u!1 &6461216555753601372
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6535827280145574538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ Transform:
   m_Children:
   - {fileID: 5271794839355013356}
   m_Father: {fileID: 4948616317853394032}
-  m_LocalEulerAnglesHint: {x: -8.587025, y: -122.31973, z: 13.500112}
+  m_LocalEulerAnglesHint: {x: 6.6696033, y: -134.26979, z: -33.258583}
 --- !u!1 &6648621974788280965
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2878031622219899839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ Transform:
   m_Children:
   - {fileID: 9198815951651920335}
   m_Father: {fileID: 4907483608825856212}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -80.19421}
+  m_LocalEulerAnglesHint: {x: 1.7643132, y: 89.414, z: -82.342735}
 --- !u!1 &7027985149148943725
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4948616317853394032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ Transform:
   - {fileID: 4179311130152139821}
   - {fileID: 5479013418364110216}
   m_Father: {fileID: 8722347441045375111}
-  m_LocalEulerAnglesHint: {x: -1.6949982e-15, y: 5.9246287e-15, z: 31.930973}
+  m_LocalEulerAnglesHint: {x: 0.85497165, y: -2.949922, z: 29.56617}
 --- !u!1 &7032169686097915220
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8019161460842006158}
   - component: {fileID: 2772405351631982124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 277884207323926521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ Transform:
   m_Children:
   - {fileID: 8873859278459767653}
   m_Father: {fileID: 5271794839355013356}
-  m_LocalEulerAnglesHint: {x: 8.464568, y: 3.1338296, z: -5.654575}
+  m_LocalEulerAnglesHint: {x: -12.067709, y: -5.668121, z: 0.9922077}
 --- !u!1 &7373715480477912321
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4179311130152139821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ Transform:
   m_Children:
   - {fileID: 8781411393240314016}
   m_Father: {fileID: 4948616317853394032}
-  m_LocalEulerAnglesHint: {x: -1.5562264e-14, y: 3.6500386e-15, z: -14.801163}
+  m_LocalEulerAnglesHint: {x: -1.2019989e-14, y: 2.8192183e-15, z: -14.801163}
 --- !u!1 &7729726114527646557
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2905220353032799903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_rightHandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,6 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4907483608825856212}
   - component: {fileID: 8821184326143841630}
+  - component: {fileID: 1243132638093653635}
   - component: {fileID: 1477940255151389615}
   - component: {fileID: 8491296439346209648}
   - component: {fileID: 7804782196648142632}
@@ -540,7 +541,7 @@ GameObject:
   - component: {fileID: 7550148579496313850}
   - component: {fileID: 1224591997037860052}
   - component: {fileID: -6506492459811686043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -586,6 +587,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1243132638093653635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798384498389156138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &1477940255151389615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -664,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5748faafb6444d8fb5520daddd4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logOnDrop: 1
+  logOnDrop: 0
 --- !u!114 &1224591997037860052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expAmount: 10
-  logOnDrop: 1
+  logOnDrop: 0
 --- !u!114 &-6506492459811686043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82abb3ade006e4445a929964a09590b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _popupAnchor: {fileID: 0}
+  _popupAnchor: {fileID: 4907483608825856212}
 --- !u!1 &7948568277298898797
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8873859278459767653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftHandTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8722347441045375111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +776,7 @@ Transform:
   m_Children:
   - {fileID: 4948616317853394032}
   m_Father: {fileID: 9198815951651920335}
-  m_LocalEulerAnglesHint: {x: 4.783072e-15, y: 2.0277798e-16, z: -4.6720905}
+  m_LocalEulerAnglesHint: {x: 6.073578e-15, y: -1.1413255e-16, z: -6.551347}
 --- !u!1 &8533604327782147795
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8938861160665501009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +807,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8781411393240314016}
-  m_LocalEulerAnglesHint: {x: -10.1786585, y: -90.97244, z: 0.34233844}
+  m_LocalEulerAnglesHint: {x: -11.7359495, y: -90, z: 0}
 --- !u!1 &8632374763163838426
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9198815951651920335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +839,7 @@ Transform:
   m_Children:
   - {fileID: 8722347441045375111}
   m_Father: {fileID: 2878031622219899839}
-  m_LocalEulerAnglesHint: {x: 3.114508e-15, y: -7.9188464e-16, z: -12.082954}
+  m_LocalEulerAnglesHint: {x: 4.9100586e-15, y: -1.2913172e-15, z: -13.0101185}
 --- !u!1 &9013407018148249866
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271794839355013356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cactus_leftLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,4 +871,4 @@ Transform:
   m_Children:
   - {fileID: 277884207323926521}
   m_Father: {fileID: 6535827280145574538}
-  m_LocalEulerAnglesHint: {x: -5.768133e-13, y: 1.6569165e-13, z: 77.08016}
+  m_LocalEulerAnglesHint: {x: -7.1597134e-13, y: 1.6596764e-13, z: 83.41153}

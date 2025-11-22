@@ -1,14 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-[Serializable]
-public class AnimationFirepointProjectileMap
-{
-    public string animationTriggerName;
-    public Transform firePoint;
-    public int projectileVariantIndex = 0;
-}
 
 public class CyclopsAI : RangedEnemyAI
 {
@@ -18,12 +9,8 @@ public class CyclopsAI : RangedEnemyAI
     public void OnAttackAnimationSet(string triggerName)
     {
         currentAttackMapping = GetMappingForAnimation(triggerName);
-        
         if (currentAttackMapping != null)
-        {
-            // Switch projectile variant theo animation
             SetProjectileVariant(currentAttackMapping.projectileVariantIndex);
-        }
     }
 
     private AnimationFirepointProjectileMap GetMappingForAnimation(string triggerName)
@@ -36,11 +23,10 @@ public class CyclopsAI : RangedEnemyAI
         return null;
     }
 
-    public new void FireProjectile()
+    public override void FireProjectile()
     {
         if (currentTarget == null || currentAttackMapping == null) return;
 
-        // Lấy projectile variant từ mapping
         var projectileVariants = stats.projectilePrefabs;
         if (projectileVariants.Count == 0) return;
 

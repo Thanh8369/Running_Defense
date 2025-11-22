@@ -12,7 +12,7 @@ namespace Son.Economy
         public TMP_Text nameText;
         public TMP_Text descriptionText;
 
-        [HideInInspector] public LevelUpOptionConfig option;
+        [HideInInspector] public LevelUpOption_StatBonus option;
         [HideInInspector] public LevelUpPanel parentPanel;
 
         private Button _btn;
@@ -32,13 +32,13 @@ namespace Son.Economy
             _btn.onClick.RemoveListener(OnClick);
         }
 
-        public void Setup(LevelUpOptionConfig config, LevelUpPanel panel)
+        public void Setup(LevelUpOption_StatBonus config, LevelUpPanel panel)
         {
             option = config;
             parentPanel = panel;
 
             if (iconImage) iconImage.sprite = config.icon;
-            if (nameText) nameText.text = config.displayName;
+            if (nameText) nameText.text = config.displayName + " +" + config.amount;
             if (descriptionText) descriptionText.text = config.description;
         }
 
