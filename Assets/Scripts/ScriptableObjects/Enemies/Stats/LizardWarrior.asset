@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: LizardWarrior
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10000
   moveSpeed: 15
   maxSpeed: 37.5
   rotateSpeed: 360

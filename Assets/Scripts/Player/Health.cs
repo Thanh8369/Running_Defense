@@ -10,6 +10,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public event Action<float, float> OnHealthChanged;
     public event Action OnDeath;
+    public event Action OnRevive;
 
     private void Awake()
     {
@@ -53,5 +54,6 @@ public class Health : MonoBehaviour, IDamageable
         CurrentHealth = playerHpData._maxHealth;
         Debug.Log($"[Health] ReviveToFull, HP = {CurrentHealth}/{playerHpData._maxHealth}");
         OnHealthChanged?.Invoke(CurrentHealth, playerHpData._maxHealth);
+        OnRevive?.Invoke();
     }
 }
