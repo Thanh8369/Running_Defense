@@ -13,7 +13,6 @@ public class OrcAttackVariant
 public class OrcAI : MeleeEnemyAI
 {
     [SerializeField] private List<OrcAttackVariant> attackVariants = new List<OrcAttackVariant>();
-
     private int currentAttackVariantId = 0;
 
     public void OnAttackAnimationSet(string triggerName)
@@ -61,7 +60,7 @@ public class OrcAI : MeleeEnemyAI
 
         foreach (Collider collider in hitColliders)
         {
-            if (collider.transform == transform) continue; // Skip tự mình
+            if (collider.transform == transform) continue;
 
             IDamageable damageable = collider.GetComponent<IDamageable>();
             if (damageable != null)

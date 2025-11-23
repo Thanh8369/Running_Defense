@@ -49,8 +49,6 @@ public class EnemyAnimation : MonoBehaviour
 
         animator.Rebind();
         animator.Update(0f);
-        animator.SetBool(IsMoving, false);
-        animator.SetBool(IsHealing, false);
     }
 
     private void OnDisable()

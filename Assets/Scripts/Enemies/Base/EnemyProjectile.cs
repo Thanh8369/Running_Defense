@@ -55,8 +55,8 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (target != null && other.transform == target)
-            target.GetComponent<IDamageable>()?.TakeDamage(damage);
+        // if (target != null && other.transform == target)
+        other.GetComponent<IDamageable>()?.TakeDamage(damage);
 
         PoolManager.Instance.Return(gameObject);
     }

@@ -26,55 +26,76 @@ public class RangedEnemyAI : EnemyAI
 
     protected override void SetupBT()
     {
-        rootNode = new BTSelector(new List<BTNode>
-        {
-            BuildPlayerAttackSequence(),
-            BuildTowerAttackSequence()
-        });
+        var nodes = new List<BTNode>();
+
+        // Thêm các node tuỳ chỉnh từ class con
+        var additionalNodes = GetAdditionalBTNodes();
+        if (additionalNodes != null)
+            nodes.AddRange(additionalNodes);
+
+        // Ưu tiên: Player > Troop > Tower
+        nodes.Add(BuildTargetSequence(
+            () => player,
+            () => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0
+        ));
+
+        nodes.Add(BuildTargetSequence(
+            () => nearestTroop,
+            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange && currentFocusTime <= 0
+        ));
+
+        nodes.Add(BuildTowerSequence());
+
+        rootNode = new BTSelector(nodes);
     }
 
-    private BTSequence BuildPlayerAttackSequence()
+    protected virtual List<BTNode> GetAdditionalBTNodes()
+    {
+        return null;
+    }
+
+    private BTSequence BuildTargetSequence(System.Func<Transform> getTarget, System.Func<bool> condition)
     {
         return new BTSequence(new List<BTNode>
         {
-            new BTCondition(() => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0),
+            new BTCondition(condition),
             new BTSelector(new List<BTNode>
             {
-                BuildFireSequence(player),
-                BuildAdvanceSequence(player)
+                BuildFireSequence(getTarget),
+                BuildAdvanceSequence(getTarget)
             })
         });
     }
 
-    private BTSequence BuildTowerAttackSequence()
+    private BTSequence BuildTowerSequence()
     {
         return new BTSequence(new List<BTNode>
         {
             new BTSelector(new List<BTNode>
             {
                 BuildTowerFireWithCooldown(),
-                BuildAdvanceSequence(tower)
+                BuildAdvanceSequence(() => tower)
             })
         });
     }
 
-    private BTSequence BuildFireSequence(Transform target)
+    private BTSequence BuildFireSequence(System.Func<Transform> getTarget)
     {
         return new BTSequence(new List<BTNode>
         {
-            new BTCondition(() => DistanceToTarget(target) <= stats.attackRange),
-            new BTAction(() => RotateToTarget(target)),
-            new BTAction(() => AttackTarget(target))
+            new BTCondition(() => DistanceToTarget(getTarget()) <= stats.attackRange),
+            new BTAction(() => RotateToTarget(getTarget())),
+            new BTAction(() => AttackTarget(getTarget()))
         });
     }
 
-    private BTSequence BuildAdvanceSequence(Transform target)
+    private BTSequence BuildAdvanceSequence(System.Func<Transform> getTarget)
     {
         return new BTSequence(new List<BTNode>
         {
-            new BTCondition(() => DistanceToTarget(target) > stats.attackRange),
-            new BTAction(() => RotateToTarget(target)),
-            new BTAction(() => MoveToTarget(target))
+            new BTCondition(() => DistanceToTarget(getTarget()) > stats.attackRange),
+            new BTAction(() => RotateToTarget(getTarget())),
+            new BTAction(() => MoveToTarget(getTarget()))
         });
     }
 

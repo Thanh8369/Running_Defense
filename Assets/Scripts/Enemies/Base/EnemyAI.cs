@@ -23,9 +23,13 @@ public abstract class EnemyAI : MonoBehaviour
     protected Transform tower;
     protected Transform player;
     protected Transform currentTarget;
+    protected Transform nearestTroop;
     protected float currentFocusTime;
 
     private float lastAttackTime;
+    private float troopScanInterval = 0.5f;
+    private float lastTroopScanTime;
+
     protected bool isAttacking;
     protected bool isRotate;
     protected bool isDie = false;
@@ -46,9 +50,37 @@ public abstract class EnemyAI : MonoBehaviour
         SetupBT();
     }
 
+    protected virtual void OnEnable()
+    {
+        isDie = false;
+        isHit = false;
+        isAttacking = false;
+        isRotate = false;
+
+        lastAttackTime = -999f;
+        lastTroopScanTime = -999f;
+        currentFocusTime = 0f;
+        currentTarget = null;
+        nearestTroop = null;
+
+        currentMoveSpeed = stats.moveSpeed;
+
+        activeBuffs.Clear();
+
+        if (rb != null)
+            rb.linearVelocity = Vector3.zero;
+    }
+
     protected virtual void Update()
     {
         if (isDie || isHit) return;
+
+        // Scan troops định kỳ
+        if (Time.time - lastTroopScanTime >= troopScanInterval)
+        {
+            FindNearestTroop();
+            lastTroopScanTime = Time.time;
+        }
 
         rootNode?.Evaluate();
 
@@ -58,6 +90,36 @@ public abstract class EnemyAI : MonoBehaviour
     }
 
     protected abstract void SetupBT();
+
+    // ============ Target Finding ============
+    protected void FindNearestTroop()
+    {
+        GameObject[] troops = GameObject.FindGameObjectsWithTag("Troop");
+
+        if (troops.Length == 0)
+        {
+            nearestTroop = null;
+            return;
+        }
+
+        Transform closest = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (GameObject troop in troops)
+        {
+            if (troop == null) continue;
+
+            float distance = Vector3.Distance(transform.position, troop.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = troop.transform;
+            }
+        }
+
+        nearestTroop = closest;
+    }
 
     // ============ Movement ============
     protected BTNode.NodeState MoveToTarget(Transform target)
@@ -139,8 +201,6 @@ public abstract class EnemyAI : MonoBehaviour
     private void UpdateBuffs()
     {
         float multiplierSpeed = 1f;
-
-        // Lấy buff tốc độ cuối cùng (gần nhất)
         Buff lastSpeed = null;
 
         for (int i = activeBuffs.Count - 1; i >= 0; i--)
@@ -174,25 +234,6 @@ public abstract class EnemyAI : MonoBehaviour
         };
 
         activeBuffs.Add(buff);
-    }
-
-    protected virtual void OnEnable()
-    {
-        isDie = false;
-        isHit = false;
-        isAttacking = false;
-        isRotate = false;
-
-        lastAttackTime = -999f;
-        currentFocusTime = 0f;
-        currentTarget = null;
-
-        currentMoveSpeed = stats.moveSpeed;
-
-        activeBuffs.Clear();
-
-        if (rb != null)
-            rb.linearVelocity = Vector3.zero;
     }
 
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);

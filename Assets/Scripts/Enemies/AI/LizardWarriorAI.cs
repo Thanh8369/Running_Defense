@@ -10,7 +10,7 @@ public class LizardWarriorAI : MeleeEnemyAI
     [SerializeField] private float healCooldown = 15f;
     [SerializeField] private float healDuration = 3f;
     [SerializeField] private float healAmount = 30f;
-    [SerializeField] private float healTick = 1f; 
+    [SerializeField] private float healTick = 1f;
     [SerializeField] private float defenseDamageReduction = 0.6f;
 
     [Header("Buff Skill Settings")]
@@ -27,7 +27,7 @@ public class LizardWarriorAI : MeleeEnemyAI
     private EnemyHealth enemyHealth;
     private EnemyAnimation enemyAnimation;
 
-    private void OnEnable()
+    private new void OnEnable()
     {
         FindFirstObjectByType<BossHealthUI>(FindObjectsInactive.Include)?.HandleBossSpawned(this);
     }
@@ -39,13 +39,11 @@ public class LizardWarriorAI : MeleeEnemyAI
         enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
-    // Override để thêm heal sequence vào đầu
     protected override List<BTNode> GetAdditionalBTNodes()
     {
         return new List<BTNode> { BuildHealSequence() };
     }
 
-    // Chỉ chặn khi đang heal (không bao gồm isHit)
     protected override bool IsBlockedByAdditionalCondition()
     {
         return isHealing;
@@ -89,7 +87,7 @@ public class LizardWarriorAI : MeleeEnemyAI
         float timeSinceLastHeal = Time.time - lastHealTime;
         float hpPercent = enemyHealth.GetHealthPercent();
 
-        return timeSinceLastHeal >= healCooldown && hpPercent < 0.5f; // 50% health 
+        return timeSinceLastHeal >= healCooldown && hpPercent < 0.5f;
     }
 
     private BTNode.NodeState EnterHealingStance()
