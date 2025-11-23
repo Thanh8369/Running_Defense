@@ -2,7 +2,7 @@
 using Son.Economy;
 
 /// <summary>
-/// Option: tăng stat cho PLAYER (damage, attack speed, HP).
+/// Option: tăng stat cho PLAYER (damage, attack speed, HP, sword).
 /// </summary>
 [CreateAssetMenu(
     fileName = "LevelUpOption_StatBonus",
@@ -12,12 +12,13 @@ public class LevelUpOption_StatBonus : LevelUpOptionConfig
 {
     public enum PlayerStatType
     {
-        AttackDamage,       // Cộng thẳng vào bonus damage
-        AttackSpeedPercent, // Nhân % attack speed
-        MaxHP               // Tăng Max HP
+        AttackDamage,           // Cộng thẳng vào bonus damage (arrow)
+        AttackSpeedPercent,     // Nhân % attack speed (arrow)
+        MaxHP,                  // Tăng Max HP
+        SwordDamageAndSpeed     // NEW: Kiếm - tăng damage + attack speed trong 1 option
     }
 
-    [Header("Cấu hình cho Player")]
+    [Header("Cấu hình chung cho Player")]
     public PlayerStatType targetStat = PlayerStatType.AttackDamage;
 
     [Tooltip("AttackDamage: +amount\nAttackSpeedPercent: amount = 0.1f => +10%\nMaxHP: +amount")]
@@ -25,6 +26,13 @@ public class LevelUpOption_StatBonus : LevelUpOptionConfig
 
     [Tooltip("Khi tăng MaxHP, có heal full máu không?")]
     public bool healToFullOnMaxHPIncrease = true;
+
+    [Header("Cấu hình riêng cho Sword (nếu targetStat = SwordDamageAndSpeed)")]
+    [Tooltip("Cộng thêm damage cho kiếm (bonus). VD: 10 = +10 damage kiếm.")]
+    public float swordDamageAmount = 10f;
+
+    [Tooltip("Tăng % tốc độ quay kiếm. VD: 0.2 = +20% speed.")]
+    public float swordAttackSpeedPercent = 0.2f;
 
     /// <summary>
     /// Gọi từ LevelUpPanel, đã truyền sẵn PlayerRunStats.
@@ -41,14 +49,14 @@ public class LevelUpOption_StatBonus : LevelUpOptionConfig
         {
             case PlayerStatType.AttackDamage:
                 stats.bonusAttackDamage += amount;
-                Debug.Log($"[PlayerUpgrade] {displayName}: +{amount} Damage → Total = {stats.TotalAttackDamage}");
+                Debug.Log($"[PlayerUpgrade] {displayName}: +{amount} Arrow Damage → Total = {stats.TotalAttackDamage}");
                 break;
 
             case PlayerStatType.AttackSpeedPercent:
                 {
                     float mul = 1f + amount; // amount = 0.1 -> +10%
                     stats.attackSpeed *= mul;
-                    Debug.Log($"[PlayerUpgrade] {displayName}: +{amount * 100f}% Attack Speed → AS = {stats.attackSpeed}");
+                    Debug.Log($"[PlayerUpgrade] {displayName}: +{amount * 100f}% Arrow Attack Speed → AS = {stats.attackSpeed}");
                     break;
                 }
 
@@ -56,6 +64,19 @@ public class LevelUpOption_StatBonus : LevelUpOptionConfig
                 stats.AddMaxHP(amount, healToFullOnMaxHPIncrease);
                 Debug.Log($"[PlayerUpgrade] {displayName}: +{amount} MaxHP → MaxHP = {stats.maxHP}, HP = {stats.currentHP}");
                 break;
+
+            case PlayerStatType.SwordDamageAndSpeed:
+                {
+                    stats.AddSwordDamage(swordDamageAmount);
+                    stats.AddSwordAttackSpeedPercent(swordAttackSpeedPercent);
+
+                    Debug.Log(
+                        $"[PlayerUpgrade] {displayName}: "
+                        + $"+{swordDamageAmount} Sword Damage (TotalSwordDamage = {stats.TotalSwordDamage}), "
+                        + $"+{swordAttackSpeedPercent * 100f}% Sword Attack Speed (baseSwordAttackSpeed = {stats.baseSwordAttackSpeed})"
+                    );
+                    break;
+                }
         }
     }
 

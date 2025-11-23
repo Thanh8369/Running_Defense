@@ -10,6 +10,9 @@ public class PlayerRunStats : MonoBehaviour
     [Tooltip("SO damage mũi tên (base).")]
     public PlayerArrowDama arrowData;
 
+    [Tooltip("SO damage kiếm (base).")]
+    public PlayerSwordDama swordData;       // <--- NEW
+
     [Tooltip("SO data player, đang dùng shootInterval.")]
     public PlayerData playerData;
 
@@ -17,23 +20,36 @@ public class PlayerRunStats : MonoBehaviour
     public PlayerHpData hpData;
 
     [Header("Damage / Attack (runtime)")]
-    [Tooltip("Damage cơ bản, lấy từ arrowData.damage khi Start/Awake.")]
+    [Tooltip("Damage cơ bản của mũi tên, lấy từ arrowData.damage khi Start/Awake.")]
     public float baseAttackDamage = 10f;
 
-    [Tooltip("Damage cộng thêm từ các level up, buff...")]
+    [Tooltip("Damage cộng thêm từ các level up, buff... (cho mũi tên).")]
     public float bonusAttackDamage = 0f;
 
     [Tooltip("Attack per second (số đòn / giây). Sẽ tính từ 1 / shootInterval.")]
     public float attackSpeed = 1f; // 1 = 1 hit/second
+
+    [Header("Sword Damage (runtime)")]
+    [Tooltip("Damage cơ bản của kiếm, lấy từ swordData.damage.")]
+    public float baseSwordDamage = 10f;      // <--- NEW
+    public float baseSwordAttackSpeed;
+
+    [Tooltip("Damage cộng thêm cho kiếm từ level up, buff...")]
+    public float bonusSwordDamage = 0f;      // <--- NEW
 
     [Header("HP (runtime)")]
     public float maxHP = 100f;
     public float currentHP = 100f;
 
     /// <summary>
-    /// Damage thực tế = base + bonus.
+    /// Damage thực tế của mũi tên = base + bonus.
     /// </summary>
     public float TotalAttackDamage => baseAttackDamage + bonusAttackDamage;
+
+    /// <summary>
+    /// Damage thực tế của kiếm = base + bonus.
+    /// </summary>
+    public float TotalSwordDamage => baseSwordDamage + bonusSwordDamage;   // <--- NEW
 
     private void Awake()
     {
@@ -47,7 +63,7 @@ public class PlayerRunStats : MonoBehaviour
     [ContextMenu("Init From Scriptable Data (Editor Only)")]
     public void InitFromScriptableData()
     {
-        // Base damage từ PlayerArrowDama
+        // Base damage từ PlayerArrowDama (mũi tên)
         if (arrowData != null)
         {
             baseAttackDamage = arrowData.damage;
@@ -55,6 +71,17 @@ public class PlayerRunStats : MonoBehaviour
         else
         {
             Debug.LogWarning("[PlayerRunStats] arrowData chưa gán, dùng baseAttackDamage mặc định.");
+        }
+
+        // Base damage từ PlayerSwordDama (kiếm)
+        if (swordData != null)
+        {
+            baseSwordDamage = swordData.damage;
+            baseSwordAttackSpeed = swordData.SwordAttackSpeed;
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerRunStats] swordData chưa gán, dùng baseSwordDamage mặc định.");
         }
 
         // AttackSpeed = 1 / shootInterval
@@ -99,8 +126,25 @@ public class PlayerRunStats : MonoBehaviour
         }
         else
         {
-            // Đảm bảo không vượt quá maxHP mới (nếu sau này có logic heal khác).
             currentHP = Mathf.Min(currentHP, maxHP);
         }
+    }
+
+    /// <summary>
+    /// Level up riêng cho kiếm: cộng thêm sword damage.
+    /// </summary>
+    public void AddSwordDamage(float amount)       // <--- NEW, dùng cho level up
+    {
+        bonusSwordDamage += amount;
+    }
+
+    /// <summary>
+    /// Tăng % tốc độ tấn công của kiếm (quay quanh player).
+    /// amount = 0.2f => +20%.
+    /// </summary>
+    public void AddSwordAttackSpeedPercent(float amount)
+    {
+        float mul = 1f + amount;
+        baseSwordAttackSpeed *= mul;
     }
 }

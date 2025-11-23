@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69829e032af5f0e4dbd7ccd76ee414e8, type: 3}
-  m_Name: TowerData
+  m_Script: {fileID: 11500000, guid: de77355f1da16084fab555a39dbb6311, type: 3}
+  m_Name: TowerHP
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 200
-  attackRange: 3
+  _maxHealth: 5000

@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 2121986225317351259}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Player
+  m_TagString: Troop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7430700240802123827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1544176f288a1414db9d6d352d8f1a55, type: 3}
   m_Name: 
@@ -493,7 +493,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7430700240802123827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0

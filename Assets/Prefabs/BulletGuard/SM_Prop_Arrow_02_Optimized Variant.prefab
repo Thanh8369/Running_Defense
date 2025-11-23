@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8291074592778494718}
   - component: {fileID: 3763659899005824442}
   - component: {fileID: 939390590913336231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Prop_Arrow_02_Optimized Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}

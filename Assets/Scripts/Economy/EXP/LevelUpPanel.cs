@@ -8,6 +8,7 @@ namespace Son.Economy
     /// - Lắng nghe sự kiện OnLevelUp từ PlayerExperienceManager.
     /// - Mỗi lần Level Up: random 3 option từ allOptions (có thể gồm Player & Tower).
     /// - Cho phép queue nhiều lần Level Up (pendingLevelUpCount).
+    /// - Mỗi option chỉ được CHỌN tối đa maxChosenPerOption lần trong 1 run.
     /// </summary>
     public class LevelUpPanel : MonoBehaviour
     {
@@ -31,16 +32,32 @@ namespace Son.Economy
         [Tooltip("Cho phép trùng option trong cùng 1 lần roll hay không.")]
         public bool allowDuplicateInOneRoll = false;
 
+        [Header("Giới hạn số lần CHỌN")]
+        [Tooltip("Mỗi option chỉ được CHỌN tối đa bao nhiêu lần trong 1 run.")]
+        public int maxChosenPerOption = 5;   // <--- NEW
+
         private PlayerExperienceManager _exp;
         private float _prevTimeScale = 1f;
 
         private int _pendingLevelUpCount = 0;
         private bool _isPanelOpen = false;
 
+        // Đếm số lần MỖI OPTION đã được CHỌN (player click).
+        private readonly Dictionary<LevelUpOptionConfig, int> _optionChosenCount
+            = new Dictionary<LevelUpOptionConfig, int>(); // <--- NEW
+
         private void Awake()
         {
             if (panelRoot != null)
                 panelRoot.SetActive(false);
+
+            // Chuẩn bị dictionary cho tất cả option
+            foreach (var opt in allOptions)
+            {
+                if (opt == null) continue;
+                if (!_optionChosenCount.ContainsKey(opt))
+                    _optionChosenCount[opt] = 0;
+            }
         }
 
         private void OnEnable()
@@ -81,7 +98,7 @@ namespace Son.Economy
                 return;
             }
 
-            if (!_isPanelOpen)
+            if (!_isPanelOpen && _exp.currentLevel <= 35)
             {
                 _prevTimeScale = Time.timeScale;
                 Time.timeScale = 0f;
@@ -104,7 +121,18 @@ namespace Son.Economy
         /// </summary>
         public void OnOptionChosen(LevelUpOptionConfig option)
         {
-            Debug.Log($"[LevelUpPanel] Player đã chọn option: {option?.id} - {option?.displayName}");
+            Debug.Log($"[LevelUpPanel] Player đã CHỌN option: {option?.id} - {option?.displayName}");
+
+            // Ghi nhận số lần CHỌN của option này
+            if (option != null)
+            {
+                if (!_optionChosenCount.ContainsKey(option))
+                    _optionChosenCount[option] = 0;
+
+                _optionChosenCount[option]++;
+
+                Debug.Log($"[LevelUpPanel] Option {option.id} đã được chọn tổng cộng: {_optionChosenCount[option]} lần.");
+            }
 
             // --- APPLY EFFECT ---
             if (option != null)
@@ -142,7 +170,8 @@ namespace Son.Economy
         }
 
         /// <summary>
-        /// Random ra N option bất kỳ từ allOptions.
+        /// Random ra N option bất kỳ từ allOptions,
+        /// nhưng chỉ chọn những option CHƯA bị chọn quá maxChosenPerOption lần.
         /// </summary>
         private List<LevelUpOptionConfig> PickRandomOptions(int count)
         {
@@ -151,19 +180,47 @@ namespace Son.Economy
             if (allOptions == null || allOptions.Count == 0)
                 return result;
 
-            var pool = new List<LevelUpOptionConfig>(allOptions);
+            // Đảm bảo tất cả option nằm trong dictionary
+            foreach (var opt in allOptions)
+            {
+                if (opt == null) continue;
+                if (!_optionChosenCount.ContainsKey(opt))
+                    _optionChosenCount[opt] = 0;
+            }
 
             for (int i = 0; i < count; i++)
             {
+                // Tạo pool theo rule:
+                // - Chỉ lấy option đã được CHỌN < maxChosenPerOption lần.
+                // - Nếu không cho trùng trong cùng 1 roll thì loại option đã nằm trong result.
+                var pool = new List<LevelUpOptionConfig>();
+
+                foreach (var opt in allOptions)
+                {
+                    if (opt == null) continue;
+
+                    int chosenCount = _optionChosenCount[opt];
+
+                    // Đã chọn quá/đủ giới hạn
+                    if (chosenCount >= maxChosenPerOption)
+                        continue;
+
+                    // Không cho trùng trong cùng 1 lần roll
+                    if (!allowDuplicateInOneRoll && result.Contains(opt))
+                        continue;
+
+                    pool.Add(opt);
+                }
+
                 if (pool.Count == 0)
+                {
+                    Debug.Log("[LevelUpPanel] Không còn option hợp lệ (đã đạt maxChosenPerOption) → không đủ 3 lựa chọn.");
                     break;
+                }
 
                 int index = Random.Range(0, pool.Count);
-                var opt = pool[index];
-                result.Add(opt);
-
-                if (!allowDuplicateInOneRoll)
-                    pool.RemoveAt(index);
+                var chosenOpt = pool[index];
+                result.Add(chosenOpt);
             }
 
             return result;

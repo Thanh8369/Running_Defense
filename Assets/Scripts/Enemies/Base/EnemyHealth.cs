@@ -90,6 +90,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void HandleRewards()
     {
+        expDrop.SetExpAmount(enemyAI.stats.expAmount);
         int goldGain = goldDrop?.DropGoldAndReturnAmount() ?? 0;
         expDrop?.OnEnemyKilled();
 

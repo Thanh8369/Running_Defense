@@ -2903,7 +2903,7 @@ GameObject:
   - component: {fileID: 3967844555638148833}
   m_Layer: 0
   m_Name: Phapsu Variant
-  m_TagString: Player
+  m_TagString: Troop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
