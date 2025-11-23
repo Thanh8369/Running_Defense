@@ -47,8 +47,32 @@ public abstract class EnemyAI : MonoBehaviour
 
         currentMoveSpeed = stats.moveSpeed;
 
+        player.GetComponent<Health>().OnDeath += HandlePlayerDeath;
+        player.GetComponent<Health>().OnRevive += HandlePlayerRevive;
+
         SetupBT();
     }
+
+    private void HandlePlayerDeath()
+    {
+        if (player != null)
+        {
+            player = null;            // Xóa target
+            if (currentTarget != null && currentTarget.CompareTag("Player"))
+                currentTarget = null;
+        }
+    }
+
+    private void HandlePlayerRevive()
+{
+    // Lấy lại player
+    Transform newPlayer = GameObject.FindGameObjectWithTag("Player")?.transform;
+    if (newPlayer != null)
+    {
+        player = newPlayer;
+        currentTarget = player;
+    }
+}
 
     protected virtual void OnEnable()
     {

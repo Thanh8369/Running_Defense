@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private LizardWarriorAI bossAI;
     private EnemyGoldDrop goldDrop;
     private EnemyExpDropTest expDrop;
+    private StageClearRewardUI stageClearRewardUI;
     private float maxHealth;
     private bool isDead = false;
 
@@ -30,6 +31,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         goldDrop = GetComponent<EnemyGoldDrop>();
         expDrop = GetComponent<EnemyExpDropTest>();
+
+        stageClearRewardUI = FindAnyObjectByType<StageClearRewardUI>(FindObjectsInactive.Include);
     }
 
     private void Update()
@@ -105,6 +108,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         SpawnManager.Instance.OnEnemyKilled();
         PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
+
+        var boss = GetComponent<LizardWarriorAI>();
+        if (boss != null && stageClearRewardUI != null)
+        {
+            stageClearRewardUI.ShowReward();
+        }
     }
 
     private void OnEnable()
