@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class DaggerATK : MonoBehaviour
 {
-    public int daggerCount;
+    public WeaponCount weaponCount;
     public float spreadAngle;
     public GameObject dagger;
     public Transform throwPoint;
@@ -18,8 +18,8 @@ public class DaggerATK : MonoBehaviour
     private float shootTimer = 0f;
     private void Awake()
     {
-        daggers = new List<Quaternion>(daggerCount);
-        for (int i = 0; i < daggerCount; i++)
+        daggers = new List<Quaternion>(weaponCount.projectileCount);
+        for (int i = 0; i < weaponCount.projectileCount; i++)
         {
             daggers.Add(Quaternion.Euler(Vector3.zero));
         }
@@ -39,36 +39,22 @@ public class DaggerATK : MonoBehaviour
     {
         for (int i = 0; i < daggers.Count; i++)
         {
-            //1
-            //daggers[i] = Random.rotation;
-
-            //GameObject p = Instantiate(dagger, throwPoint.position, throwPoint.rotation);
-            //p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, daggers[i], spreadAngle);
-            //p.GetComponent<Rigidbody>().AddForce(p.transform.forward * daggerVel);
-
-            //2
-            //    Quaternion spreadRot = Quaternion.AngleAxis(
-            //    Random.Range(-spreadAngle, spreadAngle),
-            //    throwPoint.up
-            //) * Quaternion.AngleAxis(
-            //    Random.Range(-spreadAngle, spreadAngle),
-            //    throwPoint.right
-            //);
-            //    Quaternion finalRot = throwPoint.rotation * spreadRot;
-            //    GameObject p = Instantiate(dagger, throwPoint.position, finalRot);
-            //    Rigidbody rb = p.GetComponent<Rigidbody>();
-            //    rb.linearVelocity = p.transform.forward * daggerVel;
-
-            //3
             Vector3 dir = throwPoint.forward;
-            dir = Quaternion.AngleAxis(Random.Range(-spreadAngle, spreadAngle), throwPoint.up) * dir;     // horizontal
-            dir = Quaternion.AngleAxis(Random.Range(-spreadAngle, spreadAngle), throwPoint.right) * dir;  // vertical
 
-            // This makes blade ALWAYS point along dir without tilt
+            // Apply random spread
+            dir = Quaternion.AngleAxis(Random.Range(-spreadAngle, spreadAngle), throwPoint.up) * dir;
+            dir = Quaternion.AngleAxis(Random.Range(-spreadAngle, spreadAngle), throwPoint.right) * dir;
+
             Quaternion finalRot = Quaternion.LookRotation(dir, Vector3.up);
 
-            GameObject p = Instantiate(dagger, throwPoint.position, finalRot);
-            p.GetComponent<Rigidbody>().linearVelocity = dir.normalized * daggerVel;
+            // ---- USE POOLED OBJECT ----
+            GameObject p = DaggerObjectPool.Instance.Get();
+
+            p.transform.position = throwPoint.position;
+            p.transform.rotation = finalRot;
+
+            Rigidbody rb = p.GetComponent<Rigidbody>();
+            rb.linearVelocity = dir.normalized * daggerVel;
         }
     }
 }
