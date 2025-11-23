@@ -176,6 +176,25 @@ public abstract class EnemyAI : MonoBehaviour
         activeBuffs.Add(buff);
     }
 
+    protected virtual void OnEnable()
+    {
+        isDie = false;
+        isHit = false;
+        isAttacking = false;
+        isRotate = false;
+
+        lastAttackTime = -999f;
+        currentFocusTime = 0f;
+        currentTarget = null;
+
+        currentMoveSpeed = stats.moveSpeed;
+
+        activeBuffs.Clear();
+
+        if (rb != null)
+            rb.linearVelocity = Vector3.zero;
+    }
+
     protected float DistanceToTarget(Transform target) => target == null ? Mathf.Infinity : Vector3.Distance(transform.position, target.position);
     protected bool CanAttack() => Time.time - lastAttackTime >= stats.attackCooldown;
     public void OnAttackAnimationEnd() => isAttacking = false;

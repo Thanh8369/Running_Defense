@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 2121986225317351259}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -483,7 +483,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &6118680422603132425
 Animator:

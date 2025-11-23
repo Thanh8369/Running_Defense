@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ccea0f265b0e8498e55df3a70579ff, type: 3}
-  m_Name: LevelUpOption
+  m_Script: {fileID: 11500000, guid: 85be13a421644084eb55c743adcdd5d9, type: 3}
+  m_Name: TowerHP
   m_EditorClassIdentifier: 
-  id: 
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  id: Tower HP
+  displayName: Tower HP
+  description: Tower HP
+  icon: {fileID: -875854896, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
   powerValue: 1
+  targetStat: 3
+  amount: 10
+  healToFullOnMaxHPIncrease: 1
