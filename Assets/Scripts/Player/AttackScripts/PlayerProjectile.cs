@@ -4,7 +4,7 @@ public class PlayerProjectile : MonoBehaviour
 {
     //ArrowDamage
     public PlayerArrowDama playerDamage;
-    public float lifeTime = 3f;
+    public float lifeTime = 1f;
     private float timer = 0f;
 
     void OnEnable()
@@ -28,7 +28,7 @@ public class PlayerProjectile : MonoBehaviour
         {
             damageable.TakeDamage(playerDamage.damage);
             ArrowObjectPool.Instance.ReturnObject(gameObject);
-            Debug.Log("hit");
+            //Debug.Log("hit");
         }
     }
 }

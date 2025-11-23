@@ -19,11 +19,11 @@ public class SwordSpinner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.TryGetComponent<IDamageable>(out var damageable))
         {
 
-            GetComponent<EnemyHealth>().TakeDamage(playerDamage.damage);
-            //ArrowObjectPool.Instance.ReturnObject(gameObject);
+            //GetComponent<EnemyHealth>().TakeDamage(playerDamage.damage);
+            damageable.TakeDamage(playerDamage.damage);
             //Debug.Log("hit");
         }
     }

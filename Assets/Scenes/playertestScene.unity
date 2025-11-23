@@ -856,6 +856,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1750748533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750748535}
+  - component: {fileID: 1750748534}
+  m_Layer: 0
+  m_Name: DaggerObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1750748534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750748533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b086269138ae97344b04c37954ce6aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1517462375083585838, guid: b18fea29cbef3fd4b90676626174e93a, type: 3}
+  initialSize: 20
+--- !u!4 &1750748535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750748533}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24737255, y: -0.10131954, z: -1.0804456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1918551972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3535,7 +3581,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7107337233875032154}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebe352ab55e03dc409efb4a7f5ce8f7f, type: 3}
   m_Name: 
@@ -4127,9 +4173,13 @@ MonoBehaviour:
   - animationTriggerName: Attack01
     firePoint: {fileID: 2115340388604643212}
     projectileVariantIndex: 0
+    scaleUpDuration: 0
+    scaleUpMax: 1
   - animationTriggerName: Attack02
     firePoint: {fileID: 5610782924400452129}
     projectileVariantIndex: 1
+    scaleUpDuration: 0
+    scaleUpMax: 1
 --- !u!4 &3562128851480451985
 Transform:
   m_ObjectHideFlags: 0
@@ -9244,7 +9294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb83485652d1c74085c3ddff09d2b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daggerCount: 5
+  weaponCount: {fileID: 11400000, guid: 354369d6b8865e74ca8d43547ee14879, type: 2}
   spreadAngle: 15
   dagger: {fileID: 1517462375083585838, guid: b18fea29cbef3fd4b90676626174e93a, type: 3}
   throwPoint: {fileID: 3990157013993643392}
@@ -13838,3 +13888,4 @@ SceneRoots:
   - {fileID: 1504311858}
   - {fileID: 357801820}
   - {fileID: 681691425188430116}
+  - {fileID: 1750748535}
