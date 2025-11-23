@@ -40,6 +40,7 @@ namespace Son.Economy
         private void OnExpChanged(int level, int curExp, int expToNext)
         {
             float normalized = expToNext > 0 ? (float)curExp / expToNext : 0f;
+            float previousLevel = level - 1f;
 
             if (expSlider != null)
             {
@@ -52,7 +53,7 @@ namespace Son.Economy
                 levelText.text = level.ToString();
 
             if (expText != null)
-                expText.text = $"{curExp}/{expToNext}";
+                expText.text = previousLevel.ToString();
         }
     }
 }

@@ -1,3 +1,4 @@
+using Son.Economy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance { get; private set; }
+
+    public StageClearRewardUI UIReward;
 
     [SerializeField] private float mapTimer = 0f;
     [SerializeField] private float spawnRadius = 5f;
@@ -20,6 +23,7 @@ public class SpawnManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        UIReward = FindAnyObjectByType<StageClearRewardUI>();
     }
 
     void Start()
@@ -108,6 +112,7 @@ public class SpawnManager : MonoBehaviour
 
         if (allSpawnsCompleted && aliveEnemies <= 0)
         {
+            //UIReward.ShowReward();
             Debug.Log("GAME COMPLETED!!!");
         }
     }

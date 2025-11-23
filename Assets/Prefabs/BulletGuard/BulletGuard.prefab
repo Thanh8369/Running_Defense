@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7783297129798605981}
   - component: {fileID: 4730419761862730857}
   - component: {fileID: 8102176438953624391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Fire_Embers_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4598,7 +4598,7 @@ GameObject:
   - component: {fileID: 277566862983602519}
   - component: {fileID: 2177094409017720287}
   - component: {fileID: 4356475535254632020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4748,7 +4748,7 @@ GameObject:
   - component: {fileID: 2533017083541295516}
   - component: {fileID: 4559830518730771466}
   - component: {fileID: 5851211432939105836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FX_Fire_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

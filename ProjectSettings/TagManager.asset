@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tower
   - Enemy
+  - Troop
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Enemy
   - EnemyProjectile
   - Projectile
-  - 
+  - Ground
   - 
   - 
   - 

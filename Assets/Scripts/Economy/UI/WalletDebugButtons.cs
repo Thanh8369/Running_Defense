@@ -30,7 +30,7 @@ namespace Son.Economy
         public void AddGold100()
         {
             if (!IsWalletReady()) return;
-            Wallet.AddCurrency(CurrencyType.Gold, 100, "Debug Button: +100 Gold");
+            Wallet.AddCurrency(CurrencyType.Gold, 10000, "Debug Button: +100 Gold");
         }
 
         public void SpendGold100()

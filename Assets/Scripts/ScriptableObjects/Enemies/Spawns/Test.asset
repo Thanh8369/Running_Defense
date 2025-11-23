@@ -15,7 +15,7 @@ MonoBehaviour:
   triggerTime: 2
   spawnInfos:
   - enemy: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
-    count: 100
+    count: 1
     minBatch: 1
     maxBatch: 3
     spawnDelay: 2

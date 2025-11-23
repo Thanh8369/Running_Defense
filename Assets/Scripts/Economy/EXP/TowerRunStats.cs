@@ -9,6 +9,7 @@ public class TowerRunStats : MonoBehaviour
     [Header("ScriptableObject gốc (base stats)")]
     [Tooltip("SO chứa stat cơ bản của trụ.")]
     public TowerData baseData;
+    public Health baseHPData;
 
     [Header("Damage / Attack (runtime)")]
     [Tooltip("Damage cơ bản của trụ (lấy từ baseData.damage khi init).")]
@@ -47,7 +48,7 @@ public class TowerRunStats : MonoBehaviour
     [ContextMenu("Init From TowerData (Editor Only)")]
     public void InitFromTowerData()
     {
-        if (baseData == null)
+        if (baseHPData == null)
         {
             Debug.LogWarning($"[TowerRunStats] baseData chưa gán trên {name}, dùng giá trị mặc định.");
             // vẫn giữ các giá trị đang đặt trong Inspector
@@ -56,7 +57,7 @@ public class TowerRunStats : MonoBehaviour
         }
 
         // maxHealth / damage là int, cast sang float cho stats runtime
-        maxHP = baseData.maxHealth;
+        maxHP = baseHPData.MaxHealth;
         currentHP = maxHP;
 
         baseAttackDamage = baseData.damage;

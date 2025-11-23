@@ -18,6 +18,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 165593218ec9a3844bfbc120324d78fe, type: 3}
   unitPrefab: {fileID: 3826728684629958318, guid: 50015193bce6ab74091be21f7767bb90, type: 3}
   currency: 0
-  cost: 100
+  cost: 200
   maxAliveAtOnce: 0
   cooldown: 0
