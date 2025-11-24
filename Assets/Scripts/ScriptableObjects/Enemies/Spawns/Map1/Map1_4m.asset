@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Map1_4m
   m_EditorClassIdentifier: 
   triggerTime: 240
+  addStar: 1
   spawnInfos:
   - enemy: {fileID: 11400000, guid: 97eb3882a2835ff48b01263ded4384fd, type: 2}
     count: 4

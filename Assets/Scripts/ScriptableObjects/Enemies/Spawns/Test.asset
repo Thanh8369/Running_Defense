@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   triggerTime: 0
+  addStar: 0
   spawnInfos:
-  - enemy: {fileID: 11400000, guid: 97eb3882a2835ff48b01263ded4384fd, type: 2}
-    count: 100
+  - enemy: {fileID: 11400000, guid: a8b9bb1b00b1075488de7562aca17b95, type: 2}
+    count: 1
     minBatch: 1
     maxBatch: 1
     spawnDelay: 0

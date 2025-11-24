@@ -19,6 +19,20 @@ public class Health : MonoBehaviour, IDamageable
         Debug.Log($"[Health] Awake, HP = {CurrentHealth}/{playerHpData._maxHealth}");
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && gameObject.tag == "Player")
+        {
+            TakeDamage(MaxHealth);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T) && gameObject.tag == "Tower")
+        {
+            TakeDamage(MaxHealth);
+        }
+    }
+
+
     public void TakeDamage(float damage)
     {
         if (damage <= 0 || CurrentHealth <= 0) return;

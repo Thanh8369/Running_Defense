@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +5,7 @@ using UnityEngine;
 public class SpawnConfig : ScriptableObject
 {
     public float triggerTime = 0f;
+    public bool addStar = false;
     public List<SpawnInfo> spawnInfos = new List<SpawnInfo>();
 }
 
@@ -16,6 +16,7 @@ public class SpawnInfo
     public int count = 1;
     public int minBatch = 1;
     public int maxBatch = 5;
-    public float spawnDelay = 0.5f; 
+
+    public float spawnDelay = 0.5f;
     public float spawnHeightOffset = 0f;
 }
