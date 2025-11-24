@@ -16,7 +16,7 @@ MonoBehaviour:
   moveSpeed: 8
   maxSpeed: 20
   rotateSpeed: 360
-  attackDamage: 10
+  attackDamage: 5
   attackCooldown: 1
   attackRange: 1.5
   detectionRange: 8
