@@ -25,8 +25,8 @@ public abstract class EnemyAI : MonoBehaviour
     protected Transform currentTarget;
     protected Transform nearestTroop;
     protected float currentFocusTime;
+    protected float lastAttackTime;
 
-    private float lastAttackTime;
     private float troopScanInterval = 0.5f;
     private float lastTroopScanTime;
 
@@ -43,12 +43,18 @@ public abstract class EnemyAI : MonoBehaviour
     {
         tower = GameObject.FindGameObjectWithTag("Tower")?.transform;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
         rb = GetComponent<Rigidbody>();
 
         currentMoveSpeed = stats.moveSpeed;
 
         player.GetComponent<Health>().OnDeath += HandlePlayerDeath;
         player.GetComponent<Health>().OnRevive += HandlePlayerRevive;
+
+        if (player.GetComponent<Health>().CurrentHealth <= 0)
+        {
+            player = null;
+        }
 
         SetupBT();
     }
@@ -57,22 +63,21 @@ public abstract class EnemyAI : MonoBehaviour
     {
         if (player != null)
         {
-            player = null;            // Xóa target
+            player = null;
             if (currentTarget != null && currentTarget.CompareTag("Player"))
                 currentTarget = null;
         }
     }
 
     private void HandlePlayerRevive()
-{
-    // Lấy lại player
-    Transform newPlayer = GameObject.FindGameObjectWithTag("Player")?.transform;
-    if (newPlayer != null)
     {
-        player = newPlayer;
-        currentTarget = player;
+        Transform newPlayer = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (newPlayer != null)
+        {
+            player = newPlayer;
+            currentTarget = player;
+        }
     }
-}
 
     protected virtual void OnEnable()
     {

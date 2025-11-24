@@ -1,34 +1,31 @@
-using Son.Economy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance { get; private set; }
 
-    public StageClearRewardUI UIReward;
-
     [SerializeField] private float mapTimer = 0f;
     [SerializeField] private float spawnRadius = 5f;
 
-    [Header("List Spawn Config theo thời gian")]
+    [Header("List Spawn Config theo thứ tự thời gian")]
     [SerializeField] private List<SpawnConfig> spawnConfigs;
-
     [SerializeField] private Transform[] spawnPoints;
+
+    private HashSet<SpawnConfig> configsStarGranted = new(); // Đã cộng star chưa
+    private int totalStars = 0;
 
     private int aliveEnemies = 0;
     private bool allSpawnsCompleted = false;
 
-    void Awake()
-    {
-        Instance = this;
-        UIReward = FindAnyObjectByType<StageClearRewardUI>();
-    }
+    public int TotalStars => totalStars;
+
+    void Awake() => Instance = this;
 
     void Start()
     {
-        // Sort theo trigger time
         spawnConfigs.Sort((a, b) => a.triggerTime.CompareTo(b.triggerTime));
         StartCoroutine(RunTimeline());
     }
@@ -53,21 +50,24 @@ public class SpawnManager : MonoBehaviour
         }
 
         allSpawnsCompleted = true;
-        Debug.Log("All spawn groups have been triggered.");
+        Debug.LogWarning("All spawns completed.");
     }
 
     IEnumerator SpawnGroup(SpawnConfig config)
     {
-        List<Coroutine> runningGroups = new List<Coroutine>();
+        if (config.addStar && !configsStarGranted.Contains(config))
+        {
+            totalStars += 1;
+            configsStarGranted.Add(config);
+            Debug.LogWarning($"⭐ Config {config.name} spawned → +1 star. TotalStars = {totalStars}");
+        }
 
         foreach (var info in config.spawnInfos)
         {
-            Coroutine c = StartCoroutine(SpawnEnemyGroup(info));
-            runningGroups.Add(c);
+            StartCoroutine(SpawnEnemyGroup(info));
         }
 
-        foreach (var group in runningGroups)
-            yield return group;
+        yield return null;
     }
 
     IEnumerator SpawnEnemyGroup(SpawnInfo info)
@@ -76,20 +76,19 @@ public class SpawnManager : MonoBehaviour
 
         while (spawned < info.count)
         {
-            int batchSize = Random.Range(info.minBatch, info.maxBatch + 1);
-            batchSize = Mathf.Min(batchSize, info.count - spawned);
+            if (info.spawnDelay > 0)
+                yield return new WaitForSeconds(info.spawnDelay);
+            else
+                yield return null;
 
-            for (int i = 0; i < batchSize; i++)
+            int batch = Random.Range(info.minBatch, info.maxBatch + 1);
+            batch = Mathf.Min(batch, info.count - spawned);
+
+            for (int i = 0; i < batch; i++)
             {
                 SpawnEnemy(info);
                 spawned++;
             }
-
-            // Delay giữa các batch
-            if (info.spawnDelay > 0)
-                yield return new WaitForSeconds(info.spawnDelay);
-            else
-                yield return null; // ít nhất 1 frame để không block
         }
     }
 
@@ -99,21 +98,19 @@ public class SpawnManager : MonoBehaviour
 
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Vector2 offset = Random.insideUnitCircle * spawnRadius;
-
         Vector3 spawnPos = sp.position + new Vector3(offset.x, info.spawnHeightOffset, offset.y);
 
-        PoolManager.Instance.Get(info.enemy.prefab, spawnPos, Quaternion.identity);
+        GameObject enemyObj = PoolManager.Instance.Get(info.enemy.prefab, spawnPos, Quaternion.identity);
+
+        EnemyHealth hp = enemyObj.GetComponent<EnemyHealth>();
+        hp.onDie += () => { aliveEnemies--; };
+
         aliveEnemies++;
     }
 
-    public void OnEnemyKilled()
+    public void AddStar()
     {
-        aliveEnemies--;
-
-        if (allSpawnsCompleted && aliveEnemies <= 0)
-        {
-            //UIReward.ShowReward();
-            Debug.Log("GAME COMPLETED!!!");
-        }
+        totalStars += 1;
+        Debug.LogWarning($"⭐ AddStar() → TotalStars = {totalStars}");
     }
 }

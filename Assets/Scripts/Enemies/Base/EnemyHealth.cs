@@ -8,11 +8,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private float currentHealth;
 
+    public bool isBoss = false;
+
     private EnemyAI enemyAI;
     private LizardWarriorAI bossAI;
     private EnemyGoldDrop goldDrop;
     private EnemyExpDropTest expDrop;
+    private DamagePopupReceiver damagePopupReceiver;
     private StageClearRewardUI stageClearRewardUI;
+
     private float maxHealth;
     private bool isDead = false;
 
@@ -22,23 +26,33 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public Action onHit;
     public Action<float, float> onHealthChanged;
 
-    private void Awake()
+    private void OnEnable()
     {
         enemyAI = GetComponent<EnemyAI>();
         bossAI = GetComponent<LizardWarriorAI>();
-        maxHealth = enemyAI != null ? enemyAI.stats.maxHealth : 100f;
-        currentHealth = maxHealth;
-
         goldDrop = GetComponent<EnemyGoldDrop>();
         expDrop = GetComponent<EnemyExpDropTest>();
+        damagePopupReceiver = GetComponent<DamagePopupReceiver>();
 
         stageClearRewardUI = FindAnyObjectByType<StageClearRewardUI>(FindObjectsInactive.Include);
+
+        maxHealth = enemyAI.stats.maxHealth;
+        currentHealth = maxHealth;
+        isDead = false;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-            TakeDamage(50f);
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            TakeDamage(maxHealth);
+        }
+    }
+
+    public void Heal(float newHealth)
+    {
+        currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     public void TakeDamage(float damage)
@@ -48,9 +62,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         float finalDamage = ApplyDamageReduction(damage);
         currentHealth -= finalDamage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        onHealthChanged?.Invoke(currentHealth, maxHealth);
 
-        GetComponent<DamagePopupReceiver>()?.ShowDamage(finalDamage, transform.position);
+        onHealthChanged?.Invoke(currentHealth, maxHealth);
+        damagePopupReceiver?.ShowDamage(finalDamage, transform.position);
 
         if (currentHealth > 0)
         {
@@ -70,16 +84,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         return damage;
     }
 
-    public float GetHealthPercent() => maxHealth > 0 ? currentHealth / maxHealth : 1f;
-    public float GetCurrentHealth() => currentHealth;
-    public float GetMaxHealth() => maxHealth;
-
-    public void Heal(float newHealth)
-    {
-        currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
-        onHealthChanged?.Invoke(currentHealth, maxHealth);
-    }
-    
     private void Die()
     {
         if (isDead) return;
@@ -94,31 +98,27 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private void HandleRewards()
     {
         expDrop.SetExpAmount(enemyAI.stats.expAmount);
+
         int goldGain = goldDrop?.DropGoldAndReturnAmount() ?? 0;
         expDrop?.OnEnemyKilled();
 
         if (goldGain > 0 && GoldPopupSpawner.Instance != null)
-        {
             GoldPopupSpawner.Instance.SpawnGoldPopup(transform.position, goldGain);
-            Debug.Log($"[EnemyHealth] Spawn gold popup: {goldGain}");
-        }
     }
 
     public void OnDieAnimationEnd()
     {
-        SpawnManager.Instance.OnEnemyKilled();
-        PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
-
-        var boss = GetComponent<LizardWarriorAI>();
-        if (boss != null && stageClearRewardUI != null)
+        if (isBoss)
         {
-            stageClearRewardUI.ShowReward();
+            SpawnManager.Instance.AddStar();
+            stageClearRewardUI.ShowReward(SpawnManager.Instance.TotalStars, 0);
+            Debug.LogWarning($"Boss defeated. Total Stars: {SpawnManager.Instance.TotalStars}");
         }
+
+        PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
     }
 
-    private void OnEnable()
-    {
-        currentHealth = maxHealth;
-        isDead = false;
-    }
+    public float GetCurrentHealth() => currentHealth;
+    public float GetMaxHealth() => maxHealth;
+    public float GetHealthPercent() => currentHealth / maxHealth;
 }

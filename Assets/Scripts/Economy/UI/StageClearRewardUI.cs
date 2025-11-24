@@ -27,6 +27,10 @@ namespace Son.Economy
         [Tooltip("Text hiển thị số Gem thưởng.")]
         public TextMeshProUGUI gemAmountText;
 
+        [Header("UI Stars")]
+        [Tooltip("Danh sách các GameObject star để bật/tắt theo số sao.")]
+        public GameObject[] stars;
+
         [Tooltip("Icon Gem.")]
         public Image gemIconImage;
 
@@ -86,26 +90,34 @@ namespace Son.Economy
             _currentGemReward = CalculateGemReward(starCount, difficultyLevel);
 
             if (goldAmountText != null)
-            {
                 goldAmountText.text = _currentGoldReward.ToString();
-            }
 
             if (gemAmountText != null)
-            {
                 gemAmountText.text = _currentGemReward.ToString();
-            }
+
+            UpdateStars(starCount);
 
             if (panelRoot != null)
-            {
                 panelRoot.SetActive(true);
-            }
 
             _isShowing = true;
-
-            // Tùy bạn: có thể pause game khi hiện UI thắng
             Time.timeScale = 0f;
 
             Debug.Log($"[StageClearRewardUI] ShowReward → Gold = {_currentGoldReward}, Gem = {_currentGemReward} (stars={starCount}, diff={difficultyLevel})");
+        }
+
+        /// <summary>
+        /// Cập nhật hiển thị sao trong UI.
+        /// </summary>
+        private void UpdateStars(int starCount)
+        {
+            if (stars == null || stars.Length == 0) return;
+
+            for (int i = 0; i < stars.Length; i++)
+            {
+                if (stars[i] != null)
+                    stars[i].SetActive(i < starCount);
+            }
         }
 
         /// <summary>

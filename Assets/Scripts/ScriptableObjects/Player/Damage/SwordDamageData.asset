@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec1f149e6b653d40b32f61e6a479c73, type: 3}
   m_Name: SwordDamageData
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 100
   SwordAttackSpeed: 0.5
