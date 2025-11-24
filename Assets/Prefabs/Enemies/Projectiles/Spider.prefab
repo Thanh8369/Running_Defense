@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4722898071448509293}
   - component: {fileID: 5774898319725516293}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: Spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,6 +18,11 @@ public class LizardWarriorAI : MeleeEnemyAI
     [SerializeField] private float buffMultiplier = 1.4f;
     [SerializeField] private float buffDuration = 5f;
 
+    [Header("Summon Skill Settings")]
+    [SerializeField] private GameObject minionPrefab;
+    [SerializeField] private int summonCount = 3;
+    [SerializeField] private float summonRadius = 5f;
+
     private float lastHealTime = -999f;
     private float healStartTime;
     private float healTickTimer = 0f;
@@ -185,6 +190,40 @@ public class LizardWarriorAI : MeleeEnemyAI
             if (ai != null)
             {
                 ai.ApplyBuff(BuffType.Speed, buffMultiplier, buffDuration);
+            }
+        }
+    }
+
+    public void SummonMinions()
+    {
+        if (minionPrefab == null) return;
+
+        for (int i = 0; i < summonCount; i++)
+        {
+            Vector3 spawnPos = Vector3.zero;
+            bool validPos = false;
+
+            int attempts = 0;
+            while (!validPos && attempts < 10)
+            {
+                attempts++;
+
+                Vector2 randomCircle = UnityEngine.Random.insideUnitCircle * summonRadius;
+                spawnPos = transform.position + new Vector3(randomCircle.x, 0.5f, randomCircle.y);
+
+                float minDistance = 1f;
+                if (Vector3.Distance(spawnPos, transform.position) >= minDistance)
+                {
+                    validPos = true;
+                }
+            }
+
+            Ray ray = new Ray(spawnPos + Vector3.up * 10f, Vector3.down);
+            int groundLayerMask = LayerMask.GetMask("Ground");
+            if (Physics.Raycast(ray, out RaycastHit hit, 20f, groundLayerMask))
+            {
+                spawnPos.y = hit.point.y;
+                Instantiate(minionPrefab, spawnPos, Quaternion.identity);
             }
         }
     }

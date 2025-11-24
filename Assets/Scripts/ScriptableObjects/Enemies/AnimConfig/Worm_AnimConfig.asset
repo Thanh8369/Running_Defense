@@ -10,18 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
-  m_Name: LizardWarrior_AnimConfig
+  m_Name: Worm_AnimConfig
   m_EditorClassIdentifier: 
   attackAnimations:
-  - triggerName: Attack01
-    percent: 40
-    lastUsedTime: 5.9209185
-  - triggerName: Attack02
-    percent: 30
-    lastUsedTime: 11.303178
   - triggerName: Attack03
-    percent: 25
-    lastUsedTime: 52.114307
-  - triggerName: Taunting
     percent: 99
-    lastUsedTime: 3.5812924
+    lastUsedTime: 27.042456

@@ -13,13 +13,19 @@ public class EnemyProjectile : MonoBehaviour
     private float damage;
     private Vector3 direction;
     private Vector3 nonHomingDirection;
+    private Vector3 originalScale;
     private bool isMoving = true;
+
+    private void Awake()
+    {
+        originalScale = transform.localScale;
+    }
 
     public void Initialize(Transform target, float damage, Vector3 fireDirection)
     {
         this.target = target;
         this.damage = damage;
-        transform.localScale = Vector3.one;
+        transform.localScale = originalScale;
 
         if (target != null && !useHoming)
             nonHomingDirection = fireDirection.normalized;

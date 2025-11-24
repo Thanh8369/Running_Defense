@@ -21,17 +21,16 @@ public class Health : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && gameObject.tag == "Player")
+        if (Input.GetKeyDown(KeyCode.R) && gameObject.CompareTag("Player"))
         {
             TakeDamage(MaxHealth);
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && gameObject.tag == "Tower")
+        if (Input.GetKeyDown(KeyCode.T) && gameObject.CompareTag("Tower"))
         {
             TakeDamage(MaxHealth);
         }
     }
-
 
     public void TakeDamage(float damage)
     {
