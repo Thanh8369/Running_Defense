@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  isBoss: 0
 --- !u!114 &1059964691668408620
 MonoBehaviour:
   m_ObjectHideFlags: 0
