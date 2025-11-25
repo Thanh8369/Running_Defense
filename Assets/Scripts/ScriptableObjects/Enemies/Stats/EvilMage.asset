@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   moveSpeed: 8
+  maxSpeed: 20
   rotateSpeed: 360
   attackDamage: 10
   attackCooldown: 1
@@ -24,7 +25,7 @@ MonoBehaviour:
   expAmount: 10
   prefab: {fileID: 3787418150762522641, guid: 90e6de185da9c784495f50f5c2521f2d, type: 3}
   projectilePrefabs:
-  - prefab: {fileID: 6045715366450228825, guid: dabcd42b2f61add45a1154dba42e380c, type: 3}
+  - prefab: {fileID: 6045715366450228825, guid: 9d19ded1e66c5c54fa16208f773182ac, type: 3}
     customDamage: 0
   - prefab: {fileID: 6045715366450228825, guid: ce71c7fb55015d141aa434c2ca4d3347, type: 3}
     customDamage: 0
