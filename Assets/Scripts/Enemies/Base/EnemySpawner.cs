@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SpawnManager : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
-    public static SpawnManager Instance { get; private set; }
+    public static EnemySpawner Instance { get; private set; }
 
     [SerializeField] private float mapTimer = 0f;
     [SerializeField] private float spawnRadius = 5f;
 
-    [Header("List Spawn Config theo thứ tự thời gian")]
+    [Header("Spawn Config theo thời gian")]
     [SerializeField] private List<SpawnConfig> spawnConfigs;
     [SerializeField] private Transform[] spawnPoints;
 

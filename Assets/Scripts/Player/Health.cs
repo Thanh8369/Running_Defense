@@ -30,6 +30,11 @@ public class Health : MonoBehaviour, IDamageable
         {
             TakeDamage(MaxHealth);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && gameObject.CompareTag("Tower"))
+        {
+            TakeDamage(100);
+        }
     }
 
     public void TakeDamage(float damage)

@@ -79,12 +79,13 @@ public class PoisonDebuff : MonoBehaviour
 
     private void ApplyMaterialFlash(bool flashOn)
     {
-        foreach (var r in renderers)
+        for (int i = 0; i < renderers.Length; i++)
         {
+            var r = renderers[i];
             var mats = r.materials;
-            for (int i = 0; i < mats.Length; i++)
+            for (int j = 0; j < mats.Length; j++)
             {
-                mats[i] = flashOn ? poisonMaterial : originalMaterials[r.transform.GetSiblingIndex()][i];
+                mats[j] = flashOn ? poisonMaterial : originalMaterials[i][j];
             }
             r.materials = mats;
         }

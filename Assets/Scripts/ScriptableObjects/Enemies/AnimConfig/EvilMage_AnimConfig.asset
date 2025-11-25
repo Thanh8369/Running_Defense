@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: EvilMage_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks: []
-  rangedAttacks:
+  attackAnimations:
   - triggerName: Attack01
-    percent: 50
-    lastUsedTime: 67.722725
+    percent: 99
+    lastUsedTime: 12.929043
   - triggerName: Attack02
-    percent: 50
-    lastUsedTime: 67.722725
-  specialAttacks: []
+    percent: 1
+    lastUsedTime: 10.55181
