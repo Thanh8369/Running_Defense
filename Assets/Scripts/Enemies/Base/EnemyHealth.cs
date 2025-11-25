@@ -110,9 +110,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (isBoss)
         {
-            SpawnManager.Instance.AddStar();
-            stageClearRewardUI.ShowReward(SpawnManager.Instance.TotalStars, 0);
-            Debug.LogWarning($"Boss defeated. Total Stars: {SpawnManager.Instance.TotalStars}");
+            EnemySpawner.Instance.AddStar();
+            stageClearRewardUI.ShowReward(EnemySpawner.Instance.TotalStars, 0);
+            Debug.LogWarning($"Boss defeated. Total Stars: {EnemySpawner.Instance.TotalStars}");
         }
 
         PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);

@@ -16,8 +16,14 @@ MonoBehaviour:
   addStar: 0
   spawnInfos:
   - enemy: {fileID: 11400000, guid: 21cf37e4b28b66e4990c2c9b7c89b655, type: 2}
-    count: 100
+    count: 1
     minBatch: 1
-    maxBatch: 2
+    maxBatch: 1
+    spawnDelay: 0
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: 6cbd31872e029e84b8a413994ff2a06d, type: 2}
+    count: 1
+    minBatch: 1
+    maxBatch: 1
     spawnDelay: 0
     spawnHeightOffset: 0

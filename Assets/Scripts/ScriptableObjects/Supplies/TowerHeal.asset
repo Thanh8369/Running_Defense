@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaba49a37120f049ba2b20f6ce0dadf, type: 3}
+  m_Name: TowerHeal
+  m_EditorClassIdentifier: 
+  supplyType: 3
+  defaultAmount: 100
+  useRandomAmount: 0
+  minAmount: 50
+  maxAmount: 100
+  showPopupOnPickup: 1
+  popupDuration: 1
+  popupMoveDistance: 50
+  icon: {fileID: 0}
+  textDisplayName: TowerHP
+  textFontSize: 48
+  textColor: {r: 0.63529414, g: 1, b: 0, a: 1}
+  supplyPrefab: {fileID: 2298624712276777870, guid: b7349552c90945047863e8958fcf3f22, type: 3}
