@@ -9,14 +9,18 @@ public class HealthGuard : MonoBehaviour, IDamageable
 
     public event Action OnDeath;
 
+    private GuardAnimation guardAnim;
+    private bool isDead = false;
+
     private void Awake()
     {
         CurrentHealth = maxHealth;
+        guardAnim = GetComponent<GuardAnimation>();
     }
 
     public void TakeDamage(float damage)
     {
-        if (damage <= 0 || CurrentHealth <= 0)
+        if (isDead || damage <= 0 || CurrentHealth <= 0)
             return;
 
         CurrentHealth -= damage;
@@ -30,7 +34,18 @@ public class HealthGuard : MonoBehaviour, IDamageable
 
     void Die()
     {
+        if (isDead) return;
+        isDead = true;
+
+        // Gọi animation Die
+        if (guardAnim != null)
+        {
+            guardAnim.PlayDie();
+        }
+
         OnDeath?.Invoke();
-        Destroy(gameObject);   // Hủy lính
+
+        // Xóa object sau 1 giây
+        Destroy(gameObject, 4f);
     }
 }

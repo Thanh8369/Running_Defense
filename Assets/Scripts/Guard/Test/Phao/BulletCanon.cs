@@ -2,11 +2,11 @@
 
 public class BulletCanon : MonoBehaviour
 {
-    public float speed = 10f;      // tốc độ bay ngang
-    public float height = 3f;      // độ cao parabola
-    public float damage = 200f;    // damage gây ra
+    public float speed = 10f;
+    public float height = 3f;
+    public float damage = 200f;
 
-    private Vector3 targetPos;
+    private Transform target;       // <── GIỮ TARGET THẬT
     private Vector3 startPos;
 
     private float time;
@@ -15,12 +15,13 @@ public class BulletCanon : MonoBehaviour
     private bool initialized = false;
     private Vector3 prevPos;
 
-    public void Init(Vector3 target)
+    public void Init(Transform enemy)
     {
-        startPos = transform.position;
-        targetPos = target;
+        target = enemy;
 
-        float distance = Vector3.Distance(startPos, targetPos);
+        startPos = transform.position;
+
+        float distance = Vector3.Distance(startPos, enemy.position);
         totalTime = distance / speed;
 
         prevPos = startPos;
@@ -31,14 +32,22 @@ public class BulletCanon : MonoBehaviour
     void Update()
     {
         if (!initialized) return;
+        if (target == null || !target.gameObject.activeInHierarchy)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         time += Time.deltaTime;
         float t = Mathf.Clamp01(time / totalTime);
 
-        // Đi ngang
+        // cập nhật targetPos mỗi frame
+        Vector3 targetPos = target.position;
+
+        // Lerp ngang
         Vector3 horizontal = Vector3.Lerp(startPos, targetPos, t);
 
-        // Cong hình parabola
+        // parabola
         float curve = 4 * height * t * (1 - t);
 
         Vector3 nextPos = new Vector3(
@@ -47,16 +56,13 @@ public class BulletCanon : MonoBehaviour
             horizontal.z
         );
 
-        // Xoay đạn theo hướng bay
         Vector3 dir = nextPos - prevPos;
         if (dir != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(dir);
 
-        // Cập nhật vị trí
         transform.position = nextPos;
         prevPos = nextPos;
 
-        // Đến nơi
         if (t >= 1f)
         {
             HitTarget();
