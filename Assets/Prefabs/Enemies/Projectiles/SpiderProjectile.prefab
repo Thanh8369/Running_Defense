@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4722898071448509293}
   - component: {fileID: 5774898319725516293}
   m_Layer: 7
-  m_Name: Spider
+  m_Name: SpiderProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,11 +127,16 @@ MonoBehaviour:
   projectileSpeed: 10
   heightOffset: 0.5
   poisonConfig:
-    enablePoison: 1
+    enablePoison: 0
     poisonDamagePerTick: 10
     tickInterval: 2
     poisonDuration: 4
     stackPoison: 0
+  iceSlowConfig:
+    enableIceSlow: 1
+    slowAmount: 0.2
+    slowDuration: 3
+    stackSlow: 0
 --- !u!96 &5774898319725516293
 TrailRenderer:
   serializedVersion: 3

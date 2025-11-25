@@ -10,7 +10,10 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] private float heightOffset = 1f;
 
     [Header("Poison Settings Per Projectile")]
-    public PoisonConfig poisonConfig;
+    public PoisonDebuffConfig poisonConfig;
+
+    [Header("Ice Slow Settings Per Projectile")]
+    public SlowDebuffConfig iceSlowConfig;
 
     private Transform target;
     private float damage;
@@ -65,13 +68,18 @@ public class EnemyProjectile : MonoBehaviour
     {
         other.GetComponent<IDamageable>()?.TakeDamage(damage);
 
+        // Poison
         if (poisonConfig != null && poisonConfig.enablePoison)
         {
-            var poison = other.GetComponent<PoisonDamageOverTime>();
-            if (poison != null)
-            {
-                poison.ApplyPoison(poisonConfig);
-            }
+            var poison = other.GetComponent<PoisonDebuff>();
+            poison?.ApplyPoison(poisonConfig);
+        }
+
+        // Ice Slow
+        if (iceSlowConfig != null && iceSlowConfig.enableIceSlow)
+        {
+            var ice = other.GetComponent<SlowDebuff>();
+            ice?.ApplySlow(iceSlowConfig);
         }
 
         PoolManager.Instance.Return(gameObject);
