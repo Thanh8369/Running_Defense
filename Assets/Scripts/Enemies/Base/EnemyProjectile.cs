@@ -9,6 +9,9 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 15f;
     [SerializeField] private float heightOffset = 1f;
 
+    [Header("Poison Settings Per Projectile")]
+    public PoisonConfig poisonConfig;
+
     private Transform target;
     private float damage;
     private Vector3 direction;
@@ -27,14 +30,12 @@ public class EnemyProjectile : MonoBehaviour
         this.damage = damage;
         transform.localScale = originalScale;
 
+        // Non-homing direction
         if (target != null && !useHoming)
             nonHomingDirection = fireDirection.normalized;
 
-        StartCoroutine(ReturnToPoolAfterLifetime());
+        StartCoroutine(ReturnAfterLifetime());
     }
-
-    public void StopMoving() => isMoving = false;
-    public void StartMoving() => isMoving = true;
 
     private void Update()
     {
@@ -56,20 +57,32 @@ public class EnemyProjectile : MonoBehaviour
             Vector3 targetPos = target.position + Vector3.up * heightOffset;
             return (targetPos - transform.position).normalized;
         }
+
         return nonHomingDirection;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // if (target != null && other.transform == target)
         other.GetComponent<IDamageable>()?.TakeDamage(damage);
+
+        if (poisonConfig != null && poisonConfig.enablePoison)
+        {
+            var poison = other.GetComponent<PoisonDamageOverTime>();
+            if (poison != null)
+            {
+                poison.ApplyPoison(poisonConfig);
+            }
+        }
 
         PoolManager.Instance.Return(gameObject);
     }
 
-    private IEnumerator ReturnToPoolAfterLifetime()
+    private IEnumerator ReturnAfterLifetime()
     {
         yield return new WaitForSeconds(lifetime);
         PoolManager.Instance.Return(gameObject);
     }
+
+    public void StopMoving() => isMoving = false;
+    public void StartMoving() => isMoving = true;
 }
