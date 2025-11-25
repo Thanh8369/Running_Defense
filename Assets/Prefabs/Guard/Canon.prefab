@@ -424,7 +424,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8834548153809410939, guid: 19d4752eaba6df3429dc0206deb95106, type: 3}
   firePoint: {fileID: 379352854478909462}
   moveSpeed: 1
-  rotateSpeed: 10
   attackRange: 20
   attackCooldown: 5
   stopDistanceFromEnemy: 20
@@ -443,6 +442,7 @@ MonoBehaviour:
   anim: {fileID: 6118680422603132425}
   rb: {fileID: 9117577439634972911}
   isAttacking: 0
+  isDead: 0
 --- !u!114 &5945630487946247188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ Animator:
   m_GameObject: {fileID: 7430700240802123827}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8decb0e24dbccc54993b992c350c8a10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
