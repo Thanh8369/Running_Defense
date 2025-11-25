@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4722898071448509293}
   - component: {fileID: 5774898319725516293}
   m_Layer: 7
-  m_Name: Spider
+  m_Name: SpiderProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 535304c30b7c3f44fbdbbb53f4b5d72d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,6 +126,17 @@ MonoBehaviour:
   lifetime: 3
   projectileSpeed: 10
   heightOffset: 0.5
+  poisonConfig:
+    enablePoison: 0
+    poisonDamagePerTick: 10
+    tickInterval: 2
+    poisonDuration: 4
+    stackPoison: 0
+  iceSlowConfig:
+    enableIceSlow: 1
+    slowAmount: 0.2
+    slowDuration: 3
+    stackSlow: 0
 --- !u!96 &5774898319725516293
 TrailRenderer:
   serializedVersion: 3
