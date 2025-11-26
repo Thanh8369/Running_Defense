@@ -14,13 +14,13 @@ public class MeleeEnemyAI : EnemyAI
         // Ưu tiên: Player > Troop > Tower
         nodes.Add(BuildTargetSequence(
             () => player,
-            () => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0,
+            () => DistanceToTarget(player) <= stats.detectionRange,
             false
         ));
 
         nodes.Add(BuildTargetSequence(
             () => nearestTroop,
-            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange && currentFocusTime <= 0,
+            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange,
             false
         ));
 
@@ -46,13 +46,13 @@ public class MeleeEnemyAI : EnemyAI
             new BTCondition(() => condition() && !IsBlockedByAdditionalCondition()),
             new BTSelector(new List<BTNode>
             {
-                BuildAttackSequence(getTarget, isTower),
+                BuildAttackSequence(getTarget),
                 BuildMoveSequence(getTarget)
             })
         });
     }
 
-    private BTSequence BuildAttackSequence(System.Func<Transform> getTarget, bool isTower)
+    private BTSequence BuildAttackSequence(System.Func<Transform> getTarget)
     {
         return new BTSequence(new List<BTNode>
         {
@@ -60,8 +60,6 @@ public class MeleeEnemyAI : EnemyAI
             new BTAction(() => RotateToTarget(getTarget())),
             new BTAction(() =>
             {
-                if (isTower && currentFocusTime <= 0f)
-                    currentFocusTime = stats.attackCooldown;
                 return AttackTarget(getTarget());
             })
         });

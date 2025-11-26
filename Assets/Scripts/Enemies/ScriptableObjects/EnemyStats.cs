@@ -18,7 +18,7 @@ public class EnemyStats : ScriptableObject
     [HideInInspector] public float maxSpeed = 5f;
     [HideInInspector] public float rotateSpeed = 360f;
     public float attackDamage = 10f;
-    public float attackCooldown = 1f;
+    [Min(1)] public float attackSpeed = 1f;
     public float attackRange = 2f;
     public float detectionRange = 8f;
 
@@ -35,6 +35,6 @@ public class EnemyStats : ScriptableObject
 
     private void OnValidate()
     {
-        maxSpeed = moveSpeed * 2.5f;
+        maxSpeed = moveSpeed * 2f;
     }
 }

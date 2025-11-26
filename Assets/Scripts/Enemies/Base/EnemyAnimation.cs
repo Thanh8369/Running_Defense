@@ -21,6 +21,7 @@ public class EnemyAnimation : MonoBehaviour
     private static readonly int GetHit = Animator.StringToHash("GetHit");
     private static readonly int DefendGetHit = Animator.StringToHash("DefendGetHit");
     private static readonly int Die = Animator.StringToHash("Die");
+    private static readonly int AttackSpeedParam = Animator.StringToHash("AttackSpeed");
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class EnemyAnimation : MonoBehaviour
             enemyHealth.onDie += PlayDeathAnimation;
         }
 
+        // Reset animator để tránh trigger lỗi khi re-enable
         animator.Rebind();
         animator.Update(0f);
     }
@@ -66,51 +68,57 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
+    // ================= WALK =================
     private void PlayWalkAnimation(bool isMoving, float moveSpeed)
     {
         animator.SetBool(IsMoving, isMoving);
         animator.SetFloat(MoveSpeed, moveSpeed);
     }
 
+    // ================= ATTACK =================
     private void PlayAttackAnimation()
     {
         if (animationConfig == null) return;
 
         EnemyAnimationData anim = animationConfig.GetRandomAttack(animationConfig.attackAnimations);
+        if (anim == null) return;
 
-        if (anim != null)
-        {
-            animator.SetTrigger(anim.triggerName);
+        // Trigger animation
+        animator.SetTrigger(anim.triggerName);
 
-            cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
-            evilMageAI?.OnAttackAnimationSet(anim.triggerName);
-            orcAI?.OnAttackAnimationSet(anim.triggerName);
-            lizardWarriorAI?.OnAttackAnimationSet(anim.triggerName);
-        }
+        // Set tốc độ attack animation dựa vào attackCooldown
+        float attackSpeed = enemyAI.GetAttackSpeed();
+        animator.SetFloat(AttackSpeedParam, attackSpeed);
+
+        // Gửi trigger cho AI đặc thù
+        cyclopsAI?.OnAttackAnimationSet(anim.triggerName);
+        evilMageAI?.OnAttackAnimationSet(anim.triggerName);
+        orcAI?.OnAttackAnimationSet(anim.triggerName);
+        lizardWarriorAI?.OnAttackAnimationSet(anim.triggerName);
     }
 
+    // ================= HIT =================
     private void PlayHitAnimation()
     {
         if (lizardWarriorAI != null && lizardWarriorAI.IsHealing())
-        {
             animator.SetTrigger(DefendGetHit);
-        }
         else
-        {
             animator.SetTrigger(GetHit);
-        }
     }
 
+    // ================= HEAL =================
     public void PlayHealAnimation(bool isHealing)
     {
         animator.SetBool(IsHealing, isHealing);
     }
 
+    // ================= DIE =================
     private void PlayDeathAnimation()
     {
         animator.SetTrigger(Die);
     }
 
+    // ================= ANIMATION EVENTS =================
     public void OnAttackEnd() => enemyAI.OnAttackAnimationEnd();
     public void OnGetHitEnd() => enemyAI.OnGetHitAnimationEnd();
     public void OnDieEnd() => enemyHealth.OnDieAnimationEnd();

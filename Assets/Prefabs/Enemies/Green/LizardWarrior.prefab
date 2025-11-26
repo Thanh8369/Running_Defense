@@ -711,15 +711,12 @@ MonoBehaviour:
     damageAmount: 400
   healCooldown: 15
   healDuration: 10
-  healAmount: 50
+  healAmount: 150
   healTick: 1
   defenseDamageReduction: 0.6
-  buffRadius: 100
-  buffMultiplier: 2
-  buffDuration: 5
-  minionPrefab: {fileID: 7128240185426142786, guid: b3b9d5351cfa04a43979f145419990a4, type: 3}
-  summonCount: 3
-  summonRadius: 5
+  buffRadius: 50
+  buffMultiplier: 1.8
+  buffDuration: 10
 --- !u!114 &1976939063243183455
 MonoBehaviour:
   m_ObjectHideFlags: 0
