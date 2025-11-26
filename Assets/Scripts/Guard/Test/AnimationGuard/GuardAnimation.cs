@@ -6,6 +6,7 @@ public class GuardAnimation : MonoBehaviour
     public Rigidbody rb;
 
     public bool isAttacking = false;
+    public bool isDead = false;
 
     private RigidbodyConstraints originalConstraints;
 
@@ -16,7 +17,7 @@ public class GuardAnimation : MonoBehaviour
 
     public void SetMoving(bool moving)
     {
-        if (isAttacking)
+        if (isAttacking || isDead)
         {
             anim.SetBool("IsMoving", false);
             return;
@@ -27,23 +28,35 @@ public class GuardAnimation : MonoBehaviour
 
     public void PlayAttack()
     {
-        if (isAttacking) return;
+        if (isAttacking || isDead) return;
 
         isAttacking = true;
-
         anim.SetTrigger("Attack");
         anim.SetBool("IsMoving", false);
 
-        // Freeze toàn bộ khi tấn công
         rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    // Gọi từ Animation Event cuối attack
     public void OnAttackEnd()
     {
-        isAttacking = false;
+        if (isDead) return;
 
-        // Mở khóa chuyển động lại
+        isAttacking = false;
         rb.constraints = originalConstraints;
+    }
+
+    // ------------------------------------
+    // 🟥 GỌI KHI CHẾT
+    // ------------------------------------
+    public void PlayDie()
+    {
+        if (isDead) return;
+
+        isDead = true;
+
+        anim.SetTrigger("Die");
+        anim.SetBool("IsMoving", false);
+
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 }
