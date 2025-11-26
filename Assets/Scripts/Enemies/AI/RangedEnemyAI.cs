@@ -36,12 +36,12 @@ public class RangedEnemyAI : EnemyAI
         // Ưu tiên: Player > Troop > Tower
         nodes.Add(BuildTargetSequence(
             () => player,
-            () => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0
+            () => DistanceToTarget(player) <= stats.detectionRange
         ));
 
         nodes.Add(BuildTargetSequence(
             () => nearestTroop,
-            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange && currentFocusTime <= 0
+            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange
         ));
 
         nodes.Add(BuildTowerSequence());
@@ -105,11 +105,7 @@ public class RangedEnemyAI : EnemyAI
         {
             new BTCondition(() => DistanceToTarget(tower) <= stats.attackRange),
             new BTAction(() => RotateToTarget(tower)),
-            new BTAction(() =>
-            {
-                if (currentFocusTime <= 0f) currentFocusTime = stats.attackCooldown;
-                return AttackTarget(tower);
-            })
+            new BTAction(() => AttackTarget(tower))
         });
     }
 
