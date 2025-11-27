@@ -10,7 +10,7 @@ public class HealthGuard : MonoBehaviour, IDamageable
     public event Action OnDeath;
 
     private GuardAnimation guardAnim;
-    private bool isDead = false;
+    public bool isDead { get; private set; } = false;
 
     private void Awake()
     {

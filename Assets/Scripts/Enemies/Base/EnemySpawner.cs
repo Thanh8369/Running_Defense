@@ -17,8 +17,8 @@ public class EnemySpawner : MonoBehaviour
     private HashSet<SpawnConfig> configsStarGranted = new(); // Đã cộng star chưa
     private int totalStars = 0;
 
-    private int aliveEnemies = 0;
-    private bool allSpawnsCompleted = false;
+    // private int aliveEnemies = 0;
+    // private bool allSpawnsCompleted = false;
 
     public int TotalStars => totalStars;
 
@@ -49,8 +49,7 @@ public class EnemySpawner : MonoBehaviour
             yield return null;
         }
 
-        allSpawnsCompleted = true;
-        Debug.LogWarning("All spawns completed.");
+        // allSpawnsCompleted = true;
     }
 
     IEnumerator SpawnGroup(SpawnConfig config)
@@ -59,7 +58,6 @@ public class EnemySpawner : MonoBehaviour
         {
             totalStars += 1;
             configsStarGranted.Add(config);
-            Debug.LogWarning($"⭐ Config {config.name} spawned → +1 star. TotalStars = {totalStars}");
         }
 
         foreach (var info in config.spawnInfos)
@@ -103,14 +101,14 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemyObj = PoolManager.Instance.Get(info.enemy.prefab, spawnPos, Quaternion.identity);
 
         EnemyHealth hp = enemyObj.GetComponent<EnemyHealth>();
-        hp.onDie += () => { aliveEnemies--; };
+        // hp.OnDeath += () => { aliveEnemies--; };
 
-        aliveEnemies++;
+        // aliveEnemies++;
     }
 
     public void AddStar()
     {
         totalStars += 1;
-        Debug.LogWarning($"⭐ AddStar() → TotalStars = {totalStars}");
+        Debug.Log($"⭐ AddStar() → TotalStars = {totalStars}");
     }
 }

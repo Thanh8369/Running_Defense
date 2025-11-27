@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
-  m_Name: All Ranged
+  m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
+  m_Name: Werewolf_AnimConfig
   m_EditorClassIdentifier: 
-  triggerTime: 0
-  spawnInfos: []
+  attackAnimations:
+  - triggerName: Attack01
+    percent: 1
+    lastUsedTime: 12.03927
+  - triggerName: Attack03
+    percent: 1
+    lastUsedTime: 11.038637

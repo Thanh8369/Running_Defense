@@ -126,6 +126,20 @@ MonoBehaviour:
   lifetime: 5
   projectileSpeed: 4
   heightOffset: 0.5
+  isBomb: 1
+  bombFragmentPrefab: {fileID: 6045715366450228825, guid: b8661c9bdf9a3f742bb8cd303e283f03, type: 3}
+  fragmentCount: 16
+  poisonConfig:
+    enablePoison: 0
+    damagePerTick: 2
+    tickInterval: 1
+    duration: 5
+    stack: 0
+  iceSlowConfig:
+    enableIceSlow: 0
+    slowAmount: 0.5
+    slowDuration: 3
+    stackSlow: 0
 --- !u!96 &5774898319725516293
 TrailRenderer:
   serializedVersion: 3

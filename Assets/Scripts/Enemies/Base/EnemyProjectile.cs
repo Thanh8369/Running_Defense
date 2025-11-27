@@ -9,6 +9,11 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 15f;
     [SerializeField] private float heightOffset = 1f;
 
+    [Header("Bomb Settings")]
+    public bool isBomb = false;
+    public GameObject bombFragmentPrefab;
+    public int fragmentCount = 8;   
+
     [Header("Poison Settings Per Projectile")]
     public PoisonDebuffConfig poisonConfig;
 
@@ -31,10 +36,10 @@ public class EnemyProjectile : MonoBehaviour
     {
         this.target = target;
         this.damage = damage;
+
         transform.localScale = originalScale;
 
-        // Non-homing direction
-        if (target != null && !useHoming)
+        if (!useHoming)
             nonHomingDirection = fireDirection.normalized;
 
         StartCoroutine(ReturnAfterLifetime());
@@ -48,14 +53,21 @@ public class EnemyProjectile : MonoBehaviour
 
     private void MoveProjectile()
     {
-        direction = GetDirection();
-        transform.position += direction * projectileSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.LookRotation(direction);
+        Vector3 dir = GetDirection();
+
+        if (dir == Vector3.zero)
+            return;
+
+        transform.position += dir * projectileSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.LookRotation(dir);
     }
 
     private Vector3 GetDirection()
     {
-        if (useHoming && target != null)
+        if (!useHoming)
+            return nonHomingDirection;
+
+        if (target != null)
         {
             Vector3 targetPos = target.position + Vector3.up * heightOffset;
             return (targetPos - transform.position).normalized;
@@ -68,19 +80,14 @@ public class EnemyProjectile : MonoBehaviour
     {
         other.GetComponent<IDamageable>()?.TakeDamage(damage);
 
-        // Poison
         if (poisonConfig != null && poisonConfig.enablePoison)
-        {
-            var poison = other.GetComponent<PoisonDebuff>();
-            poison?.ApplyPoison(poisonConfig);
-        }
+            other.GetComponent<PoisonDebuff>()?.ApplyPoison(poisonConfig);
 
-        // Ice Slow
         if (iceSlowConfig != null && iceSlowConfig.enableIceSlow)
-        {
-            var ice = other.GetComponent<SlowDebuff>();
-            ice?.ApplySlow(iceSlowConfig);
-        }
+            other.GetComponent<SlowDebuff>()?.ApplySlow(iceSlowConfig);
+
+        if (isBomb)
+            Explode();
 
         PoolManager.Instance.Return(gameObject);
     }
@@ -88,7 +95,47 @@ public class EnemyProjectile : MonoBehaviour
     private IEnumerator ReturnAfterLifetime()
     {
         yield return new WaitForSeconds(lifetime);
+
+        if (isBomb)
+            Explode();
+
         PoolManager.Instance.Return(gameObject);
+    }
+
+    private void Explode()
+    {
+        if (bombFragmentPrefab == null) return;
+
+        float angleStep = 360f / fragmentCount;
+        Vector3 pos = transform.position;
+
+        for (int i = 0; i < fragmentCount; i++)
+        {
+            float angle = angleStep * i;
+            Vector3 dir = Quaternion.Euler(0, angle, 0) * Vector3.forward;
+
+            GameObject frag = PoolManager.Instance.Get(
+                bombFragmentPrefab,
+                pos,
+                Quaternion.LookRotation(dir)
+            );
+
+            EnemyProjectile fp = frag.GetComponent<EnemyProjectile>();
+            if (fp != null)
+            {
+                // Fragment KHÔNG BAO GIỜ homing hoặc là bomb
+                fp.useHoming = false;
+                fp.isBomb = false;
+                fp.bombFragmentPrefab = null;
+                fp.fragmentCount = 0;
+
+                // Gán hướng
+                fp.nonHomingDirection = dir;
+
+                // Damage giảm
+                fp.Initialize(null, damage * 0.5f, dir);
+            }
+        }
     }
 
     public void StopMoving() => isMoving = false;

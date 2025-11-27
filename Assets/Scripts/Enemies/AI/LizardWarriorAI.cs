@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class LizardWarriorAI : MeleeEnemyAI
 {
-    [SerializeField] private List<LizardWarriorAttackVariant> attackVariants = new List<LizardWarriorAttackVariant>();
-
     [Header("Boss Healing Settings")]
     [SerializeField] private float healCooldown = 15f;
     [SerializeField] private float healDuration = 3f;
     [SerializeField] private float healAmount = 30f;
     [SerializeField] private float healTick = 1f;
-    [SerializeField] private float defenseDamageReduction = 0.6f;
+
+    [Header("Defense Stance Settings")]
+    [SerializeField] private float defenseHPThreshold = 0.5f;
+    [SerializeField] private float defenseDamageReduction = 0.8f;
 
     [Header("Buff Skill Settings")]
     [SerializeField] private float buffRadius = 10f;
     [SerializeField] private float buffMultiplier = 1.4f;
     [SerializeField] private float buffDuration = 5f;
 
-    // [Header("Summon Skill Settings")]
-    // [SerializeField] private GameObject minionPrefab;
-    // [SerializeField] private int summonCount = 3;
-    // [SerializeField] private float summonRadius = 5f;
-
     private float lastHealTime = -999f;
     private float healStartTime;
     private float healTickTimer = 0f;
     private bool isHealing = false;
-    private int currentAttackVariantId = 0;
+    private string currentAttackVariantTrigger = "";
 
     private EnemyHealth enemyHealth;
     private EnemyAnimation enemyAnimation;
@@ -49,10 +45,7 @@ public class LizardWarriorAI : MeleeEnemyAI
         return new List<BTNode> { BuildHealSequence() };
     }
 
-    protected override bool IsBlockedByAdditionalCondition()
-    {
-        return isHealing;
-    }
+    protected override bool IsBlockedByAdditionalCondition() => isHealing;
 
     private BTSequence BuildHealSequence()
     {
@@ -79,9 +72,7 @@ public class LizardWarriorAI : MeleeEnemyAI
             }
 
             if (elapsedTime >= healDuration)
-            {
                 ExitHealingStance();
-            }
         }
     }
 
@@ -92,7 +83,7 @@ public class LizardWarriorAI : MeleeEnemyAI
         float timeSinceLastHeal = Time.time - lastHealTime;
         float hpPercent = enemyHealth.GetHealthPercent();
 
-        return timeSinceLastHeal >= healCooldown && hpPercent < 0.5f;
+        return timeSinceLastHeal >= healCooldown && hpPercent < defenseHPThreshold;
     }
 
     private BTNode.NodeState EnterHealingStance()
@@ -120,7 +111,7 @@ public class LizardWarriorAI : MeleeEnemyAI
         isRotate = false;
         isHit = false;
         healTickTimer = 0;
-        onMove?.Invoke(false, 0);
+        OnMove?.Invoke(false, 0);
         enemyAnimation?.PlayHealAnimation(false);
     }
 
@@ -140,32 +131,25 @@ public class LizardWarriorAI : MeleeEnemyAI
 
     public void OnAttackAnimationSet(string triggerName)
     {
-        foreach (var variant in attackVariants)
-        {
-            if (triggerName.Contains(variant.animationTriggerName))
-            {
-                currentAttackVariantId = variant.id;
-                return;
-            }
-        }
-        currentAttackVariantId = 0;
+        if (stats.attackVariants.Exists(v => v.triggerName == triggerName))
+            currentAttackVariantTrigger = triggerName;
     }
 
     public new void DealDamageToTarget()
     {
         if (currentTarget == null) return;
 
-        LizardWarriorAttackVariant currentVariant = GetCurrentAttackVariant();
-        float damage = currentVariant != null ? currentVariant.damageAmount : stats.attackDamage;
+        var variant = GetCurrentAttackVariant();
+        float damage = variant != null ? variant.damageAmount : stats.attackDamage;
 
         currentTarget.GetComponent<IDamageable>()?.TakeDamage(damage);
     }
 
-    private LizardWarriorAttackVariant GetCurrentAttackVariant()
+    private AttackVariant GetCurrentAttackVariant()
     {
-        foreach (var variant in attackVariants)
+        foreach (var variant in stats.attackVariants)
         {
-            if (variant.id == currentAttackVariantId)
+            if (variant.triggerName == currentAttackVariantTrigger)
                 return variant;
         }
         return null;
@@ -173,10 +157,7 @@ public class LizardWarriorAI : MeleeEnemyAI
 
     public bool IsHealing() => isHealing;
 
-    public float GetDamageReductionMultiplier()
-    {
-        return isHealing ? (1f - defenseDamageReduction) : 1f;
-    }
+    public float GetDamageReductionMultiplier() => isHealing ? (1f - defenseDamageReduction) : 1f;
 
     public void CastSpeedBuff()
     {
@@ -207,12 +188,4 @@ public class LizardWarriorAI : MeleeEnemyAI
     //         PoolManager.Instance.Get(minionPrefab, spawnPos, Quaternion.identity);
     //     }
     // }
-}
-
-[Serializable]
-public class LizardWarriorAttackVariant
-{
-    public int id;
-    public string animationTriggerName;
-    public float damageAmount = 15f;
 }

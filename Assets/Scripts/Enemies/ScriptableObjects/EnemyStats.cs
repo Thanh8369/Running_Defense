@@ -9,6 +9,13 @@ public class ProjectileData
     public float customDamage = -1f; // -1 = use Enemy damage, >0 = use custom
 }
 
+[Serializable]
+public class AttackVariant
+{
+    public string triggerName;
+    public float damageAmount = 15f;
+}
+
 [CreateAssetMenu(fileName = "EnemyStatsSO", menuName = "Enemy/Enemy Stats")]
 public class EnemyStats : ScriptableObject
 {
@@ -29,6 +36,9 @@ public class EnemyStats : ScriptableObject
 
     [Header("Visual")]
     public GameObject prefab;
+
+    [Header("Attack Variants")]
+    public List<AttackVariant> attackVariants = new List<AttackVariant>();
 
     [Header("Projectile Settings")]
     public List<ProjectileData> projectilePrefabs = new List<ProjectileData>();

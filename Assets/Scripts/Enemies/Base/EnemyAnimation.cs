@@ -13,6 +13,7 @@ public class EnemyAnimation : MonoBehaviour
     private EvilMageAI evilMageAI;
     private OrcAI orcAI;
     private LizardWarriorAI lizardWarriorAI;
+    private WerewolfAI werewolfAI;
     private EnemyHealth enemyHealth;
 
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
@@ -32,20 +33,21 @@ public class EnemyAnimation : MonoBehaviour
         evilMageAI = GetComponent<EvilMageAI>();
         orcAI = GetComponent<OrcAI>();
         lizardWarriorAI = GetComponent<LizardWarriorAI>();
+        werewolfAI = GetComponent<WerewolfAI>();
     }
 
     private void OnEnable()
     {
         if (enemyAI != null)
         {
-            enemyAI.onMove += PlayWalkAnimation;
-            enemyAI.onAttack += PlayAttackAnimation;
+            enemyAI.OnMove += PlayWalkAnimation;
+            enemyAI.OnAttack += PlayAttackAnimation;
         }
 
         if (enemyHealth != null)
         {
-            enemyHealth.onHit += PlayHitAnimation;
-            enemyHealth.onDie += PlayDeathAnimation;
+            enemyHealth.OnHit += PlayHitAnimation;
+            enemyHealth.OnDeath += PlayDeathAnimation;
         }
 
         // Reset animator để tránh trigger lỗi khi re-enable
@@ -57,14 +59,14 @@ public class EnemyAnimation : MonoBehaviour
     {
         if (enemyAI != null)
         {
-            enemyAI.onMove -= PlayWalkAnimation;
-            enemyAI.onAttack -= PlayAttackAnimation;
+            enemyAI.OnMove -= PlayWalkAnimation;
+            enemyAI.OnAttack -= PlayAttackAnimation;
         }
 
         if (enemyHealth != null)
         {
-            enemyHealth.onHit -= PlayHitAnimation;
-            enemyHealth.onDie -= PlayDeathAnimation;
+            enemyHealth.OnHit -= PlayHitAnimation;
+            enemyHealth.OnDeath -= PlayDeathAnimation;
         }
     }
 
@@ -78,6 +80,17 @@ public class EnemyAnimation : MonoBehaviour
     // ================= ATTACK =================
     private void PlayAttackAnimation()
     {
+        // Nếu là Werewolf, dùng trigger cụ thể dựa vào target
+        if (werewolfAI != null)
+        {
+            string triggerName = werewolfAI.GetCurrentAttackTrigger();
+            animator.SetTrigger(triggerName);
+            float attackSpeed = enemyAI.GetAttackSpeed();
+            animator.SetFloat(AttackSpeedParam, attackSpeed);
+            return;
+        }
+
+        // Các enemy khác dùng random animation
         if (animationConfig == null) return;
 
         EnemyAnimationData anim = animationConfig.GetRandomAttack(animationConfig.attackAnimations);
@@ -87,8 +100,8 @@ public class EnemyAnimation : MonoBehaviour
         animator.SetTrigger(anim.triggerName);
 
         // Set tốc độ attack animation dựa vào attackCooldown
-        float attackSpeed = enemyAI.GetAttackSpeed();
-        animator.SetFloat(AttackSpeedParam, attackSpeed);
+        float attackSpeed2 = enemyAI.GetAttackSpeed();
+        animator.SetFloat(AttackSpeedParam, attackSpeed2);
 
         // Gửi trigger cho AI đặc thù
         cyclopsAI?.OnAttackAnimationSet(anim.triggerName);

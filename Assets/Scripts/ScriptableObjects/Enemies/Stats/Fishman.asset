@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: Fishman
   m_EditorClassIdentifier: 
-  enemyName: Fishman
+  maxHealth: 100
   moveSpeed: 6
+  maxSpeed: 12
   rotateSpeed: 360
   attackDamage: 10
-  attackCooldown: 1
-  attackRange: 2.5
+  attackSpeed: 1
+  attackRange: 2.8
   detectionRange: 10
+  minGold: 5
+  maxGold: 15
+  expAmount: 10
   prefab: {fileID: 9053075404424218739, guid: 44212287555210e4ab6d1e253eee5e09, type: 3}
+  projectilePrefabs: []
