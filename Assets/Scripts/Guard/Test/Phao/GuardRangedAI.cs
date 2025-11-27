@@ -120,12 +120,9 @@ public class GuardRangedAI : MonoBehaviour
         if (firePoint == null || target == null)
             return;
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = PoolManager.Instance.Get(bulletPrefab, firePoint.position, firePoint.rotation);
 
-        BulletCanon parabola = bullet.GetComponent<BulletCanon>();
-        if (parabola != null)
-        {
-            parabola.Init(target);
-        }
+        BulletCanon bc = bullet.GetComponent<BulletCanon>();
+        bc.Init(target, bulletPrefab);
     }
 }

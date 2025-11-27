@@ -7,55 +7,62 @@ public class Bullet : MonoBehaviour
     public float damage = 50f;
 
     private Vector3 direction;
+    private float timer;
+    private GameObject prefabOrigin; // prefab gốc để trả pool
 
-    /// <summary>
-    /// Gán hướng bay cho viên đạn
-    /// </summary>
-    public void SetDirection(Vector3 dir)
+    // Set direction + prefab gốc
+    public void Init(Vector3 dir, GameObject prefab)
     {
         direction = dir.normalized;
+        prefabOrigin = prefab;
 
-        // Tự hủy sau time sống
-        Destroy(gameObject, lifeTime);
+        timer = 0f;
+        gameObject.SetActive(true);
     }
 
     void Update()
     {
-        // Nếu chưa có direction → không làm gì
         if (direction == Vector3.zero) return;
 
-        // Bay thẳng
         transform.position += direction * speed * Time.deltaTime;
 
-        // KHÓA xoay theo trục Y để đầu mũi tên không bị nghiêng
+        // Khóa xoay
         Vector3 flatDir = new Vector3(direction.x, 0f, direction.z);
         if (flatDir.sqrMagnitude > 0.001f)
             transform.rotation = Quaternion.LookRotation(flatDir);
+
+        timer += Time.deltaTime;
+        if (timer >= lifeTime)
+            ReturnToPool();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Ngăn tự bắn vào mình hoặc tower
         if (other.transform == transform.parent) return;
 
-        // Lấy IDamageable ở object hoặc parent
         IDamageable dmg = other.GetComponent<IDamageable>();
         if (dmg == null)
             dmg = other.GetComponentInParent<IDamageable>();
 
-        // Nếu có script damage → gây damage
         if (dmg != null)
         {
             dmg.TakeDamage(damage);
-            Destroy(gameObject);
+            ReturnToPool();
             return;
         }
 
-        // Enemy có tag nhưng thiếu script → cảnh báo
         if (other.CompareTag("Enemy"))
-        {
-            Debug.LogWarning("Enemy FOUND but missing IDamageable: " + other.name);
-            Destroy(gameObject);
-        }
+            ReturnToPool();
+    }
+
+    void ReturnToPool()
+    {
+        direction = Vector3.zero;
+        timer = 0f;
+
+        if (PoolManager.Instance != null)
+            PoolManager.Instance.Return(gameObject, prefabOrigin);
+        else
+            gameObject.SetActive(false);
     }
 }

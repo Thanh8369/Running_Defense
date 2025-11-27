@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;    // thêm để load scene
 
 namespace Son.Economy
 {
@@ -13,19 +14,23 @@ namespace Son.Economy
         public GameObject panelRoot;
 
         [Header("UI Buttons")]
-        public Button btnContinueGem;     // nút xanh 12 Gem
-        public Button btnContinueAd;      // nút vàng FREE
+        public Button btnContinueGem;     // nút dùng GOLD để revive
+        public Button btnContinueAd;      // nút trở về Main Menu
         public Button btnClose;           // nút X
 
         [Header("UI Text")]
-        public TextMeshProUGUI gemCostText;
+        public TextMeshProUGUI gemCostText;  // text hiển thị GOLD cost
 
-        [Header("Chi phí hồi sinh")]
-        public int gemCost = 12;
+        [Header("Chi phí hồi sinh (Gold)")]
+        public int gemCost = 12;              // cost ban đầu bằng Gold
+
+        [Header("Scene")]
+        [Tooltip("Tên scene main menu để load khi bấm nút về menu.")]
+        public string mainMenuSceneName = "MainMenu";
 
         [Header("Event Hook")]
         public UnityEvent onContinue;   // gọi khi revive
-        public UnityEvent onQuit;       // gọi khi quit
+        public UnityEvent onQuit;       // gọi khi quit / về main menu
 
         private float _prevTimeScale = 1f;
         private bool _isOpen = false;
@@ -56,7 +61,7 @@ namespace Son.Economy
         // ---------------- PUBLIC API ----------------
 
         /// <summary>
-        /// Gọi hàm này khi Player chết
+        /// Gọi hàm này khi Tower/Player chết
         /// </summary>
         public void Show()
         {
@@ -68,7 +73,7 @@ namespace Son.Economy
                 panelRoot.SetActive(true);
 
             if (gemCostText != null)
-                gemCostText.text = gemCost.ToString();
+                gemCostText.text = gemCost.ToString();   // luôn hiển thị cost hiện tại
 
             _prevTimeScale = Time.timeScale;
             Time.timeScale = 0f; // pause game
@@ -91,31 +96,55 @@ namespace Son.Economy
 
         // ---------------- BUTTON EVENTS ----------------
 
+        // Nút dùng GOLD để hồi sinh
         private void OnClickContinueGem()
         {
-            // Spend Gem using WalletManager
-            bool paid = WalletManager.Instance.SpendCurrency(CurrencyType.Gem, gemCost, "Revive by Gem");
+            // Spend Gold (không còn dùng Gem)
+            bool paid = WalletManager.Instance.SpendCurrency(CurrencyType.Gold, gemCost, "Revive by Gold");
 
             if (!paid)
             {
-                Debug.Log("[DeathPanel] Không đủ Gem để hồi sinh.");
-                // TODO: hiện popup "Not enough gems"
+                Debug.Log("[DeathPanel] Không đủ Gold để hồi sinh.");
+                // TODO: hiện popup "Not enough gold"
                 return;
             }
 
+            // Nếu trả được → tiếp tục game (revive tower/player)
             ContinueGame();
+
+            // Sau mỗi lần revive, tăng cost lên gấp đôi
+            gemCost *= 2;
+
+            // Cập nhật lại UI nếu panel được mở lại sau này
+            if (gemCostText != null)
+                gemCostText.text = gemCost.ToString();
         }
 
+        // Nút này giờ dùng để về Main Menu
         private void OnClickContinueAd()
         {
-            Debug.Log("[DeathPanel] Giả lập xem Ads thành công → cho revive.");
-            // TODO: tích hợp Ads thật sau
-            ContinueGame();
+            Debug.Log("[DeathPanel] Player chọn về Main Menu.");
+
+            // Ẩn panel + trả lại timeScale trước
+            Hide();
+
+            // Bắn event onQuit nếu có logic custom gắn trong Inspector
+            onQuit?.Invoke();
+
+            // Nếu có tên scene, load scene main menu
+            if (!string.IsNullOrEmpty(mainMenuSceneName))
+            {
+                SceneManager.LoadScene(mainMenuSceneName);
+            }
+            else
+            {
+                Debug.LogWarning("[DeathPanel] mainMenuSceneName đang để trống, không load được Main Menu.");
+            }
         }
 
         private void OnClickClose()
         {
-            Debug.Log("[DeathPanel] Player chọn Quit.");
+            Debug.Log("[DeathPanel] Player chọn Quit (nút X).");
             Hide();
             onQuit?.Invoke();
         }
@@ -128,7 +157,7 @@ namespace Son.Economy
 
             Hide();
 
-            // Gọi logic revive bạn gán trong Inspector
+            // Gọi logic revive bạn gán trong Inspector (ví dụ: DeathController.ReviveTower)
             onContinue?.Invoke();
         }
     }
