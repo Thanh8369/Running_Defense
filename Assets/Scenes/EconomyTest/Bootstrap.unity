@@ -350,6 +350,7 @@ MonoBehaviour:
   currentExp: 0
   baseExpToLevelUp: 100
   expGrowthPerLevel: 0.2
+  canGainExp: 1
 --- !u!4 &590830076
 Transform:
   m_ObjectHideFlags: 0

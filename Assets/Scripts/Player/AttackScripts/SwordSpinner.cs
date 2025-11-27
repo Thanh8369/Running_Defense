@@ -26,6 +26,13 @@ public class SwordSpinner : MonoBehaviour
     {
         if (player == null || playerRunStats == null) return;
 
+        // 🔒 Nếu player đang chết hoặc revive thì không quay kiếm, không làm gì cả
+        if (PlayerLifeController.Instance != null &&
+            !PlayerLifeController.Instance.CanAct)
+        {
+            return;
+        }
+
         // attackSpeed = số đòn / giây => số vòng quay / giây
         float rotationsPerSecond = playerRunStats.baseSwordAttackSpeed;
         float speed = 360f * rotationsPerSecond; // độ/giây
@@ -49,6 +56,13 @@ public class SwordSpinner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (playerRunStats == null) return;
+
+        // 🔒 Chết / revive thì không gây damage
+        if (PlayerLifeController.Instance != null &&
+            !PlayerLifeController.Instance.CanAct)
+        {
+            return;
+        }
 
         if (other.TryGetComponent<EnemyHealth>(out var damageable))
         {

@@ -26,6 +26,8 @@ namespace Son.Economy
         [Range(0f, 1f)]
         public float expGrowthPerLevel = 0.2f;
 
+        public bool canGainExp = true;
+
         /// <summary>
         /// EXP yêu cầu cho level hiện tại -> level + 1.
         /// </summary>
@@ -64,6 +66,13 @@ namespace Son.Economy
         public void AddExp(int amount)
         {
             if (amount <= 0) return;
+
+            // KHÓA NHẬN EXP KHI CHẾT HOẶC ĐANG REVIVE
+            if (!canGainExp)
+            {
+                Debug.Log("[PlayerExperience] Đang chết / revive → không nhận EXP.");
+                return;
+            }
 
             int expToNext = ExpToNextLevel;
             currentExp += amount;
