@@ -3,7 +3,7 @@
 public class TowerShooter : MonoBehaviour
 {
     public TowerArea tower;
-    public TowerData towerStats;
+    public TowerRunStats towerStats;
 
     public Transform firePoint;
     public GameObject bulletPrefab;
