@@ -4,7 +4,7 @@ using UnityEngine.AI;
 [System.Serializable]
 public class SlowDebuffConfig
 {
-    public bool enableIceSlow = false;
+    public bool enableSlow = false;
     [Range(0f, 1f)] public float slowAmount = 0.5f;
     public float slowDuration = 3f;
     public bool stackSlow = false;
@@ -36,7 +36,7 @@ public class SlowDebuff : MonoBehaviour
 
     public void ApplySlow(SlowDebuffConfig config)
     {
-        if (config == null || !config.enableIceSlow || agent == null)
+        if (config == null || !config.enableSlow || agent == null)
             return;
 
         float targetSpeed = originalSpeed * (1f - Mathf.Clamp01(config.slowAmount));

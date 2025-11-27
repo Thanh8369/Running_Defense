@@ -175,17 +175,4 @@ public class LizardWarriorAI : MeleeEnemyAI
             }
         }
     }
-
-    // public void SummonMinions()
-    // {
-    //     if (minionPrefab == null) return;
-
-    //     for (int i = 0; i < summonCount; i++)
-    //     {
-    //         Vector2 offset = UnityEngine.Random.insideUnitCircle * summonRadius;
-    //         Vector3 spawnPos = transform.position + new Vector3(offset.x, 0, offset.y);
-
-    //         PoolManager.Instance.Get(minionPrefab, spawnPos, Quaternion.identity);
-    //     }
-    // }
 }

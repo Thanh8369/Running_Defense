@@ -83,7 +83,7 @@ public class EnemyProjectile : MonoBehaviour
         if (poisonConfig != null && poisonConfig.enablePoison)
             other.GetComponent<PoisonDebuff>()?.ApplyPoison(poisonConfig);
 
-        if (iceSlowConfig != null && iceSlowConfig.enableIceSlow)
+        if (iceSlowConfig != null && iceSlowConfig.enableSlow)
             other.GetComponent<SlowDebuff>()?.ApplySlow(iceSlowConfig);
 
         if (isBomb)

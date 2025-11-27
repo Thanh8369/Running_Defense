@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class UISettings : MonoBehaviour
 {
     private const string MasterVolumeKey = "MasterVolume";
-    private const string SfxVolumeKey    = "SfxVolume";
-    private const string CameraFovKey    = "CameraFOV";
+    private const string SfxVolumeKey = "SfxVolume";
+    private const string CameraFovKey = "CameraFOV";
 
     [Header("Sliders")]
     [SerializeField] private Slider _bgmSlider;   // Nhạc nền
@@ -51,7 +51,7 @@ public class UISettings : MonoBehaviour
         {
             _fovSlider.minValue = 40f;   // tùy chỉnh theo game
             _fovSlider.maxValue = 60f;
-            _fovSlider.value    = savedFov;
+            _fovSlider.value = savedFov;
             _fovSlider.onValueChanged.AddListener(OnFovSliderChanged);
         }
 
@@ -153,7 +153,6 @@ public class UISettings : MonoBehaviour
             _mainCamera.fieldOfView = fov;
         }
     }
-
     private void SaveFov(float fov)
     {
         PlayerPrefs.SetFloat(CameraFovKey, fov);
@@ -166,5 +165,16 @@ public class UISettings : MonoBehaviour
     public void HideSettings()
     {
         _settingsPanel.SetActive(false);
+    }
+
+    // ================== ADD SFX SOURCE ==================
+
+    public void AddSfxSource(AudioSource source)
+    {
+        if (source != null && !_sfxSources.Contains(source))
+        {
+            _sfxSources.Add(source);
+            source.volume = _sfxSlider != null ? _sfxSlider.value : 1f;
+        }
     }
 }
