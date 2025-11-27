@@ -6,7 +6,7 @@ public class BulletCanon : MonoBehaviour
     public float height = 3f;
     public float damage = 200f;
 
-    private Transform target;       // <── GIỮ TARGET THẬT
+    private Transform target;
     private Vector3 startPos;
 
     private float time;
@@ -15,8 +15,13 @@ public class BulletCanon : MonoBehaviour
     private bool initialized = false;
     private Vector3 prevPos;
 
-    public void Init(Transform enemy)
+    private GameObject prefabOrigin;   // <── để biết trả về pool nào
+
+    // Init cho PoolManager
+    public void Init(Transform enemy, GameObject prefab)
     {
+        prefabOrigin = prefab;          // <── lưu prefab gốc (bắt buộc cho pooling)
+
         target = enemy;
 
         startPos = transform.position;
@@ -25,6 +30,7 @@ public class BulletCanon : MonoBehaviour
         totalTime = distance / speed;
 
         prevPos = startPos;
+        time = 0f;
 
         initialized = true;
     }
@@ -32,22 +38,20 @@ public class BulletCanon : MonoBehaviour
     void Update()
     {
         if (!initialized) return;
+
         if (target == null || !target.gameObject.activeInHierarchy)
         {
-            Destroy(gameObject);
+            ReturnToPool();
             return;
         }
 
         time += Time.deltaTime;
         float t = Mathf.Clamp01(time / totalTime);
 
-        // cập nhật targetPos mỗi frame
         Vector3 targetPos = target.position;
 
-        // Lerp ngang
         Vector3 horizontal = Vector3.Lerp(startPos, targetPos, t);
 
-        // parabola
         float curve = 4 * height * t * (1 - t);
 
         Vector3 nextPos = new Vector3(
@@ -66,7 +70,7 @@ public class BulletCanon : MonoBehaviour
         if (t >= 1f)
         {
             HitTarget();
-            Destroy(gameObject);
+            ReturnToPool();
         }
     }
 
@@ -80,7 +84,18 @@ public class BulletCanon : MonoBehaviour
             if (dmg != null)
             {
                 dmg.TakeDamage(damage);
+                break;
             }
         }
+    }
+
+    void ReturnToPool()
+    {
+        initialized = false;
+
+        if (PoolManager.Instance != null && prefabOrigin != null)
+            PoolManager.Instance.Return(gameObject, prefabOrigin);
+        else
+            gameObject.SetActive(false);  // fallback
     }
 }

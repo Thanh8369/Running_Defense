@@ -3,45 +3,65 @@
 [RequireComponent(typeof(LineRenderer))]
 public class TowerAreaRangeRenderer : MonoBehaviour
 {
-    public TowerArea tower;
-    public int segments = 60;
-    public float heightOffset = 0.1f;
+    public TowerArea towerArea;
+    private TowerRunStats stats;
 
     private LineRenderer line;
+    public int segments = 40;
 
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        line.positionCount = segments + 1;
         line.loop = true;
+        line.useWorldSpace = false;
         line.widthMultiplier = 0.05f;
+
+        // --- FIX QUAN TRỌNG ---
+        if (towerArea == null)
+            towerArea = GetComponentInParent<TowerArea>();
+
+        if (towerArea == null)
+        {
+            Debug.LogError("Không tìm thấy TowerArea!");
+            return;
+        }
+
+        // --- GÁN TowerRunStats ---
+        stats = towerArea.GetComponent<TowerRunStats>();
+
+        if (stats == null)
+        {
+            Debug.LogError("TowerArea không có TowerRunStats!");
+            return;
+        }
+
+        DrawCircle(stats.attackRange);
     }
 
     void Update()
     {
-        DrawCircle();
+        if (stats != null)
+            DrawCircle(stats.attackRange); // realtime update khi nâng cấp
     }
 
-    void DrawCircle()
+    void DrawCircle(float radius)
     {
-        if (tower == null) return;
+        if (line == null) return;
 
-        float radius = tower.range;   // Phạm vi thực
-        Vector3 center = tower.transform.position;
+        line.positionCount = segments + 1;
 
-        float angleStep = 360f / segments;
+        float angle = 0f;
+        float step = 360f / segments;
 
         for (int i = 0; i <= segments; i++)
         {
-            float rad = Mathf.Deg2Rad * (angleStep * i);
+            float x = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
+            float z = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
 
-            float x = Mathf.Cos(rad) * radius;
-            float z = Mathf.Sin(rad) * radius;
+            // NÂNG VÒNG LÊN 1 CHÚT CHO KHÔNG CHÌM DƯỚI ĐẤT
+            line.SetPosition(i, new Vector3(x, 2f, z));
 
-            Vector3 pos =
-                new Vector3(x, heightOffset, z) + center;
-
-            line.SetPosition(i, pos);
+            angle += step;
         }
     }
 }
