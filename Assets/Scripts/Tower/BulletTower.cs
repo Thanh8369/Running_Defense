@@ -12,7 +12,7 @@ public class BulletTower : MonoBehaviour
     private float ttl;
     private GameObject prefabOrigin;
 
-    public void Init(Transform enemy, TowerData data, GameObject prefab)
+    public void Init(Transform enemy, TowerRunStats data, GameObject prefab)
     {
         target = enemy;
         prefabOrigin = prefab;
@@ -20,7 +20,7 @@ public class BulletTower : MonoBehaviour
         ttl = 0f;
 
         // Lấy damage từ TowerData
-        damage = data.damage;
+        damage = data.TotalAttackDamage;
 
         gameObject.SetActive(true);
     }
