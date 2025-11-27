@@ -62,14 +62,13 @@ public class TowerShooter : MonoBehaviour
     {
         if (bulletPrefab == null || firePoint == null || target == null) return;
 
-        TowerRunStats runStats = FindAnyObjectByType<TowerRunStats>();
+        GameObject bullet = PoolManager.Instance.Get(
+            bulletPrefab,
+            firePoint.position,
+            firePoint.rotation
+        );
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-
-        BulletTower bt = bullet.GetComponent<BulletTower>();
-        if (bt != null)
-        {
-            bt.Init(target, runStats);
-        }
+        bullet.GetComponent<BulletTower>()
+              .Init(target, towerStats, bulletPrefab);
     }
 }

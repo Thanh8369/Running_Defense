@@ -1,32 +1,40 @@
-﻿using System.Collections.Generic;
+﻿using NUnit.Framework.Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SphereCollider))]
 public class TowerArea : MonoBehaviour
 {
-    public float range = 10f;
+    public TowerRunStats runStats;
+    [HideInInspector]
+    public SphereCollider col;
+
     public List<Transform> enemyQueue = new List<Transform>();
 
-    private void OnTriggerEnter(Collider other)
+   void Awake()
+    {
+        col = GetComponent<SphereCollider>();
+        col.isTrigger = true;
+
+        if (runStats != null)
+            col.radius = runStats.attackRange; // <-- cập nhật từ runtime stats
+    }
+
+    public void UpdateRange()
+    {
+        if (runStats != null)
+            col.radius = runStats.attackRange;
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
             enemyQueue.Add(other.transform);
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy"))
             enemyQueue.Remove(other.transform);
-    }
-
-    private void Update()
-    {
-        // Remove tất cả enemy đã bị Destroy (null) ra khỏi list
-        enemyQueue.RemoveAll(e => e == null);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

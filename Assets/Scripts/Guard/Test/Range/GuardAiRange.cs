@@ -140,14 +140,23 @@ public class GuardAiRange : MonoBehaviour
         if (target == null || firePoint == null)
             return;
 
+        // Xoay mặt về target
         Vector3 aimDir = target.position - transform.position;
         aimDir.y = 0;
 
         if (aimDir != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(aimDir);
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDirection((target.position - firePoint.position).normalized);
+        // Lấy đạn từ pool
+        GameObject bullet = PoolManager.Instance.Get(
+            bulletPrefab,
+            firePoint.position,
+            Quaternion.identity
+        );
+
+        // Gán hướng bay
+        Vector3 dir = (target.position - firePoint.position).normalized;
+        bullet.GetComponent<Bullet>().Init(dir, bulletPrefab);
     }
 
     // Animation Event – xoay theo target khi đang kéo cung
