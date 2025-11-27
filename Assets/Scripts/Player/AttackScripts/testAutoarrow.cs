@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class testAutoarrow : MonoBehaviour
 {
@@ -12,6 +12,10 @@ public class testAutoarrow : MonoBehaviour
 
     void Update()
     {
+        // Khóa bắn nếu không được phép hành động
+        if (PlayerLifeController.Instance != null && !PlayerLifeController.Instance.CanAct)
+            return;
+
         shootTimer += Time.deltaTime;
 
         GameObject nearestEnemy = GetNearestEnemy();

@@ -41,9 +41,48 @@ public class TapToMoveController : MonoBehaviour
             Debug.LogWarning("[TapToMove] Collider not found");
     }
 
+    // 👉 Khi script bị Disable (player chết / bị khóa điều khiển) thì clear path luôn
+    private void OnDisable()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();          // QUAN TRỌNG: xoá path cũ
+            agent.velocity = Vector3.zero;
+        }
+
+        isRolling = false;
+        arrived = true;
+
+        if (playerCollider != null)
+            playerCollider.enabled = true;
+    }
+
     private void Update()
     {
-        if (isRolling) return; // đang roll thì không nhận input di chuyển
+        // Nếu có PlayerLifeController và không được phép hành động → dừng luôn
+        if (PlayerLifeController.Instance != null && !PlayerLifeController.Instance.CanAct)
+        {
+            if (agent != null)
+            {
+                agent.isStopped = true;
+                agent.ResetPath();      // QUAN TRỌNG: xoá path cũ
+                agent.velocity = Vector3.zero;
+            }
+
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
+
+            isRolling = false;
+            arrived = true;
+
+            if (playerCollider != null)
+                playerCollider.enabled = true;
+
+            return;
+        }
+
+        if (isRolling) return;
 
 #if UNITY_EDITOR
         HandleMouseInput();
@@ -81,7 +120,8 @@ public class TapToMoveController : MonoBehaviour
             agent.updateRotation = false;
             agent.velocity = Vector3.zero;
 
-            animator.SetFloat("Speed", 0f);
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
         }
     }
 
@@ -174,7 +214,8 @@ public class TapToMoveController : MonoBehaviour
             playerCollider.enabled = false;
 
         // Trigger animation
-        animator.SetTrigger("Roll");
+        if (animator != null)
+            animator.SetTrigger("Roll");
 
         StartCoroutine(WaitForRollEnd());
     }
@@ -212,8 +253,11 @@ public class TapToMoveController : MonoBehaviour
             agent.isStopped = false;
             agent.updateRotation = true;
 
+            agent.ResetPath();               // clear path cũ trước khi set mới (an toàn)
             agent.SetDestination(hit.point);
-            animator.SetFloat("Speed", 2f);
+
+            if (animator != null)
+                animator.SetFloat("Speed", 2f);
         }
     }
 
