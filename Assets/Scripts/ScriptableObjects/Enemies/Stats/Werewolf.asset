@@ -10,18 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Fishman
+  m_Name: Werewolf
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
   moveSpeed: 6
   maxSpeed: 12
   rotateSpeed: 360
   attackDamage: 10
   attackSpeed: 1
-  attackRange: 2.8
-  detectionRange: 10
+  attackRange: 3
+  detectionRange: 8
   minGold: 5
   maxGold: 15
   expAmount: 10
-  prefab: {fileID: 9053075404424218739, guid: 44212287555210e4ab6d1e253eee5e09, type: 3}
+  prefab: {fileID: 5700224818061501662, guid: a46ee585e0ed7da42b07856796f8adbd, type: 3}
+  attackVariants:
+  - triggerName: Attack01
+    damageAmount: 100
+  - triggerName: Attack03
+    damageAmount: 10
   projectilePrefabs: []

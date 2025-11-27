@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 3044646861478570445}
   - component: {fileID: 8268646014155035989}
   m_Layer: 6
-  m_Name: Specter
+  m_Name: SpecterPA
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

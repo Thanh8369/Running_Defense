@@ -2329,12 +2329,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4435921473273675835}
   - component: {fileID: 4082808221177696388}
+  - component: {fileID: 7669116832448824717}
   - component: {fileID: 6885199697402223830}
   - component: {fileID: 7372537198970893448}
   - component: {fileID: 5773013158998541784}
   - component: {fileID: 3316063314058968577}
   - component: {fileID: 8421600272543672060}
   - component: {fileID: 864493528946043712}
+  - component: {fileID: 4108383110068870910}
   m_Layer: 6
   m_Name: Fishman
   m_TagString: Enemy
@@ -2381,6 +2383,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7669116832448824717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053075404424218739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9840126, y: 1.3932931, z: 1.2781827}
+  m_Center: {x: 0.007993698, y: 0.6890625, z: 0.13909152}
 --- !u!54 &6885199697402223830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2474,3 +2497,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  isBoss: 0
+--- !u!114 &4108383110068870910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053075404424218739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82abb3ade006e4445a929964a09590b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _popupAnchor: {fileID: 4435921473273675835}

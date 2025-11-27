@@ -36,8 +36,8 @@ public abstract class EnemyAI : MonoBehaviour
     protected bool isHit = false;
     private List<Buff> activeBuffs = new List<Buff>();
 
-    public Action<bool, float> onMove;
-    public Action onAttack;
+    public Action<bool, float> OnMove;
+    public Action OnAttack;
 
     protected virtual void Start()
     {
@@ -52,8 +52,8 @@ public abstract class EnemyAI : MonoBehaviour
         if (player != null)
         {
             Health hp = player.GetComponent<Health>();
-            hp.OnDeath += HandlePlayerDeath;
-            hp.OnRevive += HandlePlayerRevive;
+            hp.OnDeath += OnPlayerDeath;
+            hp.OnRevive += OnPlayerRevive;
 
             if (hp.CurrentHealth <= 0)
                 player = null;
@@ -62,7 +62,7 @@ public abstract class EnemyAI : MonoBehaviour
         SetupBT();
     }
 
-    private void HandlePlayerDeath()
+    private void OnPlayerDeath()
     {
         if (player != null)
         {
@@ -72,7 +72,7 @@ public abstract class EnemyAI : MonoBehaviour
         }
     }
 
-    private void HandlePlayerRevive()
+    private void OnPlayerRevive()
     {
         Transform newPlayer = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (newPlayer != null)
@@ -127,18 +127,17 @@ public abstract class EnemyAI : MonoBehaviour
     {
         GameObject[] troops = GameObject.FindGameObjectsWithTag("Troop");
 
-        if (troops.Length == 0)
-        {
-            nearestTroop = null;
-            return;
-        }
-
         Transform closest = null;
         float minDistance = Mathf.Infinity;
 
         foreach (GameObject troop in troops)
         {
             if (troop == null) continue;
+
+            // Kiểm tra troop còn alive
+            HealthGuard guard = troop.GetComponent<HealthGuard>();
+            if (guard != null && guard.isDead) continue;
+
             float dist = Vector3.Distance(transform.position, troop.transform.position);
 
             if (dist < minDistance)
@@ -149,6 +148,14 @@ public abstract class EnemyAI : MonoBehaviour
         }
 
         nearestTroop = closest;
+
+        // Nếu currentTarget đã chết thì đổi target
+        if (currentTarget != null)
+        {
+            HealthGuard guard = currentTarget.GetComponent<HealthGuard>();
+            if (guard != null && guard.isDead)
+                currentTarget = nearestTroop != null ? nearestTroop : tower;
+        }
     }
 
     // =======================================================
@@ -163,7 +170,7 @@ public abstract class EnemyAI : MonoBehaviour
 
         if (isAttacking || dist <= stats.attackRange || isRotate)
         {
-            onMove?.Invoke(false, 0);
+            OnMove?.Invoke(false, 0);
             return BTNode.NodeState.Success;
         }
 
@@ -171,7 +178,7 @@ public abstract class EnemyAI : MonoBehaviour
         dir.y = 0;
 
         rb.MovePosition(transform.position + dir.normalized * currentMoveSpeed * Time.deltaTime);
-        onMove?.Invoke(true, Mathf.Clamp01(currentMoveSpeed / stats.maxSpeed));
+        OnMove?.Invoke(true, Mathf.Clamp01(currentMoveSpeed / stats.maxSpeed));
 
         return BTNode.NodeState.Running;
     }
@@ -213,7 +220,7 @@ public abstract class EnemyAI : MonoBehaviour
         currentTarget = target;
 
         lastAttackTime = Time.time;
-        onAttack?.Invoke();
+        OnAttack?.Invoke();
 
         return BTNode.NodeState.Success;
     }
@@ -230,7 +237,7 @@ public abstract class EnemyAI : MonoBehaviour
         if (rb != null)
             rb.linearVelocity = Vector3.zero;
 
-        onMove?.Invoke(false, 0);
+        OnMove?.Invoke(false, 0);
     }
 
     public virtual void StopAI()
@@ -239,7 +246,7 @@ public abstract class EnemyAI : MonoBehaviour
         isAttacking = false;
         isRotate = false;
 
-        onMove?.Invoke(false, 0);
+        OnMove?.Invoke(false, 0);
     }
 
     // =======================================================

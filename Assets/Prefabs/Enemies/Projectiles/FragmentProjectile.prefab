@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4722898071448509293}
   - component: {fileID: 5774898319725516293}
   m_Layer: 7
-  m_Name: Projectile
+  m_Name: FragmentProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,13 +122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b272a9328c23d3459ede6fa877fc355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useHoming: 1
+  useHoming: 0
   lifetime: 5
   projectileSpeed: 4
   heightOffset: 0.5
-  isBomb: 1
-  bombFragmentPrefab: {fileID: 6045715366450228825, guid: b8661c9bdf9a3f742bb8cd303e283f03, type: 3}
-  fragmentCount: 16
+  isBomb: 0
+  bombFragmentPrefab: {fileID: 0}
+  fragmentCount: 0
   poisonConfig:
     enablePoison: 0
     damagePerTick: 2
