@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
-  m_Name: Worm
+  m_Name: DemonKing
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  moveSpeed: 0
-  maxSpeed: 0
+  maxHealth: 10000
+  moveSpeed: 8
+  maxSpeed: 16
   rotateSpeed: 360
-  attackDamage: 0
+  attackDamage: 10
   attackSpeed: 1
   attackRange: 10
-  detectionRange: 10
+  detectionRange: 12
   minGold: 5
   maxGold: 15
   expAmount: 10
-  prefab: {fileID: 7128240185426142786, guid: b3b9d5351cfa04a43979f145419990a4, type: 3}
-  attackVariants: []
-  projectilePrefabs:
-  - prefab: {fileID: 6045715366450228825, guid: 9d19ded1e66c5c54fa16208f773182ac, type: 3}
-    customDamage: 0
+  prefab: {fileID: 8072334525206123220, guid: 6ac8ecde921c0b248be09639f076d538, type: 3}
+  attackVariants:
+  - triggerName: Attack01
+    damageAmount: 0
+  - triggerName: Attack02
+    damageAmount: 0
+  projectilePrefabs: []

@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
-  m_Name: LizardWarrior_AnimConfig
+  m_Name: DemonKing_AnimConfig
   m_EditorClassIdentifier: 
   attackAnimations:
   - triggerName: Attack01
-    percent: 25
-    lastUsedTime: 2.3030918
+    percent: 1
+    lastUsedTime: 27.408337
     isTaunting: 0
   - triggerName: Attack02
-    percent: 25
-    lastUsedTime: 29.417929
-    isTaunting: 0
-  - triggerName: Attack03
-    percent: 25
-    lastUsedTime: 1.0102748
+    percent: 1
+    lastUsedTime: 2.010376
     isTaunting: 0
   - triggerName: Taunting
-    percent: 25
-    lastUsedTime: 33.30439
+    percent: 99
+    lastUsedTime: 24.558496
     isTaunting: 1
