@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,10 +25,14 @@ public class DaggerATK : MonoBehaviour
         }
     }
 
-     void Update()
+    void Update()
     {
+        // Khóa tấn công nếu không được phép hành động
+        if (PlayerLifeController.Instance != null && !PlayerLifeController.Instance.CanAct)
+            return;
+
         shootTimer += Time.deltaTime;
-        if ( shootTimer >= playerData.shootInterval)
+        if (shootTimer >= playerData.shootInterval)
         {
             ThrowDagger();
             shootTimer = 0f;

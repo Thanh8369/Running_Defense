@@ -2,6 +2,7 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Collider))]
 public class TapToMoveController : MonoBehaviour
 {
     [Header("NavMeshAgent Settings")]
@@ -17,11 +18,18 @@ public class TapToMoveController : MonoBehaviour
 
     [Header("Double Tap Roll Settings")]
     public float doubleTapTime = 0.25f;
-    public bool isRolling = false;
-    public float extraRollPush = 0f; // thêm lực khi roll nếu animation yếu
+    [HideInInspector] public bool isRolling = false;
+
+    [Header("Roll Move")]
+    public float rollDistance = 4f;
+    public float rollDuration = 0.25f;   // thời gian LERP để đi hết quãng đường
+
+    private float rollTimer;
+    private Vector3 rollStartPos;
+    private Vector3 rollEndPos;
 
     private float lastTapTime = 0f;
-    private bool arrived = false;
+    private bool arrived = true;
 
     private Camera mainCam;
     private Vector3 rollDirection;
@@ -37,13 +45,58 @@ public class TapToMoveController : MonoBehaviour
             Debug.LogWarning("[TapToMove] MainCamera not found");
 
         playerCollider = GetComponent<Collider>();
-        if (playerCollider == null)
-            Debug.LogWarning("[TapToMove] Collider not found");
+    }
+
+    // Khi script bị Disable (player chết / disable control) thì clear path luôn
+    private void OnDisable()
+    {
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+            agent.velocity = Vector3.zero;
+        }
+
+        isRolling = false;
+        arrived = true;
+
+        if (playerCollider != null)
+            playerCollider.enabled = true;
     }
 
     private void Update()
     {
-        if (isRolling) return; // đang roll thì không nhận input di chuyển
+        // Không cho điều khiển khi player chết / đang revive
+        if (PlayerLifeController.Instance != null &&
+            !PlayerLifeController.Instance.CanAct)
+        {
+            if (agent != null)
+            {
+                agent.isStopped = true;
+                agent.ResetPath();
+                agent.velocity = Vector3.zero;
+            }
+
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
+
+            isRolling = false;
+            arrived = true;
+
+            if (playerCollider != null)
+                playerCollider.enabled = true;
+
+            return;
+        }
+
+        // Đang roll: chỉ LERP vị trí, không xử lý input
+        if (isRolling)
+        {
+            rollTimer += Time.deltaTime;
+            float t = Mathf.Clamp01(rollTimer / rollDuration);
+            transform.position = Vector3.Lerp(rollStartPos, rollEndPos, t);
+            return;
+        }
 
 #if UNITY_EDITOR
         HandleMouseInput();
@@ -55,21 +108,12 @@ public class TapToMoveController : MonoBehaviour
         CheckArrived();
     }
 
-    private void FixedUpdate()
-    {
-        if (isRolling && extraRollPush > 0f)
-        {
-            // extra push nếu animation roll không có rootmotion mạnh
-            transform.position += rollDirection * extraRollPush * Time.deltaTime;
-        }
-    }
-
     // =====================================================
     // CHECK ARRIVE
     // =====================================================
     private void CheckArrived()
     {
-        if (arrived) return;
+        if (arrived || agent == null) return;
 
         if (!agent.pathPending &&
             agent.remainingDistance <= agent.stoppingDistance &&
@@ -81,7 +125,8 @@ public class TapToMoveController : MonoBehaviour
             agent.updateRotation = false;
             agent.velocity = Vector3.zero;
 
-            animator.SetFloat("Speed", 0f);
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
         }
     }
 
@@ -145,56 +190,78 @@ public class TapToMoveController : MonoBehaviour
     // =====================================================
     private void TriggerRoll(Vector3 screenPoint)
     {
-        if (mainCam == null) return;
+        if (mainCam == null || agent == null) return;
 
-        // Raycast để lấy vị trí tap
+        // Raycast lấy vị trí tap để biết hướng lướt
         Ray ray = mainCam.ScreenPointToRay(screenPoint);
         if (!Physics.Raycast(ray, out RaycastHit hit, 1000f, groundLayer))
             return;
 
-        // Tính hướng roll
-        rollDirection = (hit.point - transform.position);
-        rollDirection.y = 0;
+        rollDirection = hit.point - transform.position;
+        rollDirection.y = 0f;
+        if (rollDirection.sqrMagnitude < 0.001f)
+            return;
+
         rollDirection.Normalize();
 
-        // Xoay về hướng roll
-        if (rollDirection != Vector3.zero)
-            transform.rotation = Quaternion.LookRotation(rollDirection);
+        // set start & end
+        rollStartPos = transform.position;
+        rollEndPos = rollStartPos + rollDirection * rollDistance;
+        rollTimer = 0f;
 
-        // Bắt đầu roll
         isRolling = true;
-        arrived = false;
+        arrived = true; // trong lúc roll coi như đã tới
 
-        // Tắt agent
+        // NavMesh trong lúc roll
         agent.isStopped = true;
         agent.updateRotation = false;
+        agent.ResetPath();
 
-        // Tắt collider để không va chạm khi roll
+        // Xoay mặt theo hướng roll
+        transform.rotation = Quaternion.LookRotation(rollDirection);
+
+        // Tắt collider để khỏi va chạm
         if (playerCollider != null)
             playerCollider.enabled = false;
 
-        // Trigger animation
-        animator.SetTrigger("Roll");
+        // Bất tử trong lúc roll
+        if (PlayerLifeController.Instance != null)
+            PlayerLifeController.Instance.SetInvulnerable(true);
 
+        // Trigger animation
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", 0f);
+            animator.SetTrigger("Roll");
+        }
+
+        // Đợi animation xong rồi mở lại control
         StartCoroutine(WaitForRollEnd());
     }
 
     private System.Collections.IEnumerator WaitForRollEnd()
     {
-        // Đợi animation vào state Roll
-        yield return new WaitForSeconds(0.05f);
+        // Đợi 1 frame cho chắc là vào state Roll
+        yield return null;
 
-        // Chờ animation kết thúc
-        yield return new WaitForSeconds(1.8f); // thời gian roll animation
+        // Chờ animation kết thúc (tùy clip của bạn)
+        yield return new WaitForSeconds(1.8f);
 
-        // Kết thúc roll
         isRolling = false;
-        agent.isStopped = false;
-        agent.updateRotation = true;
 
-        // Bật lại collider
+        if (agent != null)
+        {
+            agent.isStopped = false;
+            agent.updateRotation = true;
+            agent.velocity = Vector3.zero;
+        }
+
         if (playerCollider != null)
             playerCollider.enabled = true;
+
+        // Hết roll thì hết bất tử
+        if (PlayerLifeController.Instance != null)
+            PlayerLifeController.Instance.SetInvulnerable(false);
     }
 
     // =====================================================
@@ -202,7 +269,7 @@ public class TapToMoveController : MonoBehaviour
     // =====================================================
     private void MoveToScreenPoint(Vector3 screenPoint)
     {
-        if (mainCam == null) return;
+        if (mainCam == null || agent == null) return;
 
         Ray ray = mainCam.ScreenPointToRay(screenPoint);
         if (Physics.Raycast(ray, out RaycastHit hit, 1000f, groundLayer))
@@ -212,8 +279,11 @@ public class TapToMoveController : MonoBehaviour
             agent.isStopped = false;
             agent.updateRotation = true;
 
+            agent.ResetPath();
             agent.SetDestination(hit.point);
-            animator.SetFloat("Speed", 2f);
+
+            if (animator != null)
+                animator.SetFloat("Speed", 2f);
         }
     }
 
@@ -222,13 +292,13 @@ public class TapToMoveController : MonoBehaviour
     // =====================================================
     private void HandleRotation()
     {
-        if (!rotateToMoveDirection || isRolling) return;
+        if (!rotateToMoveDirection || isRolling || agent == null) return;
         if (agent.velocity.sqrMagnitude < 0.01f) return;
 
         Vector3 dir = agent.velocity.normalized;
-        dir.y = 0;
+        dir.y = 0f;
 
-        if (dir != Vector3.zero)
+        if (dir.sqrMagnitude > 0.0001f)
         {
             Quaternion target = Quaternion.LookRotation(dir);
             transform.rotation = Quaternion.Lerp(transform.rotation, target, rotateSpeed * Time.deltaTime);
