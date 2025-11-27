@@ -9,5 +9,5 @@ public class TowerData : ScriptableObject
     [Header("Tower Stats")]
     public int maxHealth;
     public int damage;
-    public float attackRange = 3f;
+    public float attackRange ;
 }

@@ -110,12 +110,16 @@ public class GuardAiRange : MonoBehaviour
     // UPDATE TARGET
     void UpdateTarget()
     {
-        // loại bỏ target chết/null khỏi danh sách
-        tower.enemyQueue.RemoveAll(e => e == null || (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead()));
-
-        // Đang attack → không đổi target
+        // Nếu đang khóa target khi attack → không đổi target
         if (lockedTarget != null)
             return;
+
+        // Xóa enemy chết / null
+        tower.enemyQueue.RemoveAll(e =>
+            e == null ||
+            !e.gameObject.activeInHierarchy ||
+            (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead())
+        );
 
         if (tower.enemyQueue.Count == 0)
         {
@@ -123,8 +127,12 @@ public class GuardAiRange : MonoBehaviour
             return;
         }
 
+        // Nếu target hiện tại không còn hợp lệ → đổi target RANDOM
         if (target == null || !tower.enemyQueue.Contains(target))
-            target = tower.enemyQueue[0];
+        {
+            int r = Random.Range(0, tower.enemyQueue.Count);
+            target = tower.enemyQueue[r];
+        }
     }
 
     // ATTACK
@@ -140,14 +148,23 @@ public class GuardAiRange : MonoBehaviour
         if (target == null || firePoint == null)
             return;
 
+        // Xoay mặt về target
         Vector3 aimDir = target.position - transform.position;
         aimDir.y = 0;
 
         if (aimDir != Vector3.zero)
             transform.rotation = Quaternion.LookRotation(aimDir);
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        bullet.GetComponent<Bullet>().SetDirection((target.position - firePoint.position).normalized);
+        // Lấy đạn từ pool
+        GameObject bullet = PoolManager.Instance.Get(
+            bulletPrefab,
+            firePoint.position,
+            Quaternion.identity
+        );
+
+        // Gán hướng bay
+        Vector3 dir = (target.position - firePoint.position).normalized;
+        bullet.GetComponent<Bullet>().Init(dir, bulletPrefab);
     }
 
     // Animation Event – xoay theo target khi đang kéo cung

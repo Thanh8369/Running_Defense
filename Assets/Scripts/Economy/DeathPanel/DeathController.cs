@@ -1,98 +1,75 @@
 ﻿using UnityEngine;
-using Son.Economy;   // để dùng DeathPanelController
+using Son.Economy;
 
 /// <summary>
-/// Nghe sự kiện chết từ Health và hiện Death Panel.
-/// Đồng thời nghe sự kiện onContinue từ DeathPanel để hồi full máu tower.
-/// Gắn script này lên Tower (object có Health của tower).
+/// Nghe TowerLifeController.OnDeath để hiện DeathPanel,
+/// và nghe DeathPanel.onContinue để revive Tower.
+/// Gắn script này lên chính object Tower.
 /// </summary>
 public class DeathController : MonoBehaviour
 {
-    [Header("Tham chiếu tới Health của Tower")]
-    public Health health;
+    [Header("Tower Life Controller")]
+    public TowerLifeController life;
 
-    [Header("Death Panel Controller (nếu để trống sẽ tự tìm trong scene)")]
+    [Header("Death Panel Controller")]
     public DeathPanelController deathPanel;
 
     private void Reset()
     {
-        // Tự lấy Health cùng object nếu quên gán
-        if (health == null)
-            health = GetComponent<Health>();
+        if (life == null)
+            life = GetComponent<TowerLifeController>();
     }
 
     private void Awake()
     {
-        // Nếu chưa gán DeathPanel trong Inspector thì thử tìm trong scene
-        if (deathPanel == null)
-        {
-            deathPanel = FindAnyObjectByType<DeathPanelController>();
-        }
+        if (life == null)
+            life = GetComponent<TowerLifeController>();
 
-        if (health == null)
-        {
-            health = GetComponent<Health>();
-        }
+        if (deathPanel == null)
+            deathPanel = FindAnyObjectByType<DeathPanelController>();
     }
 
     private void OnEnable()
     {
-        if (health != null)
-        {
-            // đăng ký lắng nghe event chết (HP về 0)
-            health.OnDeath += HandleDeath;
-        }
+        if (life != null)
+            life.OnDeath += HandleDeath;
 
         if (deathPanel != null)
-        {
-            // đăng ký lắng nghe nút Continue (Gem + Ad)
             deathPanel.onContinue.AddListener(ReviveTower);
-        }
     }
 
     private void OnDisable()
     {
-        if (health != null)
-        {
-            health.OnDeath -= HandleDeath;
-        }
+        if (life != null)
+            life.OnDeath -= HandleDeath;
 
         if (deathPanel != null)
-        {
             deathPanel.onContinue.RemoveListener(ReviveTower);
-        }
     }
 
     /// <summary>
-    /// Gọi khi Health bắn event OnDeath (HP về 0)
+    /// Gọi khi TowerLifeController bắn OnDeath.
     /// </summary>
     private void HandleDeath()
     {
         Debug.Log("[DeathController] Tower chết → hiện Death Panel");
-
-        if (deathPanel != null)
-        {
-            deathPanel.Show();
-        }
-        else
-        {
-            Debug.LogWarning("[DeathController] Không tìm thấy DeathPanelController trong scene!");
-        }
+        deathPanel?.Show();
     }
 
     /// <summary>
-    /// Gọi khi bấm Continue Gem hoặc Continue Ad.
-    /// Chỉ tower này được hồi full máu.
+    /// Gọi khi bấm nút Revive trên DeathPanel.
     /// </summary>
     private void ReviveTower()
     {
-        if (health == null)
+        Debug.Log("[DeathController] Revive tower");
+
+        if (life == null)
         {
-            Debug.LogWarning("[DeathController] Không có Health để revive!");
+            Debug.LogWarning("[DeathController] Không có TowerLifeController để revive!");
             return;
         }
 
-        Debug.Log("[DeathController] Revive tower → full máu");
-        health.ReviveToFull();
+        // Gọi hàm revive chuẩn của Tower
+        life.Revive();
     }
 }

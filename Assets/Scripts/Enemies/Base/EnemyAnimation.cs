@@ -9,12 +9,14 @@ public class EnemyAnimation : MonoBehaviour
 
     private Animator animator;
     private EnemyAI enemyAI;
+    private EnemyHealth enemyHealth;
+    private EnemySound enemySound;
+    
     private CyclopsAI cyclopsAI;
     private EvilMageAI evilMageAI;
     private OrcAI orcAI;
     private LizardWarriorAI lizardWarriorAI;
     private WerewolfAI werewolfAI;
-    private EnemyHealth enemyHealth;
 
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
     private static readonly int IsHealing = Animator.StringToHash("IsHealing");
@@ -29,6 +31,8 @@ public class EnemyAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
         enemyAI = GetComponent<EnemyAI>();
         enemyHealth = GetComponent<EnemyHealth>();
+        enemySound = GetComponent<EnemySound>();
+
         cyclopsAI = GetComponent<CyclopsAI>();
         evilMageAI = GetComponent<EvilMageAI>();
         orcAI = GetComponent<OrcAI>();
@@ -98,6 +102,10 @@ public class EnemyAnimation : MonoBehaviour
 
         // Trigger animation
         animator.SetTrigger(anim.triggerName);
+        if (anim.isTaunting)
+        {
+            enemySound?.PlayTauntingSound();
+        }
 
         // Set tốc độ attack animation dựa vào attackCooldown
         float attackSpeed2 = enemyAI.GetAttackSpeed();
@@ -114,9 +122,13 @@ public class EnemyAnimation : MonoBehaviour
     private void PlayHitAnimation()
     {
         if (lizardWarriorAI != null && lizardWarriorAI.IsHealing())
+        {
             animator.SetTrigger(DefendGetHit);
-        else
-            animator.SetTrigger(GetHit);
+            return;
+        }
+
+        animator.SetTrigger(GetHit);
+        enemySound?.PlayGetHitSound();
     }
 
     // ================= HEAL =================
@@ -129,6 +141,7 @@ public class EnemyAnimation : MonoBehaviour
     private void PlayDeathAnimation()
     {
         animator.SetTrigger(Die);
+        enemySound?.PlayDieSound();
     }
 
     // ================= ANIMATION EVENTS =================

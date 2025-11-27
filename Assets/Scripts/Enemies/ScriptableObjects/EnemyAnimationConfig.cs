@@ -9,6 +9,7 @@ public class EnemyAnimationData
     public string triggerName;    
     [Range(1f, 99f)] public float percent = 20f;           
     [HideInInspector] public float lastUsedTime = -999f;
+    public bool isTaunting = false;
 }
 
 [CreateAssetMenu(fileName = "AnimConfig", menuName = "Enemy/Animation Config")]

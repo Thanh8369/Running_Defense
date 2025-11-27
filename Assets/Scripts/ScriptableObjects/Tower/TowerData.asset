@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69829e032af5f0e4dbd7ccd76ee414e8, type: 3}
   m_Name: TowerData
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage: 200
-  attackRange: 3
+  maxHealth: 5000
+  damage: 500
+  attackRange: 30

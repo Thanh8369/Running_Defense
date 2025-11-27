@@ -5,8 +5,8 @@ public class BossHealthUI : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
 
-    private LizardWarriorAI _currentBoss;
-    private EnemyHealth _bossHealth;
+    private EnemyAI currentBoss;
+    private EnemyHealth bossHealth;
 
     private void Awake()
     {
@@ -15,44 +15,45 @@ public class BossHealthUI : MonoBehaviour
 
     private void Update()
     {
-        if (_currentBoss != null && _bossHealth != null)
+        if (currentBoss != null && bossHealth != null)
         {
-            float maxHealth = _bossHealth.GetMaxHealth();
-            float currentHealth = _bossHealth.GetCurrentHealth();
+            float maxHealth = bossHealth.GetMaxHealth();
+            float currentHealth = bossHealth.GetCurrentHealth();
 
             if (maxHealth > 0)
                 _slider.value = currentHealth / maxHealth;
         }
     }
 
-    public void HandleBossSpawned(LizardWarriorAI boss)
+    public void HandleBossSpawned(EnemyAI boss)
     {
-        if(boss == null) return;
+        if (boss == null) return;
 
-        _currentBoss = boss;
-        _bossHealth = boss.GetComponent<EnemyHealth>();
+        currentBoss = boss;
+        bossHealth = boss.GetComponent<EnemyHealth>();
 
-        if (_bossHealth != null)
+        if (bossHealth != null)
         {
             gameObject.SetActive(true);
 
-            _bossHealth.onHealthChanged += UpdateUI;
-            _bossHealth.OnDeath += HandleBossDied;
+            bossHealth.onHealthChanged += UpdateUI;
+            bossHealth.OnDeath += HandleBossDied;
 
-            UpdateUI(_bossHealth.GetCurrentHealth(), _bossHealth.GetMaxHealth());
+            UpdateUI(bossHealth.GetCurrentHealth(), bossHealth.GetMaxHealth());
         }
     }
 
+
     private void HandleBossDied()
     {
-        if (_bossHealth != null)
+        if (bossHealth != null)
         {
-            _bossHealth.onHealthChanged -= UpdateUI;
-            _bossHealth.OnDeath -= HandleBossDied;
+            bossHealth.onHealthChanged -= UpdateUI;
+            bossHealth.OnDeath -= HandleBossDied;
         }
 
-        _currentBoss = null;
-        _bossHealth = null;
+        currentBoss = null;
+        bossHealth = null;
         gameObject.SetActive(false);
     }
 

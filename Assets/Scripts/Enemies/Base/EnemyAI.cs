@@ -49,14 +49,24 @@ public abstract class EnemyAI : MonoBehaviour
         currentMoveSpeed = stats.moveSpeed;
         currentAttackSpeed = stats.attackSpeed;
 
+        //if (tower != null)
+        //{
+        //    TowerRunStats hp = player.GetComponent<TowerRunStats>();
+        //    hp.OnDeath += OnPlayerDeath;
+        //    hp.OnRevive += OnPlayerRevive;
+
+        //    if (hp.currentHP <= 0)
+        //        player = null;
+        //}
+
         if (player != null)
         {
-            Health hp = player.GetComponent<Health>();
+            PlayerLifeController hp = player.GetComponent<PlayerLifeController>();
             hp.OnDeath += OnPlayerDeath;
             hp.OnRevive += OnPlayerRevive;
 
-            if (hp.CurrentHealth <= 0)
-                player = null;
+            //if (hp.currentHP <= 0)
+            //    player = null;
         }
 
         SetupBT();

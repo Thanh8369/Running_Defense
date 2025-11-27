@@ -14,14 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackAnimations:
   - triggerName: Attack01
-    percent: 40
-    lastUsedTime: 16.709093
+    percent: 25
+    lastUsedTime: 2.3030918
+    isTaunting: 0
   - triggerName: Attack02
-    percent: 30
-    lastUsedTime: 14.550731
+    percent: 25
+    lastUsedTime: 29.417929
+    isTaunting: 0
   - triggerName: Attack03
     percent: 25
-    lastUsedTime: 12.473556
+    lastUsedTime: 1.0102748
+    isTaunting: 0
   - triggerName: Taunting
-    percent: 5
-    lastUsedTime: 3.3479896
+    percent: 25
+    lastUsedTime: 33.30439
+    isTaunting: 1

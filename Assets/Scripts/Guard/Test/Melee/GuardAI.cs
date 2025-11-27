@@ -48,12 +48,16 @@ public class GuardAI : MonoBehaviour
     // =================================================================
     void UpdateTarget()
     {
-        // Nếu đang khóa target khi đánh → không đổi target
+        // Nếu đang khóa target khi attack → không đổi target
         if (lockedTarget != null)
             return;
 
-        // loại bỏ target chết/null khỏi danh sách
-        tower.enemyQueue.RemoveAll(e => e == null || (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead()));
+        // Xóa enemy chết / null
+        tower.enemyQueue.RemoveAll(e =>
+            e == null ||
+            !e.gameObject.activeInHierarchy ||
+            (e.TryGetComponent<EnemyHealth>(out var h) && h.IsDead())
+        );
 
         if (tower.enemyQueue.Count == 0)
         {
@@ -61,8 +65,12 @@ public class GuardAI : MonoBehaviour
             return;
         }
 
+        // Nếu target hiện tại không còn hợp lệ → đổi target RANDOM
         if (target == null || !tower.enemyQueue.Contains(target))
-            target = tower.enemyQueue[0];
+        {
+            int r = Random.Range(0, tower.enemyQueue.Count);
+            target = tower.enemyQueue[r];
+        }
     }
 
     // =================================================================
