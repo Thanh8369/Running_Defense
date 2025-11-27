@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
+  m_Name: Werewolf
+  m_EditorClassIdentifier: 
+  maxHealth: 1000
+  moveSpeed: 6
+  maxSpeed: 12
+  rotateSpeed: 360
+  attackDamage: 10
+  attackSpeed: 1
+  attackRange: 3
+  detectionRange: 8
+  minGold: 5
+  maxGold: 15
+  expAmount: 10
+  prefab: {fileID: 5700224818061501662, guid: a46ee585e0ed7da42b07856796f8adbd, type: 3}
+  attackVariants:
+  - triggerName: Attack01
+    damageAmount: 100
+  - triggerName: Attack03
+    damageAmount: 10
+  projectilePrefabs: []

@@ -37,7 +37,7 @@ public class BossHealthUI : MonoBehaviour
             gameObject.SetActive(true);
 
             _bossHealth.onHealthChanged += UpdateUI;
-            _bossHealth.onDie += HandleBossDied;
+            _bossHealth.OnDeath += HandleBossDied;
 
             UpdateUI(_bossHealth.GetCurrentHealth(), _bossHealth.GetMaxHealth());
         }
@@ -48,7 +48,7 @@ public class BossHealthUI : MonoBehaviour
         if (_bossHealth != null)
         {
             _bossHealth.onHealthChanged -= UpdateUI;
-            _bossHealth.onDie -= HandleBossDied;
+            _bossHealth.OnDeath -= HandleBossDied;
         }
 
         _currentBoss = null;

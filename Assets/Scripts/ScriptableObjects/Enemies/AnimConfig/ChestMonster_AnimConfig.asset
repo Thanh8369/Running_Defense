@@ -12,10 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: ChestMonster_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks:
-  - animationName: Attack01
-    triggerName: Attack01
+  attackAnimations:
+  - triggerName: Attack01
     percent: 99
-    lastUsedTime: 90.86471
-  rangedAttacks: []
-  specialAttacks: []
+    lastUsedTime: 0

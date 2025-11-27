@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e4ceb2c01b3a4f840b1da0030c903, type: 3}
   m_Name: Turtle_AnimConfig
   m_EditorClassIdentifier: 
-  meleeAttacks:
-  - triggerName: Attack02
-    percent: 0
-    lastUsedTime: 90.60486
-  rangedAttacks: []
-  specialAttacks: []
+  attackAnimations:
+  - triggerName: Attack01
+    percent: 99
+    lastUsedTime: 16.305155

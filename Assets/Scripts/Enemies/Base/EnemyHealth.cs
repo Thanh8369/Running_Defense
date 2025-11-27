@@ -11,7 +11,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public bool isBoss = false;
 
     private EnemyAI enemyAI;
-    private LizardWarriorAI bossAI;
     private EnemyGoldDrop goldDrop;
     private EnemyExpDropTest expDrop;
     private DamagePopupReceiver damagePopupReceiver;
@@ -22,14 +21,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public bool IsDead() => isDead;
 
-    public Action onDie;
-    public Action onHit;
+    public event Action OnDeath;
+    public Action OnHit;
     public Action<float, float> onHealthChanged;
 
     private void OnEnable()
     {
         enemyAI = GetComponent<EnemyAI>();
-        bossAI = GetComponent<LizardWarriorAI>();
         goldDrop = GetComponent<EnemyGoldDrop>();
         expDrop = GetComponent<EnemyExpDropTest>();
         damagePopupReceiver = GetComponent<DamagePopupReceiver>();
@@ -68,7 +66,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (currentHealth > 0)
         {
-            onHit?.Invoke();
+            OnHit?.Invoke();
             enemyAI.GetHit();
         }
         else
@@ -79,9 +77,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private float ApplyDamageReduction(float damage)
     {
-        if (bossAI != null)
-            return damage * bossAI.GetDamageReductionMultiplier();
-        return damage;
+        return GetComponent<EnemyAI>() switch
+        {
+            TurtleAI turtle => damage * turtle.GetDamageReductionMultiplier(),
+            LizardWarriorAI boss => damage * boss.GetDamageReductionMultiplier(),
+            _ => damage
+        };
     }
 
     private void Die()
@@ -90,7 +91,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         isDead = true;
 
         enemyAI.StopAI();
-        onDie?.Invoke();
+        OnDeath?.Invoke();
 
         HandleRewards();
     }
@@ -112,7 +113,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             EnemySpawner.Instance.AddStar();
             stageClearRewardUI.ShowReward(EnemySpawner.Instance.TotalStars, 0);
-            Debug.LogWarning($"Boss defeated. Total Stars: {EnemySpawner.Instance.TotalStars}");
         }
 
         PoolManager.Instance.Return(gameObject, enemyAI.stats.prefab);
