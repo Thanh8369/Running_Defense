@@ -245,7 +245,7 @@ public class TapToMoveController : MonoBehaviour
         yield return null;
 
         // Chờ animation kết thúc (tùy clip của bạn)
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1f);
 
         isRolling = false;
 
