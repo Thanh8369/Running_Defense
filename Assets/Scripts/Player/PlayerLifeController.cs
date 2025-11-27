@@ -49,6 +49,9 @@ public class PlayerLifeController : MonoBehaviour
     /// <summary>Player có được phép hành động không?</summary>
     public bool CanAct => !isDead && !isReviving;
 
+    private bool isInvulnerable = false;
+    public bool IsInvulnerable => isInvulnerable;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -72,7 +75,10 @@ public class PlayerLifeController : MonoBehaviour
     // ==========================
     public void ApplyDamage(float amount)
     {
-        if (isDead || runStats == null) return;
+        if (runStats == null) return;
+
+        // chết rồi, đang revive, hoặc đang bất tử (roll) thì không ăn damage
+        if (isDead || isReviving || isInvulnerable) return;
         if (amount <= 0f) return;
 
         runStats.currentHP -= amount;
@@ -207,6 +213,11 @@ public class PlayerLifeController : MonoBehaviour
         // Nhận EXP
         if (expManager != null)
             expManager.canGainExp = canAct;    // nhớ đã thêm biến này trong PlayerExperienceManager
+    }
+
+    public void SetInvulnerable(bool value)
+    {
+        isInvulnerable = value;
     }
 
     // Giữ lại tên hàm giống PlayerDeathController cho dễ quen
