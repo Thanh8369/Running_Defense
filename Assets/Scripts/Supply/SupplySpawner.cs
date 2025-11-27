@@ -9,23 +9,54 @@ public class SupplySpawner : MonoBehaviour
 
     [SerializeField] private float mapTimer = 0f;
     [SerializeField] private float spawnRadius = 3f;
+    [SerializeField] private int totalActiveOnMap = 0;
 
     [Header("Spawn Config theo thời gian")]
-    [SerializeField] private List<SupplySpawnConfig> spawnConfigs;
-    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private List<SupplySpawnConfig> spawnGroups;
 
     public GameObject supplyPopupPrefab;
     public Canvas popupCanvas;
 
-    private void Awake() => Instance = this;
+    private Dictionary<SupplyData, int> activeCounts = new Dictionary<SupplyData, int>();
+    private Dictionary<SupplySpawnConfig, int> groupActiveCounts = new Dictionary<SupplySpawnConfig, int>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
-        if (spawnConfigs != null)
-        {
-            spawnConfigs.Sort((a, b) => a.triggerTime.CompareTo(b.triggerTime));
-        }
+        ResetAllSupplyCounters();
+
+        if (spawnGroups != null)
+            spawnGroups.Sort((a, b) => a.triggerTime.CompareTo(b.triggerTime));
+
         StartCoroutine(RunTimeline());
+    }
+
+    private void ResetAllSupplyCounters()
+    {
+        activeCounts.Clear();
+        groupActiveCounts.Clear();
+        totalActiveOnMap = 0;
+
+        foreach (var group in spawnGroups)
+        {
+            if (!groupActiveCounts.ContainsKey(group))
+                groupActiveCounts[group] = 0;
+
+            if (group.supplyInfos == null) continue;
+            foreach (var info in group.supplyInfos)
+            {
+                activeCounts[info.supply] = 0;
+            }
+        }
     }
 
     private IEnumerator RunTimeline()
@@ -33,74 +64,112 @@ public class SupplySpawner : MonoBehaviour
         mapTimer = 0f;
         int index = 0;
 
-        if (spawnConfigs == null)
-        {
-            Debug.LogWarning("[SupplySpawner] Chưa gán SpawnConfigs");
-            yield break;
-        }
-
-        while (index < spawnConfigs.Count)
+        while (index < spawnGroups.Count)
         {
             mapTimer += Time.deltaTime;
 
-            while (index < spawnConfigs.Count &&
-                   mapTimer >= spawnConfigs[index].triggerTime)
+            while (index < spawnGroups.Count &&
+                   mapTimer >= spawnGroups[index].triggerTime)
             {
-                StartCoroutine(SpawnGroup(spawnConfigs[index]));
+                StartCoroutine(SpawnGroup(spawnGroups[index]));
                 index++;
             }
 
             yield return null;
         }
-
-        Debug.LogWarning("[SupplySpawner] Tất cả supply đã spawn xong");
     }
 
     private IEnumerator SpawnGroup(SupplySpawnConfig config)
     {
-        foreach (var info in config.spawnInfos)
-        {
-            StartCoroutine(SpawnSupplyGroup(info));
-        }
-        yield return null;
-    }
-
-    private IEnumerator SpawnSupplyGroup(SupplyInfo info)
-    {
         int spawned = 0;
 
-        while (spawned < info.count)
+        while (spawned < config.totalSupplyCount)
         {
-            if (info.spawnDelay > 0)
-                yield return new WaitForSeconds(info.spawnDelay);
+            if (groupActiveCounts[config] >= config.maxActiveSuppliesInMap)
+            {
+                yield return null;
+                continue;
+            }
+
+            if (config.spawnDelay > 0)
+                yield return new WaitForSeconds(config.spawnDelay);
             else
                 yield return null;
 
-            int batch = Random.Range(info.minBatch, info.maxBatch + 1);
-            batch = Mathf.Min(batch, info.count - spawned);
+            SupplyData supply = PickRandomSupply(config.supplyInfos);
 
-            for (int i = 0; i < batch; i++)
-            {
-                SpawnSupply(info);
-                spawned++;
-            }
+            if (supply == null)
+                continue;
+
+            SpawnSupply(supply, config);
+            spawned++;
         }
     }
 
-    private void SpawnSupply(SupplyInfo info)
+    private SupplyData PickRandomSupply(SupplyInfo[] supplyInfos)
     {
-        if (spawnPoints.Length == 0) return;
-        if (info.supply == null || info.supply.supplyPrefab == null) return;
+        List<SupplyInfo> available = new List<SupplyInfo>();
 
-        Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Vector2 offset = Random.insideUnitCircle * spawnRadius;
-        Vector3 spawnPos = sp.position + new Vector3(offset.x, info.spawnHeightOffset, offset.y);
-
-        GameObject supplyObj = PoolManager.Instance.Get(info.supply.supplyPrefab, spawnPos, Quaternion.identity);
-        SupplyItem supplyItem = supplyObj.GetComponent<SupplyItem>();
-        if (supplyItem != null)
+        foreach (var info in supplyInfos)
         {
-            supplyItem.Init(info.supply, spawnPos);
+            int count = activeCounts.ContainsKey(info.supply) ? activeCounts[info.supply] : 0;
+            if (count < info.maxActiveSupplies)
+                available.Add(info);
         }
+
+        if (available.Count == 0)
+            return null;
+
+        float totalChance = 0f;
+        foreach (var a in available)
+            totalChance += a.spawnChance;
+
+        float rand = Random.value * totalChance;
+        float sum = 0f;
+
+        foreach (var a in available)
+        {
+            sum += a.spawnChance;
+            if (rand < sum)
+                return a.supply;
+        }
+
+        return available[available.Count - 1].supply;
+    }
+
+    private void SpawnSupply(SupplyData supply, SupplySpawnConfig config)
+    {
+        Vector2 offset = Random.insideUnitCircle * spawnRadius;
+        Vector3 spawnPos = transform.position + new Vector3(offset.x, 1.5f, offset.y);
+
+        GameObject supplyObj = PoolManager.Instance.Get(supply.supplyPrefab, spawnPos, Quaternion.identity);
+
+        SupplyItem item = supplyObj.GetComponent<SupplyItem>();
+        if (item != null)
+            item.Init(supply, spawnPos, this, config);
+
+        // Per-type
+        if (!activeCounts.ContainsKey(supply))
+            activeCounts[supply] = 0;
+        activeCounts[supply]++;
+
+        // Per group
+        groupActiveCounts[config]++;
+
+        // Total
+        totalActiveOnMap++;
+    }
+
+    public void OnSupplyPicked(SupplyData supply, SupplySpawnConfig config)
+    {
+        if (supply == null) return;
+
+        if (activeCounts.ContainsKey(supply))
+            activeCounts[supply] = Mathf.Max(0, activeCounts[supply] - 1);
+
+        if (groupActiveCounts.ContainsKey(config))
+            groupActiveCounts[config] = Mathf.Max(0, groupActiveCounts[config] - 1);
+
+        totalActiveOnMap = Mathf.Max(0, totalActiveOnMap - 1);
     }
 }

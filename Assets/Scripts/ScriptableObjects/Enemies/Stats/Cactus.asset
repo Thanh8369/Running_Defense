@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Cactus
   m_EditorClassIdentifier: 
   maxHealth: 30
-  moveSpeed: 8
-  maxSpeed: 20
+  moveSpeed: 6
+  maxSpeed: 12
   rotateSpeed: 360
   attackDamage: 5
-  attackCooldown: 1
-  attackRange: 1.5
+  attackSpeed: 1
+  attackRange: 2
   detectionRange: 8
   minGold: 5
   maxGold: 15

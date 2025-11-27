@@ -13,34 +13,22 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   triggerTime: 0
-  spawnInfos:
+  totalSupplyCount: 100
+  maxActiveSuppliesInMap: 14
+  spawnDelay: 0
+  supplyInfos:
   - supply: {fileID: 11400000, guid: f5ad129a5b7f0854e8517f443366b681, type: 2}
-    count: 1
-    minBatch: 1
-    maxBatch: 1
-    spawnDelay: 0
-    spawnHeightOffset: 1
+    spawnChance: 90
+    maxActiveSupplies: 5
   - supply: {fileID: 11400000, guid: 55a7fb776b5ceef459e4e97944c31f8e, type: 2}
-    count: 1
-    minBatch: 1
-    maxBatch: 1
-    spawnDelay: 0
-    spawnHeightOffset: 1
+    spawnChance: 70
+    maxActiveSupplies: 3
   - supply: {fileID: 11400000, guid: f721fbf076e392f43b3fd56f1c44b9e5, type: 2}
-    count: 1
-    minBatch: 1
-    maxBatch: 1
-    spawnDelay: 0
-    spawnHeightOffset: 1
-  - supply: {fileID: 11400000, guid: d4ed6fb54dcc3cf408b494b5dbfb16d0, type: 2}
-    count: 1
-    minBatch: 1
-    maxBatch: 1
-    spawnDelay: 0
-    spawnHeightOffset: 1
+    spawnChance: 50
+    maxActiveSupplies: 3
   - supply: {fileID: 11400000, guid: 390522d7af607994eb080c72ab3ab0ea, type: 2}
-    count: 1
-    minBatch: 1
-    maxBatch: 1
-    spawnDelay: 0
-    spawnHeightOffset: 1
+    spawnChance: 50
+    maxActiveSupplies: 3
+  - supply: {fileID: 11400000, guid: d4ed6fb54dcc3cf408b494b5dbfb16d0, type: 2}
+    spawnChance: 100
+    maxActiveSupplies: 2

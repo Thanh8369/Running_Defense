@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6662194194712869089}
   - component: {fileID: 7770089842390376278}
   - component: {fileID: -704692633389284386}
-  - component: {fileID: 3717528091929669336}
   m_Layer: 8
   m_Name: BulletTower
   m_TagString: Untagged
@@ -138,21 +137,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3717528091929669336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3272820200405257946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 341a514daede3864885b370c44837903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  lifeTime: 3
-  hitDistance: 0.3
 --- !u!1 &4246999293175380052
 GameObject:
   m_ObjectHideFlags: 0

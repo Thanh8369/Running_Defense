@@ -3,6 +3,16 @@ using UnityEngine;
 
 public class WormAI : CyclopsAI
 {
+    protected override void Start()
+    {
+        if (Physics.Raycast(transform.position + Vector3.up * 2f, Vector3.down, out var hit, 5f))
+        {
+            Vector3 pos = transform.position;
+            pos.y = hit.point.y;
+            transform.position = pos;
+        }
+    }
+
     protected override void SetupBT()
     {
         var nodes = new List<BTNode>();
@@ -16,12 +26,12 @@ public class WormAI : CyclopsAI
         // Chỉ tấn công nếu target trong range, không quay người nếu không trong range
         nodes.Add(BuildStationaryTargetSequence(
             () => player,
-            () => DistanceToTarget(player) <= stats.detectionRange && currentFocusTime <= 0
+            () => DistanceToTarget(player) <= stats.detectionRange
         ));
 
         nodes.Add(BuildStationaryTargetSequence(
             () => nearestTroop,
-            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange && currentFocusTime <= 0
+            () => nearestTroop != null && DistanceToTarget(nearestTroop) <= stats.detectionRange
         ));
 
         nodes.Add(BuildStationaryTowerSequence());
