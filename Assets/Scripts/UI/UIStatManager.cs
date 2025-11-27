@@ -35,6 +35,11 @@ public class UIStatManager : MonoBehaviour
 
     public GameObject _gameObject;
 
+    private void Awake()
+    {
+        _playerExperienceManager = FindFirstObjectByType<PlayerExperienceManager>();
+    }
+
     public void UpdateUIStats()
     {
         if(_playerExperienceManager != null)
