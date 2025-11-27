@@ -43,6 +43,21 @@ public class HealthGuard : MonoBehaviour, IDamageable
             guardAnim.PlayDie();
         }
 
+        GuardAI ai = GetComponent<GuardAI>();
+        if (ai != null) ai.enabled = false;
+
+        GuardAiRange airange = GetComponent<GuardAiRange>();
+        if (airange != null) airange.enabled = false;
+
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            rb.constraints = RigidbodyConstraints.FreezeAll;   // 👈 QUAN TRỌNG
+        }
         OnDeath?.Invoke();
 
         // Xóa object sau 1 giây
