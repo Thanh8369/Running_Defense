@@ -13,7 +13,6 @@ public class LevelUpOption_TowerStatBonus : LevelUpOptionConfig
     public enum TowerStatType
     {
         AttackDamage,
-        AttackSpeedPercent,
         Range,
         MaxHP
     }
@@ -21,7 +20,7 @@ public class LevelUpOption_TowerStatBonus : LevelUpOptionConfig
     [Header("Cấu hình cho Tower")]
     public TowerStatType targetStat = TowerStatType.AttackDamage;
 
-    [Tooltip("AttackDamage: +amount\nAttackSpeedPercent: amount = 0.1f => +10%\nRange: +amount\nMaxHP: +amount")]
+    [Tooltip("AttackDamage: +amount\nRange: +amount\nMaxHP: +amount")]
     public float amount = 5f;
 
     [Tooltip("Khi tăng MaxHP, có heal full máu không?")]
@@ -60,14 +59,6 @@ public class LevelUpOption_TowerStatBonus : LevelUpOptionConfig
                 tower.bonusAttackDamage += amount;
                 Debug.Log($"[TowerUpgrade] {displayName}: +{amount} Damage cho {tower.name} → Total = {tower.TotalAttackDamage}");
                 break;
-
-            case TowerStatType.AttackSpeedPercent:
-                {
-                    float mul = 1f + amount; // 0.1 => +10%
-                    tower.attackSpeed *= mul;
-                    Debug.Log($"[TowerUpgrade] {displayName}: +{amount * 100f}% Attack Speed cho {tower.name} → AS = {tower.attackSpeed}");
-                    break;
-                }
 
             case TowerStatType.Range:
                 tower.AddRange(amount);

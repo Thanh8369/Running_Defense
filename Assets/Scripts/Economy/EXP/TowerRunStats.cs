@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Chỉ số runtime cho 1 trụ.
@@ -9,7 +10,7 @@ public class TowerRunStats : MonoBehaviour
     [Header("ScriptableObject gốc (base stats)")]
     [Tooltip("SO chứa stat cơ bản của trụ.")]
     public TowerData baseData;
-    public Health baseHPData;
+    //public Health baseHPData;
 
     [Header("Damage / Attack (runtime)")]
     [Tooltip("Damage cơ bản của trụ (lấy từ baseData.damage khi init).")]
@@ -31,6 +32,10 @@ public class TowerRunStats : MonoBehaviour
     [Tooltip("Máu hiện tại.")]
     public float currentHP = 100f;
 
+    public event Action<float, float> OnHealthChanged;
+    public event Action OnDeath;
+    public event Action OnRevive;
+
     /// <summary>
     /// Damage thực tế = base + bonus.
     /// </summary>
@@ -48,7 +53,7 @@ public class TowerRunStats : MonoBehaviour
     [ContextMenu("Init From TowerData (Editor Only)")]
     public void InitFromTowerData()
     {
-        if (baseHPData == null)
+        if (baseData == null)
         {
             Debug.LogWarning($"[TowerRunStats] baseData chưa gán trên {name}, dùng giá trị mặc định.");
             // vẫn giữ các giá trị đang đặt trong Inspector
@@ -57,7 +62,7 @@ public class TowerRunStats : MonoBehaviour
         }
 
         // maxHealth / damage là int, cast sang float cho stats runtime
-        maxHP = baseHPData.MaxHealth;
+        maxHP = baseData.maxHealth;
         currentHP = maxHP;
 
         baseAttackDamage = baseData.damage;
@@ -89,5 +94,20 @@ public class TowerRunStats : MonoBehaviour
     public void AddRange(float amount)
     {
         attackRange += amount;
+    }
+    /// <summary>
+    /// Hồi full máu và bắn event OnRevive.
+    /// </summary>
+    public void ReviveToFull()
+    {
+        float targetMax = baseData != null ? baseData.maxHealth : maxHP;
+
+        maxHP = targetMax;
+        currentHP = targetMax;
+
+        Debug.Log($"[TowerRunStats] ReviveToFull, HP = {currentHP}/{maxHP}");
+
+        OnHealthChanged?.Invoke(currentHP, maxHP);
+        OnRevive?.Invoke();
     }
 }

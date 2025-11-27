@@ -54,8 +54,7 @@ public class LevelUpOption_StatBonus : LevelUpOptionConfig
 
             case PlayerStatType.AttackSpeedPercent:
                 {
-                    float mul = 1f + amount; // amount = 0.1 -> +10%
-                    stats.attackSpeed *= mul;
+                    stats.AddAttackSpeedPercent(amount);
                     Debug.Log($"[PlayerUpgrade] {displayName}: +{amount * 100f}% Arrow Attack Speed → AS = {stats.attackSpeed}");
                     break;
                 }
