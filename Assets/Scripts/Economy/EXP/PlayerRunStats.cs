@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Chứa các chỉ số runtime của Player trong 1 run.
@@ -146,5 +147,15 @@ public class PlayerRunStats : MonoBehaviour
     {
         float mul = 1f + amount;
         baseSwordAttackSpeed *= mul;
+    }
+
+    /// <summary>
+    /// Tăng % tốc độ tấn công của mũi tên.
+    /// amount = 0.2f => +20%.
+    /// </summary>
+    public void AddAttackSpeedPercent(float amount)
+    {
+        float mul = 1f + amount;
+        attackSpeed *= mul;
     }
 }

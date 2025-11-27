@@ -1,4 +1,5 @@
 ﻿using Son.Economy;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ using UnityEngine;
 /// - Khi revive: chờ reviveDelay (nếu > 0), hồi máu dần trong reviveDuration,
 ///   reset anim về Idle + mở lại điều khiển.
 /// </summary>
-public class PlayerLifeController : MonoBehaviour
+public class PlayerLifeController : MonoBehaviour, IDamageable   // 👈 THÊM IDamageable
 {
     public static PlayerLifeController Instance { get; private set; }
 
@@ -50,6 +51,11 @@ public class PlayerLifeController : MonoBehaviour
     public bool CanAct => !isDead && !isReviving;
 
     private bool isInvulnerable = false;
+
+    public event Action<float, float> OnHealthChanged;
+    public event Action OnDeath;
+    public event Action OnRevive;
+
     public bool IsInvulnerable => isInvulnerable;
 
     private void Awake()
@@ -71,10 +77,23 @@ public class PlayerLifeController : MonoBehaviour
     }
 
     // ==========================
-    // GỌI HÀM NÀY KHI PLAYER ĂN DAMAGE
+    // IDamageable
+    // ==========================
+    /// <summary>
+    /// Implement IDamageable. Các script khác chỉ cần gọi TakeDamage() là được.
+    /// </summary>
+    public void TakeDamage(float damage)
+    {
+        ApplyDamage(damage);
+    }
+
+    // ==========================
+    // GỌI HÀM NÀY KHI PLAYER ĂN DAMAGE (internal)
     // ==========================
     public void ApplyDamage(float amount)
     {
+        Debug.Log($"Player TakeDamage {amount}, HP trước = {runStats.currentHP}");
+
         if (runStats == null) return;
 
         // chết rồi, đang revive, hoặc đang bất tử (roll) thì không ăn damage
@@ -90,7 +109,7 @@ public class PlayerLifeController : MonoBehaviour
     }
 
     // ==========================
-    // HANDLE DIE (gộp từ PlayerDeathController.HandleDeath)
+    // HANDLE DIE
     // ==========================
     private void Die()
     {
@@ -104,21 +123,20 @@ public class PlayerLifeController : MonoBehaviour
         // 1) Tắt input / movement / tấn công / exp
         DisableControl();
 
-        // 2) Play die animation (giữ y chang DeathController cũ)
+        // 2) Play die animation
         if (animator != null)
         {
             animator.SetTrigger(AnimDie);
         }
 
-        // 3) Nếu bạn muốn auto revive sau 1 thời gian,
-        //    có thể gọi StartRevive() ở đây hoặc để UI (Death Panel) gọi.
-        // Ví dụ auto:
+        // 3) Auto revive sau 1 thời gian
         StartRevive();
+
+        OnDeath?.Invoke();
     }
 
     // ==========================
-    // GỌI TỪ NÚT "REVIVE" / CONTINUE TRÊN UI
-    // Hoặc tự gọi trong Die() nếu muốn auto revive.
+    // GỌI TỪ UI HOẶC TỰ GỌI TRONG Die()
     // ==========================
     public void StartRevive()
     {
@@ -130,15 +148,13 @@ public class PlayerLifeController : MonoBehaviour
 
     // ==========================
     // REVIVE ROUTINE
-    // (kế thừa ý tưởng từ ReviveAfterDelay của PlayerDeathController
-    //  + thêm phần hồi máu mượt như bản PlayerLifeController cũ)
     // ==========================
     private IEnumerator ReviveRoutine()
     {
         isReviving = true;
         DisableControl(); // đang revive vẫn khóa hết
 
-        // 1) Chờ reviveDelay nếu có (giống PlayerDeathController.revivedDelay)
+        // 1) Chờ reviveDelay nếu có
         if (reviveDelay > 0f)
         {
             yield return new WaitForSeconds(reviveDelay);
@@ -155,14 +171,14 @@ public class PlayerLifeController : MonoBehaviour
             float k = Mathf.Clamp01(t / reviveDuration);
             runStats.currentHP = Mathf.Lerp(startHP, endHP, k);
 
-            // TODO: nếu có thanh máu UI thì update ở đây
+            // TODO: update UI HP nếu cần
 
             yield return null;
         }
 
         runStats.currentHP = endHP;
 
-        // 3) Reset trạng thái Animator (giống PlayerDeathController.ReviveAfterDelay)
+        // 3) Reset trạng thái Animator
         if (animator != null)
         {
             animator.ResetTrigger(AnimDie);
@@ -173,12 +189,13 @@ public class PlayerLifeController : MonoBehaviour
         isDead = false;
         isReviving = false;
         EnableControl();
+        OnRevive?.Invoke();
 
         Debug.Log("[PlayerLife] Revive done → unlock control");
     }
 
     // ==========================
-    // BẬT / TẮT CONTROL (thay cho DisableControl/EnableControl cũ)
+    // BẬT / TẮT CONTROL
     // ==========================
     private void SetPlayerActive(bool canAct)
     {
@@ -189,7 +206,6 @@ public class PlayerLifeController : MonoBehaviour
 
             if (!canAct)
             {
-                // ép dừng NavMesh nếu đang chạy
                 if (moveController.agent != null)
                 {
                     moveController.agent.isStopped = true;
@@ -212,7 +228,7 @@ public class PlayerLifeController : MonoBehaviour
 
         // Nhận EXP
         if (expManager != null)
-            expManager.canGainExp = canAct;    // nhớ đã thêm biến này trong PlayerExperienceManager
+            expManager.canGainExp = canAct;
     }
 
     public void SetInvulnerable(bool value)
@@ -220,7 +236,6 @@ public class PlayerLifeController : MonoBehaviour
         isInvulnerable = value;
     }
 
-    // Giữ lại tên hàm giống PlayerDeathController cho dễ quen
     private void DisableControl() => SetPlayerActive(false);
     private void EnableControl() => SetPlayerActive(true);
 }
