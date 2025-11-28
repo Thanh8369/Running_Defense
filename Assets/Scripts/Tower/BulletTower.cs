@@ -12,6 +12,7 @@ public class BulletTower : MonoBehaviour
     private float ttl;
     private GameObject prefabOrigin;
 
+    // Init cho Pool
     public void Init(Transform enemy, TowerRunStats data, GameObject prefab)
     {
         target = enemy;
@@ -19,7 +20,7 @@ public class BulletTower : MonoBehaviour
 
         ttl = 0f;
 
-        // Lấy damage từ TowerData
+        // Lấy damage từ TowerRunStats
         damage = data.TotalAttackDamage;
 
         gameObject.SetActive(true);
@@ -51,11 +52,14 @@ public class BulletTower : MonoBehaviour
 
     void HitTarget()
     {
-        IDamageable dmg = target.GetComponent<IDamageable>();
-        if (dmg == null) dmg = target.GetComponentInParent<IDamageable>();
+        if (target != null)
+        {
+            IDamageable dmg = target.GetComponent<IDamageable>();
+            if (dmg == null) dmg = target.GetComponentInParent<IDamageable>();
 
-        if (dmg != null)
-            dmg.TakeDamage(damage);
+            if (dmg != null)
+                dmg.TakeDamage(damage);
+        }
 
         ReturnToPool();
     }
@@ -63,6 +67,11 @@ public class BulletTower : MonoBehaviour
     void ReturnToPool()
     {
         ttl = 0f;
+
+        // Reset transform TRƯỚC khi trả về pool
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+
         PoolManager.Instance.Return(gameObject, prefabOrigin);
     }
 }
