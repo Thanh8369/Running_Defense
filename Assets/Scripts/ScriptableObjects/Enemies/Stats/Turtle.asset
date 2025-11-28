@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: Turtle
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 300
   moveSpeed: 2
   maxSpeed: 4
   rotateSpeed: 180
@@ -23,6 +23,7 @@ MonoBehaviour:
   minGold: 5
   maxGold: 15
   expAmount: 10
+  scoreAmount: 10
   prefab: {fileID: 1275755912302449940, guid: 89f8321f9fe58e74c97c9e109b47814e, type: 3}
   attackVariants: []
   projectilePrefabs: []

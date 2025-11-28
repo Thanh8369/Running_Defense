@@ -1877,7 +1877,7 @@ MonoBehaviour:
   attackVariants:
   - id: 1
     isAOE: 1
-    aoeDamage: 60
+    aoeDamage: 30
     aoeLayerMask:
       serializedVersion: 2
       m_Bits: 55

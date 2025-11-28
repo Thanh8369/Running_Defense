@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dec5e48a0e54fa46a6acf9565656e22, type: 3}
+  m_Name: Map1_8m
+  m_EditorClassIdentifier: 
+  triggerTime: 480
+  addStar: 0
+  spawnInfos:
+  - enemy: {fileID: 11400000, guid: c9c9ada569cc9ca40a88c82c22965371, type: 2}
+    count: 1
+    minBatch: 1
+    maxBatch: 1
+    spawnDelay: 1
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: 11bf0e82fc435f747a747a24c76b88d1, type: 2}
+    count: 100
+    minBatch: 5
+    maxBatch: 20
+    spawnDelay: 4
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: 6e7b125bae1b6ae43b98670623cba6c1, type: 2}
+    count: 60
+    minBatch: 5
+    maxBatch: 15
+    spawnDelay: 4
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: 7ca0693903b8a4d4d8d139b009b924a8, type: 2}
+    count: 80
+    minBatch: 5
+    maxBatch: 20
+    spawnDelay: 5
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: 6cbd31872e029e84b8a413994ff2a06d, type: 2}
+    count: 5
+    minBatch: 1
+    maxBatch: 2
+    spawnDelay: 30
+    spawnHeightOffset: 0
+  - enemy: {fileID: 11400000, guid: ed77a8320b897514f8c73ef7a8c033cf, type: 2}
+    count: 3
+    minBatch: 1
+    maxBatch: 1
+    spawnDelay: 45
+    spawnHeightOffset: 0

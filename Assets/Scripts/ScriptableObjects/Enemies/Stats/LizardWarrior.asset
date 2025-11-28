@@ -20,15 +20,16 @@ MonoBehaviour:
   attackSpeed: 1
   attackRange: 6
   detectionRange: 8
-  minGold: 100
-  maxGold: 1000
+  minGold: 800
+  maxGold: 1500
   expAmount: 100
+  scoreAmount: 2000
   prefab: {fileID: 1894462108528737659, guid: dc205721daded154d9a2bd51b910b3e5, type: 3}
   attackVariants:
   - triggerName: Attack01
     damageAmount: 100
   - triggerName: Attack02
-    damageAmount: 100
+    damageAmount: 150
   - triggerName: Attack03
-    damageAmount: 100
+    damageAmount: 200
   projectilePrefabs: []

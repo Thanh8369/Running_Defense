@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1000
   moveSpeed: 12
-  maxSpeed: 30
+  maxSpeed: 24
   rotateSpeed: 360
   attackDamage: 10
-  attackCooldown: 1
+  attackSpeed: 1
   attackRange: 15
   detectionRange: 25
-  minGold: 5
-  maxGold: 15
-  expAmount: 50
+  minGold: 100
+  maxGold: 300
+  expAmount: 100
+  scoreAmount: 100
   prefab: {fileID: 5820329575921559263, guid: 4284318eb5fe8dd45a073655e1b6cec0, type: 3}
+  attackVariants: []
   projectilePrefabs:
   - prefab: {fileID: 7023165486502889764, guid: dbdb8d3734601bd4298cc3ff97b2a48b, type: 3}
     customDamage: 10

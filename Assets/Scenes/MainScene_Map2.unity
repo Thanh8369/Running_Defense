@@ -369,10 +369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f835aff5bdd33f4fb4fe74bc4514e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowData: {fileID: 11400000, guid: d768ed7e86ee15347b96e911a62d01c4, type: 2}
+  arrowData: {fileID: 11400000, guid: 50e3a19c98e68d14daa3c7ed7440141a, type: 2}
   swordData: {fileID: 11400000, guid: 4fc4193e17b300c43bea21864ae0359a, type: 2}
   playerData: {fileID: 11400000, guid: bc82cc0b797e70e4fb5f268563c38a1c, type: 2}
-  hpData: {fileID: 11400000, guid: f5aaa3f644e43834eac27b9ffece2e2a, type: 2}
+  hpData: {fileID: 11400000, guid: 5701ee59d1733524483e4185a3d04917, type: 2}
   baseAttackDamage: 10
   bonusAttackDamage: 0
   attackSpeed: 1
@@ -2730,48 +2730,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: spawnConfigs.Array.size
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 58392d809799cb649ba03ccc39c97e78, type: 2}
+      objectReference: {fileID: 11400000, guid: f1b304d8d66502049ac3a9860fd10098, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 06a9d49376e1f58469c867f7644f2343, type: 2}
+      objectReference: {fileID: 11400000, guid: e6dfe4733728f0343abab6a571ea4e39, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: aabdcaeaf570f7a43a906ada6a8cbe05, type: 2}
+      objectReference: {fileID: 11400000, guid: f7267fe20d961ac4baa2b390ad615884, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: 880138af66c90ba4a93c91b1bcfe099e, type: 2}
+      objectReference: {fileID: 11400000, guid: 8fcc188c09835234d9457bea949a5649, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[4]'
       value: 
-      objectReference: {fileID: 11400000, guid: 3240814ff4bb7e64f9f4cca595801945, type: 2}
+      objectReference: {fileID: 11400000, guid: 5d0a1e1638aa2de4b9eb514d18041c86, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[5]'
       value: 
-      objectReference: {fileID: 11400000, guid: d6507fa8db68ca74fb57adfffdc57f97, type: 2}
+      objectReference: {fileID: 11400000, guid: 0db2e024bd918bf44a6e3fbe4ebe20bb, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[6]'
       value: 
-      objectReference: {fileID: 11400000, guid: 017b172634e2d49478b43fbf6ec7080b, type: 2}
+      objectReference: {fileID: 11400000, guid: 6f5bbcd11326811409dc6384a733e60e, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[7]'
       value: 
-      objectReference: {fileID: 11400000, guid: 2c90a91ecaf38544ab2bc5d96be31a51, type: 2}
+      objectReference: {fileID: 11400000, guid: dafdcac07d4b0f542a87e483577f64c1, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[8]'
       value: 
-      objectReference: {fileID: 11400000, guid: e2b15ee0670515849b3647fa0dee58ed, type: 2}
+      objectReference: {fileID: 11400000, guid: 7d6eabf5763e080418fdbf1f68f4d85b, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnConfigs.Array.data[9]'
       value: 
-      objectReference: {fileID: 11400000, guid: 1986955bf33c815448d184cb3e948716, type: 2}
+      objectReference: {fileID: 11400000, guid: dc19c9be2fc5c084c88f5f2ca05c24d2, type: 2}
     - target: {fileID: 5440338873537939487, guid: 331bf218ac1a12348810451883ff2926, type: 3}
       propertyPath: 'spawnPoints.Array.data[10]'
       value: 
@@ -3702,6 +3702,10 @@ PrefabInstance:
       propertyPath: popupCanvas
       value: 
       objectReference: {fileID: 136987631}
+    - target: {fileID: 2964377945474696596, guid: 1de551408b0c9514ca50491f36012a37, type: 3}
+      propertyPath: 'spawnGroups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3de5b15bab4f8d649885af55aaf64f41, type: 2}
     - target: {fileID: 2980333304256310708, guid: 1de551408b0c9514ca50491f36012a37, type: 3}
       propertyPath: m_Name
       value: SupplySpawner
@@ -3795,6 +3799,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1530318213585458568, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
+      propertyPath: baseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c4b6306d662ff24ebe6f651f51ea9cd, type: 2}
     - target: {fileID: 1530318213585458568, guid: 61dbe45a474a58a43b6e9bc69bbd8ce8, type: 3}
       propertyPath: baseHPData
       value: 
@@ -11726,24 +11734,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000017881393, y: 0.8351608, z: -0.03936009}
     m_Extent: {x: 1.0252013, y: 0.97310704, z: 0.3147204}
   m_DirtyAABB: 0
---- !u!114 &3317884781753291358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8369480501520799050}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb83485652d1c74085c3ddff09d2b55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponCount: {fileID: 11400000, guid: b056a43e5ba14f243a514132c9d1a3c1, type: 2}
-  spreadAngle: 0
-  dagger: {fileID: 0}
-  throwPoint: {fileID: 2439799857589522576}
-  daggerVel: 0
-  playerData: {fileID: 11400000, guid: 3f02db35ac315bc4f81e899e61bd8d0d, type: 2}
 --- !u!1 &3326950240202951497
 GameObject:
   m_ObjectHideFlags: 0
@@ -15266,7 +15256,6 @@ GameObject:
   - component: {fileID: 6631078112689706391}
   - component: {fileID: 3483880623166772688}
   - component: {fileID: 6816742013469999235}
-  - component: {fileID: 3317884781753291358}
   - component: {fileID: 228523254}
   - component: {fileID: 228523263}
   - component: {fileID: 8369480501520799053}
@@ -15347,7 +15336,7 @@ MonoBehaviour:
   runStats: {fileID: 228523254}
   expManager: {fileID: 0}
   moveController: {fileID: 228523263}
-  daggerAtk: {fileID: 3317884781753291358}
+  daggerAtk: {fileID: 0}
   autoArrow: {fileID: 3483880623166772688}
   animator: {fileID: 3264931717573466467}
   reviveDelay: 0
