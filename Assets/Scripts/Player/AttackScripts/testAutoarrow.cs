@@ -72,10 +72,10 @@ public class testAutoarrow : MonoBehaviour
         proj.transform.position = firePoint.position;
         proj.transform.rotation = Quaternion.identity;
 
-        Vector3 dir = (target.position - firePoint.position).normalized;
+        Vector3 dir = (target.position - firePoint.position + new Vector3(0f, .5f, 0f)).normalized;
 
         Rigidbody rb = proj.GetComponent<Rigidbody>();
-        rb.linearVelocity = dir * 20f;
+        rb.linearVelocity = (dir) * 20f;
 
         proj.transform.forward = dir;
     }

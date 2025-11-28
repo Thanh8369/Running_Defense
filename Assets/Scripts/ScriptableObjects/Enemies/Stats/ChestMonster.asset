@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce67fff2b3be54ca2bf007f8cae539, type: 3}
   m_Name: ChestMonster
   m_EditorClassIdentifier: 
-  enemyName: ChestMonster
+  maxHealth: 100
   moveSpeed: 3
+  maxSpeed: 6
   rotateSpeed: 360
   attackDamage: 10
-  attackCooldown: 1.5
+  attackSpeed: 1
   attackRange: 1.2
   detectionRange: 8
+  minGold: 50
+  maxGold: 100
+  expAmount: 50
+  scoreAmount: 10
   prefab: {fileID: 5327414303672706579, guid: 074e4e33f269e6c488a746a09e00d252, type: 3}
+  attackVariants: []
+  projectilePrefabs: []

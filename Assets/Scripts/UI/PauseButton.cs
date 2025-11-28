@@ -5,7 +5,6 @@ public class PauseButton : MonoBehaviour
 {
     [SerializeField] private Button _pauseButton;
     [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private playercontroller _playerController;
 
     private void Awake()
     {
@@ -35,6 +34,5 @@ public class PauseButton : MonoBehaviour
     {
         _pauseMenu.SetActive(!_pauseMenu.activeSelf);
         Time.timeScale = _pauseMenu.activeSelf ? 0f : 1f;
-        _playerController.enabled = !_pauseMenu.activeSelf;
     }
 }

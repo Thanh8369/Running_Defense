@@ -105,6 +105,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (goldGain > 0 && GoldPopupSpawner.Instance != null)
             GoldPopupSpawner.Instance.SpawnGoldPopup(transform.position, goldGain);
+
+        RunScoreManager.Instance.AddScore(enemyAI.stats.scoreAmount, $"Kill {gameObject.name}");
     }
 
     public void OnDieAnimationEnd()
