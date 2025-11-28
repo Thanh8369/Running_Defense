@@ -18,5 +18,7 @@ MonoBehaviour:
   icon: {fileID: -1338320074, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
   powerValue: 1
   targetStat: 1
-  amount: 0.1
+  amount: 0.5
   healToFullOnMaxHPIncrease: 0
+  swordDamageAmount: 10
+  swordAttackSpeedPercent: 0.2

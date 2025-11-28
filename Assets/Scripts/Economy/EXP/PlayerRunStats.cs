@@ -158,4 +158,11 @@ public class PlayerRunStats : MonoBehaviour
         float mul = 1f + amount;
         attackSpeed *= mul;
     }
+
+    public void Heal(float amount)
+    {
+        if (amount <= 0 || currentHP <= 0) return;
+
+        currentHP = Mathf.Clamp(currentHP + amount, 0, hpData._maxHealth);
+    }
 }

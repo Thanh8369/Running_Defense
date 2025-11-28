@@ -110,4 +110,11 @@ public class TowerRunStats : MonoBehaviour
         OnHealthChanged?.Invoke(currentHP, maxHP);
         OnRevive?.Invoke();
     }
+
+    public void Heal(float amount)
+    {
+        if (amount <= 0 || currentHP <= 0) return;
+
+        currentHP = Mathf.Clamp(currentHP + amount, 0, baseData.maxHealth);
+    }
 }

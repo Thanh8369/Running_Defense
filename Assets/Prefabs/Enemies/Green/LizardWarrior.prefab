@@ -423,7 +423,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746100192267283488}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -887,9 +887,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 4193599610980796102}
-  _attackClip: {fileID: 8300000, guid: a10be4f0bc24e3d4fbff572f3323fda9, type: 3}
-  _deathClip: {fileID: 8300000, guid: 208cf780e35d02447bd6d91868d0ca07, type: 3}
-  _hurtClip: {fileID: 8300000, guid: d0d77a6552c7baf428c50a6373d63570, type: 3}
+  tauntingClip: {fileID: 0}
+  dieClip: {fileID: 0}
+  getHitClip: {fileID: 0}
 --- !u!1 &2209827861516001117
 GameObject:
   m_ObjectHideFlags: 0
