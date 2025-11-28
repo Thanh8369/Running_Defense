@@ -887,9 +887,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 4193599610980796102}
-  tauntingClip: {fileID: 0}
-  dieClip: {fileID: 0}
-  getHitClip: {fileID: 0}
+  tauntingClip: {fileID: 8300000, guid: a10be4f0bc24e3d4fbff572f3323fda9, type: 3}
+  dieClip: {fileID: 8300000, guid: 208cf780e35d02447bd6d91868d0ca07, type: 3}
+  getHitClip: {fileID: 8300000, guid: d0d77a6552c7baf428c50a6373d63570, type: 3}
 --- !u!1 &2209827861516001117
 GameObject:
   m_ObjectHideFlags: 0

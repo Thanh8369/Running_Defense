@@ -53,7 +53,7 @@ namespace Son.Economy
             DontDestroyOnLoad(gameObject);
 
             LoadBestScore();
-            ResetScoreForNewRun(); // đảm bảo start run với 0 điểm
+            //ResetScoreForNewRun(); // đảm bảo start run với 0 điểm
         }
 
         /// <summary>

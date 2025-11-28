@@ -19,6 +19,6 @@ MonoBehaviour:
   powerValue: 1
   targetStat: 2
   amount: 50
-  healToFullOnMaxHPIncrease: 0
+  healToFullOnMaxHPIncrease: 1
   swordDamageAmount: 10
   swordAttackSpeedPercent: 0.2

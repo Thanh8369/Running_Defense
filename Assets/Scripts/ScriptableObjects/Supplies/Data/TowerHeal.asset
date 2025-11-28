@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TowerHeal
   m_EditorClassIdentifier: 
   supplyType: 3
-  defaultAmount: 100
+  defaultAmount: 500
   useRandomAmount: 0
   minAmount: 50
   maxAmount: 100
