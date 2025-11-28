@@ -132,7 +132,7 @@ MonoBehaviour:
   poisonConfig:
     enablePoison: 1
     damagePerTick: 2
-    tickInterval: 2
+    tickInterval: 1
     duration: 5
     stack: 0
   iceSlowConfig:

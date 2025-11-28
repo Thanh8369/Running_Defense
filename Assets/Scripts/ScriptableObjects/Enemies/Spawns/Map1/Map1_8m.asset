@@ -23,21 +23,21 @@ MonoBehaviour:
     spawnHeightOffset: 0
   - enemy: {fileID: 11400000, guid: dc7976a8c2bf0ad4e88ba2232b4008ac, type: 2}
     count: 100
-    minBatch: 10
+    minBatch: 5
     maxBatch: 20
-    spawnDelay: 20
+    spawnDelay: 4
     spawnHeightOffset: 0
   - enemy: {fileID: 11400000, guid: b0db0a38c0466534ba8bf5b42826b5fa, type: 2}
     count: 60
-    minBatch: 10
+    minBatch: 5
     maxBatch: 15
-    spawnDelay: 15
+    spawnDelay: 4
     spawnHeightOffset: 1
   - enemy: {fileID: 11400000, guid: 21cf37e4b28b66e4990c2c9b7c89b655, type: 2}
     count: 80
-    minBatch: 15
+    minBatch: 5
     maxBatch: 20
-    spawnDelay: 20
+    spawnDelay: 5
     spawnHeightOffset: 0
   - enemy: {fileID: 11400000, guid: 97eb3882a2835ff48b01263ded4384fd, type: 2}
     count: 5

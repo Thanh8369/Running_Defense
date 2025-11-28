@@ -22,6 +22,8 @@ MonoBehaviour:
   detectionRange: 10
   minGold: 5
   maxGold: 15
-  expAmount: 10
+  expAmount: 20
+  scoreAmount: 10
   prefab: {fileID: 9053075404424218739, guid: 44212287555210e4ab6d1e253eee5e09, type: 3}
+  attackVariants: []
   projectilePrefabs: []
