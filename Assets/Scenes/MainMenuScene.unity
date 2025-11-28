@@ -3681,7 +3681,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2196009060354443243, guid: 880b63f1814629140b5a06b65c35c956, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 748514568}
   m_SourcePrefab: {fileID: 100100000, guid: 880b63f1814629140b5a06b65c35c956, type: 3}
 --- !u!1 &554258436
 GameObject:
@@ -9979,6 +9982,25 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &748514567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2196009060354443243, guid: 880b63f1814629140b5a06b65c35c956, type: 3}
+  m_PrefabInstance: {fileID: 551162029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &748514568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748514567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3fd80ce92a0484f9b46759e2dc1323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  bestScore: 0
 --- !u!1 &792250203
 GameObject:
   m_ObjectHideFlags: 0

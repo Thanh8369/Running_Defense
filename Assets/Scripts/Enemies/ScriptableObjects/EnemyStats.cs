@@ -33,6 +33,7 @@ public class EnemyStats : ScriptableObject
     public int minGold = 5;
     public int maxGold = 15;
     public int expAmount = 10;
+    public int scoreAmount = 10;
 
     [Header("Visual")]
     public GameObject prefab;
