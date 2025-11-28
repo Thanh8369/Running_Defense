@@ -55,10 +55,10 @@ public class SupplyItem : MonoBehaviour
                 PlayerExperienceManager.Instance?.AddExp(finalAmount);
                 break;
             case SupplyType.PlayerHeal:
-                GameObject.FindGameObjectWithTag("Player")?.GetComponent<Health>()?.Heal(finalAmount);
+                GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerRunStats>()?.Heal(finalAmount);
                 break;
             case SupplyType.TowerHeal:
-                GameObject.FindGameObjectWithTag("Tower")?.GetComponent<Health>()?.Heal(finalAmount);
+                GameObject.FindGameObjectWithTag("Tower")?.GetComponent<TowerRunStats>()?.Heal(finalAmount);
                 break;
             case SupplyType.TowerDamage:
                 DamageTowerArea();

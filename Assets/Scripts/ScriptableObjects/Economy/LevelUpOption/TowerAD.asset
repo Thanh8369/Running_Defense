@@ -18,5 +18,5 @@ MonoBehaviour:
   icon: {fileID: -795367877, guid: 34f3c2f46df9b894ea0736eda1011c10, type: 3}
   powerValue: 1
   targetStat: 0
-  amount: 5
+  amount: 200
   healToFullOnMaxHPIncrease: 1

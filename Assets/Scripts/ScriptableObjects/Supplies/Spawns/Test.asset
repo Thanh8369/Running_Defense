@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerTime: 0
   totalSupplyCount: 100
-  maxActiveSuppliesInMap: 5
-  spawnDelay: 30
+  maxActiveSuppliesInMap: 10
+  spawnDelay: 10
   supplyInfos:
   - supply: {fileID: 11400000, guid: f5ad129a5b7f0854e8517f443366b681, type: 2}
     spawnChance: 90
@@ -30,5 +30,5 @@ MonoBehaviour:
     spawnChance: 50
     maxActiveSupplies: 3
   - supply: {fileID: 11400000, guid: d4ed6fb54dcc3cf408b494b5dbfb16d0, type: 2}
-    spawnChance: 100
+    spawnChance: 50
     maxActiveSupplies: 2

@@ -7,6 +7,7 @@ public class TowerAreaRangeRenderer : MonoBehaviour
     private TowerRunStats stats;
 
     private LineRenderer line;
+    private SphereCollider rangeCollider; // <-- thêm collider
     public int segments = 40;
 
     void Start()
@@ -16,7 +17,7 @@ public class TowerAreaRangeRenderer : MonoBehaviour
         line.useWorldSpace = false;
         line.widthMultiplier = 0.05f;
 
-        // --- FIX QUAN TRỌNG ---
+        // Lấy TowerArea
         if (towerArea == null)
             towerArea = GetComponentInParent<TowerArea>();
 
@@ -26,22 +27,37 @@ public class TowerAreaRangeRenderer : MonoBehaviour
             return;
         }
 
-        // --- GÁN TowerRunStats ---
+        // Lấy stats
         stats = towerArea.GetComponent<TowerRunStats>();
-
         if (stats == null)
         {
             Debug.LogError("TowerArea không có TowerRunStats!");
             return;
         }
 
-        DrawCircle(stats.attackRange);
+        // Lấy SphereCollider
+        rangeCollider = GetComponent<SphereCollider>();
+        if (rangeCollider == null)
+        {
+            rangeCollider = gameObject.AddComponent<SphereCollider>();
+            rangeCollider.isTrigger = true; // collider này thường dùng trigger
+        }
+
+        UpdateRange(stats.attackRange);
     }
 
     void Update()
     {
         if (stats != null)
-            DrawCircle(stats.attackRange); // realtime update khi nâng cấp
+            UpdateRange(stats.attackRange); // realtime update khi nâng cấp
+    }
+
+    void UpdateRange(float radius)
+    {
+        DrawCircle(radius);
+
+        if (rangeCollider != null)
+            rangeCollider.radius = radius; // <-- thay đổi radius collider
     }
 
     void DrawCircle(float radius)
@@ -58,9 +74,7 @@ public class TowerAreaRangeRenderer : MonoBehaviour
             float x = Mathf.Sin(angle * Mathf.Deg2Rad) * radius;
             float z = Mathf.Cos(angle * Mathf.Deg2Rad) * radius;
 
-            // NÂNG VÒNG LÊN 1 CHÚT CHO KHÔNG CHÌM DƯỚI ĐẤT
             line.SetPosition(i, new Vector3(x, 2f, z));
-
             angle += step;
         }
     }

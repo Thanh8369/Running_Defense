@@ -2430,9 +2430,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &6716827546812984514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2475,6 +2475,7 @@ MonoBehaviour:
   anim: {fileID: 740347844262751661}
   rb: {fileID: 6716827546812984514}
   isAttacking: 0
+  isDead: 0
 --- !u!114 &9111194214477081104
 MonoBehaviour:
   m_ObjectHideFlags: 0

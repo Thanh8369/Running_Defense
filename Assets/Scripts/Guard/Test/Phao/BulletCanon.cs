@@ -81,7 +81,7 @@ public class BulletCanon : MonoBehaviour
         foreach (var c in cols)
         {
             IDamageable dmg = c.GetComponent<IDamageable>();
-            if (dmg != null)
+            if (dmg != null && c.tag != "Tower" && c.tag != "Player")
             {
                 dmg.TakeDamage(damage);
                 break;
