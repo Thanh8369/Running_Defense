@@ -47,51 +47,51 @@ public class UIStatManager : MonoBehaviour
             _level.text = _playerExperienceManager.currentLevel.ToString();
             _xp.text = _playerExperienceManager.currentExp + " / " + _playerExperienceManager.ExpToNextLevel;
             // _xpSlider.maxValue = _playerExperienceManager.ExpToNextLevel;
-            _xpSlider.minValue = _playerExperienceManager.currentExp / _playerExperienceManager.ExpToNextLevel;
+            //_xpSlider.minValue = _playerExperienceManager.currentExp / _playerExperienceManager.ExpToNextLevel;
         }
         // Player Stats
         if (_atkPlayerSlider != null && _atkPlayer != null)
         {
             _atkPlayer.text = _playerRunStats.TotalAttackDamage.ToString();
             // _atkPlayerSlider.maxValue = _playerRunStats.baseAttackDamage + 25;
-            _atkPlayerSlider.minValue = _playerRunStats.baseAttackDamage / (_playerRunStats.arrowData.damage + 25);
+            //_atkPlayerSlider.minValue = _playerRunStats.baseAttackDamage / (_playerRunStats.arrowData.damage + 25);
         }
         if (_aSPlayer != null && _aSPlayerSlider != null)
         {
             _aSPlayer.text = Math.Round(_playerRunStats.attackSpeed, 2).ToString();
             // _aSPlayerSlider.maxValue = _playerRunStats.attackSpeed + 2.5f;
-            _aSPlayerSlider.minValue = _playerRunStats.attackSpeed / (_playerRunStats.playerData.shootInterval + 2.5f);
+            //_aSPlayerSlider.minValue = _playerRunStats.attackSpeed / (_playerRunStats.playerData.shootInterval + 2.5f);
         }
         if (_hPPlayer != null && _hPPlayerSlider != null)
         {
             _hPPlayer.text = _playerRunStats.currentHP.ToString();
             // _hPPlayerSlider.maxValue = _playerRunStats.currentHP + 25 * 5;
-            _hPPlayerSlider.minValue = _playerRunStats.currentHP / (_playerRunStats.hpData._maxHealth + 25 * 5);
+            //_hPPlayerSlider.minValue = _playerRunStats.currentHP / (_playerRunStats.hpData._maxHealth + 25 * 5);
         }
         if (_skillPlayer != null && _skillPlayerSlider != null)
         {
             _skillPlayer.text = _playerRunStats.TotalSwordDamage.ToString();
             // _skillPlayerSlider.maxValue = _playerRunStats.baseSwordDamage + 25;
-            _skillPlayerSlider.minValue = _playerRunStats.baseSwordDamage / (_playerRunStats.swordData.damage + 25);
+            //_skillPlayerSlider.minValue = _playerRunStats.baseSwordDamage / (_playerRunStats.swordData.damage + 25);
         }
         // Tower Stats
         if (_atkTower != null && _atkTowerSlider != null)
         {
             _atkTower.text = _towerRunStats.TotalAttackDamage.ToString();
             // _atkTowerSlider.maxValue = _towerRunStats.baseAttackDamage + 50 * 5;
-            _atkTowerSlider.minValue = _towerRunStats.baseAttackDamage / (_towerRunStats.baseData.damage + 50 * 5);
+            //_atkTowerSlider.minValue = _towerRunStats.baseAttackDamage / (_towerRunStats.baseData.damage + 50 * 5);
         }
         if (_aSTower != null && _aSTowerSlider != null)
         {
             _aSTower.text = _towerRunStats.attackRange.ToString();
             // _aSTowerSlider.maxValue = _towerRunStats.attackRange + 15;
-            _aSTowerSlider.minValue = _towerRunStats.attackRange / (_towerRunStats.baseData.attackRange + 15);
+            //_aSTowerSlider.minValue = _towerRunStats.attackRange / (_towerRunStats.baseData.attackRange + 15);
         }
         if (_hPTower != null && _hPTowerSlider != null)
         {
             _hPTower.text = _towerRunStats.currentHP.ToString();
             // _hPTowerSlider.maxValue = _towerRunStats.currentHP + 500 * 5;
-            _hPTowerSlider.minValue = _towerRunStats.currentHP / (_towerRunStats.baseData.maxHealth + 500 * 5);
+            //_hPTowerSlider.minValue = _towerRunStats.currentHP / (_towerRunStats.baseData.maxHealth + 500 * 5);
         }
         _gameObject.SetActive(true);
     }

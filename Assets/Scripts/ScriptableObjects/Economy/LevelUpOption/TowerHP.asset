@@ -19,4 +19,4 @@ MonoBehaviour:
   powerValue: 1
   targetStat: 2
   amount: 500
-  healToFullOnMaxHPIncrease: 0
+  healToFullOnMaxHPIncrease: 1

@@ -2142,9 +2142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 4112795809052836401}
-  _attackClip: {fileID: 8300000, guid: c35e32f8087691a40be28f2e53e07dda, type: 3}
-  _deathClip: {fileID: 8300000, guid: 208cf780e35d02447bd6d91868d0ca07, type: 3}
-  _hurtClip: {fileID: 8300000, guid: d0d77a6552c7baf428c50a6373d63570, type: 3}
+  tauntingClip: {fileID: 8300000, guid: c35e32f8087691a40be28f2e53e07dda, type: 3}
+  dieClip: {fileID: 8300000, guid: 208cf780e35d02447bd6d91868d0ca07, type: 3}
+  getHitClip: {fileID: 8300000, guid: d0d77a6552c7baf428c50a6373d63570, type: 3}
 --- !u!1 &8541461251325809053
 GameObject:
   m_ObjectHideFlags: 0

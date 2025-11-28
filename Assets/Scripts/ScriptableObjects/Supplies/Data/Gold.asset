@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   supplyType: 0
-  defaultAmount: 1000
-  useRandomAmount: 0
+  defaultAmount: 0
+  useRandomAmount: 1
   minAmount: 50
   maxAmount: 100
   showPopupOnPickup: 1
