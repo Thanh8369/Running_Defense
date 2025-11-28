@@ -16,14 +16,14 @@ public class PoisonDebuff : MonoBehaviour
     public Material poisonMaterial;
     public float flashInterval = 0.2f;
 
-    private Health health;
+    private PlayerLifeController playerLife;
     private Coroutine effectRoutine;
     private Renderer[] renderers;
     private Material[][] originalMaterials;
 
     private void Awake()
     {
-        health = GetComponent<Health>();
+        playerLife = GetComponent<PlayerLifeController>();
         renderers = GetComponentsInChildren<Renderer>();
         originalMaterials = new Material[renderers.Length][];
         for (int i = 0; i < renderers.Length; i++)
@@ -34,7 +34,7 @@ public class PoisonDebuff : MonoBehaviour
 
     public void ApplyPoison(PoisonDebuffConfig config)
     {
-        if (!config.enablePoison || health == null || poisonMaterial == null) return;
+        if (!config.enablePoison || playerLife == null || poisonMaterial == null) return;
 
         if (!config.stack && effectRoutine != null)
         {
@@ -66,7 +66,7 @@ public class PoisonDebuff : MonoBehaviour
 
             if (tickTimer >= config.tickInterval)
             {
-                health.TakeDamage(config.damagePerTick);
+                playerLife.TakeDamage(config.damagePerTick);
                 tickTimer = 0f;
             }
 

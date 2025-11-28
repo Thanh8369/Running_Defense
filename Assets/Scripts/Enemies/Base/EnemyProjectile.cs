@@ -133,7 +133,7 @@ public class EnemyProjectile : MonoBehaviour
                 fp.nonHomingDirection = dir;
 
                 // Damage giảm
-                fp.Initialize(null, damage * 0.5f, dir);
+                fp.Initialize(null, damage * 0.8f, dir);
             }
         }
     }

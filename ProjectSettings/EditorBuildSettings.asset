@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene_Map1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/MainScene_Map2.unity
+    guid: 3783204d60ea84544b50e340d0027146
+  - enabled: 0
     path: Assets/Scenes/EconomyTest/EconomyTest.unity
     guid: 8d526484dd6930b41a9a595be04fd708
   - enabled: 0

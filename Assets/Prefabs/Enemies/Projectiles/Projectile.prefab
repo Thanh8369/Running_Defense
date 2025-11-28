@@ -125,10 +125,10 @@ MonoBehaviour:
   useHoming: 1
   lifetime: 5
   projectileSpeed: 4
-  heightOffset: 0.5
+  heightOffset: 1
   isBomb: 1
   bombFragmentPrefab: {fileID: 6045715366450228825, guid: b8661c9bdf9a3f742bb8cd303e283f03, type: 3}
-  fragmentCount: 16
+  fragmentCount: 6
   poisonConfig:
     enablePoison: 0
     damagePerTick: 2
